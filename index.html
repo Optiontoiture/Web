@@ -1,473 +1,456 @@
 <!DOCTYPE html>
 <html lang="fr-CA">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Option Toiture | Expert en toiture Rive-Sud de Montréal | GAF Master Elite</title>
-    <meta name="description" content="Option Toiture, expert en toiture résidentielle et commerciale sur la Rive-Sud de Montréal. Certification GAF Master Elite, installateur RONA+, 15+ ans d'expérience. Soumission gratuite.">
-    <meta name="keywords" content="toiture rive-sud, couvreur montréal, bardeaux GAF, option toiture, toiture marieville, remplacement toiture, réparation toiture">
-    <link rel="canonical" href="https://www.optiontoiture.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="fr_CA">
-    <meta property="og:site_name" content="Option Toiture">
-    <meta property="og:title" content="Option Toiture | Expert en toiture Rive-Sud de Montréal">
-    <meta property="og:description" content="Expert en toiture résidentielle et commerciale sur la Rive-Sud. GAF Master Elite, installateur RONA+, 15+ ans d'expérience.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold: #D4A843;
-            --gold-hover: #c29a3a;
-            --dark: #1a1a1a;
-            --text: #2d2d2d;
-            --text-light: #666;
-            --bg: #fafaf8;
-            --white: #fff;
-            --border: #e8e5de;
-            --section-alt: #f5f3ee;
-        }
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Work Sans', sans-serif; color: var(--text); background: var(--bg); }
-        h1, h2, h3 { font-family: 'DM Serif Display', serif; font-weight: 400; }
-        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-        a { text-decoration: none; }
-        img { max-width: 100%; height: auto; display: block; }
-
-        /* HEADER */
-        .site-header {
-            background: var(--white); border-bottom: 1px solid var(--border);
-            position: sticky; top: 0; z-index: 100;
-        }
-        .header-top {
-            background: var(--dark); color: #fff; font-size: 13px; padding: 6px 0;
-        }
-        .header-top .container { display: flex; justify-content: flex-end; gap: 24px; }
-        .header-top a { color: rgba(255,255,255,0.8); text-decoration: none; }
-        .header-top a:hover { color: var(--gold); }
-        .header-main .container {
-            display: flex; align-items: center; justify-content: space-between;
-            padding-top: 12px; padding-bottom: 12px;
-        }
-        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .logo img { height: 44px; width: auto; }
-        .logo span { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text); }
-        nav { display: flex; align-items: center; gap: 8px; }
-        nav a {
-            padding: 8px 14px; font-size: 14px; font-weight: 500;
-            color: var(--text); border-radius: 6px; transition: all .2s;
-        }
-        nav a:hover { background: var(--section-alt); color: var(--gold); }
-        nav .nav-cta {
-            background: var(--gold); color: #fff; font-weight: 600;
-            padding: 10px 20px; border-radius: 8px;
-        }
-        nav .nav-cta:hover { background: var(--gold-hover); }
-        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-        .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); margin: 5px 0; }
-
-        /* HERO */
-        .hero {
-            position: relative; min-height: 85vh; display: flex; align-items: center;
-            background: linear-gradient(135deg, var(--dark) 0%, #2a2318 100%);
-            overflow: hidden;
-        }
-        .hero::before {
-            content: ''; position: absolute; inset: 0;
-            background: url('images/photos/chantier-rona-camion-2.webp') center/cover;
-            opacity: 0.25;
-        }
-        .hero-content {
-            position: relative; z-index: 2; max-width: 680px;
-            padding: 80px 0; animation: fadeUp 0.8s ease;
-        }
-        .hero-badges { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
-        .badge {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 6px 14px; border-radius: 20px; font-size: 12px;
-            font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
-        }
-        .badge-gold { background: var(--gold); color: #fff; }
-        .badge-outline { border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); }
-        .hero h1 { font-size: clamp(36px, 5vw, 58px); color: #fff; line-height: 1.1; margin-bottom: 20px; }
-        .hero h1 em { font-style: normal; color: var(--gold); }
-        .hero p { font-size: 18px; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 32px; max-width: 540px; }
-        .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-        .btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 14px 28px; border-radius: 8px; font-size: 15px;
-            font-weight: 600; transition: all .3s; cursor: pointer; border: none;
-        }
-        .btn-gold { background: var(--gold); color: #fff; }
-        .btn-gold:hover { background: var(--gold-hover); transform: translateY(-2px); }
-        .btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); }
-        .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-        /* STATS */
-        .stats { background: var(--white); padding: 0; margin-top: -40px; position: relative; z-index: 3; }
-        .stats-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            border-radius: 16px; overflow: hidden;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-        }
-        .stat {
-            padding: 32px 24px; text-align: center;
-            border-right: 1px solid var(--border);
-        }
-        .stat:last-child { border-right: none; }
-        .stat-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: var(--gold); }
-        .stat-label { font-size: 13px; color: var(--text-light); margin-top: 4px; font-weight: 500; }
-
-        /* SECTIONS */
-        .section { padding: 80px 0; }
-        .section-alt { background: var(--section-alt); }
-        .section-title { text-align: center; margin-bottom: 48px; }
-        .section-title h2 { font-size: clamp(28px, 4vw, 40px); color: var(--text); margin-bottom: 12px; }
-        .section-title p { font-size: 16px; color: var(--text-light); max-width: 600px; margin: 0 auto; line-height: 1.6; }
-
-        /* SERVICES */
-        .services-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-        }
-        .service-card {
-            background: var(--white); border-radius: 12px; padding: 32px 28px;
-            border: 1px solid var(--border); transition: all .3s;
-        }
-        .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.06); border-color: var(--gold); }
-        .service-icon { font-size: 32px; margin-bottom: 16px; }
-        .service-card h3 { font-size: 20px; margin-bottom: 10px; }
-        .service-card p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
-
-        /* GALLERY */
-        .gallery-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-        }
-        .gallery-grid .featured { grid-column: span 2; grid-row: span 2; }
-        .gallery-item {
-            border-radius: 12px; overflow: hidden; position: relative;
-            aspect-ratio: 16/10;
-        }
-        .gallery-item.featured { aspect-ratio: auto; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
-        .gallery-item:hover img { transform: scale(1.05); }
-
-        /* PARTNERS */
-        .partners-row {
-            display: flex; align-items: center; justify-content: center;
-            gap: 48px; flex-wrap: wrap; padding: 20px 0;
-        }
-        .partners-row img {
-            height: 56px; width: auto; opacity: 0.7;
-            transition: opacity .3s; filter: grayscale(30%);
-        }
-        .partners-row img:hover { opacity: 1; filter: none; }
-
-        /* TERRITORY */
-        .territory { background: var(--dark); color: #fff; padding: 80px 0; }
-        .territory h2 { color: #fff; text-align: center; font-size: clamp(28px, 4vw, 38px); margin-bottom: 12px; }
-        .territory > .container > p { text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 40px; }
-        .city-columns {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
-        }
-        .city-col h3 { color: var(--gold); font-size: 18px; margin-bottom: 16px; }
-        .city-col ul { list-style: none; }
-        .city-col li { padding: 6px 0; font-size: 14px; color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.06); }
-
-        /* CTA FINAL */
-        .cta-final {
-            background: linear-gradient(135deg, var(--gold) 0%, #b8902e 100%);
-            padding: 80px 0; text-align: center;
-        }
-        .cta-final h2 { color: #fff; font-size: clamp(26px, 4vw, 38px); margin-bottom: 16px; }
-        .cta-final p { color: rgba(255,255,255,0.85); font-size: 16px; margin-bottom: 32px; }
-        .cta-final .btn { background: var(--dark); color: #fff; font-size: 16px; padding: 16px 36px; }
-        .cta-final .btn:hover { background: #000; transform: translateY(-2px); }
-        .cta-phone { margin-top: 20px; font-size: 18px; color: #fff; }
-        .cta-phone a { color: #fff; font-weight: 600; }
-
-        /* FOOTER */
-        footer {
-            background: #111; color: rgba(255,255,255,0.5); padding: 40px 0;
-            font-size: 13px; text-align: center;
-        }
-        footer a { color: rgba(255,255,255,0.6); }
-        footer a:hover { color: var(--gold); }
-
-        @keyframes fadeUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
-
-        /* MOBILE NAV */
-        .mobile-nav {
-            display: none; position: fixed; inset: 0; background: var(--white);
-            z-index: 200; flex-direction: column; padding: 80px 24px 24px;
-        }
-        .mobile-nav.open { display: flex; }
-        .mobile-nav a { display: block; padding: 16px 0; font-size: 1.1rem; font-weight: 500; color: var(--text); border-bottom: 1px solid var(--border); }
-        .mobile-nav .close-btn { position: absolute; top: 20px; right: 24px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
-
-        @media (max-width: 960px) {
-            nav { display: none; }
-            .hamburger { display: block; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .services-grid { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: 1fr 1fr; }
-            .gallery-grid .featured { grid-column: span 2; }
-            .city-columns { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 600px) {
-            .stats-grid { grid-template-columns: 1fr; }
-            .stat { border-right: none; border-bottom: 1px solid var(--border); }
-            .stat:last-child { border-bottom: none; }
-            .gallery-grid { grid-template-columns: 1fr; }
-            .gallery-grid .featured { grid-column: span 1; }
-            .hero-badges { flex-direction: column; align-items: flex-start; }
-            .partners-row { gap: 24px; }
-            .partners-row img { height: 40px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Découvrir Option Toiture | Couvreur certifié GAF Master Elite à Marieville</title>
+  <meta name="description" content="Option Toiture inc. — couvreur certifié GAF Master Elite à Marieville. Installation, réparation et remplacement de toitures résidentielles et commerciales en Montérégie. Plus de 1 000 projets complétés. Soumission gratuite en 24h.">
+  <meta name="keywords" content="couvreur Marieville, toiture Rive-Sud, remplacement toiture Montérégie, couvreur certifié GAF, bardeaux asphalte, réparation toiture, Option Toiture, toiture commerciale, ferblanterie, ventilation entretoit, couvreur Chambly, couvreur Longueuil, couvreur Brossard, couvreur Saint-Jean-sur-Richelieu">
+  <meta name="author" content="Option Toiture inc.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.optiontoiture.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.optiontoiture.com/">
+  <meta property="og:title" content="Option Toiture | Couvreur certifié GAF Master Elite à Marieville">
+  <meta property="og:description" content="Couvreur certifié GAF Master Elite à Marieville. Installation, réparation et remplacement de toitures en Montérégie. 1 000+ projets complétés. Garanties jusqu'à 50 ans.">
+  <meta property="og:site_name" content="Option Toiture inc.">
+  <meta property="og:locale" content="fr_CA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Option Toiture | Couvreur certifié GAF Master Elite">
+  <meta name="twitter:description" content="Couvreur certifié GAF Master Elite à Marieville. 1 000+ projets en Montérégie. Garanties jusqu'à 50 ans.">
+  <meta name="geo.region" content="CA-QC">
+  <meta name="geo.placename" content="Marieville">
+  <meta name="geo.position" content="45.4369;-73.1759">
+  <meta name="ICBM" content="45.4369, -73.1759">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"RoofingContractor","name":"Option Toiture inc.","url":"https://www.optiontoiture.com","logo":"https://www.optiontoiture.com/images/logos/option-toiture-large.png","description":"Couvreur certifié GAF Master Elite à Marieville. Installation, réparation et remplacement de toitures résidentielles et commerciales en Montérégie.","telephone":"+1-844-454-1454","foundingDate":"2012","address":{"@type":"PostalAddress","streetAddress":"3320 route 112","addressLocality":"Marieville","addressRegion":"QC","postalCode":"J3M 1P1","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":45.4369,"longitude":-73.1759},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"150","bestRating":"5"},"priceRange":"$$","areaServed":[{"@type":"City","name":"Marieville"},{"@type":"City","name":"Chambly"},{"@type":"City","name":"Longueuil"},{"@type":"City","name":"Brossard"},{"@type":"City","name":"Saint-Jean-sur-Richelieu"},{"@type":"City","name":"Boucherville"},{"@type":"City","name":"Saint-Hyacinthe"},{"@type":"City","name":"Granby"},{"@type":"City","name":"Bromont"},{"@type":"City","name":"Beloeil"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services de toiture","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Installation complète de toiture"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Réparation et infiltration"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Remplacement de toiture"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ventilation d'entretoit"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Toiture commerciale"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ferblanterie et gouttières"}}]},"sameAs":["https://www.facebook.com/optiontoiture","https://www.instagram.com/optiontoiture"]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root{--cream:#f5f0e8;--cream-light:#faf7f2;--gold:#d4a03c;--gold-dark:#b8891f;--dark:#1a1a1a;--dark-bg:#222;--text:#333;--text-light:#666;--text-muted:#999;--white:#fff;--border:#e5e0d8;--green:#2e7d32;--red:#c62828;--shadow:0 2px 16px rgba(0,0,0,.06);--shadow-lg:0 8px 32px rgba(0,0,0,.08);--radius:12px;--radius-lg:16px;--transition:.3s ease}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    .overline{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+    h1.section-heading,h2.section-heading{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--dark);line-height:1.2;margin-bottom:20px}
+    .section-subtitle{color:var(--text-light);font-size:1.05rem;max-width:700px}
+    .section-header{text-align:center;margin-bottom:60px}.section-header .section-subtitle{margin:0 auto}
+    .photo-hero{background:#000;overflow:hidden}
+    .photo-hero img{width:100%;height:auto;display:block;object-fit:cover;max-height:480px}
+    .about{padding:100px 0;background:var(--cream-light)}
+    .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}
+    .about-photo{border-radius:var(--radius-lg);overflow:hidden;background:var(--border);aspect-ratio:3/4;max-height:600px}
+    .about-photo iframe{width:100%;height:100%;border:0;display:block;min-height:400px}
+    .about-text{text-align:center}
+    .about-text p{color:var(--text-light);font-size:.98rem;margin-bottom:16px;line-height:1.8}
+    .about-text strong{color:var(--text)}
+    .why{padding:100px 0;background:var(--cream-light)}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+    .why-list{display:flex;flex-direction:column;gap:28px}
+    .why-item{display:flex;gap:16px;align-items:flex-start}
+    .why-check{width:32px;height:32px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;flex-shrink:0;margin-top:2px}
+    .why-item h4{font-size:.95rem;font-weight:700;margin-bottom:4px}
+    .why-item p{font-size:.88rem;color:var(--text-light);line-height:1.6}
+    .why-right{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .stat-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 20px;text-align:center}
+    .stat-card .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold);margin-bottom:4px}
+    .stat-card .stat-label{font-size:.85rem;color:var(--text-muted)}
+    .stat-card.photo-card{padding:0;overflow:hidden;grid-column:span 2}
+    .stat-card.photo-card img{width:100%;height:220px;object-fit:cover;display:block}
+    .services{padding:100px 0;background:var(--cream-light)}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .service-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;transition:transform var(--transition),box-shadow var(--transition)}
+    .service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+    .service-card .sc-img{height:220px;overflow:hidden}
+    .service-card .sc-img img{width:100%;height:100%;object-fit:cover}
+    .service-card .sc-body{padding:28px;text-align:center}
+    .service-card h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;margin-bottom:12px}
+    .service-card p{font-size:.88rem;color:var(--text-light);line-height:1.7;margin-bottom:16px}
+    .service-card .sc-link{color:var(--gold);font-weight:600;text-decoration:none;font-size:.9rem}
+    .service-card .sc-link:hover{color:var(--gold-dark)}
+    .steps{padding:100px 0;background:var(--cream)}
+    .steps-grid{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+    .step{text-align:center;flex:1;min-width:180px;max-width:220px}
+    .step-num{width:64px;height:64px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin:0 auto 16px}
+    .step h4{font-size:.95rem;font-weight:700;margin-bottom:8px}
+    .step p{font-size:.82rem;color:var(--text-light);line-height:1.6}
+    .guide{padding:100px 0;background:var(--cream-light)}
+    .guide-table{width:100%;border-collapse:collapse;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+    .guide-table thead{background:var(--dark)}
+    .guide-table thead th{color:var(--white);font-size:.9rem;font-weight:600;padding:18px 16px;text-align:center}
+    .guide-table thead th:first-child{text-align:left;color:var(--cream)}
+    .guide-table thead th.recommended{background:var(--gold);color:var(--dark)}
+    .guide-table tbody td{padding:16px;text-align:center;border-bottom:1px solid var(--border);font-size:.9rem}
+    .guide-table tbody td:first-child{text-align:left;font-weight:600;background:var(--cream-light)}
+    .guide-table tbody td.recommended{background:rgba(212,160,60,.08);font-weight:600}
+    .guide-table tbody tr:last-child td{border-bottom:none}
+    .realisations{padding:100px 0;background:var(--cream-light)}
+    .real-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:12px}
+    .real-item{border-radius:var(--radius);overflow:hidden}
+    .real-item img{width:100%;height:100%;object-fit:cover}
+    .testimonials{padding:100px 0;background:var(--cream)}
+    .faq{padding:100px 0;background:var(--cream-light)}
+    .faq-list{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+    .faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+    .faq-q{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:.95rem;transition:background var(--transition)}
+    .faq-q:hover{background:var(--cream)}
+    .faq-q .plus{color:var(--gold);font-size:1.3rem;font-weight:300;transition:transform var(--transition)}
+    .faq-item.open .faq-q .plus{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease}
+    .faq-item.open .faq-a{max-height:300px;padding:0 24px 20px}
+    .faq-a p{font-size:.9rem;color:var(--text-light);line-height:1.7}
+    .zone{padding:100px 0;background:var(--dark-bg);color:var(--white)}
+    .zone .section-header h2.section-heading{color:var(--white)}
+    .zone .section-subtitle{color:rgba(255,255,255,.6)}
+    .zone-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;text-align:center}
+    .zone-col h4{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+    .zone-col ul{list-style:none}
+    .zone-col li{padding:6px 0;font-size:.92rem;color:rgba(255,255,255,.75);border-bottom:1px solid rgba(255,255,255,.08)}
+    .zone-col li:last-child{border:none}
+    .zone-col li strong{color:var(--white);font-weight:600}
+    .zone-note{text-align:center;margin-top:48px;color:rgba(255,255,255,.5);font-size:.92rem}
+    .zone-note a{color:var(--gold);text-decoration:none;font-weight:600}
+    .cta{padding:80px 0;background:var(--gold);text-align:center}
+    .cta h2{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--dark);margin-bottom:16px;line-height:1.2}
+    .cta p{font-size:1rem;color:rgba(0,0,0,.7);margin-bottom:32px}
+    .cta .btn-dark{display:inline-flex;align-items:center;gap:10px;background:var(--dark);color:var(--white);padding:18px 36px;border-radius:var(--radius);font-weight:700;font-size:1rem;text-decoration:none;transition:all var(--transition)}
+    .cta .btn-dark:hover{background:#000;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+    .cta .cta-phone{margin-top:20px;font-size:1.1rem;font-weight:700;color:var(--dark)}
+    .cta .cta-phone a{color:var(--dark);text-decoration:none}
+    .calc-wrapper{max-width:980px;margin:0 auto}
+    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .card{background:var(--white);border-radius:var(--radius-lg);padding:28px 24px;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #eee}
+    .card-title{font-size:17px;font-weight:700;margin-bottom:20px;color:var(--dark)}
+    .card-subtitle{font-size:13px;color:#888;margin:-12px 0 16px}
+    .field{margin-bottom:26px}.field:last-child{margin-bottom:0}
+    .field-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .field-label{font-weight:700;font-size:14px;color:var(--dark)}
+    .field-value-box{background:#f5f5f5;border:1px solid #e0e0e0;border-radius:8px;padding:5px 14px;font-weight:600;font-size:14px;color:var(--dark);min-width:100px;text-align:center;font-variant-numeric:tabular-nums}
+    .field-value-box .unit{color:#666;font-weight:400;margin-left:4px}
+    .slider-track{position:relative;height:36px;display:flex;align-items:center}
+    .slider-track .bg{position:absolute;left:0;right:0;height:6px;background:#e8e8e8;border-radius:3px}
+    .slider-track .fill{position:absolute;left:0;height:6px;background:var(--gold);border-radius:3px;transition:width .12s ease}
+    .slider-track .thumb{position:absolute;width:22px;height:22px;border-radius:50%;background:var(--white);border:3px solid var(--gold);box-shadow:0 1px 4px rgba(0,0,0,.15);transition:left .12s ease;pointer-events:none;transform:translateX(-50%)}
+    .slider-track input[type=range]{position:absolute;width:100%;height:36px;opacity:0;cursor:pointer;z-index:2;-webkit-appearance:none;appearance:none}
+    .slider-bounds{display:flex;justify-content:space-between;margin-top:4px}
+    .slider-bounds span{font-size:12px;color:#aaa}
+    .field-help{font-size:13px;color:#888;margin-top:6px}
+    .select-wrap{position:relative}
+    .select-wrap select{width:100%;padding:12px 40px 12px 16px;border-radius:10px;border:1px solid #ddd;background:var(--white);font-size:15px;color:var(--dark);appearance:none;-webkit-appearance:none;cursor:pointer;font-family:inherit}
+    .select-wrap select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,160,60,.15)}
+    .select-arrow{position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;color:#666}
+    .acc-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;border:1px solid #eee;margin-bottom:8px;transition:all .2s ease}
+    .acc-item:hover{border-color:#ddd;background:#f5f5f5}
+    .acc-item.active{background:#fefbf2;border-color:#f0d878}
+    .acc-info{flex:1}.acc-label{font-weight:600;font-size:14px;color:var(--dark)}.acc-desc{font-size:12px;color:#888;margin-top:2px}
+    .qty-controls{display:flex;align-items:center;gap:0;border:1px solid #ddd;border-radius:8px;overflow:hidden;flex-shrink:0}
+    .qty-btn{width:32px;height:32px;border:none;background:#f5f5f5;color:var(--dark);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;font-family:inherit;line-height:1}
+    .qty-btn:hover{background:#e0e0e0}
+    .qty-value{width:34px;text-align:center;font-weight:700;font-size:14px;color:var(--dark);font-variant-numeric:tabular-nums;border-left:1px solid #ddd;border-right:1px solid #ddd;line-height:32px}
+    .acc-item.active .qty-controls{border-color:#f0d878}
+    .acc-item.active .qty-value{color:var(--gold)}
+    .noue-extra{margin-top:12px;padding:16px;background:#fdf9ef;border-radius:10px;border:1px solid #f0e4c4}
+    .results-card{grid-column:1/-1;background:linear-gradient(135deg,#fefbf2,#fdf6e3);border-radius:var(--radius-lg);padding:32px 28px;border:2px solid #f0d878}
+    .results-title{font-size:20px;font-weight:800;color:var(--gold);text-align:center;margin-bottom:24px}
+    .total-box{background:var(--dark);padding:24px;text-align:center;border-radius:var(--radius)}
+    .total-label{color:rgba(255,255,255,.8);font-size:14px;font-weight:500;margin-bottom:4px}
+    .total-amount{color:var(--white);font-size:38px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+    .cta-section{text-align:center;margin-top:24px}
+    .cta-section p{font-size:14px;color:#666;margin-bottom:16px;line-height:1.5}
+    .cta-btn{display:inline-block;background:var(--gold);color:var(--white);border:none;border-radius:var(--radius);padding:14px 40px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 12px rgba(212,160,60,.25);transition:transform .15s ease,box-shadow .15s ease;text-decoration:none}
+    .cta-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(212,160,60,.4)}
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:992px){.about-grid,.why-grid{grid-template-columns:1fr}.about-photo{max-height:400px;aspect-ratio:auto}.services-grid{grid-template-columns:repeat(2,1fr)}.real-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}.zone-grid{grid-template-columns:1fr}.guide-table{font-size:.82rem}h1.section-heading,h2.section-heading{font-size:2rem}}
+    @media(max-width:768px){.services-grid{grid-template-columns:1fr}.steps-grid{flex-direction:column;align-items:center}.step{max-width:100%}.why-right{grid-template-columns:1fr 1fr}.real-grid{grid-template-columns:1fr}h1.section-heading,h2.section-heading{font-size:1.7rem}.cta h2{font-size:1.8rem}.guide-table{display:block;overflow-x:auto}.calc-grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="site-header">
-        <div class="header-top">
-            <div class="container">
-                <a href="tel:+18444541454">📞 1-844-454-1454</a>
-            </div>
-        </div>
-        <div class="header-main">
-            <div class="container">
-                <a href="/" class="logo">
-                    <img src="images/logos/option-toiture-nav.png" alt="Option Toiture" loading="eager">
-                </a>
-                <nav>
-                    <a href="/">Accueil</a>
-                    <a href="/decouvrir-option-toiture">Découvrir</a>
-                    <a href="/installation-rona">RONA+</a>
-                    <a href="tel:+18444541454" class="nav-cta">1-844-454-1454</a>
-                </nav>
-                <button class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+  <!-- HERO PHOTO -->
+  <section class="photo-hero">
+    <img src="images/photos/hero-collage-equipe.webp" alt="Option Toiture — Couvreurs certifiés au travail en Montérégie" loading="eager">
+  </section>
 
-    <div class="mobile-nav" id="mobileNav">
-        <button class="close-btn" onclick="this.parentElement.classList.remove('open')">✕</button>
-        <a href="/">Accueil</a>
-        <a href="/decouvrir-option-toiture">Découvrir Option Toiture</a>
-        <a href="/installation-rona">Installation RONA+</a>
-        <a href="tel:+18444541454">📞 1-844-454-1454</a>
+  <!-- À PROPOS -->
+  <section class="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">À propos d'Option Toiture</span>
+        <h1 class="section-heading">L'excellence en toiture depuis 2012 sur la Rive-Sud</h1>
+        <p class="section-subtitle" style="margin:0 auto;font-weight:600;color:var(--text)">Installateur officiel RONA · Couvreur certifié GAF Master Elite</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo">
+          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1q1omrtXjLptLsXsEa8dXOwp1_pM1ABU&ehbc=2E312F" title="Carte de la zone de service Option Toiture en Montérégie" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="about-text">
+          <p>Fondée en 2012 et établie au 3320 route 112 à Marieville, <strong>Option Toiture Inc.</strong> est une entreprise de couverture spécialisée dans l'installation, la réparation et le remplacement de toitures en bardeaux d'asphalte pour les propriétés résidentielles et commerciales de la Montérégie. Nous avons complété <strong>plus de 1 000 projets</strong> à travers la Rive-Sud de Montréal, le Haut-Richelieu, les Maskoutains et Brome-Missisquoi.</p>
+          <p>Ce qui nous distingue? Notre certification <strong>GAF Master Elite</strong>, détenue par seulement 2% des couvreurs en Amérique du Nord. Elle nous permet d'offrir les <strong>garanties les plus complètes de l'industrie</strong>, incluant la couverture Golden Pledge allant jusqu'à 50 ans.</p>
+          <p>Notre équipe est composée de couvreurs, charpentiers et ferblantiers expérimentés qui travaillent ensemble sur chaque projet. Un seul interlocuteur pour l'ensemble de vos travaux — de la couverture à la ferblanterie, en passant par la ventilation d'entretoit.</p>
+          <p>Détenteur de la <strong>licence RBQ 5665-8412-01</strong> et membre de l'<strong>APCHQ</strong>, Option Toiture opère dans le plein respect des normes du Code national du bâtiment du Québec.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badges">
-                    <span class="badge badge-gold">GAF Master Elite</span>
-                    <span class="badge badge-outline">Installateur RONA+</span>
-                    <span class="badge badge-outline">Depuis 2012</span>
-                </div>
-                <h1>Experts en toiture<br>sur la <em>Rive-Sud</em></h1>
-                <p>Option Toiture est votre partenaire de confiance pour tous vos projets de toiture résidentielle et commerciale. Certification GAF Master Elite, garanties jusqu'à 50 ans.</p>
-                <div class="hero-cta">
-                    <a href="tel:+18444541454" class="btn btn-gold">📞 Soumission gratuite</a>
-                    <a href="/decouvrir-option-toiture" class="btn btn-outline">Découvrir l'entreprise</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STATS -->
-    <div class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Années d'expérience</div></div>
-                <div class="stat"><div class="stat-num">1000+</div><div class="stat-label">Projets complétés</div></div>
-                <div class="stat"><div class="stat-num">4.8★</div><div class="stat-label">Étoiles Google</div></div>
-                <div class="stat"><div class="stat-num">50 ans</div><div class="stat-label">Garantie GAF</div></div>
-            </div>
-        </div>
+  <!-- RÉALISATIONS -->
+  <section class="realisations">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">Nos réalisations</span>
+        <h2 class="section-heading" style="font-style:italic">Quelques-uns de nos 1 000+ projets de toiture</h2>
+        <p class="section-subtitle">Résidences, cottages, manoirs, immeubles commerciaux — découvrez notre savoir-faire à travers la Montérégie.</p>
+      </div>
+      <div class="real-grid">
+        <div class="real-item"><img src="images/photos/chantier-rona-camion.webp" alt="Projet de toiture résidentielle Option Toiture" loading="lazy"></div>
+        <div class="real-item"><img src="images/photos/chantier-grande-maison.webp" alt="Réalisation toiture en Montérégie" loading="lazy"></div>
+        <div class="real-item"><img src="images/photos/equipe-sur-toit.webp" alt="Couvreur au travail sur un toit" loading="lazy"></div>
+        <div class="real-item"><img src="images/photos/chantier-equipe-toit.webp" alt="Installation de bardeaux d'asphalte" loading="lazy"></div>
+        <div class="real-item"><img src="images/photos/chantier-golf.webp" alt="Projet toiture commerciale" loading="lazy"></div>
+        <div class="real-item"><img src="images/photos/chantier-montagne.webp" alt="Réalisation toiture maison" loading="lazy"></div>
+      </div>
     </div>
+  </section>
 
-    <!-- SERVICES -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nos services</h2>
-                <p>Des solutions complètes pour protéger votre propriété, du résidentiel au commercial.</p>
+  <!-- FORMULAIRE HUBSPOT -->
+  <section style="padding:80px 0;background:var(--cream)">
+    <div class="container">
+      <div style="max-width:700px;margin:0 auto;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow-lg)">
+        <script src="https://js-na3.hsforms.net/forms/embed/342479210.js" defer></script>
+        <div class="hs-form-frame" data-region="na3" data-form-id="28f8fdcc-207e-41f5-8cd4-1dc4f5cff9b0" data-portal-id="342479210"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATEUR -->
+  <section style="padding:100px 0;background:var(--cream)">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">Calculateur</span>
+        <h2 class="section-heading">Estimez le coût de votre projet de toiture</h2>
+      </div>
+      <div class="calc-wrapper">
+        <div class="calc-grid">
+          <div class="card">
+            <div class="card-title">📐 Surface & Prix</div>
+            <div class="field">
+              <div class="field-header"><span class="field-label">Nombre de Pieds Carrés</span><span class="field-value-box" id="sqft-display">1 000<span class="unit">pi²</span></span></div>
+              <div class="slider-track"><div class="bg"></div><div class="fill" id="sqft-fill"></div><div class="thumb" id="sqft-thumb"></div><input type="range" id="sqft" min="200" max="5000" step="50" value="1000"></div>
+              <div class="slider-bounds"><span>200 pi²</span><span>5 000 pi²</span></div>
+              <div class="field-help">Sélectionnez la superficie totale de votre toit.</div>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Installation complète</h3>
-                    <p>Installation de systèmes de toiture complets avec bardeaux GAF Timberline. Garantie Master Elite jusqu'à 50 ans.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>Réparation et infiltration</h3>
-                    <p>Diagnostic rapide et réparation de fuites, infiltrations d'eau, bardeaux endommagés et solins défectueux.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔄</div>
-                    <h3>Remplacement de toiture</h3>
-                    <p>Remplacement complet de votre toiture avec les meilleurs matériaux. Travaux rapides et professionnels.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💨</div>
-                    <h3>Ventilation d'entretoit</h3>
-                    <p>Installation et amélioration de la ventilation pour prolonger la durée de vie de votre toiture et réduire les coûts d'énergie.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏢</div>
-                    <h3>Toiture commerciale</h3>
-                    <p>Solutions de toiture pour immeubles commerciaux, multilogements et bâtiments industriels.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔩</div>
-                    <h3>Ferblanterie et gouttières</h3>
-                    <p>Installation de solins, gouttières, descentes pluviales et tous travaux de ferblanterie.</p>
-                </div>
+            <div class="field">
+              <div class="field-header"><span class="field-label">Type de Pente</span></div>
+              <div class="select-wrap">
+                <select id="pente"><option value="douce">Pente Douce</option><option value="moyenne">Pente Moyenne</option><option value="forte">Pente Forte</option></select>
+                <div class="select-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></div>
+              </div>
             </div>
+            <div class="field">
+              <div class="field-header"><span class="field-label">Nombre d'Étages</span><span class="field-value-box" id="etage-display">1</span></div>
+              <div class="slider-track"><div class="bg"></div><div class="fill" id="etage-fill"></div><div class="thumb" id="etage-thumb"></div><input type="range" id="etage" min="1" max="3" step="1" value="1"></div>
+              <div class="slider-bounds"><span>1</span><span>3</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">🔧 Accessoires</div>
+            <div class="card-subtitle">Sélectionnez les accessoires nécessaires pour votre toiture.</div>
+            <div id="acc-maximum" class="acc-item"><div class="acc-info"><div class="acc-label">Maximum</div><div class="acc-desc">Protection maximale pour votre toiture</div></div><div class="qty-controls"><button class="qty-btn" onclick="changeQty('maximum',-1)">−</button><span class="qty-value" id="qty-maximum">0</span><button class="qty-btn" onclick="changeQty('maximum',1)">+</button></div></div>
+            <div id="acc-noue" class="acc-item"><div class="acc-info"><div class="acc-label">Noue</div><div class="acc-desc">Jonction entre deux versants</div></div><div class="qty-controls"><button class="qty-btn" onclick="changeQty('noue',-1)">−</button><span class="qty-value" id="qty-noue">0</span><button class="qty-btn" onclick="changeQty('noue',1)">+</button></div></div>
+            <div id="noue-extra" class="noue-extra" style="display:none;"><div class="field" style="margin-bottom:0;"><div class="field-header"><span class="field-label">Pieds linéaires</span><span class="field-value-box" id="noue-len-display">20<span class="unit">pi.</span></span></div><div class="slider-track"><div class="bg"></div><div class="fill" id="noue-fill"></div><div class="thumb" id="noue-thumb"></div><input type="range" id="noue-len" min="5" max="100" step="1" value="20"></div></div></div>
+            <div id="acc-larmier" class="acc-item"><div class="acc-info"><div class="acc-label">Larmier</div><div class="acc-desc">Rebord protecteur en bas de pente</div></div><div class="qty-controls"><button class="qty-btn" onclick="changeQty('larmier',-1)">−</button><span class="qty-value" id="qty-larmier">0</span><button class="qty-btn" onclick="changeQty('larmier',1)">+</button></div></div>
+            <div id="larmier-extra" class="noue-extra" style="display:none;"><div class="field" style="margin-bottom:0;"><div class="field-header"><span class="field-label">Pieds linéaires</span><span class="field-value-box" id="larmier-len-display">20<span class="unit">pi.</span></span></div><div class="slider-track"><div class="bg"></div><div class="fill" id="larmier-fill"></div><div class="thumb" id="larmier-thumb"></div><input type="range" id="larmier-len" min="5" max="200" step="1" value="20"></div></div></div>
+            <div id="acc-faitiere" class="acc-item"><div class="acc-info"><div class="acc-label">Faîtière</div><div class="acc-desc">Arête supérieure du toit</div></div><div class="qty-controls"><button class="qty-btn" onclick="changeQty('faitiere',-1)">−</button><span class="qty-value" id="qty-faitiere">0</span><button class="qty-btn" onclick="changeQty('faitiere',1)">+</button></div></div>
+          </div>
+          <div class="results-card">
+            <div class="results-title">Estimation du Projet</div>
+            <div class="breakdown" id="breakdown"></div>
+            <div class="total-box"><div class="total-label">Estimation Totale</div><div class="total-amount" id="total-amount">0,00 $</div><div class="total-effective" id="total-effective"></div></div>
+            <div class="cta-section"><p>Cette estimation est fournie à titre indicatif. Consultez un professionnel pour obtenir les coûts exacts de votre projet.</p><a class="cta-btn" href="/contactus">Contactez un Expert</a></div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- GALLERY / RÉALISATIONS -->
-    <section class="section section-alt">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nos réalisations</h2>
-                <p>Découvrez quelques-uns de nos projets réalisés sur la Rive-Sud de Montréal et les environs.</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item featured">
-                    <img src="images/photos/chantier-rona-camion.webp" alt="Chantier de toiture avec camion RONA et équipe Option Toiture" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/photos/equipe-sur-toit.webp" alt="Équipe Option Toiture au travail sur un grand toit" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/photos/chantier-camion-option-toiture.webp" alt="Camion Option Toiture avec grue sur chantier" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/photos/chantier-grande-maison.webp" alt="Remplacement de toiture sur grande propriété" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/photos/chantier-golf.webp" alt="Toiture de maison près d'un terrain de golf" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/photos/chantier-brique-drone.webp" alt="Vue drone d'un chantier résidentiel" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/photos/chantier-montagne.webp" alt="Chantier de toiture avec camion Option Toiture en montagne" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/photos/multilogement-grue.webp" alt="Toiture multilogement avec grue" loading="lazy">
-                </div>
-            </div>
+  <!-- POURQUOI NOUS -->
+  <section class="why">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">Pourquoi Option Toiture</span>
+        <h2 class="section-heading">Les raisons de faire confiance à notre équipe</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-list">
+          <div class="why-item"><div class="why-check">✓</div><div><h4>Certification GAF Master Elite — Top 2%</h4><p>Garanties Golden Pledge jusqu'à 50 ans sur matériaux et main-d'œuvre. Un avantage que 98% des couvreurs ne peuvent pas offrir.</p></div></div>
+          <div class="why-item"><div class="why-check">✓</div><div><h4>Équipe polyvalente : couvreurs + charpentiers + ferblantiers</h4><p>Un seul interlocuteur pour tout votre projet. Meilleure qualité, délais plus courts, coût plus compétitif.</p></div></div>
+          <div class="why-item"><div class="why-check">✓</div><div><h4>Licence RBQ active et assurances complètes</h4><p>RBQ 5665-8412-01 vérifiable en tout temps. Assurance responsabilité civile en vigueur. Protection 100%.</p></div></div>
+          <div class="why-item"><div class="why-check">✓</div><div><h4>Financement Flexiti — paiements mensuels</h4><p>Étalez le coût de votre toiture. Approbation rapide directement lors de votre soumission.</p></div></div>
+          <div class="why-item"><div class="why-check">✓</div><div><h4>Partenaire officiel RONA</h4><p>Installateur qualifié du réseau RONA. Même standard de qualité et de garantie.</p></div></div>
+          <div class="why-item"><div class="why-check">✓</div><div><h4>Basés à Marieville — réactivité locale</h4><p>Connaissance du climat, des municipalités et réglementations locales. Inspection sous 24 à 48h.</p></div></div>
         </div>
-    </section>
-
-    <!-- PARTENAIRES -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nos partenaires de confiance</h2>
-            </div>
-            <div class="partners-row">
-                <img src="images/logos/gaf-master-elite.webp" alt="GAF Master Elite" loading="lazy">
-                <img src="images/logos/rona-plus.webp" alt="RONA+" loading="lazy">
-                <img src="images/logos/apchq.webp" alt="APCHQ" loading="lazy">
-                <img src="images/garanties/golden-pledge.webp" alt="GAF Golden Pledge" loading="lazy">
-                <img src="images/garanties/system-plus.webp" alt="GAF System Plus" loading="lazy">
-            </div>
+        <div class="why-right">
+          <div class="stat-card"><div class="stat-num">10M$+</div><div class="stat-label">En projets réalisés</div></div>
+          <div class="stat-card"><div class="stat-num">1000+</div><div class="stat-label">Toitures complétées</div></div>
+          <div class="stat-card"><div class="stat-num">4.8 ⭐</div><div class="stat-label">Note Google</div></div>
+          <div class="stat-card"><div class="stat-num">24h</div><div class="stat-label">Délai de soumission</div></div>
+          <div class="stat-card"><div class="stat-num">50 ans</div><div class="stat-label">Garantie max. matériaux</div></div>
+          <div class="stat-card"><div class="stat-num">Top 2%</div><div class="stat-label">Couvreurs GAF certifiés</div></div>
+          <div class="stat-card photo-card"><img src="images/photos/chantier-camion-option-toiture.webp" alt="Équipe Option Toiture au travail" loading="lazy"></div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- TERRITOIRE -->
-    <section class="territory">
-        <div class="container">
-            <h2>Notre zone de service</h2>
-            <p>Nous desservons l'ensemble de la Rive-Sud de Montréal et les environs.</p>
-            <div class="city-columns">
-                <div class="city-col">
-                    <h3>Rive-Sud de Montréal</h3>
-                    <ul>
-                        <li>Longueuil</li><li>Brossard</li><li>Boucherville</li>
-                        <li>Saint-Hubert</li><li>Saint-Lambert</li><li>La Prairie</li>
-                        <li>Candiac</li><li>Sainte-Catherine</li><li>Saint-Constant</li>
-                        <li>Châteauguay</li>
-                    </ul>
-                </div>
-                <div class="city-col">
-                    <h3>Vallée-du-Richelieu</h3>
-                    <ul>
-                        <li>Marieville (siège social)</li><li>Chambly</li><li>Carignan</li>
-                        <li>Saint-Jean-sur-Richelieu</li><li>Richelieu</li><li>Saint-Mathias</li>
-                        <li>Sainte-Julie</li><li>Saint-Bruno</li><li>Beloeil</li>
-                        <li>Mont-Saint-Hilaire</li>
-                    </ul>
-                </div>
-                <div class="city-col">
-                    <h3>Haut-Richelieu et Brome</h3>
-                    <ul>
-                        <li>Iberville</li><li>Saint-Luc</li><li>Farnham</li>
-                        <li>Cowansville</li><li>Granby</li><li>Bromont</li>
-                        <li>Waterloo</li><li>Rougemont</li><li>Saint-Hyacinthe</li>
-                        <li>Acton Vale</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">Nos services</span>
+        <h2 class="section-heading">Services de toiture résidentielle et commerciale en Montérégie</h2>
+        <p class="section-subtitle">Notre équipe certifiée prend en charge tous les aspects de votre projet, de l'inspection à la garantie.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card"><div class="sc-img"><img src="images/photos/chantier-residential-drone.webp" alt="Installation complète de toiture" loading="lazy"></div><div class="sc-body"><h3>Installation complète</h3><p>Remplacement complet incluant retrait de l'ancienne toiture, inspection du pontage, membrane d'étanchéité Ice & Water Shield, pose des bardeaux selon les spécifications GAF et optimisation de la ventilation.</p><a href="/service-offert" class="sc-link">En savoir plus →</a></div></div>
+        <div class="service-card"><div class="sc-img"><img src="images/photos/chantier-brique-drone.webp" alt="Réparation et infiltration de toiture" loading="lazy"></div><div class="sc-body"><h3>Réparation et infiltration</h3><p>Intervention rapide pour les fuites, bardeaux envolés, solins endommagés et problèmes de ventilation. Identification de la source exacte du problème et réparation durable. Urgence 7j/7 en saison.</p><a href="/reparation-infiltration-nettoyage" class="sc-link">En savoir plus →</a></div></div>
+        <div class="service-card"><div class="sc-img"><img src="images/photos/chantier-residential-drone-2.webp" alt="Remplacement de toiture" loading="lazy"></div><div class="sc-body"><h3>Remplacement de toiture</h3><p>Votre toiture a plus de 20 ans? Retrait complet, vérification intégrale du pontage, installation d'un nouveau système complet avec membrane, sous-couche synthétique et ventilation optimisée.</p><a href="/service-offert" class="sc-link">En savoir plus →</a></div></div>
+        <div class="service-card"><div class="sc-img"><img src="images/photos/chantier-drone-camion.webp" alt="Ventilation d'entretoit" loading="lazy"></div><div class="sc-body"><h3>Ventilation d'entretoit</h3><p>Installation et optimisation des évents de faîte, soffites perforés, aérateurs Maximum. Prévention des barrières de glace et de la surchauffe du grenier. Prolonge la durée de vie de votre toiture.</p><a href="/service-offert" class="sc-link">En savoir plus →</a></div></div>
+        <div class="service-card"><div class="sc-img"><img src="images/photos/multilogement-grue.webp" alt="Toiture commerciale" loading="lazy"></div><div class="sc-body"><h3>Toiture commerciale</h3><p>Solutions pour immeubles commerciaux, industriels et multi-logements. Bardeaux d'asphalte pour toits en pente, membrane élastomère pour toits plats. Superficies de 2 000 à 10 000+ pi².</p><a href="/service-offert" class="sc-link">En savoir plus →</a></div></div>
+        <div class="service-card"><div class="sc-img"><img src="images/photos/chantier-bord-eau.webp" alt="Ferblanterie et gouttières" loading="lazy"></div><div class="sc-body"><h3>Ferblanterie et gouttières</h3><p>Gouttières en aluminium, descentes pluviales, solins de cheminée, bordures de toit (drip edge), chapeaux de ventilation. Ferblanterie réalisée sur place avec matériaux de calibre professionnel.</p><a href="/service-offert" class="sc-link">En savoir plus →</a></div></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- CTA FINAL -->
-    <section class="cta-final">
-        <div class="container">
-            <h2>Prêt à protéger votre maison?</h2>
-            <p>Obtenez une soumission gratuite pour votre projet de toiture.</p>
-            <a href="tel:+18444541454" class="btn">📞 Appelez-nous maintenant</a>
-            <div class="cta-phone"><a href="tel:+18444541454">1-844-454-1454</a></div>
-        </div>
-    </section>
+  <!-- ÉTAPES -->
+  <section class="steps">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">Comment ça fonctionne</span>
+        <h2 class="section-heading" style="font-style:italic">5 étapes pour une toiture neuve, sans stress</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step"><div class="step-num">1</div><h4>Appel et planification</h4><p>Appelez au 1-844-454-1454 ou remplissez le formulaire. Visite planifiée sous 24-48h.</p></div>
+        <div class="step"><div class="step-num">2</div><h4>Inspection gratuite</h4><p>Évaluation complète de votre toiture : bardeaux, pontage, ventilation, solins. Aucun frais.</p></div>
+        <div class="step"><div class="step-num">3</div><h4>Soumission détaillée</h4><p>Soumission écrite sous 24h : travaux, matériaux, couleurs, garanties et financement.</p></div>
+        <div class="step"><div class="step-num">4</div><h4>Travaux professionnels</h4><p>Normes GAF et Code du bâtiment. Chantier propre et sécuritaire, communication constante.</p></div>
+        <div class="step"><div class="step-num">5</div><h4>Garantie et suivi</h4><p>Inspection finale, nettoyage magnétique du terrain, activation garantie GAF jusqu'à 50 ans.</p></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>© 2025 Option Toiture inc. — Licence RBQ 5665-8412-01 — Marieville, QC</p>
-            <p style="margin-top: 8px;">
-                <a href="/decouvrir-option-toiture">Découvrir</a> · 
-                <a href="/installation-rona">RONA+</a> · 
-                <a href="tel:+18444541454">1-844-454-1454</a>
-            </p>
-        </div>
-    </footer>
+  <!-- GUIDE BARDEAUX -->
+  <section class="guide">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">Guide des bardeaux</span>
+        <h2 class="section-heading">Quel type de bardeaux choisir pour votre maison?</h2>
+      </div>
+      <table class="guide-table">
+        <thead><tr><th>Caractéristique</th><th>3 pattes (standard)</th><th class="recommended">⭐ Architectural — RECOMMANDÉ</th><th>Designer (premium)</th></tr></thead>
+        <tbody>
+          <tr><td>Durée de vie</td><td>15 — 20 ans</td><td class="recommended"><strong>25 — 40 ans</strong></td><td>40 — 50+ ans</td></tr>
+          <tr><td>Résistance vent</td><td>Jusqu'à 110 km/h</td><td class="recommended"><strong>Jusqu'à 209 km/h</strong></td><td>Jusqu'à 209 km/h</td></tr>
+          <tr><td>Apparence</td><td>Plate, uniforme</td><td class="recommended"><strong>Dimensionnelle, imite l'ardoise</strong></td><td>Haut de gamme, imite le cèdre</td></tr>
+          <tr><td>Anti-algues</td><td style="color:var(--red)">✗ Non</td><td class="recommended">✓ StainGuard</td><td>✓ StainGuard Plus</td></tr>
+          <tr><td>Garantie fabricant</td><td>25 ans limitée</td><td class="recommended"><strong>Jusqu'à 50 ans</strong></td><td>Lifetime limitée</td></tr>
+          <tr><td>Exemple GAF</td><td>Royal Sovereign</td><td class="recommended"><strong>Timberline HDZ</strong></td><td>Grand Canyon</td></tr>
+          <tr><td>Exemple BP</td><td>Yukon SB</td><td class="recommended"><strong>Mystique 42</strong></td><td>Manoir</td></tr>
+          <tr><td>Prix</td><td>$</td><td class="recommended"><strong>$$ — Meilleur rapport</strong></td><td>$$$</td></tr>
+          <tr><td>Recommandation</td><td>Budget serré</td><td class="recommended">⭐ <strong>Recommandé 90% des maisons</strong></td><td>Propriétés haut de gamme</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "RoofingContractor",
-        "name": "Option Toiture",
-        "url": "https://www.optiontoiture.com",
-        "telephone": "+1-844-454-1454",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Marieville",
-            "addressRegion": "QC",
-            "addressCountry": "CA"
-        },
-        "areaServed": ["Longueuil","Brossard","Boucherville","Chambly","Marieville","Saint-Jean-sur-Richelieu","Sainte-Julie","Saint-Bruno","Beloeil","Carignan"],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "150"
-        },
-        "hasCredential": [
-            {"@type": "EducationalOccupationalCredential", "credentialCategory": "GAF Master Elite"},
-            {"@type": "EducationalOccupationalCredential", "credentialCategory": "RBQ 5665-8412-01"}
-        ]
-    }
-    </script>
+  <!-- TÉMOIGNAGES -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">Témoignages</span>
+        <h2 class="section-heading">Ce que nos clients disent de nous</h2>
+      </div>
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div class="elfsight-app-1192c08d-0f8a-47c1-a1e0-5b8eb8d88137" data-elfsight-app-lazy></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">Questions fréquentes</span>
+        <h2 class="section-heading">Vos questions sur la toiture — nos réponses</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-q">Combien coûte le remplacement d'une toiture au Québec en 2026?<span class="plus">+</span></div><div class="faq-a"><p>Le coût varie selon la superficie, la pente, le type de bardeaux et l'état du pontage. Pour une maison typique, comptez entre 8 000$ et 20 000$. Contactez-nous pour une soumission gratuite et précise.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Quelle est la différence entre bardeaux 3 pattes et architecturaux?<span class="plus">+</span></div><div class="faq-a"><p>Les bardeaux 3 pattes sont plats et économiques (15-20 ans). Les architecturaux sont dimensionnels, plus résistants au vent (209 km/h) et durent 25-40 ans. Nous recommandons les architecturaux pour 90% des projets.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Quelle est la meilleure période pour remplacer sa toiture?<span class="plus">+</span></div><div class="faq-a"><p>La saison idéale est de mai à octobre. Cependant, nous pouvons effectuer des réparations d'urgence toute l'année. Réservez tôt au printemps pour un meilleur choix de dates.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Quelle garantie offrez-vous?<span class="plus">+</span></div><div class="faq-a"><p>En tant que couvreur certifié GAF Master Elite, nous offrons la garantie Golden Pledge allant jusqu'à 50 ans sur les matériaux et la main-d'œuvre — la plus complète de l'industrie.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Offrez-vous du financement?<span class="plus">+</span></div><div class="faq-a"><p>Oui! Grâce à notre partenariat avec Flexiti, vous pouvez financer vos travaux avec des paiements mensuels. Approbation rapide directement lors de votre soumission.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Combien de temps prend le remplacement?<span class="plus">+</span></div><div class="faq-a"><p>La plupart des toitures résidentielles sont complétées en 1 à 3 jours, selon la complexité du projet. Nous vous communiquons un échéancier précis dans notre soumission.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Ai-je besoin d'un permis?<span class="plus">+</span></div><div class="faq-a"><p>Dans la plupart des municipalités, un permis n'est pas requis pour un remplacement de bardeaux. Nous vérifions les exigences de votre ville et nous occupons des démarches si nécessaire.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Avez-vous une licence RBQ?<span class="plus">+</span></div><div class="faq-a"><p>Oui, notre licence RBQ est le 5665-8412-01. Elle est active et vérifiable en tout temps sur le site de la Régie du bâtiment du Québec. Nous sommes également membres de l'APCHQ.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONE DE SERVICE -->
+  <section class="zone">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">Zone de service</span>
+        <h2 class="section-heading">Couvreur dans plus de 50 villes en Montérégie</h2>
+        <p class="section-subtitle">Basés au cœur de la Montérégie à Marieville, nous desservons la Rive-Sud, la Vallée-du-Richelieu, le Haut-Richelieu et Brome-Missisquoi.</p>
+      </div>
+      <div class="zone-grid">
+        <div class="zone-col"><h4>Rive-Sud de Montréal</h4><ul><li>Longueuil</li><li>Brossard</li><li>Boucherville</li><li>Saint-Lambert</li><li>Saint-Bruno</li><li>La Prairie</li><li>Candiac</li><li>Sainte-Julie</li><li>Saint-Constant</li><li>Sainte-Catherine</li></ul></div>
+        <div class="zone-col"><h4>Vallée-du-Richelieu</h4><ul><li><strong>Marieville (siège) ⭐</strong></li><li>Chambly</li><li>Richelieu</li><li>Carignan</li><li>Mont-Saint-Hilaire</li><li>Rougemont</li><li>Saint-Césaire</li><li>Beloeil</li><li>McMasterville</li><li>Ange-Gardien</li></ul></div>
+        <div class="zone-col"><h4>Haut-Richelieu & Brome-Missisquoi</h4><ul><li>Saint-Jean-sur-Richelieu</li><li>Saint-Hyacinthe</li><li>Granby</li><li>Bromont</li><li>Cowansville</li><li>Farnham</li><li>Bedford</li><li>Brigham</li><li>Mont-Saint-Grégoire</li><li>Roxton Pond</li></ul></div>
+      </div>
+      <div class="zone-note">Votre ville n'est pas listée? <a href="tel:+18444541454">Appelez-nous — 1-844-454-1454</a></div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta">
+    <div class="container">
+      <h2>Prêt à protéger votre maison avec une toiture de qualité?</h2>
+      <p>Soumission gratuite en 24h. Inspection sans engagement. Prix transparent. Financement Flexiti disponible.</p>
+      <a href="/contactus" class="btn-dark">📋 Demander ma soumission gratuite</a>
+      <div class="cta-phone">ou appelez : <a href="tel:+18444541454">1-844-454-1454</a></div>
+    </div>
+  </section>
+
+  <script>
+    // Calculator
+    var PENTES={douce:{label:'Pente Douce',multiplier:1.05},moyenne:{label:'Pente Moyenne',multiplier:1.20},forte:{label:'Pente Forte',multiplier:1.40}};
+    var ACCESSOIRES={maximum:{label:'Maximum',type:'fixed',prix:{douce:250,moyenne:275,forte:300},unit:'forfait'},noue:{label:'Noue',type:'linear',prix:{douce:8,moyenne:11,forte:14},unit:'/ pi. lin.'},larmier:{label:'Larmier',type:'linear',prix:{douce:3,moyenne:4.25,forte:5.50},unit:'/ pi. lin.'},faitiere:{label:'Faîtière',type:'fixed',prix:{douce:110,moyenne:135,forte:155},unit:'forfait'}};
+    var ETAGE_SURCHARGE={1:0,2:0.10,3:0.20};
+    var PRIX_PIED_CARRE=5;
+    var state={sqft:1000,price:PRIX_PIED_CARRE,pente:'douce',etage:1,noueLen:20,larmierLen:20,acc:{maximum:0,noue:0,larmier:0,faitiere:0}};
+    function fmt(n){return n.toLocaleString('fr-CA',{style:'currency',currency:'CAD',minimumFractionDigits:2})}
+    function fmtNum(n){return n.toLocaleString('fr-CA')}
+    function pct(val,min,max){return((val-min)/(max-min))*100}
+    function syncSlider(id,val,min,max){var p=pct(val,min,max);var f=document.getElementById(id+'-fill');var t=document.getElementById(id+'-thumb');if(f)f.style.width=p+'%';if(t)t.style.left=p+'%'}
+    function changeQty(id,delta){state.acc[id]=Math.max(0,Math.min(20,state.acc[id]+delta));updateAccUI(id);if(id==='noue')document.getElementById('noue-extra').style.display=state.acc.noue>0?'block':'none';if(id==='larmier')document.getElementById('larmier-extra').style.display=state.acc.larmier>0?'block':'none';calculate()}
+    function updateAccUI(id){document.getElementById('qty-'+id).textContent=state.acc[id];document.getElementById('acc-'+id).classList.toggle('active',state.acc[id]>0)}
+    function calculate(){var p=PENTES[state.pente];var base=state.sqft*state.price;var baseWithPente=base*p.multiplier;var totalAcc=0;for(var id in ACCESSOIRES){var qty=state.acc[id];if(qty<=0)continue;var acc=ACCESSOIRES[id];var prix=acc.prix[state.pente];if(acc.type==='linear'){var len=id==='noue'?state.noueLen:state.larmierLen;totalAcc+=prix*len*qty}else{totalAcc+=prix*qty}}var surcharge=ETAGE_SURCHARGE[state.etage]||0;var sousTotal=baseWithPente+totalAcc;var montantSurcharge=sousTotal*surcharge;var total=sousTotal+montantSurcharge;document.getElementById('total-amount').textContent=fmt(total)}
+    document.getElementById('sqft').addEventListener('input',function(){state.sqft=Number(this.value);document.getElementById('sqft-display').innerHTML=fmtNum(state.sqft)+'<span class="unit">pi²</span>';syncSlider('sqft',state.sqft,200,5000);calculate()});
+    document.getElementById('pente').addEventListener('change',function(){state.pente=this.value;calculate()});
+    document.getElementById('etage').addEventListener('input',function(){state.etage=Number(this.value);document.getElementById('etage-display').textContent=state.etage;syncSlider('etage',state.etage,1,3);calculate()});
+    document.getElementById('noue-len').addEventListener('input',function(){state.noueLen=Number(this.value);document.getElementById('noue-len-display').innerHTML=state.noueLen+'<span class="unit">pi.</span>';syncSlider('noue',state.noueLen,5,100);calculate()});
+    document.getElementById('larmier-len').addEventListener('input',function(){state.larmierLen=Number(this.value);document.getElementById('larmier-len-display').innerHTML=state.larmierLen+'<span class="unit">pi.</span>';syncSlider('larmier',state.larmierLen,5,200);calculate()});
+    syncSlider('sqft',1000,200,5000);syncSlider('etage',1,1,3);syncSlider('noue',20,5,100);syncSlider('larmier',20,5,200);calculate();
+  </script>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var item=q.parentElement;document.querySelectorAll('.faq-item').forEach(function(i){if(i!==item)i.classList.remove('open')});item.classList.toggle('open')})});
+    // Scroll animations
+    var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+    document.querySelectorAll('.service-card,.step,.why-item,.stat-card,.faq-item').forEach(function(el){el.classList.add('fade-in');obs.observe(el)});
+  </script>
 </body>
 </html>
