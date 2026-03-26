@@ -510,16 +510,16 @@
     </div>
   </section>
 
-  <!-- ═══ CALCULATEUR OPTIME (toujours visible) ═══ -->
-  <section class="calc-optime" id="calculateur">
+  <!-- ═══ CALCULATEUR OPTIME (apparaît après saisie d'adresse) ═══ -->
+  <section class="calc-optime" id="calculateur" style="display:none;">
     <div class="ctn">
       <div class="section-header" style="margin-bottom:32px">
         <span class="overline">Soumission instantanée</span>
         <h2 class="section-heading">Estimez le coût de votre <em>toiture</em></h2>
       </div>
       <iframe id="optime-calc"
-        src="https://app.optiontoiture.com/calculateur"
-        style="width:100%;min-height:900px;border:none;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);"
+        src="about:blank"
+        style="width:100%;min-height:0;height:0;border:none;border-radius:var(--radius-lg);overflow:hidden;transition:height .3s;"
         allowtransparency="true"
         title="Estimation de toiture">
       </iframe>
@@ -719,19 +719,27 @@
 
   <!-- Calculateur Optime : barre adresse hero + iframe -->
   <script>
-    // Auto-resize iframe
+    // Auto-resize iframe (seulement si le calculateur est visible)
     window.addEventListener('message', function(e) {
       if (e.data && e.data.type === 'optime-resize') {
-        document.getElementById('optime-calc').style.height = e.data.height + 'px';
+        var frame = document.getElementById('optime-calc');
+        if (frame) {
+          frame.style.height = e.data.height + 'px';
+          frame.style.boxShadow = '0 8px 32px rgba(0,0,0,.15)';
+        }
       }
     });
 
-    // Envoyer l'adresse au calculateur + scroll
+    // Envoyer l'adresse au calculateur + afficher + scroll
     function sendToCalc() {
       var addr = document.getElementById('heroAddress').value.trim();
       if (!addr) { document.getElementById('heroAddress').focus(); return; }
+      // Afficher la section
+      document.getElementById('calculateur').style.display = 'block';
+      // Charger l'iframe
       document.getElementById('optime-calc').src = 'https://app.optiontoiture.com/calculateur?search=' + encodeURIComponent(addr);
-      setTimeout(function(){ document.getElementById('calculateur').scrollIntoView({behavior:'smooth',block:'start'}); }, 200);
+      // Scroll vers le calculateur
+      setTimeout(function(){ document.getElementById('calculateur').scrollIntoView({behavior:'smooth',block:'start'}); }, 300);
     }
 
     // Enter = Estimer
@@ -739,7 +747,7 @@
       if (e.key === 'Enter') { e.preventDefault(); sendToCalc(); }
     });
 
-    // Google Autocomplete (suggestions d'adresse)
+    // Google Autocomplete
     function initFloatAutocomplete() {
       var heroInput = document.getElementById('heroAddress');
       if (heroInput) {
