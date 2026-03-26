@@ -509,12 +509,12 @@
         .header-cta-btn{background:var(--yellow);color:var(--dark);padding:10px 22px;border-radius:6px;font-weight:600;font-size:.78rem;text-decoration:none;letter-spacing:.04em;text-transform:uppercase;transition:all .3s}
         .header-cta-btn:hover{background:var(--yellow-hover);transform:translateY(-1px)}
         .mobile-toggle{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.5rem;padding:8px}
-        .mobile-menu{display:none;position:fixed;inset:0;background:var(--rona);z-index:200;flex-direction:column;padding:100px 32px 32px}
+        .mobile-menu{display:none;position:fixed;inset:0;background:var(--rona);z-index:200;flex-direction:column;padding:80px 32px 32px;overflow-y:auto;-webkit-overflow-scrolling:touch}
         .mobile-menu.open{display:flex}
         .mobile-menu a{font-size:1.2rem;font-weight:500;color:#fff;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
         .mobile-menu a:hover{color:var(--yellow)}
         .mobile-menu .close-btn{position:absolute;top:24px;right:28px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:rgba(255,255,255,.6)}
-        @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}}
+        @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.header-inner{height:56px;padding:0 16px}.header-logo img{height:30px}}
     </style>
 </head>
 <body>
