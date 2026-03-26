@@ -263,13 +263,13 @@
       <nav class="header-nav">
         <a href="/">Accueil</a>
         <a href="/installation-rona">RONA+</a>
-        <a href="/service-offert">Services</a>
-        <a href="/conseil">Conseils</a>
-        <a href="/contactus">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#conseils">Conseils</a>
+        <a href="#contact">Contact</a>
       </nav>
       <div class="header-right">
         <a href="tel:+18444541454" class="header-phone">1-844-454-1454</a>
-        <a href="/contactus" class="header-cta">Soumission gratuite</a>
+        <a href="#contact" class="header-cta">Soumission gratuite</a>
       </div>
       <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">&#9776;</button>
     </div>
@@ -278,9 +278,9 @@
     <button class="close-btn" onclick="this.parentElement.classList.remove('open')">&#10005;</button>
     <a href="/">Accueil</a>
     <a href="/installation-rona">Installation RONA+</a>
-    <a href="/service-offert">Services offerts</a>
-    <a href="/conseil">Conseils</a>
-    <a href="/contactus">Contactez-nous</a>
+    <a href="#services" onclick="this.parentElement.classList.remove('open')">Services offerts</a>
+    <a href="#conseils" onclick="this.parentElement.classList.remove('open')">Conseils</a>
+    <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contactez-nous</a>
     <a href="tel:+18444541454">1-844-454-1454</a>
   </div>
 
@@ -292,7 +292,7 @@
       <h1>L'excellence en toiture<br>sur la <em>Rive-Sud</em></h1>
       <p class="hero-sub">Plus de 1 000 projets complétés en Montérégie. Garanties jusqu'à 50 ans. Installateur officiel RONA.</p>
       <div class="hero-actions">
-        <a href="/contactus" class="btn btn-gold">Soumission gratuite</a>
+        <a href="#contact" class="btn btn-gold">Soumission gratuite</a>
         <a href="tel:+18444541454" class="btn btn-ghost">1-844-454-1454</a>
       </div>
     </div>
@@ -334,7 +334,7 @@
   </section>
 
   <!-- HUBSPOT FORM -->
-  <section class="form-section">
+  <section class="form-section" id="contact">
     <div class="container">
       <div class="section-header reveal"><span class="overline">Contactez-nous</span><h2 class="section-heading">Demandez votre soumission gratuite</h2></div>
       <div class="form-wrapper reveal">
@@ -366,7 +366,7 @@
             <div id="larmier-extra" class="noue-extra" style="display:none"><div class="field" style="margin-bottom:0"><div class="field-header"><span class="field-label">Pieds linéaires</span><span class="field-value-box" id="larmier-len-display">20<span class="unit">pi.</span></span></div><div class="slider-track"><div class="bg"></div><div class="fill" id="larmier-fill"></div><div class="thumb" id="larmier-thumb"></div><input type="range" id="larmier-len" min="5" max="200" step="1" value="20"></div></div></div>
             <div id="acc-faitiere" class="acc-item"><div class="acc-info"><div class="acc-label">Faîtière</div><div class="acc-desc">Arête supérieure du toit</div></div><div class="qty-controls"><button class="qty-btn" onclick="changeQty('faitiere',-1)">−</button><span class="qty-value" id="qty-faitiere">0</span><button class="qty-btn" onclick="changeQty('faitiere',1)">+</button></div></div>
           </div>
-          <div class="results-card"><div class="results-title">Estimation du Projet</div><div class="total-box"><div class="total-label">Estimation Totale</div><div class="total-amount" id="total-amount">0,00 $</div></div><div class="cta-section"><p>Estimation indicative. Contactez-nous pour un prix exact.</p><a class="cta-btn" href="/contactus">Contactez un Expert</a></div></div>
+          <div class="results-card"><div class="results-title">Estimation du Projet</div><div class="total-box"><div class="total-label">Estimation Totale</div><div class="total-amount" id="total-amount">0,00 $</div></div><div class="cta-section"><p>Estimation indicative. Contactez-nous pour un prix exact.</p><a class="cta-btn" href="#contact">Contactez un Expert</a></div></div>
         </div>
       </div>
     </div>
@@ -399,16 +399,16 @@
   </section>
 
   <!-- SERVICES -->
-  <section class="services">
+  <section class="services" id="services">
     <div class="container">
       <div class="section-header reveal"><span class="overline">Nos services</span><h2 class="section-heading">Toiture résidentielle et commerciale</h2><p class="section-subtitle">Notre équipe certifiée prend en charge tous les aspects de votre projet.</p></div>
       <div class="services-grid">
-        <div class="service-card reveal"><div class="sc-img"><img src="images/photos/chantier-residential-drone.webp" alt="Installation complète" loading="lazy"></div><div class="sc-body"><h3>Installation complète</h3><p>Remplacement complet incluant retrait, inspection du pontage, membrane d'étanchéité et pose des bardeaux selon les spécifications GAF.</p><a href="/service-offert" class="sc-link">En savoir plus →</a></div></div>
+        <div class="service-card reveal"><div class="sc-img"><img src="images/photos/chantier-residential-drone.webp" alt="Installation complète" loading="lazy"></div><div class="sc-body"><h3>Installation complète</h3><p>Remplacement complet incluant retrait, inspection du pontage, membrane d'étanchéité et pose des bardeaux selon les spécifications GAF.</p><a href="#services" class="sc-link">En savoir plus →</a></div></div>
         <div class="service-card reveal reveal-d1"><div class="sc-img"><img src="images/photos/chantier-brique-drone.webp" alt="Réparation et infiltration" loading="lazy"></div><div class="sc-body"><h3>Réparation et infiltration</h3><p>Intervention rapide pour les fuites, bardeaux envolés, solins endommagés. Urgence 7j/7 en saison.</p><a href="/reparation-infiltration-nettoyage" class="sc-link">En savoir plus →</a></div></div>
-        <div class="service-card reveal reveal-d2"><div class="sc-img"><img src="images/photos/chantier-residential-drone-2.webp" alt="Remplacement de toiture" loading="lazy"></div><div class="sc-body"><h3>Remplacement de toiture</h3><p>Votre toiture a plus de 20 ans? Retrait complet, vérification intégrale et nouveau système avec ventilation optimisée.</p><a href="/service-offert" class="sc-link">En savoir plus →</a></div></div>
-        <div class="service-card reveal"><div class="sc-img"><img src="images/photos/chantier-drone-camion.webp" alt="Ventilation d'entretoit" loading="lazy"></div><div class="sc-body"><h3>Ventilation d'entretoit</h3><p>Évents de faîte, soffites perforés, aérateurs Maximum. Prévention des barrières de glace et de la surchauffe.</p><a href="/service-offert" class="sc-link">En savoir plus →</a></div></div>
-        <div class="service-card reveal reveal-d1"><div class="sc-img"><img src="images/photos/multilogement-grue.webp" alt="Toiture commerciale" loading="lazy"></div><div class="sc-body"><h3>Toiture commerciale</h3><p>Solutions pour immeubles commerciaux et multi-logements. Superficies de 2 000 à 10 000+ pi².</p><a href="/service-offert" class="sc-link">En savoir plus →</a></div></div>
-        <div class="service-card reveal reveal-d2"><div class="sc-img"><img src="images/photos/chantier-bord-eau.webp" alt="Ferblanterie et gouttières" loading="lazy"></div><div class="sc-body"><h3>Ferblanterie et gouttières</h3><p>Gouttières en aluminium, descentes pluviales, solins de cheminée, bordures de toit. Ferblanterie sur place.</p><a href="/service-offert" class="sc-link">En savoir plus →</a></div></div>
+        <div class="service-card reveal reveal-d2"><div class="sc-img"><img src="images/photos/chantier-residential-drone-2.webp" alt="Remplacement de toiture" loading="lazy"></div><div class="sc-body"><h3>Remplacement de toiture</h3><p>Votre toiture a plus de 20 ans? Retrait complet, vérification intégrale et nouveau système avec ventilation optimisée.</p><a href="#services" class="sc-link">En savoir plus →</a></div></div>
+        <div class="service-card reveal"><div class="sc-img"><img src="images/photos/chantier-drone-camion.webp" alt="Ventilation d'entretoit" loading="lazy"></div><div class="sc-body"><h3>Ventilation d'entretoit</h3><p>Évents de faîte, soffites perforés, aérateurs Maximum. Prévention des barrières de glace et de la surchauffe.</p><a href="#services" class="sc-link">En savoir plus →</a></div></div>
+        <div class="service-card reveal reveal-d1"><div class="sc-img"><img src="images/photos/multilogement-grue.webp" alt="Toiture commerciale" loading="lazy"></div><div class="sc-body"><h3>Toiture commerciale</h3><p>Solutions pour immeubles commerciaux et multi-logements. Superficies de 2 000 à 10 000+ pi².</p><a href="#services" class="sc-link">En savoir plus →</a></div></div>
+        <div class="service-card reveal reveal-d2"><div class="sc-img"><img src="images/photos/chantier-bord-eau.webp" alt="Ferblanterie et gouttières" loading="lazy"></div><div class="sc-body"><h3>Ferblanterie et gouttières</h3><p>Gouttières en aluminium, descentes pluviales, solins de cheminée, bordures de toit. Ferblanterie sur place.</p><a href="#services" class="sc-link">En savoir plus →</a></div></div>
       </div>
     </div>
   </section>
@@ -428,7 +428,7 @@
   </section>
 
   <!-- GUIDE -->
-  <section class="guide">
+  <section class="guide" id="conseils">
     <div class="container">
       <div class="section-header reveal"><span class="overline">Guide des bardeaux</span><h2 class="section-heading">Quel type de bardeaux choisir?</h2></div>
       <div class="reveal">
@@ -493,7 +493,7 @@
     <div class="container">
       <h2 class="reveal">Prêt à protéger votre maison?</h2>
       <p class="reveal reveal-d1">Soumission gratuite en 24h. Inspection sans engagement. Financement Flexiti disponible.</p>
-      <a href="/contactus" class="btn-dark reveal reveal-d2">Demander ma soumission gratuite</a>
+      <a href="#contact" class="btn-dark reveal reveal-d2">Demander ma soumission gratuite</a>
       <div class="cta-phone reveal reveal-d3">ou appelez : <a href="tel:+18444541454">1-844-454-1454</a></div>
     </div>
   </section>
@@ -502,7 +502,7 @@
   <footer class="site-footer">
     <div class="container">
       <p>© 2025 Option Toiture inc. — RBQ 5665-8412-01 — 3320 route 112, Marieville, QC</p>
-      <div class="footer-links"><a href="/">Accueil</a><a href="/installation-rona">RONA+</a><a href="/service-offert">Services</a><a href="/contactus">Contact</a><a href="tel:+18444541454">1-844-454-1454</a></div>
+      <div class="footer-links"><a href="/">Accueil</a><a href="/installation-rona">RONA+</a><a href="#services">Services</a><a href="#contact">Contact</a><a href="tel:+18444541454">1-844-454-1454</a></div>
     </div>
   </footer>
 
