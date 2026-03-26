@@ -146,6 +146,8 @@
       transition: all .3s;
       box-shadow: 0 16px 48px rgba(0,0,0,0.4);
     }
+    
+    .dropdown-menu::before{content:"";position:absolute;top:-16px;left:0;right:0;height:16px}
     .nav-dropdown:hover .dropdown-menu {
       opacity: 1; visibility: visible; transform: translateY(0);
     }
