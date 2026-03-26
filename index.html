@@ -610,23 +610,6 @@
     // FAQ
     document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var item=q.parentElement;document.querySelectorAll('.faq-item').forEach(function(i){if(i!==item)i.classList.remove('open')});item.classList.toggle('open')})});
 
-    // Calculator
-    var PENTES={douce:{m:1.05},moyenne:{m:1.20},forte:{m:1.40}};
-    var ACC={maximum:{type:'fixed',prix:{douce:250,moyenne:275,forte:300}},noue:{type:'linear',prix:{douce:8,moyenne:11,forte:14}},larmier:{type:'linear',prix:{douce:3,moyenne:4.25,forte:5.50}},faitiere:{type:'fixed',prix:{douce:110,moyenne:135,forte:155}}};
-    var ETAGE={1:0,2:.10,3:.20};
-    var st={sqft:1000,pente:'douce',etage:1,noueLen:20,larmierLen:20,acc:{maximum:0,noue:0,larmier:0,faitiere:0}};
-    function fmt(n){return n.toLocaleString('fr-CA',{style:'currency',currency:'CAD',minimumFractionDigits:2})}
-    function fN(n){return n.toLocaleString('fr-CA')}
-    function pct(v,mn,mx){return((v-mn)/(mx-mn))*100}
-    function sync(id,v,mn,mx){var p=pct(v,mn,mx);var f=document.getElementById(id+'-fill');var t=document.getElementById(id+'-thumb');if(f)f.style.width=p+'%';if(t)t.style.left=p+'%'}
-    function changeQty(id,d){st.acc[id]=Math.max(0,Math.min(20,st.acc[id]+d));document.getElementById('qty-'+id).textContent=st.acc[id];document.getElementById('acc-'+id).classList.toggle('active',st.acc[id]>0);if(id==='noue')document.getElementById('noue-extra').style.display=st.acc.noue>0?'block':'none';if(id==='larmier')document.getElementById('larmier-extra').style.display=st.acc.larmier>0?'block':'none';calc()}
-    function calc(){var base=st.sqft*5*PENTES[st.pente].m;var ta=0;for(var id in ACC){var q=st.acc[id];if(q<=0)continue;var a=ACC[id];var p=a.prix[st.pente];if(a.type==='linear'){ta+=p*(id==='noue'?st.noueLen:st.larmierLen)*q}else{ta+=p*q}}var s=base+ta;var total=s+s*(ETAGE[st.etage]||0);document.getElementById('total-amount').textContent=fmt(total)}
-    document.getElementById('sqft').addEventListener('input',function(){st.sqft=+this.value;document.getElementById('sqft-display').innerHTML=fN(st.sqft)+'<span class="unit">pi²</span>';sync('sqft',st.sqft,200,5000);calc()});
-    document.getElementById('pente').addEventListener('change',function(){st.pente=this.value;calc()});
-    document.getElementById('etage').addEventListener('input',function(){st.etage=+this.value;document.getElementById('etage-display').textContent=st.etage;sync('etage',st.etage,1,3);calc()});
-    document.getElementById('noue-len').addEventListener('input',function(){st.noueLen=+this.value;document.getElementById('noue-len-display').innerHTML=st.noueLen+'<span class="unit">pi.</span>';sync('noue',st.noueLen,5,100);calc()});
-    document.getElementById('larmier-len').addEventListener('input',function(){st.larmierLen=+this.value;document.getElementById('larmier-len-display').innerHTML=st.larmierLen+'<span class="unit">pi.</span>';sync('larmier',st.larmierLen,5,200);calc()});
-    sync('sqft',1000,200,5000);sync('etage',1,1,3);sync('noue',20,5,100);sync('larmier',20,5,200);calc();
   </script>
 
   <!-- Google Places → Calculateur Optime -->
