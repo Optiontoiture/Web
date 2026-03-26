@@ -65,7 +65,7 @@
     .hero-bg{position:absolute;inset:0}
     .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.5;filter:contrast(1.1)}
     .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.2) 0%,rgba(20,18,16,.4) 40%,rgba(20,18,16,.95) 100%)}
-    .hero-search-center{position:absolute;top:38%;left:50%;transform:translate(-50%,-50%);z-index:3;width:100%;max-width:800px;padding:0 28px;text-align:center}
+    .hero-search-center{position:absolute;top:38%;left:50%;transform:translate(-50%,-50%);z-index:3;width:100%;max-width:900px;padding:0 28px;text-align:center}
     .hero-content{position:relative;z-index:2;padding:0 28px 80px;max-width:1200px;margin:0 auto;width:100%;margin-top:auto}
     .hero-overline{font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px;display:inline-flex;align-items:center;gap:12px;text-align:left}
     .hero-overline::before{content:'';width:40px;height:1px;background:var(--gold)}
@@ -388,7 +388,7 @@
       <span class="hero-search-label">Obtenez votre estimation instantanée</span>
       <div class="hero-search-wrap">
         <span class="hero-search-icon">📍</span>
-        <input type="text" id="heroAddress" placeholder="Entrez votre adresse pour estimer le coût de votre toiture..." autocomplete="off">
+        <input type="text" id="heroAddress" placeholder="Entrez votre adresse..." autocomplete="off">
         <button class="hero-search-btn" onclick="document.getElementById('heroAddress').focus()">Estimer →</button>
       </div>
       <p class="hero-search-hint">Analyse par satellite — résultat en quelques secondes</p>
@@ -415,10 +415,6 @@
     <!-- Résultats -->
     <h2 style="text-align:center;font-size:1.5rem;margin-bottom:4px" id="iAddr">Votre toiture</h2>
     <p style="text-align:center;color:var(--text-muted);font-size:.85rem;margin-bottom:20px">Analyse satellite complétée</p>
-    <div class="res-imgs">
-      <div class="res-img-bx"><img id="iSatImg" src="" alt="Satellite"><span class="res-img-lb">🛰 Satellite</span></div>
-      <div class="res-img-bx"><img id="iSvImg" src="" alt="Street View"><span class="res-img-lb">📷 Street View</span></div>
-    </div>
     <div class="res-stats">
       <div class="res-stat"><div class="res-stat-v" id="iArea">—</div><div class="res-stat-l">Surface (pi²)</div></div>
       <div class="res-stat"><div class="res-stat-v" id="iSegs">—</div><div class="res-stat-l">Segments</div></div>
@@ -805,13 +801,17 @@
       _RD = {sqft: areaSqft, adj: adjusted, lat: imgLat, lng: imgLng};
       _svUrl = 'https://maps.googleapis.com/maps/api/streetview?size=800x500&location=' + imgLat + ',' + imgLng + '&fov=90&pitch=10&key=' + SOLAR_KEY;
       document.getElementById('iAddr').textContent = address;
-      document.getElementById('iSatImg').src = 'https://maps.googleapis.com/maps/api/staticmap?center=' + imgLat + ',' + imgLng + '&zoom=20&size=800x500&maptype=satellite&key=' + SOLAR_KEY;
-      document.getElementById('iSvImg').src = _svUrl;
       document.getElementById('iArea').textContent = Math.round(areaSqft).toLocaleString('fr-CA');
       document.getElementById('iSegs').textContent = segs.length;
       document.getElementById('iPitch').textContent = Math.round(avgPitch) + '°';
       document.getElementById('iStories').textContent = stories;
       document.getElementById('iEstRange').textContent = fmtPrice(low) + ' — ' + fmtPrice(high);
+
+      // Pre-load Street View into AI preview box
+      var aiBox = document.getElementById('aiBox');
+      aiBox.classList.add('has-img');
+      aiBox.innerHTML = '<img src="' + _svUrl + '" alt="Votre maison" style="width:100%;border-radius:12px">';
+      document.getElementById('aiBtn').disabled = !_selCol;
 
       // Show all inline sections
       ['iResults'].forEach(function(id){document.getElementById(id).classList.add('active')});
