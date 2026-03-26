@@ -61,26 +61,26 @@
     .mobile-menu .close-btn{position:absolute;top:24px;right:28px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:rgba(255,255,255,.6)}
 
     /* HERO */
-    .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;background:var(--dark);overflow:hidden}
+    .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;background:var(--dark);overflow:hidden}
     .hero-bg{position:absolute;inset:0}
     .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.5;filter:contrast(1.1)}
-    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.2) 0%,rgba(20,18,16,.5) 50%,rgba(20,18,16,.95) 100%)}
-    .hero-content{position:relative;z-index:2;padding:0 28px 80px;max-width:1200px;margin:0 auto;width:100%;text-align:center}
-    .hero-overline{font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px;display:inline-flex;align-items:center;gap:12px}
+    .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.2) 0%,rgba(20,18,16,.4) 40%,rgba(20,18,16,.95) 100%)}
+    .hero-search-center{position:absolute;top:38%;left:50%;transform:translate(-50%,-50%);z-index:3;width:100%;max-width:800px;padding:0 28px;text-align:center}
+    .hero-content{position:relative;z-index:2;padding:0 28px 80px;max-width:1200px;margin:0 auto;width:100%;margin-top:auto}
+    .hero-overline{font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px;display:inline-flex;align-items:center;gap:12px;text-align:left}
     .hero-overline::before{content:'';width:40px;height:1px;background:var(--gold)}
     .hero h1{font-size:clamp(2.8rem,6vw,5rem);color:#fff;max-width:800px;margin-bottom:24px;font-weight:400;text-align:left}
     .hero h1 em{font-style:italic;color:var(--gold-light)}
-    .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.5);max-width:520px;margin-bottom:48px;line-height:1.8;font-weight:300;text-align:left}
-    .hero-search{max-width:760px;margin-bottom:32px}
-    .hero-search-label{font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px;display:block;text-align:left}
-    .hero-search-wrap{position:relative;display:flex;gap:0}
-    .hero-search-wrap input{flex:1;padding:24px 24px 24px 56px;border:2px solid rgba(255,255,255,.2);border-radius:12px 0 0 12px;font-size:1.15rem;font-family:'Outfit',sans-serif;color:var(--text);background:rgba(255,255,255,.97);transition:border-color .3s}
-    .hero-search-wrap input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,149,44,.15)}
+    .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.5);max-width:520px;margin-bottom:32px;line-height:1.8;font-weight:300;text-align:left}
+    .hero-search-label{font-size:.9rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px;display:block}
+    .hero-search-wrap{position:relative;display:flex;gap:0;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+    .hero-search-wrap input{flex:1;padding:26px 26px 26px 58px;border:2px solid rgba(255,255,255,.25);border-radius:14px 0 0 14px;font-size:1.2rem;font-family:'Outfit',sans-serif;color:var(--text);background:rgba(255,255,255,.97);transition:border-color .3s}
+    .hero-search-wrap input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,149,44,.2)}
     .hero-search-wrap input::placeholder{color:var(--text-muted)}
-    .hero-search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:1.3rem;color:var(--text-muted);z-index:2}
-    .hero-search-btn{background:var(--gold);color:var(--dark);border:none;padding:24px 36px;border-radius:0 12px 12px 0;font-family:'Outfit',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .3s}
+    .hero-search-icon{position:absolute;left:22px;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--text-muted);z-index:2}
+    .hero-search-btn{background:var(--gold);color:var(--dark);border:none;padding:26px 42px;border-radius:0 14px 14px 0;font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .3s}
     .hero-search-btn:hover{background:var(--gold-light)}
-    .hero-search-hint{font-size:.82rem;color:rgba(255,255,255,.4);margin-top:10px;text-align:left}
+    .hero-search-hint{font-size:.82rem;color:rgba(255,255,255,.45);margin-top:12px}
     .hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:6px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .3s}
     .btn-gold{background:var(--gold);color:var(--dark)}.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,149,44,.3)}
@@ -293,7 +293,7 @@
     .modal-cta-phone a{color:var(--dark);text-decoration:none}
     .modal-retry{display:block;margin:16px auto 0;background:none;border:none;color:var(--gold);font-weight:600;font-size:.85rem;cursor:pointer;font-family:'Outfit',sans-serif}
 
-    @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.services-grid{grid-template-columns:1fr}.steps-grid{flex-direction:column;align-items:center;gap:32px}.steps-grid::before{display:none}.step{max-width:100%}.why-right{grid-template-columns:1fr 1fr}.hero h1{font-size:2.4rem}.guide-table{display:block;overflow-x:auto}.calc-grid{grid-template-columns:1fr}.hero-search-wrap{flex-direction:column}.hero-search-wrap input{border-radius:10px;margin-bottom:8px}.hero-search-btn{border-radius:10px;padding:16px}.modal-stats{grid-template-columns:1fr}}
+    @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.services-grid{grid-template-columns:1fr}.steps-grid{flex-direction:column;align-items:center;gap:32px}.steps-grid::before{display:none}.step{max-width:100%}.why-right{grid-template-columns:1fr 1fr}.hero h1{font-size:2.4rem}.guide-table{display:block;overflow-x:auto}.calc-grid{grid-template-columns:1fr}.hero-search-center{position:relative;top:auto;left:auto;transform:none;padding:0 20px;margin-bottom:40px}.hero-search-wrap{flex-direction:column;box-shadow:none}.hero-search-wrap input{border-radius:12px;margin-bottom:8px}.hero-search-btn{border-radius:12px;padding:18px}.modal-stats{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -329,19 +329,19 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"><img src="images/photos/chantier-rona-camion-2.webp" alt="Chantier Option Toiture"></div>
+    <div class="hero-search-center">
+      <span class="hero-search-label">Obtenez votre estimation instantanée</span>
+      <div class="hero-search-wrap">
+        <span class="hero-search-icon">📍</span>
+        <input type="text" id="heroAddress" placeholder="Entrez votre adresse pour estimer le coût de votre toiture..." autocomplete="off">
+        <button class="hero-search-btn" onclick="document.getElementById('heroAddress').focus()">Estimer →</button>
+      </div>
+      <p class="hero-search-hint">Analyse par satellite — résultat en quelques secondes</p>
+    </div>
     <div class="hero-content">
       <div class="hero-overline">Couvreur certifié GAF Master Elite</div>
       <h1>L'excellence en toiture<br>sur la <em>Rive-Sud</em></h1>
       <p class="hero-sub">Plus de 1 000 projets complétés en Montérégie. Garantie 50 ans, valeur à neuf 100%. Installateur officiel RONA.</p>
-      <div class="hero-search">
-        <span class="hero-search-label">Obtenez votre estimation instantanée</span>
-        <div class="hero-search-wrap">
-          <span class="hero-search-icon">📍</span>
-          <input type="text" id="heroAddress" placeholder="Entrez votre adresse..." autocomplete="off">
-          <button class="hero-search-btn" onclick="document.getElementById('heroAddress').focus()">Estimer →</button>
-        </div>
-        <p class="hero-search-hint">Analyse par satellite — résultat en quelques secondes</p>
-      </div>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-gold">Soumission gratuite</a>
         <a href="tel:+18444541454" class="btn btn-ghost">1-844-454-1454</a>
