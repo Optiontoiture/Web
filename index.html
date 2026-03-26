@@ -67,10 +67,10 @@
     .header-cta{background:var(--gold);color:var(--dark);padding:10px 24px;border-radius:6px;font-weight:600;font-size:.78rem;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:all .3s}
     .header-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
     .mobile-toggle{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.5rem;padding:8px}
-    .mobile-menu{display:none;position:fixed;inset:0;background:var(--dark);z-index:200;flex-direction:column;padding:100px 32px 32px;opacity:0;transition:opacity .3s}
+    .mobile-menu{display:none;position:fixed;inset:0;background:var(--dark);z-index:200;flex-direction:column;padding:80px 32px 32px;opacity:0;transition:opacity .3s;overflow-y:auto;-webkit-overflow-scrolling:touch}
     .mobile-menu.open{display:flex;opacity:1}
-    .mobile-menu a{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:#fff;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-    .mobile-menu a.sub-link{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:400;padding:10px 0 10px 16px}
+    .mobile-menu a{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:500;color:#fff;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .mobile-menu a.sub-link{font-size:.9rem;font-weight:400;padding:10px 0 10px 16px;color:rgba(255,255,255,.7)}
     .mobile-menu a:hover{color:var(--gold-light)}
     .mobile-menu .close-btn{position:absolute;top:24px;right:28px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:rgba(255,255,255,.6)}
 
@@ -95,6 +95,7 @@
     .hero-search-btn{background:var(--gold);color:var(--dark);border:none;padding:26px 42px;border-radius:0 14px 14px 0;font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .3s}
     .hero-search-btn:hover{background:var(--gold-light)}
     .hero-search-hint{font-size:.82rem;color:rgba(255,255,255,.45);margin-top:12px}
+    .pac-container{z-index:10000!important}
     .hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:6px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .3s}
     .btn-gold{background:var(--gold);color:var(--dark)}.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,149,44,.3)}
@@ -388,6 +389,8 @@
       .hero-search-icon{left:14px;font-size:1.1rem}
       .hero-search-btn{border-radius:10px;padding:14px;font-size:.85rem}
       .hero-search-hint{font-size:.72rem;margin-top:8px}
+      /* Fix Google Autocomplete dropdown on mobile */
+      .pac-container{z-index:10000!important;margin-top:4px!important}
       .hero-content{padding:0 20px 16px}
       .hero-overline{font-size:.6rem;margin-bottom:12px}
       .hero h1{font-size:2rem;margin-bottom:16px}
