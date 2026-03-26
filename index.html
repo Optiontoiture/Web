@@ -260,7 +260,40 @@
 
     /* RESPONSIVE */
     @media(max-width:992px){.about-grid,.why-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:repeat(2,1fr)}.zone-grid{grid-template-columns:1fr}.hero-stats{display:none}.guide-table{font-size:.8rem}}
-    @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.services-grid{grid-template-columns:1fr}.steps-grid{flex-direction:column;align-items:center;gap:32px}.steps-grid::before{display:none}.step{max-width:100%}.why-right{grid-template-columns:1fr 1fr}.hero h1{font-size:2.4rem}.guide-table{display:block;overflow-x:auto}.calc-grid{grid-template-columns:1fr}.hero-search-wrap{flex-direction:column}.hero-search-wrap input{border-radius:10px;margin-bottom:8px}.hero-search-btn{border-radius:10px;padding:16px}}
+    /* RESULT MODAL */
+    .modal-overlay{position:fixed;inset:0;z-index:300;background:rgba(20,18,16,.7);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:20px}
+    .modal-overlay.open{display:flex}
+    .modal{background:var(--cream-light);border-radius:var(--radius-lg);max-width:680px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,.3);position:relative;animation:modalIn .4s cubic-bezier(.23,1,.32,1)}
+    @keyframes modalIn{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+    .modal-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text-muted);z-index:2;transition:color .2s}
+    .modal-close:hover{color:var(--dark)}
+    .modal-loading{padding:60px 20px;text-align:center}
+    .modal-loading .spinner{width:44px;height:44px;border:4px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .modal-loading p{color:var(--text-light);font-size:.9rem}
+    .modal-error{padding:48px 32px;text-align:center}
+    .modal-error h3{color:var(--red);margin-bottom:8px;font-size:1.3rem}
+    .modal-error p{color:var(--text-light);font-size:.9rem;margin-bottom:20px}
+    .modal-error a{color:var(--gold);font-weight:600;text-decoration:none;font-size:.95rem}
+    .modal-results{padding:32px}
+    .modal-address{font-size:.88rem;color:var(--text-light);margin-bottom:24px;text-align:center}
+    .modal-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px}
+    .modal-stat{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-align:center}
+    .modal-stat-val{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--gold);line-height:1}
+    .modal-stat-label{font-size:.72rem;color:var(--text-muted);margin-top:4px;letter-spacing:.02em}
+    .modal-estimate{background:var(--dark);border-radius:var(--radius);padding:28px;text-align:center;margin-bottom:24px}
+    .modal-estimate-label{font-size:.75rem;color:rgba(255,255,255,.6);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+    .modal-estimate-range{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:#fff}
+    .modal-estimate-note{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:8px;line-height:1.5}
+    .modal-cta{text-align:center}
+    .modal-cta p{font-size:.85rem;color:var(--text-light);margin-bottom:16px}
+    .modal-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);padding:14px 32px;border-radius:8px;font-weight:700;font-size:.85rem;text-decoration:none;transition:all .3s}
+    .modal-cta-btn:hover{background:var(--gold-light);transform:translateY(-2px)}
+    .modal-cta-phone{margin-top:12px;font-size:1rem;font-weight:700}
+    .modal-cta-phone a{color:var(--dark);text-decoration:none}
+    .modal-retry{display:block;margin:16px auto 0;background:none;border:none;color:var(--gold);font-weight:600;font-size:.85rem;cursor:pointer;font-family:'Outfit',sans-serif}
+
+    @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.services-grid{grid-template-columns:1fr}.steps-grid{flex-direction:column;align-items:center;gap:32px}.steps-grid::before{display:none}.step{max-width:100%}.why-right{grid-template-columns:1fr 1fr}.hero h1{font-size:2.4rem}.guide-table{display:block;overflow-x:auto}.calc-grid{grid-template-columns:1fr}.hero-search-wrap{flex-direction:column}.hero-search-wrap input{border-radius:10px;margin-bottom:8px}.hero-search-btn{border-radius:10px;padding:16px}.modal-stats{grid-template-columns:1fr}}
     /* FIXED FLOATING FORM WINDOW */
     .fixed-form{position:fixed;top:84px;right:28px;width:520px;z-index:80;background:var(--white);border-radius:var(--radius-lg);box-shadow:0 12px 48px rgba(0,0,0,.18);overflow:hidden;max-height:calc(100vh - 100px);display:flex;flex-direction:column}
     .fixed-form-header{background:var(--dark);color:#fff;padding:16px 20px;flex-shrink:0}
@@ -523,6 +556,42 @@
     </div>
   </section>
 
+  <!-- RESULT MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-loading" id="modalLoading">
+        <div class="spinner"></div>
+        <p>Analyse de votre toiture par satellite...</p>
+      </div>
+      <div class="modal-error" id="modalError" style="display:none">
+        <h3>Adresse non disponible</h3>
+        <p>Les données satellite ne sont pas disponibles pour cette adresse. Contactez-nous pour une soumission manuelle.</p>
+        <a href="tel:+18444541454">📞 1-844-454-1454</a>
+        <button class="modal-retry" onclick="closeModal()">← Essayer une autre adresse</button>
+      </div>
+      <div class="modal-results" id="modalResults" style="display:none">
+        <h2 style="font-size:1.6rem;text-align:center;margin-bottom:4px">Estimation de votre toiture</h2>
+        <p class="modal-address" id="modalAddress"></p>
+        <div class="modal-stats">
+          <div class="modal-stat"><div class="modal-stat-val" id="modalArea">—</div><div class="modal-stat-label">Surface totale (pi²)</div></div>
+          <div class="modal-stat"><div class="modal-stat-val" id="modalSegments">—</div><div class="modal-stat-label">Segments de toit</div></div>
+        </div>
+        <div class="modal-estimate">
+          <div class="modal-estimate-label">Estimation</div>
+          <div class="modal-estimate-range" id="modalTotal">—</div>
+          <div class="modal-estimate-note">Basé sur l'imagerie satellite Google. Le prix final sera confirmé lors d'une inspection gratuite sur place.</div>
+        </div>
+        <div class="modal-cta">
+          <p>Planifiez votre inspection gratuite pour une soumission détaillée.</p>
+          <a href="tel:+18444541454" class="modal-cta-btn">📞 Planifier mon inspection</a>
+          <div class="modal-cta-phone"><a href="tel:+18444541454">1-844-454-1454</a></div>
+        </div>
+        <button class="modal-retry" onclick="closeModal()">← Essayer une autre adresse</button>
+      </div>
+    </div>
+  </div>
+
   <!-- FIXED FLOATING FORM -->
   <aside class="fixed-form">
     <div class="fixed-form-header">
@@ -577,7 +646,6 @@
   <!-- Google Places for floating address search -->
   <script>
     function initFloatAutocomplete() {
-      // Hero search bar
       var heroInput = document.getElementById('heroAddress');
       if (heroInput) {
         var heroAc = new google.maps.places.Autocomplete(heroInput, {
@@ -588,11 +656,74 @@
         heroAc.addListener('place_changed', function() {
           var place = heroAc.getPlace();
           if (!place.geometry) return;
-          var lat = place.geometry.location.lat();
-          var lng = place.geometry.location.lng();
-          window.location.href = '/soumission?lat=' + lat + '&lng=' + lng + '&addr=' + encodeURIComponent(place.formatted_address);
+          fetchSolarModal(place.geometry.location.lat(), place.geometry.location.lng(), place.formatted_address);
         });
       }
+    }
+
+    var SOLAR_KEY = 'AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU';
+    var PRICE_SQFT = 5;
+    var PENTE_M = {douce:1.05, moyenne:1.20, forte:1.40};
+
+    function m2ft(m2){ return m2 * 10.7639; }
+    function fmtPrice(n){ return Math.round(n).toLocaleString('fr-CA') + ' $'; }
+    function getPente(deg){ return deg < 15 ? 'douce' : deg < 30 ? 'moyenne' : 'forte'; }
+
+    function openModal(){
+      document.getElementById('modalOverlay').classList.add('open');
+      document.getElementById('modalLoading').style.display = 'block';
+      document.getElementById('modalError').style.display = 'none';
+      document.getElementById('modalResults').style.display = 'none';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      document.getElementById('modalOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function fetchSolarModal(lat, lng, address) {
+      openModal();
+      var url = 'https://solar.googleapis.com/v1/buildingInsights:findClosest?location.latitude=' + lat + '&location.longitude=' + lng + '&requiredQuality=MEDIUM&key=' + SOLAR_KEY;
+
+      fetch(url)
+        .then(function(r){ if(!r.ok) throw new Error('err'); return r.json(); })
+        .then(function(data){ showModalResults(data, address); })
+        .catch(function(){
+          // Retry with LOW quality
+          fetch(url.replace('MEDIUM','LOW'))
+            .then(function(r){ if(!r.ok) throw new Error('err'); return r.json(); })
+            .then(function(data){ showModalResults(data, address); })
+            .catch(function(){
+              document.getElementById('modalLoading').style.display = 'none';
+              document.getElementById('modalError').style.display = 'block';
+            });
+        });
+    }
+
+    function showModalResults(data, address) {
+      var s = data.solarPotential;
+      if (!s || !s.wholeRoofStats) {
+        document.getElementById('modalLoading').style.display = 'none';
+        document.getElementById('modalError').style.display = 'block';
+        return;
+      }
+      var areaSqft = m2ft(s.wholeRoofStats.areaMeters2);
+      var segs = s.roofSegmentStats || [];
+      var totalPitch = 0, totalArea = 0;
+      segs.forEach(function(seg){ totalPitch += seg.pitchDegrees * seg.stats.areaMeters2; totalArea += seg.stats.areaMeters2; });
+      var avgPitch = totalArea > 0 ? totalPitch / totalArea : 15;
+      var mult = PENTE_M[getPente(avgPitch)];
+      var adjusted = areaSqft * PRICE_SQFT * mult;
+      var low = adjusted * 0.85;
+      var high = adjusted * 1.25;
+
+      document.getElementById('modalAddress').textContent = address;
+      document.getElementById('modalArea').textContent = Math.round(areaSqft).toLocaleString('fr-CA');
+      document.getElementById('modalSegments').textContent = segs.length;
+      document.getElementById('modalTotal').textContent = fmtPrice(low) + ' — ' + fmtPrice(high);
+
+      document.getElementById('modalLoading').style.display = 'none';
+      document.getElementById('modalResults').style.display = 'block';
     }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&libraries=places&callback=initFloatAutocomplete" async defer></script>
