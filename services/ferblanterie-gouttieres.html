@@ -106,6 +106,7 @@
 
     /* NAV */
     .main-nav { display: flex; align-items: center; gap: 8px; }
+    .nav-close { display: none; }
     .main-nav a {
       font-family: var(--font-body); font-size: 0.88rem; font-weight: 400;
       color: var(--color-text-muted); padding: 8px 14px;
@@ -466,6 +467,7 @@
         box-shadow: none; padding: 0 0 0 16px; min-width: 0;
       }
       .hamburger { display: block; }
+      .nav-close { display:block;position:absolute;top:16px;right:20px;background:none;border:none;color:var(--color-text);font-size:1.6rem;cursor:pointer;z-index:10; }
       .intro-grid { grid-template-columns: 1fr; gap: 32px; }
       .checklist-grid { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr; }
@@ -487,6 +489,7 @@
     <div class="header-inner">
       <a href="/"><img src="/images/logos/option-toiture-header.png" alt="Option Toiture" class="logo"></a>
       <nav class="main-nav" id="mainNav">
+        <button class="nav-close" onclick="document.getElementById('mainNav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')" aria-label="Fermer">✕</button>
         <a href="/">Accueil</a>
         <div class="nav-dropdown">
           <a href="/services/ferblanterie-gouttieres" class="active">Services</a>
