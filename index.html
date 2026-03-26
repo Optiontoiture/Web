@@ -305,6 +305,14 @@
     .suml{display:flex;justify-content:space-between;padding:8px 0;font-size:.88rem;border-bottom:1px solid rgba(255,255,255,.07)}.suml:last-of-type{border-bottom:none}.suml .sl{color:rgba(255,255,255,.5)}.suml .sv{font-weight:600}
     .sumg{margin-top:16px;padding-top:16px;border-top:2px solid var(--gold);text-align:center}.sumg .ov{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}.sumg .tv{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:700}.sumg .nt{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:6px}
 
+    /* FLOATING OPTIME FORM */
+    .fixed-form{position:fixed;top:84px;right:28px;width:420px;z-index:80;background:var(--white);border-radius:var(--radius-lg);box-shadow:0 12px 48px rgba(0,0,0,.18);overflow:hidden;max-height:calc(100vh - 100px);display:flex;flex-direction:column}
+    .fixed-form-header{background:var(--dark);color:#fff;padding:16px 18px;flex-shrink:0}
+    .fixed-form-header h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600}
+    .fixed-form-header p{font-size:.7rem;color:rgba(255,255,255,.5);margin-top:3px}
+    .fixed-form-body{flex:1;overflow:hidden;min-height:500px}
+    @media(max-width:1200px){.fixed-form{display:none}}
+
     /* RESPONSIVE */
     @media(max-width:992px){.about-grid,.why-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:repeat(2,1fr)}.zone-grid{grid-template-columns:1fr}.hero-stats{display:none}.guide-table{font-size:.8rem}}
     /* RESULT MODAL */
@@ -401,9 +409,12 @@
     </div>
   </section>
 
-  <!-- ═══ INLINE SOUMISSION SECTIONS (hidden until Solar API analysis) ═══ -->
+  <!-- ═══ SOUMISSION COMPACTE (1 seule section) ═══ -->
   <section class="isec isec-cream" id="iResults"><div class="ctn">
-    <div class="ish"><span class="sov">Résultats de l'analyse</span><h2 id="iAddr">Votre toiture</h2><p>Analyse satellite complétée. Voici les détails de votre toit.</p></div>
+
+    <!-- Résultats -->
+    <h2 style="text-align:center;font-size:1.5rem;margin-bottom:4px" id="iAddr">Votre toiture</h2>
+    <p style="text-align:center;color:var(--text-muted);font-size:.85rem;margin-bottom:20px">Analyse satellite complétée</p>
     <div class="res-imgs">
       <div class="res-img-bx"><img id="iSatImg" src="" alt="Satellite"><span class="res-img-lb">🛰 Satellite</span></div>
       <div class="res-img-bx"><img id="iSvImg" src="" alt="Street View"><span class="res-img-lb">📷 Street View</span></div>
@@ -414,48 +425,48 @@
       <div class="res-stat"><div class="res-stat-v" id="iPitch">—</div><div class="res-stat-l">Pente moy.</div></div>
       <div class="res-stat"><div class="res-stat-v" id="iStories">—</div><div class="res-stat-l">Étages</div></div>
     </div>
-    <div class="res-est"><div class="el">Estimation préliminaire</div><div class="ev" id="iEstRange">—</div><div class="en">Bardeaux GAF Timberline HDZ · Installation complète · Ajustez les accessoires ci-dessous</div></div>
-  </div></section>
+    <div class="res-est"><div class="el">Estimation préliminaire</div><div class="ev" id="iEstRange">—</div><div class="en">GAF Timberline HDZ · Installation complète</div></div>
 
-  <section class="isec isec-white" id="iColors"><div class="ctn">
-    <div class="ish"><span class="sov">Personnalisez votre toit</span><h2>Choisissez votre couleur GAF Timberline HDZ</h2><p>Sélectionnez une couleur puis visualisez-la sur votre maison grâce à l'IA.</p></div>
-    <div class="clbl">Collection High Definition</div><div class="cscroll" id="hdC"></div>
-    <div class="clbl" style="margin-top:20px">Collection Bold Definition <span style="color:var(--gold);font-style:italic;text-transform:none;letter-spacing:0">— Nouveau</span></div><div class="cscroll" id="bdC"></div>
-    <div class="sellbl" id="selLbl">↑ Sélectionnez une couleur ci-dessus</div>
-    <div class="aipv"><div class="aibox" id="aiBox">
-      <div class="aiph" id="aiPh"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><p>Choisissez une couleur, puis cliquez « Visualiser sur ma maison ».</p></div>
-      <div class="aild" id="aiLd"><div class="spinner"></div><p style="color:var(--text-light);font-size:.88rem">L'IA modifie la couleur du toit...</p></div>
-    </div>
-    <button class="aibtn" id="aiBtn" disabled onclick="vizRoof()">✨ Visualiser sur ma maison</button>
-    <p style="font-size:.72rem;color:var(--text-muted);margin-top:8px">Propulsé par Gemini AI • ~10 secondes</p>
-    </div>
-  </div></section>
+    <!-- Couleurs GAF (compact) -->
+    <div style="margin-top:32px;padding-top:28px;border-top:1px solid var(--border)">
+      <p style="text-align:center;font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px">Choisissez votre couleur de bardeaux</p>
+      <div class="clbl">High Definition</div><div class="cscroll" id="hdC"></div>
+      <div class="clbl" style="margin-top:14px">Bold Definition <span style="color:var(--gold);font-style:italic;text-transform:none;letter-spacing:0">Nouveau</span></div><div class="cscroll" id="bdC"></div>
+      <div class="sellbl" id="selLbl"></div>
 
-  <section class="isec isec-cream" id="iPhone"><div class="ctn">
-    <div class="ish"><span class="sov">Vos coordonnées</span><h2>Pour recevoir votre soumission</h2><p>Nous vous contacterons pour confirmer et planifier l'inspection gratuite.</p></div>
-    <div class="pf"><input type="text" id="cName" placeholder="Votre nom complet"><input type="tel" id="cPhone" placeholder="(514) 555-1234" maxlength="14"><input type="email" id="cEmail" placeholder="Courriel (optionnel)"></div>
-  </div></section>
-
-  <section class="isec isec-white" id="iEst"><div class="ctn">
-    <div class="ish"><span class="sov">Estimateur détaillé</span><h2>Personnalisez vos accessoires</h2><p>Quantités pré-remplies selon votre surface. Ajustez pour plus de précision.</p></div>
-    <div class="ec" id="estCats"></div>
-  </div></section>
-
-  <section class="isec isec-cream" id="iSum"><div class="ctn">
-    <div class="ish"><span class="sov">Récapitulatif</span><h2>Votre soumission estimée</h2></div>
-    <div class="sumc">
-      <div class="suml"><span class="sl">Bardeaux GAF Timberline HDZ</span><span class="sv" id="sumSh">—</span></div>
-      <div class="suml"><span class="sl">Couleur</span><span class="sv" id="sumCol">—</span></div>
-      <div class="suml"><span class="sl">Accessoires & matériaux</span><span class="sv" id="sumAcc">—</span></div>
-      <div class="suml"><span class="sl">Main-d'œuvre</span><span class="sv">Incluse</span></div>
-      <div class="sumg"><div class="ov">Estimation totale</div><div class="tv" id="sumTot">—</div><div class="nt">* Sujette à inspection. Taxes en sus.</div></div>
+      <!-- AI Preview (compact) -->
+      <div class="aipv"><div class="aibox" id="aiBox">
+        <div class="aiph" id="aiPh"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;fill:var(--border);margin:0 auto 6px;display:block"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><p style="font-size:.82rem">Sélectionnez une couleur puis visualisez-la sur votre maison</p></div>
+        <div class="aild" id="aiLd"><div class="spinner"></div><p style="color:var(--text-light);font-size:.85rem">L'IA modifie la couleur du toit...</p></div>
+      </div>
+      <button class="aibtn" id="aiBtn" disabled onclick="vizRoof()">✨ Visualiser sur ma maison</button>
+      <p style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Gemini AI • ~10 sec</p>
+      </div>
     </div>
-    <div style="text-align:center;margin-top:28px">
-      <a href="tel:+18444541454" class="btn btn-gold" style="font-size:.85rem">📞 Planifier mon inspection gratuite</a>
-      <div style="margin-top:12px;font-size:1.05rem;font-weight:700"><a href="tel:+18444541454" style="color:var(--dark);text-decoration:none">1-844-454-1454</a></div>
+
+    <!-- Estimateur accessoires (compact accordion) -->
+    <div style="margin-top:32px;padding-top:28px;border-top:1px solid var(--border)">
+      <p style="text-align:center;font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px">Accessoires & matériaux</p>
+      <div class="ec" id="estCats"></div>
     </div>
+
+    <!-- Récapitulatif (compact) -->
+    <div style="margin-top:28px">
+      <div class="sumc">
+        <div class="suml"><span class="sl">Bardeaux GAF HDZ</span><span class="sv" id="sumSh">—</span></div>
+        <div class="suml"><span class="sl">Couleur</span><span class="sv" id="sumCol">—</span></div>
+        <div class="suml"><span class="sl">Accessoires</span><span class="sv" id="sumAcc">—</span></div>
+        <div class="suml"><span class="sl">Main-d'œuvre</span><span class="sv">Incluse</span></div>
+        <div class="sumg"><div class="ov">Estimation totale</div><div class="tv" id="sumTot">—</div><div class="nt">* Sujette à inspection. Taxes en sus.</div></div>
+      </div>
+      <div style="text-align:center;margin-top:20px">
+        <a href="tel:+18444541454" class="btn btn-gold" style="font-size:.82rem">📞 Planifier mon inspection</a>
+        <div style="margin-top:10px;font-size:.95rem;font-weight:700"><a href="tel:+18444541454" style="color:var(--dark);text-decoration:none">1-844-454-1454</a></div>
+      </div>
+    </div>
+
   </div></section>
-  <!-- ═══ FIN SECTIONS SOUMISSION ═══ -->
+  <!-- ═══ FIN SOUMISSION ═══ -->
 
   <!-- ABOUT -->
   <section class="about">
@@ -492,8 +503,7 @@
     <div class="container">
       <div class="section-header reveal"><span class="overline">Contactez-nous</span><h2 class="section-heading">Demandez votre soumission gratuite</h2></div>
       <div class="form-wrapper reveal">
-        <script src="https://js-na3.hsforms.net/forms/embed/342479210.js" defer></script>
-        <div class="hs-form-frame" data-region="na3" data-form-id="28f8fdcc-207e-41f5-8cd4-1dc4f5cff9b0" data-portal-id="342479210"></div>
+        <iframe src="https://app.optiontoiture.com/formulaire" style="width:100%;height:600px;border:none;border-radius:16px;" title="Soumission gratuite" loading="lazy"></iframe>
       </div>
     </div>
   </section>
@@ -665,6 +675,17 @@
   </div>
 
 
+  <!-- FORMULAIRE OPTIME FLOTTANT -->
+  <aside class="fixed-form" id="optimeFloat">
+    <div class="fixed-form-header">
+      <h3>Soumission gratuite</h3>
+      <p>Réponse en moins de 24h</p>
+    </div>
+    <div class="fixed-form-body">
+      <iframe src="https://app.optiontoiture.com/formulaire" style="width:100%;height:100%;border:none;border-radius:0;" title="Soumission gratuite" loading="lazy"></iframe>
+    </div>
+  </aside>
+
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
@@ -734,7 +755,7 @@
       // Show inline loading, hide sections
       document.getElementById('inlineLoading').style.display = 'block';
       document.getElementById('inlineError').style.display = 'none';
-      ['iResults','iColors','iPhone','iEst','iSum'].forEach(function(id){document.getElementById(id).classList.remove('active')});
+      ['iResults'].forEach(function(id){document.getElementById(id).classList.remove('active')});
       document.getElementById('inlineLoading').scrollIntoView({behavior:'smooth',block:'center'});
     }
     function closeModal(){}
@@ -793,7 +814,7 @@
       document.getElementById('iEstRange').textContent = fmtPrice(low) + ' — ' + fmtPrice(high);
 
       // Show all inline sections
-      ['iResults','iColors','iPhone','iEst','iSum'].forEach(function(id){document.getElementById(id).classList.add('active')});
+      ['iResults'].forEach(function(id){document.getElementById(id).classList.add('active')});
       _autoFill();
       _updSum();
 
@@ -838,10 +859,6 @@
     var da=await rp.json();var pts=da.candidates&&da.candidates[0]&&da.candidates[0].content&&da.candidates[0].content.parts||[];var ip=pts.find(function(p){return p.inlineData});
     if(ip){bx.classList.add('has-img');bx.innerHTML='<img src="data:'+ip.inlineData.mimeType+';base64,'+ip.inlineData.data+'" alt="Visualisation '+_selCol.n+'">';}else throw new Error('no img');
     }catch(e){console.error(e);ld.classList.remove('active');ph.style.display='';ph.innerHTML='<p style="color:var(--red)">Erreur. Réessayez.</p>'}finally{ld.classList.remove('active');bt.disabled=false}}
-
-    // ═══ PHONE FORMAT ═══
-    var _ph=document.getElementById('cPhone');
-    if(_ph)_ph.addEventListener('input',function(e){var v=e.target.value.replace(/\D/g,'');if(v.length>10)v=v.substring(0,10);if(v.length>=7)v='('+v.substring(0,3)+') '+v.substring(3,6)+'-'+v.substring(6);else if(v.length>=4)v='('+v.substring(0,3)+') '+v.substring(3);else if(v.length>=1)v='('+v;e.target.value=v});
 
     // Init colors & estimator
     _initC();_initE();
