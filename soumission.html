@@ -4,424 +4,250 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soumission instantanée | Option Toiture</title>
+  <meta name="description" content="Obtenez une soumission instantanée pour votre toiture. Analyse satellite, couleurs GAF, visualisation IA et estimé détaillé.">
+  <link rel="canonical" href="https://www.optiontoiture.com/soumission">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--cream:#f3ede3;--cream-light:#faf7f1;--gold:#c9952c;--gold-light:#e4b94a;--gold-dark:#a67a1a;--dark:#141210;--dark-mid:#1e1c18;--text:#2a2722;--text-light:#7a756b;--text-muted:#a8a198;--white:#fff;--border:#ddd7cb;--green:#3a7d44;--red:#b33;--radius:10px;--radius-lg:14px}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);min-height:100vh}
+    :root{--cream:#f3ede3;--cream-light:#faf7f1;--gold:#c9952c;--gold-light:#e4b94a;--gold-dark:#a67a1a;--dark:#141210;--dark-mid:#1e1c18;--text:#2a2722;--text-light:#7a756b;--text-muted:#a8a198;--white:#fff;--border:#ddd7cb;--green:#3a7d44;--red:#b33;--radius:10px;--radius-lg:14px;--tr:.3s cubic-bezier(.4,0,.2,1)}
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);min-height:100vh}
+    body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.015;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
     h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600}
-
-    /* HEADER */
     .site-header{background:rgba(20,18,16,.95);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
     .header-inner{max-width:1200px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:72px}
-    .header-logo{text-decoration:none;display:flex;align-items:center}
-    .header-logo img{height:50px;width:auto}
+    .header-logo{text-decoration:none;display:flex;align-items:center}.header-logo img{height:50px;width:auto}
     .header-nav{display:flex;align-items:center;gap:4px}
     .header-nav a{font-size:.78rem;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;padding:8px 16px;border-radius:6px;transition:all .3s}
-    .header-nav a:hover{color:#fff;background:rgba(255,255,255,.08)}
-    .header-nav a.active{color:var(--gold-light);font-weight:700}
+    .header-nav a:hover{color:#fff;background:rgba(255,255,255,.08)}.header-nav a.active{color:var(--gold-light);font-weight:700}
     .header-right{display:flex;align-items:center;gap:14px}
     .header-phone{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.7);text-decoration:none}
-    .header-cta{background:var(--gold);color:var(--dark);padding:10px 24px;border-radius:6px;font-weight:600;font-size:.78rem;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:all .3s}
-    .header-cta:hover{background:var(--gold-light)}
+    .header-cta{background:var(--gold);color:var(--dark);padding:10px 24px;border-radius:6px;font-weight:600;font-size:.78rem;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:all .3s}.header-cta:hover{background:var(--gold-light)}
     .mobile-toggle{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.5rem;padding:8px}
     @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}}
-
-    /* HERO */
     .hero{background:var(--dark);padding:60px 28px 80px;text-align:center;position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(201,149,44,.1),transparent 60%);pointer-events:none}
-    .hero h1{font-size:clamp(2rem,4vw,3.2rem);color:#fff;margin-bottom:12px;position:relative}
-    .hero h1 em{font-style:italic;color:var(--gold-light)}
-    .hero p{color:rgba(255,255,255,.5);font-size:1rem;max-width:560px;margin:0 auto;position:relative}
-
-    /* MAIN */
-    .main{max-width:900px;margin:-40px auto 60px;padding:0 20px;position:relative;z-index:2}
-
-    /* SEARCH */
+    .hero h1{font-size:clamp(2rem,4vw,3.2rem);color:#fff;margin-bottom:12px;position:relative}.hero h1 em{font-style:italic;color:var(--gold-light)}
+    .hero p{color:rgba(255,255,255,.5);font-size:1rem;max-width:600px;margin:0 auto;position:relative}
+    .main{max-width:900px;margin:-40px auto 0;padding:0 20px;position:relative;z-index:2}
     .search-card{background:var(--white);border-radius:var(--radius-lg);padding:36px;box-shadow:0 12px 48px rgba(0,0,0,.1);border:2px solid var(--gold);margin-bottom:32px}
     .search-label{font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block}
-    .search-wrap{position:relative}
-    .search-wrap input{width:100%;padding:18px 20px 18px 52px;border:2px solid var(--border);border-radius:var(--radius);font-size:1.05rem;font-family:'Outfit',sans-serif;color:var(--text);background:var(--cream-light);transition:border-color .3s}
-    .search-wrap input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,149,44,.12)}
-    .search-wrap input::placeholder{color:var(--text-muted)}
-    .search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--text-muted)}
-    .search-hint{font-size:.8rem;color:var(--text-muted);margin-top:10px}
-
-    /* LOADING */
-    .loading{display:none;text-align:center;padding:60px 20px}
-    .loading.active{display:block}
-    .spinner{width:48px;height:48px;border:4px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 20px}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    .loading p{color:var(--text-light);font-size:.95rem}
-
-    /* RESULTS */
-    .results{display:none}
-    .results.active{display:block}
-
+    .search-wrap{position:relative}.search-wrap input{width:100%;padding:18px 20px 18px 52px;border:2px solid var(--border);border-radius:var(--radius);font-size:1.05rem;font-family:'Outfit',sans-serif;color:var(--text);background:var(--cream-light);transition:border-color .3s}
+    .search-wrap input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,149,44,.12)}.search-wrap input::placeholder{color:var(--text-muted)}
+    .search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--text-muted)}.search-hint{font-size:.8rem;color:var(--text-muted);margin-top:10px}
+    .loading{display:none;text-align:center;padding:60px 20px}.loading.active{display:block}
+    .spinner{width:48px;height:48px;border:4px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 20px}@keyframes spin{to{transform:rotate(360deg)}}.loading p{color:var(--text-light);font-size:.95rem}
+    .results{display:none}.results.active{display:block}
     .roof-card{background:var(--white);border-radius:var(--radius-lg);padding:36px;box-shadow:0 8px 32px rgba(0,0,0,.06);margin-bottom:24px;border:1px solid var(--border)}
-    .roof-card h2{font-size:1.6rem;margin-bottom:8px}
-    .roof-address{color:var(--text-light);font-size:.9rem;margin-bottom:24px}
-
-    .roof-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:32px}
-    .roof-stat{background:var(--cream-light);border-radius:var(--radius);padding:20px;text-align:center;border:1px solid var(--border)}
-    .roof-stat-val{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gold);line-height:1}
-    .roof-stat-label{font-size:.75rem;color:var(--text-muted);margin-top:6px;letter-spacing:.03em}
-
+    .roof-card h2{font-size:1.6rem;margin-bottom:8px}.roof-address{color:var(--text-light);font-size:.9rem;margin-bottom:24px}
+    .imgs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}.img-bx{border-radius:var(--radius);overflow:hidden;position:relative;aspect-ratio:16/10;background:var(--cream-light);border:1px solid var(--border)}.img-bx img{width:100%;height:100%;object-fit:cover}.img-lb{position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,.65);color:#fff;padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:500}
+    .roof-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+    .roof-stat{background:var(--cream-light);border-radius:var(--radius);padding:16px 10px;text-align:center;border:1px solid var(--border)}
+    .roof-stat-val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--gold);line-height:1}.roof-stat-label{font-size:.68rem;color:var(--text-muted);margin-top:4px}
     .segments-title{font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-    .segments{display:flex;flex-direction:column;gap:8px}
-    .segment{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--cream-light);border-radius:8px;font-size:.88rem}
-    .segment-name{font-weight:600}
-    .segment-details{color:var(--text-light);display:flex;gap:16px}
-
-    /* ESTIMATE */
-    .estimate-card{background:linear-gradient(135deg,var(--dark),var(--dark-mid));border-radius:var(--radius-lg);padding:40px;color:#fff;box-shadow:0 12px 48px rgba(0,0,0,.15);margin-bottom:24px}
-    .estimate-card h2{color:var(--gold-light);font-size:1.8rem;margin-bottom:24px;text-align:center}
-    .estimate-lines{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
-    .estimate-line{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-    .estimate-line:last-child{border-bottom:none}
-    .estimate-line .label{color:rgba(255,255,255,.6);font-size:.9rem}
-    .estimate-line .value{font-weight:600;font-size:.95rem}
-    .estimate-total{background:var(--gold);color:var(--dark);border-radius:var(--radius);padding:28px;text-align:center;margin-bottom:24px}
-    .estimate-total-label{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
-    .estimate-total-range{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700}
-    .estimate-note{text-align:center;font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6}
-
-    /* CTA */
-    .cta-card{background:var(--white);border-radius:var(--radius-lg);padding:36px;text-align:center;border:2px solid var(--gold);box-shadow:0 8px 32px rgba(201,149,44,.12)}
-    .cta-card h3{font-size:1.4rem;margin-bottom:8px}
-    .cta-card p{color:var(--text-light);font-size:.9rem;margin-bottom:24px}
-    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);padding:16px 36px;border-radius:8px;font-weight:700;font-size:.88rem;text-decoration:none;letter-spacing:.04em;transition:all .3s}
-    .cta-btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,149,44,.3)}
-    .cta-or{margin:16px 0;color:var(--text-muted);font-size:.85rem}
-    .cta-phone{font-size:1.2rem;font-weight:700;color:var(--dark)}
-    .cta-phone a{color:var(--dark);text-decoration:none}
-
-    /* ERROR */
-    .error{display:none;background:var(--white);border:2px solid var(--red);border-radius:var(--radius-lg);padding:32px;text-align:center}
-    .error.active{display:block}
-    .error h3{color:var(--red);margin-bottom:8px}
-    .error p{color:var(--text-light);font-size:.9rem;margin-bottom:20px}
-    .error a{color:var(--gold);font-weight:600;text-decoration:none}
-
-    /* FOOTER */
-    .site-footer{background:var(--dark);padding:40px 0;text-align:center}
-    .site-footer p{font-size:.8rem;color:rgba(255,255,255,.35)}
-
-    /* FIXED FLOATING FORM */
+    .segments{display:flex;flex-direction:column;gap:8px}.segment{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--cream-light);border-radius:8px;font-size:.88rem}.segment-name{font-weight:600}.segment-details{color:var(--text-light);display:flex;gap:16px}
+    .estimate-card{background:linear-gradient(135deg,var(--dark),var(--dark-mid));border-radius:var(--radius-lg);padding:32px;color:#fff;box-shadow:0 12px 48px rgba(0,0,0,.15);margin-bottom:24px}
+    .estimate-card h2{color:var(--gold-light);font-size:1.6rem;margin-bottom:20px;text-align:center}
+    .estimate-lines{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+    .estimate-line{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08)}.estimate-line:last-child{border-bottom:none}.estimate-line .label{color:rgba(255,255,255,.6);font-size:.88rem}.estimate-line .value{font-weight:600;font-size:.9rem}
+    .estimate-total{background:var(--gold);color:var(--dark);border-radius:var(--radius);padding:24px;text-align:center}.estimate-total-label{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}.estimate-total-range{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700}
+    .estimate-note{text-align:center;font-size:.75rem;color:rgba(255,255,255,.4);line-height:1.5;margin-top:16px}
+    .sfull{max-width:100%;padding:60px 0}.sfull .ctn{max-width:900px;margin:0 auto;padding:0 20px}.sbg-c{background:var(--cream)}.sbg-w{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .sh{text-align:center;margin-bottom:32px}.sov{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}.st{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:600;color:var(--dark);margin-bottom:6px}.ss{color:var(--text-light);font-size:.9rem;max-width:520px;margin:0 auto}
+    .clbl{font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px}
+    .cscroll{display:flex;gap:10px;overflow-x:auto;padding:6px 2px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--gold) var(--cream)}.cscroll::-webkit-scrollbar{height:5px}.cscroll::-webkit-scrollbar-track{background:var(--cream);border-radius:3px}.cscroll::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+    .csw{flex-shrink:0;width:80px;cursor:pointer;scroll-snap-align:start;text-align:center;transition:transform var(--tr)}.csw:hover{transform:translateY(-3px)}.csw.sel .swc{box-shadow:0 0 0 3px var(--white),0 0 0 5px var(--gold),0 4px 12px rgba(201,149,44,.3)}
+    .swc{width:56px;height:56px;border-radius:50%;margin:0 auto 6px;border:3px solid var(--white);box-shadow:0 2px 8px rgba(0,0,0,.1);transition:box-shadow var(--tr)}.swn{font-size:.65rem;font-weight:500;color:var(--text);line-height:1.2}
+    .sellbl{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--dark);min-height:1.6em;margin:16px 0 4px;text-align:center}
+    .aipv{max-width:640px;margin:24px auto 0;text-align:center}.aibox{background:var(--cream-light);border-radius:var(--radius-lg);border:2px dashed var(--border);min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}.aibox.has-img{border:2px solid var(--gold);padding:0}.aibox.has-img img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+    .aiph{color:var(--text-muted);font-size:.9rem;padding:32px}.aiph svg{width:40px;height:40px;fill:var(--border);margin-bottom:10px;display:block;margin-left:auto;margin-right:auto}
+    .aild{display:none;flex-direction:column;align-items:center;gap:12px}.aild.active{display:flex}
+    .aibtn{background:var(--gold);color:var(--white);border:none;padding:12px 24px;border-radius:28px;font-family:'Outfit',sans-serif;font-weight:600;font-size:.88rem;cursor:pointer;transition:all var(--tr);margin-top:16px}.aibtn:hover{background:var(--gold-light);transform:translateY(-1px)}.aibtn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+    .pf{max-width:420px;margin:0 auto;display:flex;flex-direction:column;gap:12px}.pf input{border:2px solid var(--border);border-radius:var(--radius);padding:14px 18px;font-size:1rem;font-family:'Outfit',sans-serif;text-align:center;transition:border-color var(--tr)}.pf input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,149,44,.1)}
+    .ec{display:flex;flex-direction:column;gap:20px;max-width:700px;margin:0 auto}.ecat{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--border);overflow:hidden}
+    .ech{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;transition:background var(--tr);user-select:none}.ech:hover{background:var(--cream-light)}.ech h3{font-size:1.1rem;display:flex;align-items:center;gap:8px}.ech .chv{transition:transform var(--tr);color:var(--text-muted)}.ecat.open .chv{transform:rotate(180deg)}
+    .ecb{max-height:0;overflow:hidden;transition:max-height .4s ease}.ecat.open .ecb{max-height:1200px}.eitems{padding:0 20px 20px}
+    .ei{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--cream)}.ei:last-child{border-bottom:none}
+    .eii h4{font-weight:500;font-size:.88rem;font-family:'Outfit',sans-serif}.eii span{font-size:.75rem;color:var(--text-muted)}
+    .eip{font-weight:600;color:var(--gold);font-size:.85rem;white-space:nowrap;min-width:60px;text-align:right}
+    .eq{display:flex;align-items:center;gap:6px}.eq button{width:30px;height:30px;border-radius:50%;border:1px solid var(--border);background:var(--white);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--tr);color:var(--text)}.eq button:hover{background:var(--gold);color:var(--white);border-color:var(--gold)}
+    .eq input{width:44px;text-align:center;border:1px solid var(--border);border-radius:var(--radius);padding:5px;font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:500}.eq input:focus{outline:none;border-color:var(--gold)}
+    .sumc{max-width:560px;margin:0 auto;background:linear-gradient(145deg,var(--dark),var(--dark-mid));border-radius:var(--radius-lg);padding:36px;color:#fff;box-shadow:0 12px 48px rgba(0,0,0,.15)}
+    .suml{display:flex;justify-content:space-between;padding:9px 0;font-size:.9rem;border-bottom:1px solid rgba(255,255,255,.07)}.suml:last-of-type{border-bottom:none}.suml .sl{color:rgba(255,255,255,.55)}.suml .sv{font-weight:600}
+    .sumg{margin-top:20px;padding-top:20px;border-top:2px solid var(--gold);text-align:center}.sumg .ov{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}.sumg .tv{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700}.sumg .nt{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:8px}
+    .cta-card{background:var(--white);border-radius:var(--radius-lg);padding:36px;text-align:center;border:2px solid var(--gold);box-shadow:0 8px 32px rgba(201,149,44,.12);max-width:560px;margin:24px auto 0}
+    .cta-card h3{font-size:1.3rem;margin-bottom:6px}.cta-card p{color:var(--text-light);font-size:.88rem;margin-bottom:20px}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);padding:14px 32px;border-radius:8px;font-weight:700;font-size:.88rem;text-decoration:none;letter-spacing:.04em;transition:all .3s}.cta-btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,149,44,.3)}
+    .cta-or{margin:12px 0;color:var(--text-muted);font-size:.82rem}.cta-phone{font-size:1.1rem;font-weight:700;color:var(--dark)}.cta-phone a{color:var(--dark);text-decoration:none}
+    .error{display:none;background:var(--white);border:2px solid var(--red);border-radius:var(--radius-lg);padding:32px;text-align:center}.error.active{display:block}.error h3{color:var(--red);margin-bottom:8px}.error p{color:var(--text-light);font-size:.9rem;margin-bottom:20px}.error a{color:var(--gold);font-weight:600;text-decoration:none}
+    .hsec{display:none}.hsec.active{display:block}
+    .site-footer{background:var(--dark);padding:40px 0;text-align:center}.site-footer p{font-size:.8rem;color:rgba(255,255,255,.35)}.site-footer a{color:var(--gold);text-decoration:none}
     .fixed-form{position:fixed;top:84px;right:28px;width:520px;z-index:80;background:var(--white);border-radius:var(--radius-lg);box-shadow:0 12px 48px rgba(0,0,0,.18);overflow:hidden;max-height:calc(100vh - 100px);display:flex;flex-direction:column}
-    .fixed-form-header{background:var(--dark);color:#fff;padding:18px 20px;flex-shrink:0}
-    .fixed-form-header h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600}
-    .fixed-form-header p{font-size:.72rem;color:rgba(255,255,255,.5);margin-top:4px}
+    .fixed-form-header{background:var(--dark);color:#fff;padding:18px 20px;flex-shrink:0}.fixed-form-header h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600}.fixed-form-header p{font-size:.72rem;color:rgba(255,255,255,.5);margin-top:4px}
     .fixed-form-body{padding:16px 20px;overflow-y:auto;flex:1}
     @media(max-width:1200px){.fixed-form{display:none}}
-
-    @media(max-width:768px){
-      .roof-stats{grid-template-columns:1fr}
-      .estimate-total-range{font-size:1.8rem}
-    }
+    @media(max-width:768px){.roof-stats{grid-template-columns:repeat(2,1fr)}.imgs-grid{grid-template-columns:1fr}.estimate-total-range,.sumg .tv{font-size:1.8rem}.ei{grid-template-columns:1fr;gap:6px}}
   </style>
 </head>
 <body>
+  <header class="site-header"><div class="header-inner">
+    <a href="/" class="header-logo"><img src="images/logos/option-toiture-header.png" alt="Option Toiture"></a>
+    <nav class="header-nav"><a href="/">Accueil</a><a href="/installation-rona">RONA+</a><a href="/soumission" class="active">Soumission</a></nav>
+    <div class="header-right"><a href="tel:+18444541454" class="header-phone">1-844-454-1454</a><a href="tel:+18444541454" class="header-cta">Appelez-nous</a></div>
+    <button class="mobile-toggle" aria-label="Menu">&#9776;</button>
+  </div></header>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="/" class="header-logo"><img src="images/logos/option-toiture-header.png" alt="Option Toiture"></a>
-      <nav class="header-nav">
-        <a href="/">Accueil</a>
-        <a href="/installation-rona">RONA+</a>
-        <a href="/soumission" class="active">Soumission</a>
-      </nav>
-      <div class="header-right">
-        <a href="tel:+18444541454" class="header-phone">1-844-454-1454</a>
-        <a href="tel:+18444541454" class="header-cta">Appelez-nous</a>
-      </div>
-      <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">&#9776;</button>
-    </div>
-  </header>
-
-  <!-- HERO -->
   <section class="hero">
     <h1>Soumission <em>instantanée</em></h1>
-    <p>Entrez votre adresse pour obtenir une estimation du coût de votre toiture en quelques secondes.</p>
+    <p>Entrez votre adresse pour analyser votre toiture, choisir vos couleurs et obtenir un estimé détaillé en quelques secondes.</p>
   </section>
 
-  <!-- MAIN -->
   <div class="main">
-
-    <!-- SEARCH -->
     <div class="search-card" id="searchCard">
       <span class="search-label">Votre adresse</span>
-      <div class="search-wrap">
-        <span class="search-icon">📍</span>
-        <input type="text" id="addressInput" placeholder="Ex: 123 rue Principale, Longueuil, QC" autocomplete="off">
-      </div>
-      <p class="search-hint">Commencez à taper votre adresse — les suggestions apparaîtront automatiquement.</p>
+      <div class="search-wrap"><span class="search-icon">📍</span><input type="text" id="addressInput" placeholder="Ex: 123 rue Principale, Longueuil, QC" autocomplete="off"></div>
+      <p class="search-hint">Commencez à taper — les suggestions apparaîtront automatiquement.</p>
     </div>
+    <div class="loading" id="loading"><div class="spinner"></div><p>Analyse de votre toiture en cours...</p><p style="font-size:.8rem;color:var(--text-muted);margin-top:8px">Imagerie satellite · Calcul de surface · Segments</p></div>
+    <div class="error" id="error"><h3>Adresse non trouvée</h3><p>L'API Solar ne possède pas les données pour cette adresse. Essayez une autre adresse ou contactez-nous.</p><a href="tel:+18444541454">📞 1-844-454-1454</a></div>
 
-    <!-- LOADING -->
-    <div class="loading" id="loading">
-      <div class="spinner"></div>
-      <p>Analyse de votre toiture en cours...</p>
-      <p style="font-size:.8rem;color:var(--text-muted);margin-top:8px">Imagerie satellite · Calcul de surface</p>
-    </div>
-
-    <!-- ERROR -->
-    <div class="error" id="error">
-      <h3>Adresse non trouvée</h3>
-      <p id="errorMsg">L'API Google Solar ne possède pas les données pour cette adresse. Essayez une autre adresse ou contactez-nous directement.</p>
-      <a href="tel:+18444541454">📞 1-844-454-1454</a>
-    </div>
-
-    <!-- RESULTS -->
     <div class="results" id="results">
-
       <div class="roof-card">
         <h2>Analyse de votre toiture</h2>
         <p class="roof-address" id="roofAddress"></p>
+        <div class="imgs-grid" id="imgsGrid" style="display:none">
+          <div class="img-bx"><img id="svImg" src="" alt="Street View"><span class="img-lb">Street View</span></div>
+          <div class="img-bx"><img id="satImg" src="" alt="Satellite"><span class="img-lb">Satellite</span></div>
+        </div>
         <div class="roof-stats">
-          <div class="roof-stat">
-            <div class="roof-stat-val" id="roofArea">—</div>
-            <div class="roof-stat-label">Surface totale (pi²)</div>
-          </div>
-          <div class="roof-stat">
-            <div class="roof-stat-val" id="roofSegments">—</div>
-            <div class="roof-stat-label">Segments de toit</div>
-          </div>
+          <div class="roof-stat"><div class="roof-stat-val" id="roofArea">—</div><div class="roof-stat-label">Surface (pi²)</div></div>
+          <div class="roof-stat"><div class="roof-stat-val" id="roofSegs">—</div><div class="roof-stat-label">Segments</div></div>
+          <div class="roof-stat"><div class="roof-stat-val" id="roofPitch">—</div><div class="roof-stat-label">Pente moy.</div></div>
+          <div class="roof-stat"><div class="roof-stat-val" id="roofStories">—</div><div class="roof-stat-label">Étages</div></div>
         </div>
         <div class="segments-title">Détail par segment</div>
-        <div class="segments" id="segmentsList"></div>
+        <div class="segments" id="segList"></div>
       </div>
-
       <div class="estimate-card">
-        <h2>Estimation de votre projet</h2>
+        <h2>Estimation préliminaire</h2>
         <div class="estimate-lines">
           <div class="estimate-line"><span class="label">Surface du toit</span><span class="value" id="estArea">—</span></div>
-          <div class="estimate-line"><span class="label">Prix de base</span><span class="value" id="estBase">—</span></div>
+          <div class="estimate-line"><span class="label">Prix de base (bardeaux + install.)</span><span class="value" id="estBase">—</span></div>
         </div>
-        <div class="estimate-total">
-          <div class="estimate-total-label">Estimation</div>
-          <div class="estimate-total-range" id="estTotal">—</div>
-        </div>
-        <p class="estimate-note">Cette estimation est basée sur l'imagerie satellite de Google et les tarifs moyens d'Option Toiture. Le prix final peut varier selon l'état du pontage, les accessoires nécessaires et la complexité du projet. Une inspection gratuite sur place confirmera le prix exact.</p>
-      </div>
-
-      <div class="cta-card">
-        <h3>Prêt à aller plus loin?</h3>
-        <p>Planifiez votre inspection gratuite pour obtenir une soumission détaillée et précise.</p>
-        <a href="tel:+18444541454" class="cta-btn">📞 Planifier mon inspection gratuite</a>
-        <div class="cta-or">ou</div>
-        <div class="cta-phone"><a href="tel:+18444541454">1-844-454-1454</a></div>
-      </div>
-
-      <div style="text-align:center;margin-top:24px">
-        <a href="#" onclick="resetForm();return false" style="color:var(--gold);font-weight:600;font-size:.88rem;text-decoration:none">← Essayer une autre adresse</a>
+        <div class="estimate-total"><div class="estimate-total-label">Fourchette estimée</div><div class="estimate-total-range" id="estTotal">—</div></div>
+        <p class="estimate-note">Estimation satellite. Ajustez les accessoires ci-dessous pour affiner. Le prix final dépend de l'inspection sur place.</p>
       </div>
     </div>
-
   </div>
 
-  <!-- FIXED FLOATING FORM -->
-  <aside class="fixed-form">
-    <div class="fixed-form-header">
-      <h3>Soumission gratuite</h3>
-      <p>Réponse en moins de 24h</p>
+  <!-- COULEURS GAF -->
+  <section class="sfull sbg-c hsec" id="secColors"><div class="ctn">
+    <div class="sh"><span class="sov">Personnalisez votre toit</span><h2 class="st">Choisissez votre couleur GAF Timberline HDZ</h2><p class="ss">Sélectionnez une couleur puis visualisez-la sur votre maison grâce à l'IA.</p></div>
+    <div class="clbl">Collection High Definition</div><div class="cscroll" id="hdC"></div>
+    <div class="clbl" style="margin-top:24px">Collection Bold Definition <span style="color:var(--gold);font-style:italic;text-transform:none;letter-spacing:0">— Nouveau</span></div><div class="cscroll" id="bdC"></div>
+    <div class="sellbl" id="selLbl">↑ Sélectionnez une couleur ci-dessus</div>
+    <div class="aipv"><div class="aibox" id="aiBox">
+      <div class="aiph" id="aiPh"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><p>Choisissez une couleur, puis cliquez « Visualiser sur ma maison ».</p></div>
+      <div class="aild" id="aiLd"><div class="spinner"></div><p style="color:var(--text-light);font-size:.9rem">L'IA modifie la couleur du toit...</p></div>
     </div>
-    <div class="fixed-form-body">
-      <script src="https://js-na3.hsforms.net/forms/embed/342479210.js" defer></script>
-      <div class="hs-form-frame" data-region="na3" data-form-id="5381510f-88aa-42fd-8032-bbbb8aa469c7" data-portal-id="342479210"></div>
+    <button class="aibtn" id="aiBtn" disabled onclick="vizRoof()">✨ Visualiser sur ma maison</button>
+    <p style="font-size:.75rem;color:var(--text-muted);margin-top:8px">Propulsé par Gemini AI • ~10 secondes</p>
     </div>
-  </aside>
+  </div></section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Option Toiture inc. — RBQ 5665-8412-01 — Marieville, QC</p>
+  <!-- COORDONNÉES -->
+  <section class="sfull sbg-w hsec" id="secPhone"><div class="ctn">
+    <div class="sh"><span class="sov">Vos coordonnées</span><h2 class="st">Pour recevoir votre soumission</h2><p class="ss">Nous vous contacterons pour confirmer les détails et planifier l'inspection gratuite.</p></div>
+    <div class="pf"><input type="text" id="cName" placeholder="Votre nom complet"><input type="tel" id="cPhone" placeholder="(514) 555-1234" maxlength="14"><input type="email" id="cEmail" placeholder="Courriel (optionnel)"></div>
+  </div></section>
+
+  <!-- ESTIMATEUR ACCESSOIRES -->
+  <section class="sfull sbg-c hsec" id="secEst"><div class="ctn">
+    <div class="sh"><span class="sov">Estimateur détaillé</span><h2 class="st">Personnalisez vos accessoires</h2><p class="ss">Quantités pré-remplies selon votre surface. Ajustez pour plus de précision.</p></div>
+    <div class="ec" id="estCats"></div>
+  </div></section>
+
+  <!-- RÉCAPITULATIF -->
+  <section class="sfull sbg-w hsec" id="secSum"><div class="ctn">
+    <div class="sh"><span class="sov">Récapitulatif</span><h2 class="st">Votre soumission estimée</h2></div>
+    <div class="sumc">
+      <div class="suml"><span class="sl">Bardeaux GAF Timberline HDZ</span><span class="sv" id="sumSh">—</span></div>
+      <div class="suml"><span class="sl">Couleur</span><span class="sv" id="sumCol">—</span></div>
+      <div class="suml"><span class="sl">Accessoires & matériaux</span><span class="sv" id="sumAcc">—</span></div>
+      <div class="suml"><span class="sl">Main-d'œuvre</span><span class="sv">Incluse</span></div>
+      <div class="sumg"><div class="ov">Estimation totale</div><div class="tv" id="sumTot">—</div><div class="nt">* Sujette à inspection. Taxes en sus.</div></div>
     </div>
-  </footer>
+    <div class="cta-card">
+      <h3>Prêt à aller plus loin?</h3><p>Planifiez votre inspection gratuite pour une soumission précise.</p>
+      <a href="tel:+18444541454" class="cta-btn">📞 Planifier mon inspection</a><div class="cta-or">ou</div><div class="cta-phone"><a href="tel:+18444541454">1-844-454-1454</a></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><a href="#" onclick="resetForm();return false" style="color:var(--gold);font-weight:600;font-size:.85rem;text-decoration:none">← Autre adresse</a></div>
+  </div></section>
 
-  <!-- GOOGLE MAPS + SOLAR API -->
-  <script>
-    var API_KEY = 'AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU';
+  <aside class="fixed-form"><div class="fixed-form-header"><h3>Soumission gratuite</h3><p>Réponse en moins de 24h</p></div><div class="fixed-form-body">
+    <script src="https://js-na3.hsforms.net/forms/embed/342479210.js" defer></script>
+    <div class="hs-form-frame" data-region="na3" data-form-id="5381510f-88aa-42fd-8032-bbbb8aa469c7" data-portal-id="342479210"></div>
+  </div></aside>
 
-    // Pricing
-    var PRICE_PER_SQFT = 5;
-    var PENTE_MULT = {douce: 1.05, moyenne: 1.20, forte: 1.40};
-    var MARGIN_LOW = 0.85;
-    var MARGIN_HIGH = 1.25;
+  <footer class="site-footer"><div class="container"><p>© 2026 Option Toiture inc. — RBQ 5665-8412-01 — Marieville, QC — <a href="tel:+18444541454">1-844-454-1454</a></p></div></footer>
 
-    function getPenteType(degrees) {
-      if (degrees < 15) return 'douce';
-      if (degrees < 30) return 'moyenne';
-      return 'forte';
-    }
-
-    function getPenteLabel(type) {
-      return {douce: 'Douce (< 15°)', moyenne: 'Moyenne (15-30°)', forte: 'Forte (> 30°)'}[type];
-    }
-
-    function getDirection(azimuth) {
-      var dirs = ['N','NE','E','SE','S','SO','O','NO'];
-      return dirs[Math.round(azimuth / 45) % 8];
-    }
-
-    function fmt(n) {
-      return Math.round(n).toLocaleString('fr-CA') + ' $';
-    }
-
-    function m2ToSqft(m2) {
-      return m2 * 10.7639;
-    }
-
-    // Init Google Places Autocomplete
-    function initAutocomplete() {
-      var input = document.getElementById('addressInput');
-      var autocomplete = new google.maps.places.Autocomplete(input, {
-        types: ['address'],
-        componentRestrictions: {country: 'ca'},
-        fields: ['geometry', 'formatted_address']
-      });
-
-      autocomplete.addListener('place_changed', function() {
-        var place = autocomplete.getPlace();
-        if (!place.geometry) return;
-
-        var lat = place.geometry.location.lat();
-        var lng = place.geometry.location.lng();
-        var address = place.formatted_address;
-
-        fetchSolarData(lat, lng, address);
-      });
-    }
-
-    // Fetch Solar API data
-    function fetchSolarData(lat, lng, address) {
-      document.getElementById('loading').classList.add('active');
-      document.getElementById('results').classList.remove('active');
-      document.getElementById('error').classList.remove('active');
-      document.getElementById('searchCard').style.display = 'none';
-
-      var url = 'https://solar.googleapis.com/v1/buildingInsights:findClosest'
-        + '?location.latitude=' + lat
-        + '&location.longitude=' + lng
-        + '&requiredQuality=MEDIUM'
-        + '&key=' + API_KEY;
-
-      fetch(url)
-        .then(function(res) {
-          if (!res.ok) throw new Error('API error: ' + res.status);
-          return res.json();
-        })
-        .then(function(data) {
-          document.getElementById('loading').classList.remove('active');
-          processResults(data, address);
-        })
-        .catch(function(err) {
-          document.getElementById('loading').classList.remove('active');
-          // Try with lower quality
-          var urlLow = 'https://solar.googleapis.com/v1/buildingInsights:findClosest'
-            + '?location.latitude=' + lat
-            + '&location.longitude=' + lng
-            + '&requiredQuality=LOW'
-            + '&key=' + API_KEY;
-
-          fetch(urlLow)
-            .then(function(res) {
-              if (!res.ok) throw new Error('No data');
-              return res.json();
-            })
-            .then(function(data) {
-              processResults(data, address);
-            })
-            .catch(function() {
-              document.getElementById('error').classList.add('active');
-            });
-        });
-    }
-
-    // Process results
-    function processResults(data, address) {
-      var solar = data.solarPotential;
-      if (!solar || !solar.wholeRoofStats) {
-        document.getElementById('error').classList.add('active');
-        return;
-      }
-
-      // Roof area
-      var areaM2 = solar.wholeRoofStats.areaMeters2;
-      var areaSqft = m2ToSqft(areaM2);
-
-      // Segments
-      var segments = solar.roofSegmentStats || [];
-      var totalPitch = 0;
-      var totalArea = 0;
-
-      segments.forEach(function(seg) {
-        totalPitch += seg.pitchDegrees * seg.stats.areaMeters2;
-        totalArea += seg.stats.areaMeters2;
-      });
-
-      var avgPitch = totalArea > 0 ? totalPitch / totalArea : 15;
-      var penteType = getPenteType(avgPitch);
-
-      // Display roof info
-      document.getElementById('roofAddress').textContent = address;
-      document.getElementById('roofArea').textContent = Math.round(areaSqft).toLocaleString('fr-CA');
-      document.getElementById('roofSegments').textContent = segments.length;
-
-      // Segment details
-      var segList = document.getElementById('segmentsList');
-      segList.innerHTML = '';
-      segments.slice(0, 6).forEach(function(seg, i) {
-        var segSqft = m2ToSqft(seg.stats.areaMeters2);
-        var div = document.createElement('div');
-        div.className = 'segment';
-        div.innerHTML = '<span class="segment-name">Segment ' + (i+1) + '</span>'
-          + '<span class="segment-details">'
-          + '<span>' + Math.round(segSqft).toLocaleString('fr-CA') + ' pi²</span>'
-          + '<span>' + getDirection(seg.azimuthDegrees) + '</span>'
-          + '</span>';
-        segList.appendChild(div);
-      });
-
-      // Estimate
-      var base = areaSqft * PRICE_PER_SQFT;
-      var mult = PENTE_MULT[penteType];
-      var adjusted = base * mult;
-      var low = adjusted * MARGIN_LOW;
-      var high = adjusted * MARGIN_HIGH;
-
-      document.getElementById('estArea').textContent = Math.round(areaSqft).toLocaleString('fr-CA') + ' pi²';
-      document.getElementById('estBase').textContent = fmt(adjusted);
-      document.getElementById('estTotal').textContent = fmt(low) + ' — ' + fmt(high);
-
-      document.getElementById('results').classList.add('active');
-    }
-
-    function resetForm() {
-      document.getElementById('searchCard').style.display = 'block';
-      document.getElementById('results').classList.remove('active');
-      document.getElementById('error').classList.remove('active');
-      document.getElementById('addressInput').value = '';
-      document.getElementById('addressInput').focus();
-    }
-
-    // Auto-fetch if coming from homepage with URL params
-    function checkUrlParams() {
-      var params = new URLSearchParams(window.location.search);
-      var lat = params.get('lat');
-      var lng = params.get('lng');
-      var addr = params.get('addr');
-      if (lat && lng && addr) {
-        document.getElementById('addressInput').value = decodeURIComponent(addr);
-        fetchSolarData(parseFloat(lat), parseFloat(lng), decodeURIComponent(addr));
-      }
-    }
-    window.addEventListener('load', function() { setTimeout(checkUrlParams, 500); });
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&libraries=places&callback=initAutocomplete" async defer></script>
-
+<script>
+var AK='AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU',GK='AIzaSyCcODZGJKuokABxZir1ZGxzKm3HY9NGmIk',PSF=5,PM={douce:1.05,moyenne:1.20,forte:1.40},ML=0.85,MH=1.25;
+var RD=null,selCol=null,svUrl='';
+var GAF={hd:[{n:'Charcoal',h:'#3c3c3e',d:'Gris charbon classique'},{n:'Weathered Wood',h:'#8b7d6b',d:'Bois vieilli naturel'},{n:'Barkwood',h:'#6b5344',d:'Brun écorce chaud'},{n:'Hickory',h:'#5c4a3a',d:'Noyer riche'},{n:'Pewter Gray',h:'#7a7d80',d:'Gris étain'},{n:'Oyster Gray',h:'#9e9a90',d:'Gris huître doux'},{n:'Shakewood',h:'#7a6555',d:'Bois de cèdre'},{n:'Slate',h:'#5a6068',d:'Ardoise naturelle'},{n:'Hunter Green',h:'#3a5241',d:'Vert forêt'},{n:'Mission Brown',h:'#5e4030',d:'Brun mission'},{n:'Fox Hollow Gray',h:'#6d6e6c',d:'Gris renard'},{n:'Williamsburg Slate',h:'#5a5f66',d:'Ardoise Williamsburg'},{n:'Biscayne Blue',h:'#6a7d8a',d:'Bleu côtier'},{n:'Birchwood',h:'#b0a89a',d:'Bouleau clair'},{n:'Patriot Red',h:'#6e3030',d:'Rouge patriote'}],bd:[{n:'Chestnut Valley',h:'#6a4438',d:'Châtaignier riche'},{n:'Cliffside',h:'#4a4540',d:'Falaise terrestre'},{n:'Midnight Mesa',h:'#2e2e30',d:'Noir nuit profond'},{n:'Sierra Sand',h:'#a09080',d:'Sable sierra chaud'}]};
+var ACC=[
+{cat:'Revêtement de base',ico:'🏠',items:[{id:'ul',nm:'Papier sous-couche (rouleau)',ds:'Felt #15 ou synthétique',pr:45,u:'rl'},{id:'iw',nm:'Membrane Ice & Water Shield',ds:'Rives, vallées, cheminée',pr:120,u:'rl'},{id:'st',nm:'Départ de rive / Starter Strip',ds:'GAF ProStart',pr:35,u:'pq'}]},
+{cat:'Finitions de toit',ico:'🔺',items:[{id:'rc',nm:'Chapeau de faîtière / Ridge Cap',ds:'GAF Seal-A-Ridge',pr:55,u:'pq'},{id:'de',nm:'Larmier / Drip Edge (10 pi)',ds:'Aluminium',pr:8,u:'lg'},{id:'vm',nm:'Noue de toit / Valley (10 pi)',ds:'Tôle galvanisée',pr:22,u:'lg'}]},
+{cat:'Ventilation',ico:'💨',items:[{id:'rv',nm:'Évent de faîtière (4 pi)',ds:'GAF Cobra',pr:18,u:'lg'},{id:'mx',nm:'Évent de toit Maximum',ds:'50 ou 60 po²',pr:45,u:'un'},{id:'sf',nm:'Évent de soffite',ds:'Aluminium',pr:12,u:'un'},{id:'tb',nm:'Turbine de ventilation',ds:'12" aluminium',pr:65,u:'un'}]},
+{cat:'Solins et étanchéité',ico:'🔧',items:[{id:'sp',nm:'Solin de mur / Step Flashing',ds:'Paquet de 100',pr:55,u:'pq'},{id:'cf',nm:'Solin de cheminée (kit)',ds:'Lead ou aluminium',pr:85,u:'kit'},{id:'pb',nm:'Botte de ventilation / Pipe Boot',ds:'Néoprène',pr:15,u:'un'},{id:'wf',nm:'Solin mur continu (10 pi)',ds:'Aluminium',pr:12,u:'lg'}]},
+{cat:'Clous et fixations',ico:'🔩',items:[{id:'rn',nm:'Clous à toiture (5 lbs)',ds:'1.25" galvanisé',pr:18,u:'bte'},{id:'cn',nm:'Clous en rouleau (cloueuse)',ds:'Rouleau 7200',pr:55,u:'rl'},{id:'ck',nm:'Scellant / Roofing Cement',ds:'Tube 300ml',pr:8,u:'tube'}]},
+{cat:'Accessoires spéciaux',ico:'⚡',items:[{id:'sk',nm:'Kit solin puits de lumière',ds:'Pour skylight existant',pr:120,u:'kit'},{id:'ab',nm:'Botte mât antenne/satellite',ds:'Rubber boot',pr:25,u:'un'},{id:'gt',nm:'Gouttières aluminium (10 pi)',ds:'5" ou 6"',pr:22,u:'lg'},{id:'ds',nm:'Descente gouttière (10 pi)',ds:'2x3" ou 3x4"',pr:18,u:'lg'},{id:'sg',nm:'Arrête-neige / Snow Guard',ds:'Barre ou individuel',pr:35,u:'un'}]}
+];
+function gpt(d){if(d<15)return'douce';if(d<30)return'moyenne';return'forte'}
+function gdir(a){return['N','NE','E','SE','S','SO','O','NO'][Math.round(a/45)%8]}
+function fmt(n){return Math.round(n).toLocaleString('fr-CA')+' $'}
+function m2f(m){return m*10.7639}
+function initC(){var h=document.getElementById('hdC'),b=document.getElementById('bdC');GAF.hd.forEach(function(c){h.appendChild(msw(c))});GAF.bd.forEach(function(c){b.appendChild(msw(c))})}
+function msw(c){var d=document.createElement('div');d.className='csw';d.innerHTML='<div class="swc" style="background:'+c.h+'"></div><div class="swn">'+c.n+'</div>';d.onclick=function(){selC(c,d)};return d}
+function selC(c,el){document.querySelectorAll('.csw').forEach(function(s){s.classList.remove('sel')});el.classList.add('sel');selCol=c;document.getElementById('selLbl').textContent=c.n+' — '+c.d;document.getElementById('aiBtn').disabled=!svUrl;updSum()}
+function initE(){var ct=document.getElementById('estCats');ACC.forEach(function(c,i){var s=document.createElement('div');s.className='ecat'+(i===0?' open':'');s.innerHTML='<div class="ech" onclick="this.parentElement.classList.toggle(\'open\')"><h3><span>'+c.ico+'</span> '+c.cat+'</h3><span class="chv">▼</span></div><div class="ecb"><div class="eitems">'+c.items.map(function(t){return'<div class="ei"><div class="eii"><h4>'+t.nm+'</h4><span>'+t.ds+' — '+t.pr+'$/'+t.u+'</span></div><div class="eip" id="p-'+t.id+'">0 $</div><div class="eq"><button onclick="cq(\''+t.id+'\',-1)">−</button><input type="number" id="q-'+t.id+'" value="0" min="0" data-pr="'+t.pr+'" onchange="up(\''+t.id+'\')"><button onclick="cq(\''+t.id+'\',1)">+</button></div></div>'}).join('')+'</div></div>';ct.appendChild(s)})}
+function cq(id,d){var i=document.getElementById('q-'+id);i.value=Math.max(0,parseInt(i.value||0)+d);up(id)}
+function up(id){var i=document.getElementById('q-'+id);document.getElementById('p-'+id).textContent=fmt(parseInt(i.value||0)*parseFloat(i.dataset.pr));updSum()}
+function autoFill(){if(!RD)return;var s=RD.sqft;var e={ul:Math.ceil(s/400),iw:Math.ceil(s/600),st:Math.ceil(s/120*.4),rc:Math.ceil(s/300),de:Math.ceil(Math.sqrt(s)*.6),rn:Math.ceil(s/200),ck:Math.ceil(s/400)};Object.keys(e).forEach(function(k){var i=document.getElementById('q-'+k);if(i){i.value=e[k];up(k)}})}
+function updSum(){if(!RD)return;document.getElementById('sumSh').textContent=fmt(RD.adj);document.getElementById('sumCol').textContent=selCol?selCol.n:'Non sélectionnée';var a=0;document.querySelectorAll('.eq input').forEach(function(i){a+=parseInt(i.value||0)*parseFloat(i.dataset.pr||0)});document.getElementById('sumAcc').textContent=fmt(a);var t=RD.adj+a;document.getElementById('sumTot').textContent=fmt(t*ML)+' — '+fmt(t*MH)}
+function initAutocomplete(){var inp=document.getElementById('addressInput');var ac=new google.maps.places.Autocomplete(inp,{types:['address'],componentRestrictions:{country:'ca'},fields:['geometry','formatted_address']});ac.addListener('place_changed',function(){var p=ac.getPlace();if(!p.geometry)return;fetchSD(p.geometry.location.lat(),p.geometry.location.lng(),p.formatted_address)})}
+function fetchSD(lat,lng,addr){document.getElementById('loading').classList.add('active');document.getElementById('results').classList.remove('active');document.getElementById('error').classList.remove('active');document.getElementById('searchCard').style.display='none';hideSec();
+var u='https://solar.googleapis.com/v1/buildingInsights:findClosest?location.latitude='+lat+'&location.longitude='+lng+'&requiredQuality=MEDIUM&key='+AK;
+fetch(u).then(function(r){if(!r.ok)throw new Error('e');return r.json()}).then(function(d){document.getElementById('loading').classList.remove('active');proc(d,lat,lng,addr)}).catch(function(){
+var u2='https://solar.googleapis.com/v1/buildingInsights:findClosest?location.latitude='+lat+'&location.longitude='+lng+'&requiredQuality=LOW&key='+AK;
+fetch(u2).then(function(r){if(!r.ok)throw new Error('e');return r.json()}).then(function(d){document.getElementById('loading').classList.remove('active');proc(d,lat,lng,addr)}).catch(function(){document.getElementById('loading').classList.remove('active');document.getElementById('error').classList.add('active')})})}
+function proc(data,lat,lng,addr){var sol=data.solarPotential;if(!sol||!sol.wholeRoofStats){document.getElementById('error').classList.add('active');return}
+var am=sol.wholeRoofStats.areaMeters2,asf=m2f(am),segs=sol.roofSegmentStats||[],tp=0,ta=0;
+segs.forEach(function(s){tp+=s.pitchDegrees*s.stats.areaMeters2;ta+=s.stats.areaMeters2});
+var ap=ta>0?tp/ta:15,pt=gpt(ap),mult=PM[pt],base=asf*PSF,adj=base*mult;
+var stories=Math.max(1,Math.round((sol.buildingStats&&sol.buildingStats.heightMeters||4)/3));
+RD={sqft:asf,segs:segs.length,pitch:ap,adj:adj,lat:lat,lng:lng};
+svUrl='https://maps.googleapis.com/maps/api/streetview?size=800x500&location='+lat+','+lng+'&key='+AK;
+document.getElementById('svImg').src=svUrl;document.getElementById('satImg').src='https://maps.googleapis.com/maps/api/staticmap?center='+lat+','+lng+'&zoom=20&size=800x500&maptype=satellite&key='+AK;document.getElementById('imgsGrid').style.display='grid';
+document.getElementById('roofAddress').textContent=addr;document.getElementById('roofArea').textContent=Math.round(asf).toLocaleString('fr-CA');document.getElementById('roofSegs').textContent=segs.length;document.getElementById('roofPitch').textContent=Math.round(ap)+'°';document.getElementById('roofStories').textContent=stories;
+var sl=document.getElementById('segList');sl.innerHTML='';segs.slice(0,6).forEach(function(s,i){var d=document.createElement('div');d.className='segment';d.innerHTML='<span class="segment-name">Segment '+(i+1)+'</span><span class="segment-details"><span>'+Math.round(m2f(s.stats.areaMeters2)).toLocaleString('fr-CA')+' pi²</span><span>'+gdir(s.azimuthDegrees)+'</span></span>';sl.appendChild(d)});
+document.getElementById('estArea').textContent=Math.round(asf).toLocaleString('fr-CA')+' pi²';document.getElementById('estBase').textContent=fmt(adj);document.getElementById('estTotal').textContent=fmt(adj*ML)+' — '+fmt(adj*MH);
+document.getElementById('results').classList.add('active');showSec();autoFill();updSum();document.getElementById('results').scrollIntoView({behavior:'smooth'})}
+function showSec(){['secColors','secPhone','secEst','secSum'].forEach(function(i){document.getElementById(i).classList.add('active')})}
+function hideSec(){['secColors','secPhone','secEst','secSum'].forEach(function(i){document.getElementById(i).classList.remove('active')})}
+function resetForm(){document.getElementById('searchCard').style.display='block';document.getElementById('results').classList.remove('active');document.getElementById('error').classList.remove('active');hideSec();document.getElementById('addressInput').value='';document.getElementById('addressInput').focus();RD=null;selCol=null;svUrl='';window.scrollTo({top:0,behavior:'smooth'})}
+async function vizRoof(){if(!selCol||!svUrl)return;if(!GK){alert('Clé API Gemini non configurée.\n\n1. Allez sur https://aistudio.google.com\n2. Créez une clé API\n3. Collez-la dans le code (variable GK)');return}
+var bx=document.getElementById('aiBox'),ph=document.getElementById('aiPh'),ld=document.getElementById('aiLd'),bt=document.getElementById('aiBtn');ph.style.display='none';ld.classList.add('active');bt.disabled=true;
+try{var r=await fetch(svUrl);var bl=await r.blob();var b6=await new Promise(function(rs,rj){var rd=new FileReader();rd.onloadend=function(){rs(rd.result)};rd.onerror=rj;rd.readAsDataURL(bl)});
+var rp=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key='+GK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{inlineData:{mimeType:'image/jpeg',data:b6.split(',')[1]}},{text:'Change the roof color of this house to '+selCol.n+' ('+selCol.h+') asphalt shingles, described as "'+selCol.d+'". Keep everything else exactly the same. Only modify the roof surface. Make it photorealistic.'}]}],generationConfig:{responseModalities:['Text','Image']}})});
+var da=await rp.json();var pts=da.candidates&&da.candidates[0]&&da.candidates[0].content&&da.candidates[0].content.parts||[];var ip=pts.find(function(p){return p.inlineData});
+if(ip){bx.classList.add('has-img');bx.innerHTML='<img src="data:'+ip.inlineData.mimeType+';base64,'+ip.inlineData.data+'" alt="Visualisation '+selCol.n+'">';}else throw new Error('no img');
+}catch(e){console.error(e);ld.classList.remove('active');ph.style.display='';ph.innerHTML='<p style="color:var(--red)">Erreur. Réessayez.</p>'}finally{ld.classList.remove('active');bt.disabled=false}}
+document.addEventListener('DOMContentLoaded',function(){initC();initE();
+var ph=document.getElementById('cPhone');ph.addEventListener('input',function(e){var v=e.target.value.replace(/\D/g,'');if(v.length>10)v=v.substring(0,10);if(v.length>=7)v='('+v.substring(0,3)+') '+v.substring(3,6)+'-'+v.substring(6);else if(v.length>=4)v='('+v.substring(0,3)+') '+v.substring(3);else if(v.length>=1)v='('+v;e.target.value=v})});
+function checkUrlParams(){var p=new URLSearchParams(window.location.search);var la=p.get('lat'),ln=p.get('lng'),ad=p.get('addr');if(la&&ln&&ad){document.getElementById('addressInput').value=decodeURIComponent(ad);fetchSD(parseFloat(la),parseFloat(ln),decodeURIComponent(ad))}}
+window.addEventListener('load',function(){setTimeout(checkUrlParams,500)});
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&libraries=places&callback=initAutocomplete" async defer></script>
 </body>
 </html>
