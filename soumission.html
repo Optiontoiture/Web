@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soumission instantanée | Option Toiture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--cream:#f3ede3;--cream-light:#faf7f1;--gold:#c9952c;--gold-light:#e4b94a;--gold-dark:#a67a1a;--dark:#141210;--dark-mid:#1e1c18;--text:#2a2722;--text-light:#7a756b;--text-muted:#a8a198;--white:#fff;--border:#ddd7cb;--green:#3a7d44;--red:#b33;--radius:10px;--radius-lg:14px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);min-height:100vh}
+    h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600}
+
+    /* HEADER */
+    .site-header{background:rgba(20,18,16,.95);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+    .header-inner{max-width:1200px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:72px}
+    .header-logo{text-decoration:none;display:flex;align-items:center}
+    .header-logo img{height:50px;width:auto}
+    .header-nav{display:flex;align-items:center;gap:4px}
+    .header-nav a{font-size:.78rem;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;padding:8px 16px;border-radius:6px;transition:all .3s}
+    .header-nav a:hover{color:#fff;background:rgba(255,255,255,.08)}
+    .header-nav a.active{color:var(--gold-light);font-weight:700}
+    .header-right{display:flex;align-items:center;gap:14px}
+    .header-phone{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.7);text-decoration:none}
+    .header-cta{background:var(--gold);color:var(--dark);padding:10px 24px;border-radius:6px;font-weight:600;font-size:.78rem;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:all .3s}
+    .header-cta:hover{background:var(--gold-light)}
+    .mobile-toggle{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.5rem;padding:8px}
+    @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}}
+
+    /* HERO */
+    .hero{background:var(--dark);padding:60px 28px 80px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(201,149,44,.1),transparent 60%);pointer-events:none}
+    .hero h1{font-size:clamp(2rem,4vw,3.2rem);color:#fff;margin-bottom:12px;position:relative}
+    .hero h1 em{font-style:italic;color:var(--gold-light)}
+    .hero p{color:rgba(255,255,255,.5);font-size:1rem;max-width:560px;margin:0 auto;position:relative}
+
+    /* MAIN */
+    .main{max-width:900px;margin:-40px auto 60px;padding:0 20px;position:relative;z-index:2}
+
+    /* SEARCH */
+    .search-card{background:var(--white);border-radius:var(--radius-lg);padding:36px;box-shadow:0 12px 48px rgba(0,0,0,.1);border:2px solid var(--gold);margin-bottom:32px}
+    .search-label{font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block}
+    .search-wrap{position:relative}
+    .search-wrap input{width:100%;padding:18px 20px 18px 52px;border:2px solid var(--border);border-radius:var(--radius);font-size:1.05rem;font-family:'Outfit',sans-serif;color:var(--text);background:var(--cream-light);transition:border-color .3s}
+    .search-wrap input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,149,44,.12)}
+    .search-wrap input::placeholder{color:var(--text-muted)}
+    .search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--text-muted)}
+    .search-hint{font-size:.8rem;color:var(--text-muted);margin-top:10px}
+
+    /* LOADING */
+    .loading{display:none;text-align:center;padding:60px 20px}
+    .loading.active{display:block}
+    .spinner{width:48px;height:48px;border:4px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 20px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .loading p{color:var(--text-light);font-size:.95rem}
+
+    /* RESULTS */
+    .results{display:none}
+    .results.active{display:block}
+
+    .roof-card{background:var(--white);border-radius:var(--radius-lg);padding:36px;box-shadow:0 8px 32px rgba(0,0,0,.06);margin-bottom:24px;border:1px solid var(--border)}
+    .roof-card h2{font-size:1.6rem;margin-bottom:8px}
+    .roof-address{color:var(--text-light);font-size:.9rem;margin-bottom:24px}
+
+    .roof-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
+    .roof-stat{background:var(--cream-light);border-radius:var(--radius);padding:20px;text-align:center;border:1px solid var(--border)}
+    .roof-stat-val{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gold);line-height:1}
+    .roof-stat-label{font-size:.75rem;color:var(--text-muted);margin-top:6px;letter-spacing:.03em}
+
+    .segments-title{font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+    .segments{display:flex;flex-direction:column;gap:8px}
+    .segment{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--cream-light);border-radius:8px;font-size:.88rem}
+    .segment-name{font-weight:600}
+    .segment-details{color:var(--text-light);display:flex;gap:16px}
+
+    /* ESTIMATE */
+    .estimate-card{background:linear-gradient(135deg,var(--dark),var(--dark-mid));border-radius:var(--radius-lg);padding:40px;color:#fff;box-shadow:0 12px 48px rgba(0,0,0,.15);margin-bottom:24px}
+    .estimate-card h2{color:var(--gold-light);font-size:1.8rem;margin-bottom:24px;text-align:center}
+    .estimate-lines{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+    .estimate-line{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .estimate-line:last-child{border-bottom:none}
+    .estimate-line .label{color:rgba(255,255,255,.6);font-size:.9rem}
+    .estimate-line .value{font-weight:600;font-size:.95rem}
+    .estimate-total{background:var(--gold);color:var(--dark);border-radius:var(--radius);padding:28px;text-align:center;margin-bottom:24px}
+    .estimate-total-label{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+    .estimate-total-range{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700}
+    .estimate-note{text-align:center;font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6}
+
+    /* CTA */
+    .cta-card{background:var(--white);border-radius:var(--radius-lg);padding:36px;text-align:center;border:2px solid var(--gold);box-shadow:0 8px 32px rgba(201,149,44,.12)}
+    .cta-card h3{font-size:1.4rem;margin-bottom:8px}
+    .cta-card p{color:var(--text-light);font-size:.9rem;margin-bottom:24px}
+    .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);padding:16px 36px;border-radius:8px;font-weight:700;font-size:.88rem;text-decoration:none;letter-spacing:.04em;transition:all .3s}
+    .cta-btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,149,44,.3)}
+    .cta-or{margin:16px 0;color:var(--text-muted);font-size:.85rem}
+    .cta-phone{font-size:1.2rem;font-weight:700;color:var(--dark)}
+    .cta-phone a{color:var(--dark);text-decoration:none}
+
+    /* ERROR */
+    .error{display:none;background:var(--white);border:2px solid var(--red);border-radius:var(--radius-lg);padding:32px;text-align:center}
+    .error.active{display:block}
+    .error h3{color:var(--red);margin-bottom:8px}
+    .error p{color:var(--text-light);font-size:.9rem;margin-bottom:20px}
+    .error a{color:var(--gold);font-weight:600;text-decoration:none}
+
+    /* FOOTER */
+    .site-footer{background:var(--dark);padding:40px 0;text-align:center}
+    .site-footer p{font-size:.8rem;color:rgba(255,255,255,.35)}
+
+    @media(max-width:768px){
+      .roof-stats{grid-template-columns:1fr}
+      .estimate-total-range{font-size:1.8rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="header-logo"><img src="images/logos/option-toiture-header.png" alt="Option Toiture"></a>
+      <nav class="header-nav">
+        <a href="/">Accueil</a>
+        <a href="/installation-rona">RONA+</a>
+        <a href="/soumission" class="active">Soumission</a>
+      </nav>
+      <div class="header-right">
+        <a href="tel:+18444541454" class="header-phone">1-844-454-1454</a>
+        <a href="tel:+18444541454" class="header-cta">Appelez-nous</a>
+      </div>
+      <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Soumission <em>instantanée</em></h1>
+    <p>Entrez votre adresse pour obtenir une estimation du coût de votre toiture en quelques secondes.</p>
+  </section>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- SEARCH -->
+    <div class="search-card" id="searchCard">
+      <span class="search-label">Votre adresse</span>
+      <div class="search-wrap">
+        <span class="search-icon">📍</span>
+        <input type="text" id="addressInput" placeholder="Ex: 123 rue Principale, Longueuil, QC" autocomplete="off">
+      </div>
+      <p class="search-hint">Commencez à taper votre adresse — les suggestions apparaîtront automatiquement.</p>
+    </div>
+
+    <!-- LOADING -->
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Analyse de votre toiture en cours...</p>
+      <p style="font-size:.8rem;color:var(--text-muted);margin-top:8px">Imagerie satellite · Calcul de surface · Analyse de pente</p>
+    </div>
+
+    <!-- ERROR -->
+    <div class="error" id="error">
+      <h3>Adresse non trouvée</h3>
+      <p id="errorMsg">L'API Google Solar ne possède pas les données pour cette adresse. Essayez une autre adresse ou contactez-nous directement.</p>
+      <a href="tel:+18444541454">📞 1-844-454-1454</a>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="results" id="results">
+
+      <div class="roof-card">
+        <h2>Analyse de votre toiture</h2>
+        <p class="roof-address" id="roofAddress"></p>
+        <div class="roof-stats">
+          <div class="roof-stat">
+            <div class="roof-stat-val" id="roofArea">—</div>
+            <div class="roof-stat-label">Surface totale (pi²)</div>
+          </div>
+          <div class="roof-stat">
+            <div class="roof-stat-val" id="roofPitch">—</div>
+            <div class="roof-stat-label">Pente moyenne</div>
+          </div>
+          <div class="roof-stat">
+            <div class="roof-stat-val" id="roofSegments">—</div>
+            <div class="roof-stat-label">Segments de toit</div>
+          </div>
+        </div>
+        <div class="segments-title">Détail par segment</div>
+        <div class="segments" id="segmentsList"></div>
+      </div>
+
+      <div class="estimate-card">
+        <h2>Estimation de votre projet</h2>
+        <div class="estimate-lines">
+          <div class="estimate-line"><span class="label">Surface du toit</span><span class="value" id="estArea">—</span></div>
+          <div class="estimate-line"><span class="label">Type de pente</span><span class="value" id="estPente">—</span></div>
+          <div class="estimate-line"><span class="label">Prix de base</span><span class="value" id="estBase">—</span></div>
+          <div class="estimate-line"><span class="label">Ajustement pente</span><span class="value" id="estPenteAdj">—</span></div>
+        </div>
+        <div class="estimate-total">
+          <div class="estimate-total-label">Estimation</div>
+          <div class="estimate-total-range" id="estTotal">—</div>
+        </div>
+        <p class="estimate-note">Cette estimation est basée sur l'imagerie satellite de Google et les tarifs moyens d'Option Toiture. Le prix final peut varier selon l'état du pontage, les accessoires nécessaires et la complexité du projet. Une inspection gratuite sur place confirmera le prix exact.</p>
+      </div>
+
+      <div class="cta-card">
+        <h3>Prêt à aller plus loin?</h3>
+        <p>Planifiez votre inspection gratuite pour obtenir une soumission détaillée et précise.</p>
+        <a href="tel:+18444541454" class="cta-btn">📞 Planifier mon inspection gratuite</a>
+        <div class="cta-or">ou</div>
+        <div class="cta-phone"><a href="tel:+18444541454">1-844-454-1454</a></div>
+      </div>
+
+      <div style="text-align:center;margin-top:24px">
+        <a href="#" onclick="resetForm();return false" style="color:var(--gold);font-weight:600;font-size:.88rem;text-decoration:none">← Essayer une autre adresse</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Option Toiture inc. — RBQ 5665-8412-01 — Marieville, QC</p>
+    </div>
+  </footer>
+
+  <!-- GOOGLE MAPS + SOLAR API -->
+  <script>
+    var API_KEY = 'AIzaSyAhnxVOM5h0zdSMtuYcimDklHmmn299rqg';
+
+    // Pricing
+    var PRICE_PER_SQFT = 5;
+    var PENTE_MULT = {douce: 1.05, moyenne: 1.20, forte: 1.40};
+    var MARGIN_LOW = 0.85;
+    var MARGIN_HIGH = 1.25;
+
+    function getPenteType(degrees) {
+      if (degrees < 15) return 'douce';
+      if (degrees < 30) return 'moyenne';
+      return 'forte';
+    }
+
+    function getPenteLabel(type) {
+      return {douce: 'Douce (< 15°)', moyenne: 'Moyenne (15-30°)', forte: 'Forte (> 30°)'}[type];
+    }
+
+    function getDirection(azimuth) {
+      var dirs = ['N','NE','E','SE','S','SO','O','NO'];
+      return dirs[Math.round(azimuth / 45) % 8];
+    }
+
+    function fmt(n) {
+      return Math.round(n).toLocaleString('fr-CA') + ' $';
+    }
+
+    function m2ToSqft(m2) {
+      return m2 * 10.7639;
+    }
+
+    // Init Google Places Autocomplete
+    function initAutocomplete() {
+      var input = document.getElementById('addressInput');
+      var autocomplete = new google.maps.places.Autocomplete(input, {
+        types: ['address'],
+        componentRestrictions: {country: 'ca'},
+        fields: ['geometry', 'formatted_address']
+      });
+
+      autocomplete.addListener('place_changed', function() {
+        var place = autocomplete.getPlace();
+        if (!place.geometry) return;
+
+        var lat = place.geometry.location.lat();
+        var lng = place.geometry.location.lng();
+        var address = place.formatted_address;
+
+        fetchSolarData(lat, lng, address);
+      });
+    }
+
+    // Fetch Solar API data
+    function fetchSolarData(lat, lng, address) {
+      document.getElementById('loading').classList.add('active');
+      document.getElementById('results').classList.remove('active');
+      document.getElementById('error').classList.remove('active');
+      document.getElementById('searchCard').style.display = 'none';
+
+      var url = 'https://solar.googleapis.com/v1/buildingInsights:findClosest'
+        + '?location.latitude=' + lat
+        + '&location.longitude=' + lng
+        + '&requiredQuality=MEDIUM'
+        + '&key=' + API_KEY;
+
+      fetch(url)
+        .then(function(res) {
+          if (!res.ok) throw new Error('API error: ' + res.status);
+          return res.json();
+        })
+        .then(function(data) {
+          document.getElementById('loading').classList.remove('active');
+          processResults(data, address);
+        })
+        .catch(function(err) {
+          document.getElementById('loading').classList.remove('active');
+          // Try with lower quality
+          var urlLow = 'https://solar.googleapis.com/v1/buildingInsights:findClosest'
+            + '?location.latitude=' + lat
+            + '&location.longitude=' + lng
+            + '&requiredQuality=LOW'
+            + '&key=' + API_KEY;
+
+          fetch(urlLow)
+            .then(function(res) {
+              if (!res.ok) throw new Error('No data');
+              return res.json();
+            })
+            .then(function(data) {
+              processResults(data, address);
+            })
+            .catch(function() {
+              document.getElementById('error').classList.add('active');
+            });
+        });
+    }
+
+    // Process results
+    function processResults(data, address) {
+      var solar = data.solarPotential;
+      if (!solar || !solar.wholeRoofStats) {
+        document.getElementById('error').classList.add('active');
+        return;
+      }
+
+      // Roof area
+      var areaM2 = solar.wholeRoofStats.areaMeters2;
+      var areaSqft = m2ToSqft(areaM2);
+
+      // Segments
+      var segments = solar.roofSegmentStats || [];
+      var totalPitch = 0;
+      var totalArea = 0;
+
+      segments.forEach(function(seg) {
+        totalPitch += seg.pitchDegrees * seg.stats.areaMeters2;
+        totalArea += seg.stats.areaMeters2;
+      });
+
+      var avgPitch = totalArea > 0 ? totalPitch / totalArea : 15;
+      var penteType = getPenteType(avgPitch);
+
+      // Display roof info
+      document.getElementById('roofAddress').textContent = address;
+      document.getElementById('roofArea').textContent = Math.round(areaSqft).toLocaleString('fr-CA');
+      document.getElementById('roofPitch').textContent = Math.round(avgPitch) + '°';
+      document.getElementById('roofSegments').textContent = segments.length;
+
+      // Segment details
+      var segList = document.getElementById('segmentsList');
+      segList.innerHTML = '';
+      segments.slice(0, 6).forEach(function(seg, i) {
+        var segSqft = m2ToSqft(seg.stats.areaMeters2);
+        var div = document.createElement('div');
+        div.className = 'segment';
+        div.innerHTML = '<span class="segment-name">Segment ' + (i+1) + '</span>'
+          + '<span class="segment-details">'
+          + '<span>' + Math.round(segSqft).toLocaleString('fr-CA') + ' pi²</span>'
+          + '<span>' + Math.round(seg.pitchDegrees) + '°</span>'
+          + '<span>' + getDirection(seg.azimuthDegrees) + '</span>'
+          + '</span>';
+        segList.appendChild(div);
+      });
+
+      // Estimate
+      var base = areaSqft * PRICE_PER_SQFT;
+      var mult = PENTE_MULT[penteType];
+      var adjusted = base * mult;
+      var low = adjusted * MARGIN_LOW;
+      var high = adjusted * MARGIN_HIGH;
+
+      document.getElementById('estArea').textContent = Math.round(areaSqft).toLocaleString('fr-CA') + ' pi²';
+      document.getElementById('estPente').textContent = getPenteLabel(penteType) + ' — ' + Math.round(avgPitch) + '°';
+      document.getElementById('estBase').textContent = fmt(base);
+      document.getElementById('estPenteAdj').textContent = '×' + mult.toFixed(2) + ' = ' + fmt(adjusted);
+      document.getElementById('estTotal').textContent = fmt(low) + ' — ' + fmt(high);
+
+      document.getElementById('results').classList.add('active');
+    }
+
+    function resetForm() {
+      document.getElementById('searchCard').style.display = 'block';
+      document.getElementById('results').classList.remove('active');
+      document.getElementById('error').classList.remove('active');
+      document.getElementById('addressInput').value = '';
+      document.getElementById('addressInput').focus();
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhnxVOM5h0zdSMtuYcimDklHmmn299rqg&libraries=places&callback=initAutocomplete" async defer></script>
+
+</body>
+</html>
