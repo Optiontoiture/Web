@@ -112,6 +112,8 @@
     .form-wrapper{max-width:780px;margin:0 auto;background:transparent;border:none;border-radius:0;padding:0;box-shadow:none}
 
     /* CALCULATOR */
+    .calc-optime{padding:80px 0;background:var(--cream-light);position:relative}
+    .calc-optime::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
     .calc-section{padding:100px 0;background:var(--cream)}
     .calc-wrapper{max-width:980px;margin:0 auto}
     .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -350,7 +352,7 @@
     .modal-cta-phone a{color:var(--dark);text-decoration:none}
     .modal-retry{display:block;margin:16px auto 0;background:none;border:none;color:var(--gold);font-weight:600;font-size:.85rem;cursor:pointer;font-family:'Outfit',sans-serif}
 
-    @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.services-grid{grid-template-columns:1fr}.steps-grid{flex-direction:column;align-items:center;gap:32px}.steps-grid::before{display:none}.step{max-width:100%}.why-right{grid-template-columns:1fr 1fr}.hero h1{font-size:2.4rem}.guide-table{display:block;overflow-x:auto}.calc-grid{grid-template-columns:1fr}.hero-search-center{position:relative;top:auto;left:auto;transform:none;padding:0 20px;margin-bottom:40px}.hero-search-wrap{flex-direction:column;box-shadow:none}.hero-search-wrap input{border-radius:12px;margin-bottom:8px}.hero-search-btn{border-radius:12px;padding:18px}.modal-stats{grid-template-columns:1fr}.res-stats{grid-template-columns:repeat(2,1fr)}.res-imgs{grid-template-columns:1fr}.ei{grid-template-columns:1fr;gap:6px}.two-col{grid-template-columns:1fr}}
+    @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.services-grid{grid-template-columns:1fr}.steps-grid{flex-direction:column;align-items:center;gap:32px}.steps-grid::before{display:none}.step{max-width:100%}.why-right{grid-template-columns:1fr 1fr}.hero h1{font-size:2.4rem}.guide-table{display:block;overflow-x:auto}.calc-grid{grid-template-columns:1fr}.hero-search-center{position:relative;top:auto;left:auto;transform:none;padding:0 20px;margin-bottom:40px}.hero-search-wrap{flex-direction:column;box-shadow:none}.hero-search-wrap input{border-radius:12px;margin-bottom:8px}.hero-search-btn{border-radius:12px;padding:18px}.modal-stats{grid-template-columns:1fr}.res-stats{grid-template-columns:repeat(2,1fr)}.res-imgs{grid-template-columns:1fr}.ei{grid-template-columns:1fr;gap:6px}.two-col{grid-template-columns:1fr}.calc-optime{padding:48px 0}}
   </style>
 </head>
 <body>
@@ -391,7 +393,7 @@
       <div class="hero-search-wrap">
         <span class="hero-search-icon">📍</span>
         <input type="text" id="heroAddress" placeholder="Entrez votre adresse..." autocomplete="off">
-        <button class="hero-search-btn" onclick="document.getElementById('heroAddress').focus()">Estimer →</button>
+        <button class="hero-search-btn" onclick="sendToCalc()">Estimer →</button>
       </div>
       <p class="hero-search-hint">Entrez votre adresse pour obtenir une soumission instantanée</p>
     </div>
@@ -411,15 +413,21 @@
     </div>
   </section>
 
-  <!-- ═══ CALCULATEUR OPTIME (apparaît après saisie d'adresse) ═══ -->
-  <section class="isec isec-cream" id="iResults"><div class="ctn">
-    <iframe id="optimeCalc"
-      src="about:blank"
-      style="width:100%;min-height:600px;border:none;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);"
-      allowtransparency="true"
-      title="Calculateur toiture">
-    </iframe>
-  </div></section>
+  <!-- ═══ CALCULATEUR OPTIME (toujours visible) ═══ -->
+  <section class="calc-optime" id="calculateur">
+    <div class="ctn">
+      <div class="section-header" style="margin-bottom:32px">
+        <span class="overline">Soumission instantanée</span>
+        <h2 class="section-heading">Estimez le coût de votre <em>toiture</em></h2>
+      </div>
+      <iframe id="optime-calc"
+        src="https://app.optiontoiture.com/calculateur"
+        style="width:100%;min-height:900px;border:none;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);"
+        allowtransparency="true"
+        title="Estimation de toiture">
+      </iframe>
+    </div>
+  </section>
   <!-- ═══ FIN CALCULATEUR ═══ -->
 
   <!-- ABOUT -->
@@ -612,42 +620,43 @@
 
   </script>
 
-  <!-- Google Places → Calculateur Optime -->
+  <!-- Calculateur Optime : barre adresse hero + iframe -->
   <script>
-    // Auto-resize iframe based on content height
+    // Auto-resize iframe
     window.addEventListener('message', function(e) {
       if (e.data && e.data.type === 'optime-resize') {
-        var frame = document.getElementById('optimeCalc');
-        if (frame) frame.style.height = e.data.height + 'px';
+        document.getElementById('optime-calc').style.height = e.data.height + 'px';
       }
     });
 
+    // Envoyer l'adresse au calculateur + scroll
+    function sendToCalc() {
+      var addr = document.getElementById('heroAddress').value.trim();
+      if (!addr) { document.getElementById('heroAddress').focus(); return; }
+      document.getElementById('optime-calc').src = 'https://app.optiontoiture.com/calculateur?search=' + encodeURIComponent(addr);
+      setTimeout(function(){ document.getElementById('calculateur').scrollIntoView({behavior:'smooth',block:'start'}); }, 200);
+    }
+
+    // Enter = Estimer
+    document.getElementById('heroAddress').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault(); sendToCalc(); }
+    });
+
+    // Google Autocomplete (suggestions d'adresse)
     function initFloatAutocomplete() {
       var heroInput = document.getElementById('heroAddress');
       if (heroInput) {
         var heroAc = new google.maps.places.Autocomplete(heroInput, {
           types: ['address'],
           componentRestrictions: {country: 'ca'},
-          fields: ['geometry', 'formatted_address']
+          fields: ['formatted_address']
         });
         heroAc.addListener('place_changed', function() {
           var place = heroAc.getPlace();
-          if (!place.geometry) return;
-          var lat = place.geometry.location.lat();
-          var lng = place.geometry.location.lng();
-          var addr = place.formatted_address;
-
-          // Load Optime calculator with address
-          var calcFrame = document.getElementById('optimeCalc');
-          if (calcFrame) {
-            calcFrame.src = 'https://app.optiontoiture.com/calculateur?lat=' + encodeURIComponent(lat)
-              + '&lng=' + encodeURIComponent(lng)
-              + '&addr=' + encodeURIComponent(addr);
+          if (place.formatted_address) {
+            heroInput.value = place.formatted_address;
+            sendToCalc();
           }
-
-          // Show section and scroll
-          document.getElementById('iResults').classList.add('active');
-          setTimeout(function(){ document.getElementById('iResults').scrollIntoView({behavior:'smooth',block:'start'}); }, 100);
         });
       }
     }
