@@ -112,6 +112,8 @@
     .form-wrapper{max-width:780px;margin:0 auto;background:transparent;border:none;border-radius:0;padding:0;box-shadow:none}
 
     /* CALCULATOR */
+    .calc-optime{padding:80px 0;background:var(--cream-light);position:relative}
+    .calc-optime::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
     .calc-section{padding:100px 0;background:var(--cream)}
     .calc-wrapper{max-width:980px;margin:0 auto}
     .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -350,7 +352,7 @@
     .modal-cta-phone a{color:var(--dark);text-decoration:none}
     .modal-retry{display:block;margin:16px auto 0;background:none;border:none;color:var(--gold);font-weight:600;font-size:.85rem;cursor:pointer;font-family:'Outfit',sans-serif}
 
-    @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.services-grid{grid-template-columns:1fr}.steps-grid{flex-direction:column;align-items:center;gap:32px}.steps-grid::before{display:none}.step{max-width:100%}.why-right{grid-template-columns:1fr 1fr}.hero h1{font-size:2.4rem}.guide-table{display:block;overflow-x:auto}.calc-grid{grid-template-columns:1fr}.hero-search-center{position:relative;top:auto;left:auto;transform:none;padding:0 20px;margin-bottom:40px}.hero-search-wrap{flex-direction:column;box-shadow:none}.hero-search-wrap input{border-radius:12px;margin-bottom:8px}.hero-search-btn{border-radius:12px;padding:18px}.modal-stats{grid-template-columns:1fr}.res-stats{grid-template-columns:repeat(2,1fr)}.res-imgs{grid-template-columns:1fr}.ei{grid-template-columns:1fr;gap:6px}.two-col{grid-template-columns:1fr}}
+    @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.services-grid{grid-template-columns:1fr}.steps-grid{flex-direction:column;align-items:center;gap:32px}.steps-grid::before{display:none}.step{max-width:100%}.why-right{grid-template-columns:1fr 1fr}.hero h1{font-size:2.4rem}.guide-table{display:block;overflow-x:auto}.calc-grid{grid-template-columns:1fr}.hero-search-center{position:relative;top:auto;left:auto;transform:none;padding:0 20px;margin-bottom:40px}.hero-search-wrap{flex-direction:column;box-shadow:none}.hero-search-wrap input{border-radius:12px;margin-bottom:8px}.hero-search-btn{border-radius:12px;padding:18px}.modal-stats{grid-template-columns:1fr}.res-stats{grid-template-columns:repeat(2,1fr)}.res-imgs{grid-template-columns:1fr}.ei{grid-template-columns:1fr;gap:6px}.two-col{grid-template-columns:1fr}.calc-optime{padding:48px 0}.calc-optime #optimeCalc{height:700px}}
   </style>
 </head>
 <body>
@@ -411,7 +413,24 @@
     </div>
   </section>
 
-  <!-- ═══ CALCULATEUR OPTIME (iframe à venir) ═══ -->
+  <!-- ═══ CALCULATEUR OPTIME ═══ -->
+  <section class="calc-optime" id="calculateur">
+    <div class="ctn">
+      <div class="section-header" style="margin-bottom:32px">
+        <span class="overline">Soumission instantanée</span>
+        <h2 class="section-heading">Estimez le coût de votre <em>toiture</em></h2>
+        <p class="section-subtitle">Utilisez notre calculateur pour obtenir une estimation détaillée de votre projet de toiture.</p>
+      </div>
+      <iframe id="optimeCalc"
+        src="https://app.optiontoiture.com/calculateur"
+        style="width:100%;height:900px;border:none;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);"
+        allowtransparency="true"
+        title="Calculateur toiture">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ═══ RÉSULTATS SOLAR API (apparaît après analyse) ═══ -->
   <section class="isec isec-cream" id="iResults"><div class="ctn">
     <h2 style="text-align:center;font-size:1.4rem;margin-bottom:2px" id="iAddr">Votre toiture</h2>
     <p style="text-align:center;color:var(--text-muted);font-size:.8rem;margin-bottom:16px">Analyse satellite complétée</p>
@@ -420,9 +439,6 @@
       <div class="res-stat"><div class="res-stat-v" id="iSegs">—</div><div class="res-stat-l">Segments</div></div>
       <div class="res-stat"><div class="res-stat-v" id="iPitch">—</div><div class="res-stat-l">Pente moy.</div></div>
       <div class="res-stat"><div class="res-stat-v" id="iStories">—</div><div class="res-stat-l">Étages</div></div>
-    </div>
-    <div id="optimeEmbed" style="text-align:center;padding:40px 0">
-      <a href="tel:+15148354820" class="btn btn-gold" style="font-size:.9rem;padding:14px 32px">📞 514-835-4820 · Soumission gratuite</a>
     </div>
   </div></section>
   <!-- ═══ FIN CALCULATEUR ═══ -->
@@ -731,7 +747,21 @@
 
       // Show results section
       document.getElementById('iResults').classList.add('active');
-      setTimeout(function(){ document.getElementById('iResults').scrollIntoView({behavior:'smooth',block:'start'}); }, 100);
+
+      // Update Optime calculator iframe with Solar data
+      var calcFrame = document.getElementById('optimeCalc');
+      if (calcFrame) {
+        var params = 'lat=' + encodeURIComponent(imgLat)
+          + '&lng=' + encodeURIComponent(imgLng)
+          + '&addr=' + encodeURIComponent(address)
+          + '&sqft=' + Math.round(areaSqft)
+          + '&segs=' + segs.length
+          + '&pitch=' + Math.round(avgPitch)
+          + '&stories=' + stories;
+        calcFrame.src = 'https://app.optiontoiture.com/calculateur?' + params;
+      }
+
+      setTimeout(function(){ document.getElementById('calculateur').scrollIntoView({behavior:'smooth',block:'start'}); }, 100);
     }
 
     // Calculateur Optime sera intégré via iframe
