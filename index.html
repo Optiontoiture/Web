@@ -71,6 +71,16 @@
     .hero h1{font-size:clamp(2.8rem,6vw,5rem);color:#fff;max-width:800px;margin-bottom:24px;font-weight:400}
     .hero h1 em{font-style:italic;color:var(--gold-light)}
     .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.5);max-width:520px;margin-bottom:40px;line-height:1.8;font-weight:300}
+    .hero-search{max-width:600px;margin-bottom:32px}
+    .hero-search-label{font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px;display:block}
+    .hero-search-wrap{position:relative;display:flex;gap:0}
+    .hero-search-wrap input{flex:1;padding:20px 20px 20px 52px;border:2px solid rgba(255,255,255,.15);border-radius:10px 0 0 10px;font-size:1.05rem;font-family:'Outfit',sans-serif;color:var(--text);background:rgba(255,255,255,.95);backdrop-filter:blur(8px);transition:border-color .3s}
+    .hero-search-wrap input:focus{outline:none;border-color:var(--gold)}
+    .hero-search-wrap input::placeholder{color:var(--text-muted)}
+    .hero-search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--text-muted);z-index:2}
+    .hero-search-btn{background:var(--gold);color:var(--dark);border:none;padding:20px 28px;border-radius:0 10px 10px 0;font-family:'Outfit',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .3s}
+    .hero-search-btn:hover{background:var(--gold-light)}
+    .hero-search-hint{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:8px}
     .hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:6px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .3s}
     .btn-gold{background:var(--gold);color:var(--dark)}.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,149,44,.3)}
@@ -250,7 +260,7 @@
 
     /* RESPONSIVE */
     @media(max-width:992px){.about-grid,.why-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:repeat(2,1fr)}.zone-grid{grid-template-columns:1fr}.hero-stats{display:none}.guide-table{font-size:.8rem}}
-    @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.services-grid{grid-template-columns:1fr}.steps-grid{flex-direction:column;align-items:center;gap:32px}.steps-grid::before{display:none}.step{max-width:100%}.why-right{grid-template-columns:1fr 1fr}.hero h1{font-size:2.4rem}.guide-table{display:block;overflow-x:auto}.calc-grid{grid-template-columns:1fr}}
+    @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.services-grid{grid-template-columns:1fr}.steps-grid{flex-direction:column;align-items:center;gap:32px}.steps-grid::before{display:none}.step{max-width:100%}.why-right{grid-template-columns:1fr 1fr}.hero h1{font-size:2.4rem}.guide-table{display:block;overflow-x:auto}.calc-grid{grid-template-columns:1fr}.hero-search-wrap{flex-direction:column}.hero-search-wrap input{border-radius:10px;margin-bottom:8px}.hero-search-btn{border-radius:10px;padding:16px}}
     /* FIXED FLOATING FORM WINDOW */
     .fixed-form{position:fixed;top:84px;right:28px;width:340px;z-index:80;background:var(--white);border-radius:var(--radius-lg);box-shadow:0 12px 48px rgba(0,0,0,.18);overflow:hidden;max-height:calc(100vh - 100px);display:flex;flex-direction:column}
     .fixed-form-header{background:var(--dark);color:#fff;padding:16px 20px;flex-shrink:0}
@@ -306,6 +316,15 @@
       <div class="hero-overline">Couvreur certifié GAF Master Elite</div>
       <h1>L'excellence en toiture<br>sur la <em>Rive-Sud</em></h1>
       <p class="hero-sub">Plus de 1 000 projets complétés en Montérégie. Garanties jusqu'à 50 ans. Installateur officiel RONA.</p>
+      <div class="hero-search">
+        <span class="hero-search-label">Obtenez votre estimation instantanée</span>
+        <div class="hero-search-wrap">
+          <span class="hero-search-icon">📍</span>
+          <input type="text" id="heroAddress" placeholder="Entrez votre adresse..." autocomplete="off">
+          <button class="hero-search-btn" onclick="document.getElementById('heroAddress').focus()">Estimer →</button>
+        </div>
+        <p class="hero-search-hint">Analyse par satellite — résultat en quelques secondes</p>
+      </div>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-gold">Soumission gratuite</a>
         <a href="tel:+18444541454" class="btn btn-ghost">1-844-454-1454</a>
@@ -578,20 +597,38 @@
   <!-- Google Places for floating address search -->
   <script>
     function initFloatAutocomplete() {
-      var input = document.getElementById('floatAddress');
-      if (!input) return;
-      var ac = new google.maps.places.Autocomplete(input, {
-        types: ['address'],
-        componentRestrictions: {country: 'ca'},
-        fields: ['geometry', 'formatted_address']
-      });
-      ac.addListener('place_changed', function() {
-        var place = ac.getPlace();
-        if (!place.geometry) return;
-        var lat = place.geometry.location.lat();
-        var lng = place.geometry.location.lng();
-        window.location.href = '/soumission?lat=' + lat + '&lng=' + lng + '&addr=' + encodeURIComponent(place.formatted_address);
-      });
+      // Hero search bar
+      var heroInput = document.getElementById('heroAddress');
+      if (heroInput) {
+        var heroAc = new google.maps.places.Autocomplete(heroInput, {
+          types: ['address'],
+          componentRestrictions: {country: 'ca'},
+          fields: ['geometry', 'formatted_address']
+        });
+        heroAc.addListener('place_changed', function() {
+          var place = heroAc.getPlace();
+          if (!place.geometry) return;
+          var lat = place.geometry.location.lat();
+          var lng = place.geometry.location.lng();
+          window.location.href = '/soumission?lat=' + lat + '&lng=' + lng + '&addr=' + encodeURIComponent(place.formatted_address);
+        });
+      }
+      // Float sidebar search
+      var floatInput = document.getElementById('floatAddress');
+      if (floatInput) {
+        var floatAc = new google.maps.places.Autocomplete(floatInput, {
+          types: ['address'],
+          componentRestrictions: {country: 'ca'},
+          fields: ['geometry', 'formatted_address']
+        });
+        floatAc.addListener('place_changed', function() {
+          var place = floatAc.getPlace();
+          if (!place.geometry) return;
+          var lat = place.geometry.location.lat();
+          var lng = place.geometry.location.lng();
+          window.location.href = '/soumission?lat=' + lat + '&lng=' + lng + '&addr=' + encodeURIComponent(place.formatted_address);
+        });
+      }
     }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&libraries=places&callback=initFloatAutocomplete" async defer></script>
