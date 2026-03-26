@@ -65,22 +65,22 @@
     .hero-bg{position:absolute;inset:0}
     .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.5;filter:contrast(1.1)}
     .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.2) 0%,rgba(20,18,16,.5) 50%,rgba(20,18,16,.95) 100%)}
-    .hero-content{position:relative;z-index:2;padding:0 28px 80px;max-width:1200px;margin:0 auto;width:100%}
+    .hero-content{position:relative;z-index:2;padding:0 28px 80px;max-width:1200px;margin:0 auto;width:100%;text-align:center}
     .hero-overline{font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px;display:inline-flex;align-items:center;gap:12px}
     .hero-overline::before{content:'';width:40px;height:1px;background:var(--gold)}
-    .hero h1{font-size:clamp(2.8rem,6vw,5rem);color:#fff;max-width:800px;margin-bottom:24px;font-weight:400}
+    .hero h1{font-size:clamp(2.8rem,6vw,5rem);color:#fff;max-width:800px;margin-bottom:24px;font-weight:400;text-align:left}
     .hero h1 em{font-style:italic;color:var(--gold-light)}
-    .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.5);max-width:520px;margin-bottom:40px;line-height:1.8;font-weight:300}
-    .hero-search{max-width:600px;margin-bottom:32px}
-    .hero-search-label{font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px;display:block}
+    .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.5);max-width:520px;margin-bottom:48px;line-height:1.8;font-weight:300;text-align:left}
+    .hero-search{max-width:760px;margin-bottom:32px}
+    .hero-search-label{font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px;display:block;text-align:left}
     .hero-search-wrap{position:relative;display:flex;gap:0}
-    .hero-search-wrap input{flex:1;padding:20px 20px 20px 52px;border:2px solid rgba(255,255,255,.15);border-radius:10px 0 0 10px;font-size:1.05rem;font-family:'Outfit',sans-serif;color:var(--text);background:rgba(255,255,255,.95);backdrop-filter:blur(8px);transition:border-color .3s}
-    .hero-search-wrap input:focus{outline:none;border-color:var(--gold)}
+    .hero-search-wrap input{flex:1;padding:24px 24px 24px 56px;border:2px solid rgba(255,255,255,.2);border-radius:12px 0 0 12px;font-size:1.15rem;font-family:'Outfit',sans-serif;color:var(--text);background:rgba(255,255,255,.97);transition:border-color .3s}
+    .hero-search-wrap input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,149,44,.15)}
     .hero-search-wrap input::placeholder{color:var(--text-muted)}
-    .hero-search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--text-muted);z-index:2}
-    .hero-search-btn{background:var(--gold);color:var(--dark);border:none;padding:20px 28px;border-radius:0 10px 10px 0;font-family:'Outfit',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .3s}
+    .hero-search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:1.3rem;color:var(--text-muted);z-index:2}
+    .hero-search-btn{background:var(--gold);color:var(--dark);border:none;padding:24px 36px;border-radius:0 12px 12px 0;font-family:'Outfit',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .3s}
     .hero-search-btn:hover{background:var(--gold-light)}
-    .hero-search-hint{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:8px}
+    .hero-search-hint{font-size:.82rem;color:rgba(255,255,255,.4);margin-top:10px;text-align:left}
     .hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:6px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .3s}
     .btn-gold{background:var(--gold);color:var(--dark)}.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,149,44,.3)}
