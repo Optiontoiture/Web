@@ -858,18 +858,15 @@
       if(!GK){alert('Clé Gemini non configurée');return}
       var bx=document.getElementById('aiBox'),ph=document.getElementById('aiPh'),ld=document.getElementById('aiLd'),bt=document.getElementById('aiBtn');
       if(ph)ph.style.display='none';ld.classList.add('active');bt.disabled=true;bx.classList.remove('has-img');
-      // Get current panorama angle
       var pov=_pano.getPov(),heading=Math.round(pov.heading||0),pitch=Math.round(pov.pitch||15);
       var z=_pano.getZoom()||1,fov=Math.round(180/Math.pow(2,z));
-      var captureUrl='https://maps.googleapis.com/maps/api/streetview?size=800x500&location='+_RD.lat+','+_RD.lng+'&heading='+heading+'&pitch='+pitch+'&fov='+fov+'&key='+SOLAR_KEY;
+      // Use local proxy to avoid CORS
+      var proxyUrl='/api/streetview?lat='+_RD.lat+'&lng='+_RD.lng+'&heading='+heading+'&pitch='+pitch+'&fov='+fov;
       try{
-        // Load via <img> + canvas to get base64 (avoids CORS fetch issue)
-        var b64data=await new Promise(function(resolve,reject){
-          var img=new Image();img.crossOrigin='anonymous';
-          img.onload=function(){try{var c=document.createElement('canvas');c.width=800;c.height=500;c.getContext('2d').drawImage(img,0,0,800,500);resolve(c.toDataURL('image/jpeg',0.85).split(',')[1])}catch(e){reject(e)}};
-          img.onerror=function(){reject(new Error('Impossible de capturer l\'image. Activez Street View Static API dans Google Cloud.'))};
-          img.src=captureUrl;
-        });
+        var r=await fetch(proxyUrl);
+        if(!r.ok)throw new Error('Erreur capture image ('+r.status+'). Vérifiez que Street View Static API est activée.');
+        var bl=await r.blob();
+        var b64data=await new Promise(function(rs,rj){var rd=new FileReader();rd.onloadend=function(){rs(rd.result.split(',')[1])};rd.onerror=rj;rd.readAsDataURL(bl)});
         var rp=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key='+GK,{
           method:'POST',headers:{'Content-Type':'application/json'},
           body:JSON.stringify({contents:[{parts:[{inlineData:{mimeType:'image/jpeg',data:b64data}},{text:'Change the roof color of this house to '+_selCol.n+' ('+_selCol.h+') asphalt shingles "'+_selCol.d+'". Keep everything else exactly the same — walls, windows, trees, sky, ground. Only modify the roof shingle color. Photorealistic result.'}]}],generationConfig:{responseModalities:['Text','Image']}})
@@ -882,7 +879,7 @@
         else throw new Error('Aucune image générée par l\'IA');
       }catch(e){
         console.error('vizRoof:',e);ld.classList.remove('active');
-        bx.innerHTML='<div class="aiph"><p style="color:var(--red);font-size:.9rem">'+e.message+'</p><p style="font-size:.75rem;color:var(--text-muted);margin-top:8px">Vérifiez que <strong>Street View Static API</strong> est activée dans Google Cloud Console.</p></div>';
+        bx.innerHTML='<div class="aiph"><p style="color:var(--red);font-size:.9rem">'+e.message+'</p></div>';
       }finally{ld.classList.remove('active');bt.disabled=false}
     }
 
