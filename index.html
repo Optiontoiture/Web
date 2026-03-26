@@ -573,6 +573,16 @@
       <div class="modal-results" id="modalResults" style="display:none">
         <h2 style="font-size:1.6rem;text-align:center;margin-bottom:4px">Estimation de votre toiture</h2>
         <p class="modal-address" id="modalAddress"></p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;border-radius:10px;overflow:hidden">
+          <div style="position:relative">
+            <img id="modalSatellite" src="" alt="Vue satellite" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:10px">
+            <span style="position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,.6);color:#fff;font-size:.65rem;padding:3px 8px;border-radius:4px;font-weight:600">🛰 Satellite</span>
+          </div>
+          <div style="position:relative">
+            <img id="modalStreet" src="" alt="Vue Street View" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:10px">
+            <span style="position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,.6);color:#fff;font-size:.65rem;padding:3px 8px;border-radius:4px;font-weight:600">📷 Street View</span>
+          </div>
+        </div>
         <div class="modal-stats">
           <div class="modal-stat"><div class="modal-stat-val" id="modalArea">—</div><div class="modal-stat-label">Surface totale (pi²)</div></div>
           <div class="modal-stat"><div class="modal-stat-val" id="modalSegments">—</div><div class="modal-stat-label">Segments de toit</div></div>
@@ -687,12 +697,11 @@
 
       fetch(url)
         .then(function(r){ if(!r.ok) throw new Error('err'); return r.json(); })
-        .then(function(data){ showModalResults(data, address); })
+        .then(function(data){ showModalResults(data, address, lat, lng); })
         .catch(function(){
-          // Retry with LOW quality
           fetch(url.replace('MEDIUM','LOW'))
             .then(function(r){ if(!r.ok) throw new Error('err'); return r.json(); })
-            .then(function(data){ showModalResults(data, address); })
+            .then(function(data){ showModalResults(data, address, lat, lng); })
             .catch(function(){
               document.getElementById('modalLoading').style.display = 'none';
               document.getElementById('modalError').style.display = 'block';
@@ -700,7 +709,7 @@
         });
     }
 
-    function showModalResults(data, address) {
+    function showModalResults(data, address, lat, lng) {
       var s = data.solarPotential;
       if (!s || !s.wholeRoofStats) {
         document.getElementById('modalLoading').style.display = 'none';
@@ -721,6 +730,12 @@
       document.getElementById('modalArea').textContent = Math.round(areaSqft).toLocaleString('fr-CA');
       document.getElementById('modalSegments').textContent = segs.length;
       document.getElementById('modalTotal').textContent = fmtPrice(low) + ' — ' + fmtPrice(high);
+
+      // Satellite + Street View images
+      var imgLat = data.center ? data.center.latitude : lat;
+      var imgLng = data.center ? data.center.longitude : lng;
+      document.getElementById('modalSatellite').src = 'https://maps.googleapis.com/maps/api/staticmap?center=' + imgLat + ',' + imgLng + '&zoom=20&size=400x300&maptype=satellite&key=' + SOLAR_KEY;
+      document.getElementById('modalStreet').src = 'https://maps.googleapis.com/maps/api/streetview?size=400x300&location=' + imgLat + ',' + imgLng + '&fov=90&pitch=10&key=' + SOLAR_KEY;
 
       document.getElementById('modalLoading').style.display = 'none';
       document.getElementById('modalResults').style.display = 'block';
