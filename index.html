@@ -267,15 +267,6 @@
     .fixed-form-header h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600}
     .fixed-form-header p{font-size:.72rem;color:rgba(255,255,255,.5);margin-top:4px}
     .fixed-form-body{padding:16px 20px;overflow-y:auto;flex:1}
-    .float-search{margin-bottom:16px}
-    .float-search label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
-    .float-search input{width:100%;padding:12px 14px 12px 36px;border:2px solid var(--border);border-radius:8px;font-size:.88rem;font-family:'Outfit',sans-serif;color:var(--text);background:var(--cream-light);transition:border-color .3s}
-    .float-search input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,149,44,.12)}
-    .float-search input::placeholder{color:var(--text-muted)}
-    .float-search-wrap{position:relative}
-    .float-search-wrap .ico{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:.9rem;color:var(--text-muted)}
-    .float-divider{height:1px;background:var(--border);margin:16px 0}
-    .float-divider-text{text-align:center;font-size:.72rem;color:var(--text-muted);margin:-8px 0 0;background:var(--white);display:inline-block;padding:0 8px;position:relative;left:50%;transform:translateX(-50%)}
     @media(max-width:1200px){.fixed-form{display:none}}
   </style>
 </head>
@@ -535,23 +526,12 @@
   <!-- FIXED FLOATING FORM -->
   <aside class="fixed-form">
     <div class="fixed-form-header">
-      <h3>Soumission instantanée</h3>
-      <p>Entrez votre adresse pour une estimation en temps réel</p>
+      <h3>Soumission gratuite</h3>
+      <p>Réponse en moins de 24h</p>
     </div>
     <div class="fixed-form-body">
-      <div class="float-search">
-        <label>Estimation par satellite</label>
-        <div class="float-search-wrap">
-          <span class="ico">📍</span>
-          <input type="text" id="floatAddress" placeholder="Votre adresse..." autocomplete="off">
-        </div>
-      </div>
-      <div class="float-divider"></div>
-      <div class="float-divider-text">ou remplissez le formulaire</div>
-      <div style="margin-top:16px">
-        <script src="https://js-na3.hsforms.net/forms/embed/342479210.js" defer></script>
-        <div class="hs-form-frame" data-region="na3" data-form-id="5381510f-88aa-42fd-8032-bbbb8aa469c7" data-portal-id="342479210"></div>
-      </div>
+      <script src="https://js-na3.hsforms.net/forms/embed/342479210.js" defer></script>
+      <div class="hs-form-frame" data-region="na3" data-form-id="5381510f-88aa-42fd-8032-bbbb8aa469c7" data-portal-id="342479210"></div>
     </div>
   </aside>
 
@@ -607,22 +587,6 @@
         });
         heroAc.addListener('place_changed', function() {
           var place = heroAc.getPlace();
-          if (!place.geometry) return;
-          var lat = place.geometry.location.lat();
-          var lng = place.geometry.location.lng();
-          window.location.href = '/soumission?lat=' + lat + '&lng=' + lng + '&addr=' + encodeURIComponent(place.formatted_address);
-        });
-      }
-      // Float sidebar search
-      var floatInput = document.getElementById('floatAddress');
-      if (floatInput) {
-        var floatAc = new google.maps.places.Autocomplete(floatInput, {
-          types: ['address'],
-          componentRestrictions: {country: 'ca'},
-          fields: ['geometry', 'formatted_address']
-        });
-        floatAc.addListener('place_changed', function() {
-          var place = floatAc.getPlace();
           if (!place.geometry) return;
           var lat = place.geometry.location.lat();
           var lng = place.geometry.location.lng();
