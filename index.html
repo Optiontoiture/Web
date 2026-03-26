@@ -616,7 +616,7 @@
   <script>
     // Auto-resize iframe based on content height
     window.addEventListener('message', function(e) {
-      if (e.data && e.data.type === 'optimeResize') {
+      if (e.data && e.data.type === 'optime-resize') {
         var frame = document.getElementById('optimeCalc');
         if (frame) frame.style.height = e.data.height + 'px';
       }
