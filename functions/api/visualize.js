@@ -10,7 +10,7 @@ export async function onRequest(context) {
   const colorDesc = url.searchParams.get('desc') || 'Dark gray';
 
   const MAPS_KEY = 'AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU';
-  const GEMINI_KEY = 'AIzaSyCcODZGJKuokABxZir1ZGxzKm3HY9NGmIk';
+  const GEMINI_KEY = context.env.GEMINI_KEY;
 
   if (!lat || !lng) {
     return new Response(JSON.stringify({error: 'Missing lat/lng'}), {
