@@ -429,12 +429,15 @@
       <div class="sellbl" id="selLbl"></div>
 
       <!-- AI Preview (compact) -->
-      <div class="aipv"><div class="aibox" id="aiBox">
-        <div class="aiph" id="aiPh"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;fill:var(--border);margin:0 auto 6px;display:block"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><p style="font-size:.82rem">Sélectionnez une couleur puis visualisez-la sur votre maison</p></div>
-        <div class="aild" id="aiLd"><div class="spinner"></div><p style="color:var(--text-light);font-size:.85rem">L'IA modifie la couleur du toit...</p></div>
-      </div>
-      <button class="aibtn" id="aiBtn" disabled onclick="vizRoof()">✨ Visualiser sur ma maison</button>
-      <p style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Gemini AI • ~10 sec</p>
+      <div class="aipv">
+        <div id="svPano" style="display:none;width:100%;height:350px;border-radius:var(--radius-lg);overflow:hidden;border:2px solid var(--gold);margin-bottom:4px"></div>
+        <p id="svHint" style="display:none;font-size:.72rem;color:var(--text-muted);text-align:center;margin-bottom:8px">↕ Bougez et zoomez pour trouver le meilleur angle de votre toit</p>
+        <div class="aibox" id="aiBox">
+          <div class="aiph" id="aiPh"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;fill:var(--border);margin:0 auto 6px;display:block"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><p style="font-size:.82rem">Le résultat IA apparaîtra ici après avoir cliqué « Visualiser »</p></div>
+          <div class="aild" id="aiLd"><div class="spinner"></div><p style="color:var(--text-light);font-size:.85rem">L'IA modifie la couleur du toit...</p></div>
+        </div>
+        <button class="aibtn" id="aiBtn" disabled onclick="vizRoof()">✨ Visualiser sur ma maison</button>
+        <p style="font-size:.68rem;color:var(--text-muted);margin-top:6px">Gemini AI • ~10 sec</p>
       </div>
     </div>
 
@@ -805,10 +808,19 @@
       document.getElementById('iStories').textContent = stories;
       document.getElementById('iEstRange').textContent = fmtPrice(low) + ' — ' + fmtPrice(high);
 
-      // Pre-load Street View into AI preview box
-      var aiBox = document.getElementById('aiBox');
-      aiBox.classList.add('has-img');
-      aiBox.innerHTML = '<img src="' + _svUrl + '" alt="Votre maison" style="width:100%;border-radius:12px">';
+      // Show interactive Street View panorama
+      var panoDiv = document.getElementById('svPano');
+      panoDiv.style.display = 'block';
+      document.getElementById('svHint').style.display = 'block';
+      _pano = new google.maps.StreetViewPanorama(panoDiv, {
+        position: {lat: imgLat, lng: imgLng},
+        pov: {heading: 0, pitch: 15},
+        zoom: 1,
+        addressControl: false,
+        fullscreenControl: true,
+        motionTracking: false,
+        motionTrackingControl: false
+      });
       document.getElementById('aiBtn').disabled = !_selCol;
 
       // Show all inline sections
@@ -821,7 +833,7 @@
     }
 
     // ═══ INLINE SOUMISSION: STATE ═══
-    var _RD = null, _selCol = null, _svUrl = '';
+    var _RD = null, _selCol = null, _svUrl = '', _pano = null;
     var GK = 'AIzaSyCcODZGJKuokABxZir1ZGxzKm3HY9NGmIk';
 
     // ═══ GAF COLORS ═══
@@ -832,7 +844,7 @@
     ]};
     function _initC(){var h=document.getElementById('hdC'),b=document.getElementById('bdC');if(!h)return;_GAF.hd.forEach(function(c){h.appendChild(_msw(c))});_GAF.bd.forEach(function(c){b.appendChild(_msw(c))})}
     function _msw(c){var d=document.createElement('div');d.className='csw';d.innerHTML='<div class="swc" style="background:'+c.h+'"></div><div class="swn">'+c.n+'</div>';d.onclick=function(){_selC(c,d)};return d}
-    function _selC(c,el){document.querySelectorAll('.csw').forEach(function(s){s.classList.remove('sel')});el.classList.add('sel');_selCol=c;document.getElementById('selLbl').textContent=c.n+' — '+c.d;document.getElementById('aiBtn').disabled=!_svUrl;_updSum()}
+    function _selC(c,el){document.querySelectorAll('.csw').forEach(function(s){s.classList.remove('sel')});el.classList.add('sel');_selCol=c;document.getElementById('selLbl').textContent=c.n+' — '+c.d;document.getElementById('aiBtn').disabled=!_pano;_updSum()}
 
     // ═══ ACCESSORIES ═══
     var _ACC=[
@@ -850,9 +862,14 @@
     function _updSum(){if(!_RD)return;document.getElementById('sumSh').textContent=fmtPrice(_RD.adj);document.getElementById('sumCol').textContent=_selCol?_selCol.n:'Non sélectionnée';var a=0;document.querySelectorAll('.eq input').forEach(function(i){a+=parseInt(i.value||0)*parseFloat(i.dataset.pr||0)});document.getElementById('sumAcc').textContent=fmtPrice(a);var t=_RD.adj+a;document.getElementById('sumTot').textContent=fmtPrice(t*0.85)+' — '+fmtPrice(t*1.25)}
 
     // ═══ AI VISUALIZATION ═══
-    async function vizRoof(){if(!_selCol||!_svUrl)return;if(!GK){alert('Clé Gemini non configurée');return}
-    var bx=document.getElementById('aiBox'),ph=document.getElementById('aiPh'),ld=document.getElementById('aiLd'),bt=document.getElementById('aiBtn');ph.style.display='none';ld.classList.add('active');bt.disabled=true;
-    try{var r=await fetch(_svUrl);var bl=await r.blob();var b6=await new Promise(function(rs,rj){var rd=new FileReader();rd.onloadend=function(){rs(rd.result)};rd.onerror=rj;rd.readAsDataURL(bl)});
+    async function vizRoof(){if(!_selCol||!_RD)return;if(!GK){alert('Clé Gemini non configurée');return}
+    var bx=document.getElementById('aiBox'),ph=document.getElementById('aiPh'),ld=document.getElementById('aiLd'),bt=document.getElementById('aiBtn');ph.style.display='none';ld.classList.add('active');bt.disabled=true;bx.classList.remove('has-img');
+    try{
+      // Capture current Street View angle from panorama
+      var heading=0,pitch=15,fov=90;
+      if(_pano){var pov=_pano.getPov();heading=Math.round(pov.heading);pitch=Math.round(pov.pitch);var z=_pano.getZoom()||1;fov=Math.round(180/Math.pow(2,z))}
+      var captureUrl='https://maps.googleapis.com/maps/api/streetview?size=800x500&location='+_RD.lat+','+_RD.lng+'&heading='+heading+'&pitch='+pitch+'&fov='+fov+'&key='+SOLAR_KEY;
+      var r=await fetch(captureUrl);var bl=await r.blob();var b6=await new Promise(function(rs,rj){var rd=new FileReader();rd.onloadend=function(){rs(rd.result)};rd.onerror=rj;rd.readAsDataURL(bl)});
     var rp=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key='+GK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{inlineData:{mimeType:'image/jpeg',data:b6.split(',')[1]}},{text:'Change the roof color of this house to '+_selCol.n+' ('+_selCol.h+') asphalt shingles "'+_selCol.d+'". Keep everything else exactly the same. Only modify the roof. Photorealistic.'}]}],generationConfig:{responseModalities:['Text','Image']}})});
     var da=await rp.json();var pts=da.candidates&&da.candidates[0]&&da.candidates[0].content&&da.candidates[0].content.parts||[];var ip=pts.find(function(p){return p.inlineData});
     if(ip){bx.classList.add('has-img');bx.innerHTML='<img src="data:'+ip.inlineData.mimeType+';base64,'+ip.inlineData.data+'" alt="Visualisation '+_selCol.n+'">';}else throw new Error('no img');
