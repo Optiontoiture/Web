@@ -824,7 +824,6 @@
 
     // ═══ INLINE SOUMISSION: STATE ═══
     var _RD = null, _selCol = null, _svUrl = '', _pano = null;
-    var GK = 'AIzaSyCcODZGJKuokABxZir1ZGxzKm3HY9NGmIk';
 
     // ═══ GAF COLORS ═══
     var _GAF = {hd:[
@@ -855,28 +854,19 @@
     async function vizRoof(){
       if(!_selCol){alert('Choisissez une couleur de bardeaux d\'abord!');return}
       if(!_RD||!_pano){alert('Analysez une adresse d\'abord');return}
-      if(!GK){alert('Clé Gemini non configurée');return}
       var bx=document.getElementById('aiBox'),ph=document.getElementById('aiPh'),ld=document.getElementById('aiLd'),bt=document.getElementById('aiBtn');
       if(ph)ph.style.display='none';ld.classList.add('active');bt.disabled=true;bx.classList.remove('has-img');
       var pov=_pano.getPov(),heading=Math.round(pov.heading||0),pitch=Math.round(pov.pitch||15);
       var z=_pano.getZoom()||1,fov=Math.round(180/Math.pow(2,z));
-      // Use local proxy to avoid CORS
-      var proxyUrl='/api/streetview?lat='+_RD.lat+'&lng='+_RD.lng+'&heading='+heading+'&pitch='+pitch+'&fov='+fov;
       try{
-        var r=await fetch(proxyUrl);
-        if(!r.ok)throw new Error('Erreur capture image ('+r.status+'). Vérifiez que Street View Static API est activée.');
-        var bl=await r.blob();
-        var b64data=await new Promise(function(rs,rj){var rd=new FileReader();rd.onloadend=function(){rs(rd.result.split(',')[1])};rd.onerror=rj;rd.readAsDataURL(bl)});
-        var rp=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent?key='+GK,{
-          method:'POST',headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({contents:[{parts:[{inlineData:{mimeType:'image/jpeg',data:b64data}},{text:'Change the roof color of this house to '+_selCol.n+' ('+_selCol.h+') asphalt shingles "'+_selCol.d+'". Keep everything else exactly the same — walls, windows, trees, sky, ground. Only modify the roof shingle color. Photorealistic result.'}]}],generationConfig:{responseModalities:['Text','Image']}})
-        });
-        var da=await rp.json();
-        if(da.error)throw new Error(da.error.message||'Erreur API Gemini');
+        var apiUrl='/api/visualize?lat='+_RD.lat+'&lng='+_RD.lng+'&heading='+heading+'&pitch='+pitch+'&fov='+fov+'&color='+encodeURIComponent(_selCol.n)+'&hex='+encodeURIComponent(_selCol.h)+'&desc='+encodeURIComponent(_selCol.d);
+        var r=await fetch(apiUrl);
+        var da=await r.json();
+        if(da.error)throw new Error(da.error);
         var pts=(da.candidates&&da.candidates[0]&&da.candidates[0].content&&da.candidates[0].content.parts)||[];
         var ip=pts.find(function(p){return p.inlineData});
         if(ip){bx.classList.add('has-img');bx.innerHTML='<img src="data:'+ip.inlineData.mimeType+';base64,'+ip.inlineData.data+'" alt="Visualisation '+_selCol.n+'" style="width:100%;border-radius:12px">';}
-        else throw new Error('Aucune image générée par l\'IA');
+        else throw new Error('Aucune image générée');
       }catch(e){
         console.error('vizRoof:',e);ld.classList.remove('active');
         bx.innerHTML='<div class="aiph"><p style="color:var(--red);font-size:.9rem">'+e.message+'</p></div>';
