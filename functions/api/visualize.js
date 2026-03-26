@@ -25,10 +25,15 @@ export async function onRequest(context) {
     const svResponse = await fetch(svUrl);
     if (!svResponse.ok) throw new Error('Street View fetch failed: ' + svResponse.status);
     const svBuffer = await svResponse.arrayBuffer();
-    const svBase64 = btoa(String.fromCharCode(...new Uint8Array(svBuffer)));
+    const bytes = new Uint8Array(svBuffer);
+    let binary = '';
+    for (let i = 0; i < bytes.length; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    const svBase64 = btoa(binary);
 
     // 2. Call Gemini API with image
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent?key=${GEMINI_KEY}`;
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-preview-image-generation:generateContent?key=${GEMINI_KEY}`;
     const geminiBody = {
       contents: [{
         parts: [
@@ -58,7 +63,7 @@ export async function onRequest(context) {
 
     if (geminiData.error) {
       // Try fallback model
-      const fallbackUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-image:generateContent?key=${GEMINI_KEY}`;
+      const fallbackUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image-preview:generateContent?key=${GEMINI_KEY}`;
       const fallbackResponse = await fetch(fallbackUrl, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
