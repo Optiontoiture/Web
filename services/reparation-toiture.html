@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réparation de toiture et infiltrations | Urgence 7j/7 | Option Toiture</title>
+  <meta name="description" content="Réparation de toiture, infiltrations d'eau et bardeaux arrachés sur la Rive-Sud. Service d'urgence 7j/7. Diagnostic précis, intervention rapide.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.optiontoiture.com/services/reparation-toiture">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Réparation de toiture",
+    "description": "Réparation de toiture, infiltrations d'eau et bardeaux arrachés sur la Rive-Sud. Service d'urgence 7j/7. Diagnostic précis, intervention rapide.",
+    "provider": {
+      "@type": "RoofingContractor",
+      "name": "Option Toiture Inc.",
+      "telephone": "+15148354820",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3320 route 112",
+        "addressLocality": "Marieville",
+        "addressRegion": "QC",
+        "postalCode": "J3M 1P1",
+        "addressCountry": "CA"
+      }
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 45.45, "longitude": -73.17 },
+      "geoRadius": "50000"
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Outfit', system-ui, sans-serif;
+      --color-bg: #0a0a0a;
+      --color-surface: #141414;
+      --color-surface-2: #1e1e1e;
+      --color-text: #f0ece4;
+      --color-text-muted: #a09a8e;
+      --color-accent: #c8a96e;
+      --color-accent-hover: #d4ba82;
+      --color-border: rgba(200,169,110,0.15);
+      --color-white: #ffffff;
+      --container: 1200px;
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.03;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+    a { color: var(--color-accent); text-decoration: none; transition: color .3s; }
+    a:hover { color: var(--color-accent-hover); }
+    img { max-width: 100%; height: auto; display: block; }
+    em { font-style: italic; color: var(--color-accent); }
+
+    /* ── HEADER ── */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 16px 0;
+      background: rgba(10,10,10,0.3);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid transparent;
+      transition: all .4s;
+    }
+    .site-header.scrolled {
+      background: rgba(10,10,10,0.92);
+      border-bottom-color: var(--color-border);
+      padding: 10px 0;
+    }
+    .header-inner {
+      max-width: var(--container); margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { height: 48px; transition: height .3s; }
+    .site-header.scrolled .logo { height: 38px; }
+
+    /* NAV */
+    .main-nav { display: flex; align-items: center; gap: 8px; }
+    .main-nav a {
+      font-family: var(--font-body); font-size: 0.88rem; font-weight: 400;
+      color: var(--color-text-muted); padding: 8px 14px;
+      border-radius: 6px; transition: all .3s; white-space: nowrap;
+    }
+    .main-nav a:hover, .main-nav a.active {
+      color: var(--color-text); background: rgba(200,169,110,0.08);
+    }
+    .main-nav a.active { color: var(--color-accent); }
+
+    /* DROPDOWN */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown > a {
+      display: flex; align-items: center; gap: 4px;
+    }
+    .nav-dropdown > a::after {
+      content: '';
+      border: solid var(--color-text-muted);
+      border-width: 0 1.5px 1.5px 0;
+      padding: 2.5px;
+      transform: rotate(45deg);
+      margin-top: -2px;
+      transition: transform .3s;
+    }
+    .nav-dropdown:hover > a::after { transform: rotate(-135deg); }
+    .dropdown-menu {
+      position: absolute; top: 100%; left: 0;
+      background: rgba(20,20,20,0.97);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 8px 0;
+      min-width: 260px;
+      opacity: 0; visibility: hidden;
+      transform: translateY(8px);
+      transition: all .3s;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    }
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1; visibility: visible; transform: translateY(0);
+    }
+    .dropdown-menu a {
+      display: block; padding: 10px 20px;
+      font-size: 0.86rem; color: var(--color-text-muted);
+      border-radius: 0;
+    }
+    .dropdown-menu a:hover {
+      background: rgba(200,169,110,0.08); color: var(--color-accent);
+    }
+
+    /* MOBILE NAV */
+    .hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      width: 32px; height: 24px; position: relative;
+    }
+    .hamburger span {
+      display: block; position: absolute; left: 0; width: 100%; height: 2px;
+      background: var(--color-text); transition: all .3s; border-radius: 2px;
+    }
+    .hamburger span:nth-child(1) { top: 0; }
+    .hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .hamburger span:nth-child(3) { bottom: 0; }
+    .hamburger.open span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+    .header-phone {
+      font-family: var(--font-body); font-size: 0.9rem; font-weight: 500;
+      color: var(--color-accent); white-space: nowrap;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 60vh;
+      display: flex; align-items: center;
+      padding: 160px 0 80px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: var(--color-surface);
+    }
+    .hero-bg .placeholder-img {
+      width: 100%; height: 100%; object-fit: cover; opacity: 0.3;
+      background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-2) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; color: var(--color-text-muted);
+    }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(180deg, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.85) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2; max-width: 720px;
+    }
+    .overline {
+      font-family: var(--font-body); font-size: 0.8rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 3px;
+      color: var(--color-accent); margin-bottom: 16px;
+      display: inline-block;
+    }
+    .hero h1 {
+      font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 600; line-height: 1.15; margin-bottom: 20px;
+    }
+    .hero-desc {
+      font-size: 1.1rem; color: var(--color-text-muted);
+      line-height: 1.8; margin-bottom: 32px; max-width: 600px;
+    }
+    .hero-stats {
+      display: flex; gap: 40px; flex-wrap: wrap;
+    }
+    .stat { text-align: left; }
+    .stat-val {
+      font-family: var(--font-display); font-size: 2rem; font-weight: 700;
+      color: var(--color-accent); line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem; color: var(--color-text-muted);
+      text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 100px 0; }
+    .section-header {
+      margin-bottom: 56px;
+    }
+    .section-header h2 {
+      font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 600; line-height: 1.2;
+    }
+    .section-header p {
+      font-size: 1.05rem; color: var(--color-text-muted);
+      margin-top: 12px; max-width: 560px;
+    }
+
+    /* ── INTRO / DESCRIPTION ── */
+    .intro-section { background: var(--color-bg); }
+    .intro-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .intro-text h2 {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 600; margin-bottom: 24px;
+    }
+    .intro-text p {
+      font-size: 1rem; color: var(--color-text-muted);
+      line-height: 1.85; margin-bottom: 16px;
+    }
+    .intro-img {
+      background: var(--color-surface);
+      border-radius: var(--radius);
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+    .intro-img .placeholder-img {
+      width: 100%; height: 100%; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 4rem; color: var(--color-text-muted);
+      background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-2) 100%);
+    }
+
+    /* ── CHECKLIST ── */
+    .checklist-section { background: var(--color-surface); }
+    .checklist-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    }
+    .check-item {
+      display: flex; gap: 16px; padding: 24px;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      transition: border-color .3s, transform .3s;
+    }
+    .check-item:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-2px);
+    }
+    .check-icon {
+      flex-shrink: 0; width: 32px; height: 32px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      background: rgba(200,169,110,0.15); color: var(--color-accent);
+      font-weight: 700; font-size: 0.9rem;
+    }
+    .check-item h4 {
+      font-family: var(--font-body); font-size: 0.95rem; font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .check-item p {
+      font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6;
+    }
+
+    /* ── FEATURES ── */
+    .features-section { background: var(--color-bg); }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    }
+    .feature-card {
+      padding: 32px 24px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      transition: all .3s;
+    }
+    .feature-card:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    }
+    .feature-icon {
+      font-size: 2rem; margin-bottom: 16px;
+    }
+    .feature-card h3 {
+      font-family: var(--font-body); font-size: 1rem; font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6;
+    }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--color-surface); }
+    .faq-list { max-width: 800px; }
+    .faq-item {
+      border-bottom: 1px solid var(--color-border);
+    }
+    .faq-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 0; background: none; border: none; cursor: pointer;
+      font-family: var(--font-body); font-size: 1rem; font-weight: 500;
+      color: var(--color-text); text-align: left; gap: 16px;
+    }
+    .faq-q svg {
+      flex-shrink: 0; transition: transform .3s;
+      color: var(--color-accent);
+    }
+    .faq-q[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .4s ease, padding .4s ease;
+    }
+    .faq-a.open { max-height: 300px; padding-bottom: 20px; }
+    .faq-a p {
+      font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.8;
+    }
+
+    /* ── OTHER SERVICES ── */
+    .other-svc {
+      background: var(--color-bg); padding: 80px 0;
+    }
+    .other-svc-grid {
+      display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px;
+    }
+    .other-svc-link {
+      display: inline-block; padding: 10px 20px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-size: 0.9rem; color: var(--color-text-muted);
+      transition: all .3s;
+    }
+    .other-svc-link:hover {
+      border-color: var(--color-accent); color: var(--color-accent);
+      transform: translateY(-2px);
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(200,169,110,0.08) 0%, rgba(10,10,10,1) 100%);
+      text-align: center; padding: 100px 0;
+    }
+    .cta-section h2 {
+      font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600; margin-bottom: 16px;
+    }
+    .cta-section p {
+      font-size: 1.05rem; color: var(--color-text-muted); margin-bottom: 32px;
+    }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 8px;
+      font-family: var(--font-body); font-size: 0.95rem; font-weight: 600;
+      transition: all .3s; cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: var(--color-accent); color: var(--color-bg);
+    }
+    .btn-primary:hover {
+      background: var(--color-accent-hover); transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200,169,110,0.3);
+      color: var(--color-bg);
+    }
+    .btn-outline {
+      background: transparent; color: var(--color-text);
+      border: 1px solid var(--color-border);
+    }
+    .btn-outline:hover {
+      border-color: var(--color-accent); color: var(--color-accent);
+      transform: translateY(-2px);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--color-surface); border-top: 1px solid var(--color-border);
+      padding: 60px 0 24px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 2px;
+      color: var(--color-accent); margin-bottom: 16px;
+    }
+    .footer-col p, .footer-col a {
+      display: block; font-size: 0.88rem; color: var(--color-text-muted);
+      line-height: 1.8;
+    }
+    .footer-col a:hover { color: var(--color-accent); }
+    .footer-bottom {
+      border-top: 1px solid var(--color-border);
+      padding-top: 20px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.8rem; color: var(--color-text-muted);
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .7s, transform .7s;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: .1s; }
+    .reveal-d2 { transition-delay: .2s; }
+    .reveal-d3 { transition-delay: .3s; }
+    .reveal-d4 { transition-delay: .4s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 992px) {
+      .main-nav { display: none; }
+      .main-nav.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 70px; left: 0; right: 0; bottom: 0;
+        background: rgba(10,10,10,0.97);
+        padding: 24px; gap: 4px; z-index: 999;
+        overflow-y: auto;
+      }
+      .main-nav.open .nav-dropdown .dropdown-menu {
+        position: static; opacity: 1; visibility: visible;
+        transform: none; background: transparent; border: none;
+        box-shadow: none; padding: 0 0 0 16px; min-width: 0;
+      }
+      .hamburger { display: block; }
+      .intro-grid { grid-template-columns: 1fr; gap: 32px; }
+      .checklist-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 64px 0; }
+      .hero { min-height: 50vh; padding: 120px 0 60px; }
+      .hero-stats { gap: 24px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="/"><img src="/images/logos/option-toiture-header.png" alt="Option Toiture" class="logo"></a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/">Accueil</a>
+        <div class="nav-dropdown">
+          <a href="/services/reparation-toiture" class="active">Services</a>
+          <div class="dropdown-menu">
+            <a href="/services/installation-toiture">Installation de toiture</a>
+            <a href="/services/reparation-toiture">Réparation de toiture</a>
+            <a href="/services/remplacement-toiture">Remplacement de toiture</a>
+            <a href="/services/ventilation-entretoit">Ventilation d'entretoit</a>
+            <a href="/services/toiture-commerciale">Toiture commerciale</a>
+            <a href="/services/ferblanterie-gouttieres">Ferblanterie et gouttières</a>
+          </div>
+        </div>
+        <a href="/installation-rona">RONA+</a>
+        <a href="/soumission">Soumission</a>
+      </nav>
+      <a href="tel:+15148354820" class="header-phone">📞 514-835-4820</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/photos/chantier-brique-drone.webp" alt="Option Toiture - chantier" style="width:100%;height:100%;object-fit:cover;opacity:.4;">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <span class="overline reveal">Service de réparation</span>
+      <h1 class="reveal reveal-d1">Réparation de toiture <em>rapide et fiable</em></h1>
+      <p class="hero-desc reveal reveal-d2">Bardeaux arrachés, infiltrations d'eau, solins endommagés — notre équipe intervient rapidement pour protéger votre maison et prévenir les dommages coûteux.</p>
+      <div class="hero-stats reveal reveal-d3">
+        
+              <div class="stat">
+                <div class="stat-val">24–48h</div>
+                <div class="stat-label">Délai d'intervention</div>
+              </div>
+              <div class="stat">
+                <div class="stat-val">7j/7</div>
+                <div class="stat-label">Service d'urgence</div>
+              </div>
+              <div class="stat">
+                <div class="stat-val">175$</div>
+                <div class="stat-label">Tarif de base</div>
+              </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO / DESCRIPTION -->
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text reveal">
+          <span class="overline">À propos du service</span>
+          <h2>On répare seulement ce qui doit l'être</h2>
+          <p>Que ce soit à la suite d'une tempête, de vents violents ou simplement en raison de l'usure du temps, notre équipe inspecte minutieusement votre toiture afin de <strong>cibler les interventions nécessaires</strong>. Nous privilégions une approche honnête en réparant uniquement ce qui doit l'être.</p>
+          <p>Chaque réparation commence par un <strong>diagnostic précis de la source du problème</strong>. Infiltration active? Bardeaux soulevés par le vent? Solin de cheminée décollé? Nous identifions la cause exacte et appliquons une réparation durable — pas un pansement temporaire.</p>
+        </div>
+        <div class="intro-img reveal reveal-d2">
+          <img src="/images/photos/chantier-camion-option-toiture.webp" alt="Option Toiture" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CE QUI EST INCLUS -->
+  <section class="checklist-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="overline">Ce qui est inclus</span>
+        <h2>Un service <em>complet</em></h2>
+      </div>
+      <div class="checklist-grid">
+        
+            <div class="check-item">
+              <div class="check-icon">✓</div>
+              <div>
+                <h4>Réparation de bardeaux arrachés</h4>
+                <p>Intervention rapide pour protéger votre maison des intempéries et prévenir les infiltrations.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-icon">✓</div>
+              <div>
+                <h4>Réparation d'infiltrations d'eau</h4>
+                <p>Diagnostic précis de la source et réparation ciblée — intérieur et extérieur.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-icon">✓</div>
+              <div>
+                <h4>Remplacement de solins</h4>
+                <p>Autour des cheminées, fenêtres de toit, murs adjacents et puits de lumière.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-icon">✓</div>
+              <div>
+                <h4>Nettoyage de gouttières</h4>
+                <p>Prévention des obstructions et des dommages liés à l'accumulation d'eau.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-icon">✓</div>
+              <div>
+                <h4>Inspection préventive</h4>
+                <p>Identification proactive des problèmes avant qu'ils ne s'aggravent et ne coûtent cher.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <div class="check-icon">✓</div>
+              <div>
+                <h4>Service d'urgence</h4>
+                <p>Disponible rapidement lors de situations critiques — tempêtes, infiltrations actives.</p>
+              </div>
+            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVANTAGES -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="overline">Pourquoi Option Toiture</span>
+        <h2>Les avantages de <em>travailler avec nous</em></h2>
+      </div>
+      <div class="features-grid">
+        
+            <div class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h3>Intervention rapide</h3>
+              <p>Réponse sous 24 à 48 heures. Service d'urgence disponible 7 jours sur 7 en saison.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔍</div>
+              <h3>Diagnostic précis</h3>
+              <p>Nous trouvons la source exacte du problème — pas de devinettes, pas de travaux inutiles.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">💰</div>
+              <h3>Tarifs transparents</h3>
+              <p>Tarif de base 175$ + 95$/heure par technicien. Pas de surprises sur la facture.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🛡️</div>
+              <h3>Réparation durable</h3>
+              <p>Matériaux de qualité et techniques éprouvées pour une réparation qui tient dans le temps.</p>
+            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="overline">Questions fréquentes</span>
+        <h2>Tout savoir sur <em>réparation de toiture</em></h2>
+      </div>
+      <div class="faq-list reveal">
+        
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Combien coûte une réparation de toiture?</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </button>
+              <div class="faq-a"><p>Le tarif de base est de 175$, plus 95$ de l'heure par technicien. La plupart des réparations courantes (bardeaux arrachés, petit solin) se règlent en 1 à 3 heures. Nous vous donnons une estimation avant de commencer.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Comment savoir si j'ai une infiltration?</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </button>
+              <div class="faq-a"><p>Les signes courants incluent : taches d'eau au plafond, peinture qui pèle, moisissure dans l'entretoit, gouttements lors de fortes pluies. Si vous avez un doute, appelez-nous pour une inspection gratuite.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Est-ce que la réparation est garantie?</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </button>
+              <div class="faq-a"><p>Oui, toutes nos réparations sont garanties. Les matériaux utilisés sont couverts par la garantie du fabricant et notre main-d'œuvre est garantie.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false">
+                <span>Faut-il réparer ou remplacer ma toiture?</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </button>
+              <div class="faq-a"><p>Si votre toiture a moins de 15 ans et que les dommages sont localisés, une réparation est souvent suffisante. Au-delà de 20 ans ou si les problèmes sont généralisés, un remplacement complet est plus rentable à long terme.</p></div>
+            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTRES SERVICES -->
+  <section class="other-svc">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="overline">Nos autres services</span>
+        <h2>Découvrez aussi</h2>
+      </div>
+      <div class="other-svc-grid reveal reveal-d1">
+        <a href="/services/installation-toiture" class="other-svc-link">Installation de toiture</a>
+<a href="/services/remplacement-toiture" class="other-svc-link">Remplacement de toiture</a>
+<a href="/services/ventilation-entretoit" class="other-svc-link">Ventilation d'entretoit</a>
+<a href="/services/toiture-commerciale" class="other-svc-link">Toiture commerciale</a>
+<a href="/services/ferblanterie-gouttieres" class="other-svc-link">Ferblanterie et gouttières</a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <span class="overline reveal">Prêt à commencer?</span>
+      <h2 class="reveal reveal-d1">Votre projet commence <em>ici</em></h2>
+      <p class="reveal reveal-d2">Obtenez une soumission gratuite sans engagement. Notre équipe vous accompagne du début à la fin.</p>
+      <div class="cta-btns reveal reveal-d3">
+        <a href="/soumission" class="btn btn-primary">Obtenir une soumission gratuite</a>
+        <a href="tel:+15148354820" class="btn btn-outline">📞 514-835-4820</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Option Toiture</h4>
+          <p>Fondée en 2012 à Marieville, Option Toiture se spécialise dans l'installation, la réparation et le remplacement de toitures résidentielles et commerciales sur la Rive-Sud de Montréal. Installateur officiel RONA+.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/services/installation-toiture">Installation de toiture</a>
+          <a href="/services/reparation-toiture">Réparation de toiture</a>
+          <a href="/services/remplacement-toiture">Remplacement de toiture</a>
+          <a href="/services/ventilation-entretoit">Ventilation d'entretoit</a>
+          <a href="/services/toiture-commerciale">Toiture commerciale</a>
+          <a href="/services/ferblanterie-gouttieres">Ferblanterie et gouttières</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p><strong>Option Toiture Inc.</strong></p>
+          <p>3320 route 112<br>Marieville, QC J3M 1P1</p>
+          <a href="tel:+15148354820">📞 514-835-4820</a>
+          <a href="mailto:info@optiontoiture.com">✉ info@optiontoiture.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Option Toiture Inc. — Licence RBQ 5665-8412-01 — Membre APCHQ</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('mainNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      nav.classList.toggle('open');
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        // close all
+        document.querySelectorAll('.faq-q').forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.classList.remove('open');
+        });
+        if (!expanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          btn.nextElementSibling.classList.add('open');
+        }
+      });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
