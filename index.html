@@ -48,6 +48,18 @@
     .header-nav{display:flex;align-items:center;gap:4px}
     .header-nav a{font-size:.78rem;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;padding:8px 16px;border-radius:6px;transition:all .3s;letter-spacing:.04em}
     .header-nav a:hover{color:#fff;background:rgba(255,255,255,.08)}
+    .nav-drop{position:relative}
+    .nav-drop>a{display:flex;align-items:center;gap:4px;cursor:pointer}
+    .nav-drop>a::after{content:'';border:solid rgba(255,255,255,.5);border-width:0 1.5px 1.5px 0;padding:2px;transform:rotate(45deg);margin-top:-2px;transition:transform .3s}
+    .nav-drop:hover>a::after{transform:rotate(-135deg)}
+    .nav-drop .drop-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:rgba(20,18,16,.97);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--radius);padding:12px 0;min-width:240px;opacity:0;visibility:hidden;pointer-events:none;transition:all .25s;box-shadow:0 16px 48px rgba(0,0,0,.5);z-index:100}
+    .nav-drop:hover .drop-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+    .drop-menu a{display:block;padding:8px 20px;font-size:.8rem;color:rgba(255,255,255,.6);border-radius:0;white-space:nowrap}
+    .drop-menu a:hover{background:rgba(201,149,44,.1);color:var(--gold-light)}
+    .drop-menu .drop-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);padding:12px 20px 4px;pointer-events:none}
+    .drop-menu .drop-label:first-child{padding-top:4px}
+    .drop-cols{display:grid;grid-template-columns:1fr 1fr;min-width:420px}
+    .drop-col{padding:4px 0}
     .header-right{display:flex;align-items:center;gap:14px}
     .header-phone{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.7);text-decoration:none;transition:color .3s}
     .header-phone:hover{color:var(--gold-light)}
@@ -364,7 +376,48 @@
       <nav class="header-nav">
         <a href="/">Accueil</a>
         <a href="/installation-rona">RONA+</a>
-        <a href="#services">Services</a>
+        <div class="nav-drop">
+          <a>Services</a>
+          <div class="drop-menu">
+            <a href="/services/installation-toiture">Installation de toiture</a>
+            <a href="/services/reparation-toiture">Réparation de toiture</a>
+            <a href="/services/remplacement-toiture">Remplacement de toiture</a>
+            <a href="/services/ventilation-entretoit">Ventilation d'entretoit</a>
+            <a href="/services/toiture-commerciale">Toiture commerciale</a>
+            <a href="/services/ferblanterie-gouttieres">Ferblanterie et gouttières</a>
+          </div>
+        </div>
+        <div class="nav-drop">
+          <a>Secteurs</a>
+          <div class="drop-menu">
+            <div class="drop-cols">
+              <div class="drop-col">
+                <div class="drop-label">Rive-Sud</div>
+                <a href="/couvreur-longueuil/">Longueuil</a>
+                <a href="/couvreur-brossard/">Brossard</a>
+                <a href="/couvreur-boucherville/">Boucherville</a>
+                <a href="/couvreur-saint-lambert/">Saint-Lambert</a>
+                <a href="/couvreur-la-prairie/">La Prairie</a>
+                <a href="/couvreur-candiac/">Candiac</a>
+                <a href="/couvreur-sainte-julie/">Sainte-Julie</a>
+                <a href="/couvreur-saint-bruno-de-montarville/">Saint-Bruno</a>
+                <a href="/couvreur-carignan/">Carignan</a>
+              </div>
+              <div class="drop-col">
+                <div class="drop-label">Montérégie</div>
+                <a href="/couvreur-chambly/">Chambly</a>
+                <a href="/couvreur-richelieu/">Richelieu</a>
+                <a href="/couvreur-marieville/">Marieville</a>
+                <a href="/couvreur-mont-saint-hilaire/">Mont-Saint-Hilaire</a>
+                <a href="/couvreur-saint-jean-sur-richelieu/">Saint-Jean</a>
+                <a href="/couvreur-saint-hyacinthe/">Saint-Hyacinthe</a>
+                <a href="/couvreur-granby/">Granby</a>
+                <a href="/couvreur-bromont/">Bromont</a>
+                <a href="/couvreur-cowansville/">Cowansville</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <a href="#conseils">Conseils</a>
         <a href="tel:+15148354820">Contact</a>
       </nav>
@@ -379,9 +432,20 @@
     <button class="close-btn" onclick="this.parentElement.classList.remove('open')">&#10005;</button>
     <a href="/">Accueil</a>
     <a href="/installation-rona">Installation RONA+</a>
-    <a href="#services" onclick="this.parentElement.classList.remove('open')">Services offerts</a>
-    <a href="#conseils" onclick="this.parentElement.classList.remove('open')">Conseils</a>
-    <a href="tel:+15148354820" onclick="this.parentElement.classList.remove('open')">Contactez-nous</a>
+    <div class="drop-label" style="color:var(--gold);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 0 4px">Services</div>
+    <a href="/services/installation-toiture" onclick="this.closest('.mobile-menu').classList.remove('open')">Installation de toiture</a>
+    <a href="/services/reparation-toiture" onclick="this.closest('.mobile-menu').classList.remove('open')">Réparation de toiture</a>
+    <a href="/services/remplacement-toiture" onclick="this.closest('.mobile-menu').classList.remove('open')">Remplacement de toiture</a>
+    <a href="/services/ventilation-entretoit" onclick="this.closest('.mobile-menu').classList.remove('open')">Ventilation d'entretoit</a>
+    <a href="/services/toiture-commerciale" onclick="this.closest('.mobile-menu').classList.remove('open')">Toiture commerciale</a>
+    <a href="/services/ferblanterie-gouttieres" onclick="this.closest('.mobile-menu').classList.remove('open')">Ferblanterie et gouttières</a>
+    <div class="drop-label" style="color:var(--gold);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 0 4px">Secteurs</div>
+    <a href="/couvreur-longueuil/" onclick="this.closest('.mobile-menu').classList.remove('open')">Longueuil</a>
+    <a href="/couvreur-brossard/" onclick="this.closest('.mobile-menu').classList.remove('open')">Brossard</a>
+    <a href="/couvreur-chambly/" onclick="this.closest('.mobile-menu').classList.remove('open')">Chambly</a>
+    <a href="/couvreur-saint-jean-sur-richelieu/" onclick="this.closest('.mobile-menu').classList.remove('open')">Saint-Jean-sur-Richelieu</a>
+    <a href="/couvreur-granby/" onclick="this.closest('.mobile-menu').classList.remove('open')">Granby</a>
+    <a href="tel:+15148354820" onclick="this.closest('.mobile-menu').classList.remove('open')">Contactez-nous</a>
     <a href="tel:+15148354820">514-835-4820</a>
   </div>
 
