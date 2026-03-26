@@ -306,9 +306,9 @@
     .sumg{margin-top:16px;padding-top:16px;border-top:2px solid var(--gold);text-align:center}.sumg .ov{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}.sumg .tv{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:700}.sumg .nt{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:6px}
 
     /* FLOATING OPTIME FORM */
-    .fixed-form{position:fixed;top:84px;right:28px;width:420px;z-index:80;background:transparent;border-radius:var(--radius-lg);overflow:hidden;max-height:calc(100vh - 100px);display:flex;flex-direction:column;box-shadow:none}
+    .fixed-form{position:fixed;top:84px;right:28px;width:440px;z-index:80;background:transparent;border-radius:var(--radius-lg);overflow:visible;height:calc(100vh - 100px);display:flex;flex-direction:column;box-shadow:none}
     .fixed-form-header{display:none}
-    .fixed-form-body{flex:1;overflow:hidden;min-height:500px}
+    .fixed-form-body{flex:1;overflow:auto}
     @media(max-width:1200px){.fixed-form{display:none}}
 
     /* RESPONSIVE */
@@ -669,7 +669,7 @@
       <p>Réponse en moins de 24h</p>
     </div>
     <div class="fixed-form-body">
-      <iframe src="https://app.optiontoiture.com/formulaire" style="width:100%;height:100%;border:none;border-radius:0;" allowtransparency="true" title="Soumission gratuite"></iframe>
+      <iframe src="https://app.optiontoiture.com/formulaire" style="width:100%;height:700px;border:none;border-radius:16px;" allowtransparency="true" title="Soumission gratuite"></iframe>
     </div>
   </aside>
 
