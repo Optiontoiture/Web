@@ -109,7 +109,7 @@
 
     /* HUBSPOT FORM */
     .form-section{padding:100px 0;background:var(--cream)}
-    .form-wrapper{max-width:680px;margin:0 auto;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:48px;box-shadow:var(--shadow-lg)}
+    .form-wrapper{max-width:780px;margin:0 auto;background:transparent;border:none;border-radius:0;padding:0;box-shadow:none}
 
     /* CALCULATOR */
     .calc-section{padding:100px 0;background:var(--cream)}
@@ -306,10 +306,8 @@
     .sumg{margin-top:16px;padding-top:16px;border-top:2px solid var(--gold);text-align:center}.sumg .ov{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}.sumg .tv{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:700}.sumg .nt{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:6px}
 
     /* FLOATING OPTIME FORM */
-    .fixed-form{position:fixed;top:84px;right:28px;width:420px;z-index:80;background:var(--white);border-radius:var(--radius-lg);box-shadow:0 12px 48px rgba(0,0,0,.18);overflow:hidden;max-height:calc(100vh - 100px);display:flex;flex-direction:column}
-    .fixed-form-header{background:var(--dark);color:#fff;padding:16px 18px;flex-shrink:0}
-    .fixed-form-header h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600}
-    .fixed-form-header p{font-size:.7rem;color:rgba(255,255,255,.5);margin-top:3px}
+    .fixed-form{position:fixed;top:84px;right:28px;width:420px;z-index:80;background:transparent;border-radius:var(--radius-lg);overflow:hidden;max-height:calc(100vh - 100px);display:flex;flex-direction:column;box-shadow:none}
+    .fixed-form-header{display:none}
     .fixed-form-body{flex:1;overflow:hidden;min-height:500px}
     @media(max-width:1200px){.fixed-form{display:none}}
 
