@@ -69,6 +69,7 @@
     .mobile-menu{display:none;position:fixed;inset:0;background:var(--dark);z-index:200;flex-direction:column;padding:100px 32px 32px;opacity:0;transition:opacity .3s}
     .mobile-menu.open{display:flex;opacity:1}
     .mobile-menu a{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:#fff;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .mobile-menu a.sub-link{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:400;padding:10px 0 10px 16px}
     .mobile-menu a:hover{color:var(--gold-light)}
     .mobile-menu .close-btn{position:absolute;top:24px;right:28px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:rgba(255,255,255,.6)}
 
@@ -364,7 +365,39 @@
     .modal-cta-phone a{color:var(--dark);text-decoration:none}
     .modal-retry{display:block;margin:16px auto 0;background:none;border:none;color:var(--gold);font-weight:600;font-size:.85rem;cursor:pointer;font-family:'Outfit',sans-serif}
 
-    @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.services-grid{grid-template-columns:1fr}.steps-grid{flex-direction:column;align-items:center;gap:32px}.steps-grid::before{display:none}.step{max-width:100%}.why-right{grid-template-columns:1fr 1fr}.hero h1{font-size:2.4rem}.guide-table{display:block;overflow-x:auto}.calc-grid{grid-template-columns:1fr}.hero-search-center{position:relative;top:auto;left:auto;transform:none;padding:0 20px;margin-bottom:40px}.hero-search-wrap{flex-direction:column;box-shadow:none}.hero-search-wrap input{border-radius:12px;margin-bottom:8px}.hero-search-btn{border-radius:12px;padding:18px}.modal-stats{grid-template-columns:1fr}.res-stats{grid-template-columns:repeat(2,1fr)}.res-imgs{grid-template-columns:1fr}.ei{grid-template-columns:1fr;gap:6px}.two-col{grid-template-columns:1fr}.calc-optime{padding:48px 0}}
+    @media(max-width:768px){
+      .header-nav,.header-right{display:none}
+      .mobile-toggle{display:block}
+      .services-grid{grid-template-columns:1fr}
+      .steps-grid{flex-direction:column;align-items:center;gap:32px}
+      .steps-grid::before{display:none}
+      .step{max-width:100%}
+      .why-right{grid-template-columns:1fr 1fr}
+      .guide-table{display:block;overflow-x:auto}
+      .calc-grid{grid-template-columns:1fr}
+      .calc-optime{padding:48px 0}
+      /* HERO MOBILE */
+      .hero{min-height:auto;padding-top:80px;padding-bottom:24px}
+      .hero-search-center{position:relative;top:auto;left:auto;transform:none;padding:0 20px;margin-bottom:24px;z-index:3}
+      .hero-search-label{font-size:.7rem;margin-bottom:10px}
+      .hero-search-wrap{flex-direction:column;box-shadow:none;gap:8px}
+      .hero-search-wrap input{border-radius:10px;padding:16px 16px 16px 44px;font-size:1rem;border:2px solid rgba(255,255,255,.2)}
+      .hero-search-icon{left:14px;font-size:1.1rem}
+      .hero-search-btn{border-radius:10px;padding:14px;font-size:.85rem}
+      .hero-search-hint{font-size:.72rem;margin-top:8px}
+      .hero-content{padding:0 20px 16px}
+      .hero-overline{font-size:.6rem;margin-bottom:12px}
+      .hero h1{font-size:2rem;margin-bottom:16px}
+      .hero-sub{font-size:.88rem;margin-bottom:20px;line-height:1.65}
+      .hero-actions{gap:10px}
+      .btn{padding:13px 24px;font-size:.72rem}
+      /* OTHER */
+      .modal-stats{grid-template-columns:1fr}
+      .res-stats{grid-template-columns:repeat(2,1fr)}
+      .res-imgs{grid-template-columns:1fr}
+      .ei{grid-template-columns:1fr;gap:6px}
+      .two-col{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -433,18 +466,18 @@
     <a href="/">Accueil</a>
     <a href="/installation-rona">Installation RONA+</a>
     <div class="drop-label" style="color:var(--gold);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 0 4px">Services</div>
-    <a href="/services/installation-toiture" onclick="this.closest('.mobile-menu').classList.remove('open')">Installation de toiture</a>
-    <a href="/services/reparation-toiture" onclick="this.closest('.mobile-menu').classList.remove('open')">Réparation de toiture</a>
-    <a href="/services/remplacement-toiture" onclick="this.closest('.mobile-menu').classList.remove('open')">Remplacement de toiture</a>
-    <a href="/services/ventilation-entretoit" onclick="this.closest('.mobile-menu').classList.remove('open')">Ventilation d'entretoit</a>
-    <a href="/services/toiture-commerciale" onclick="this.closest('.mobile-menu').classList.remove('open')">Toiture commerciale</a>
-    <a href="/services/ferblanterie-gouttieres" onclick="this.closest('.mobile-menu').classList.remove('open')">Ferblanterie et gouttières</a>
+    <a href="/services/installation-toiture" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Installation de toiture</a>
+    <a href="/services/reparation-toiture" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Réparation de toiture</a>
+    <a href="/services/remplacement-toiture" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Remplacement de toiture</a>
+    <a href="/services/ventilation-entretoit" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Ventilation d'entretoit</a>
+    <a href="/services/toiture-commerciale" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Toiture commerciale</a>
+    <a href="/services/ferblanterie-gouttieres" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Ferblanterie et gouttières</a>
     <div class="drop-label" style="color:var(--gold);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 0 4px">Secteurs</div>
-    <a href="/couvreur-longueuil/" onclick="this.closest('.mobile-menu').classList.remove('open')">Longueuil</a>
-    <a href="/couvreur-brossard/" onclick="this.closest('.mobile-menu').classList.remove('open')">Brossard</a>
-    <a href="/couvreur-chambly/" onclick="this.closest('.mobile-menu').classList.remove('open')">Chambly</a>
-    <a href="/couvreur-saint-jean-sur-richelieu/" onclick="this.closest('.mobile-menu').classList.remove('open')">Saint-Jean-sur-Richelieu</a>
-    <a href="/couvreur-granby/" onclick="this.closest('.mobile-menu').classList.remove('open')">Granby</a>
+    <a href="/couvreur-longueuil/" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Longueuil</a>
+    <a href="/couvreur-brossard/" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Brossard</a>
+    <a href="/couvreur-chambly/" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Chambly</a>
+    <a href="/couvreur-saint-jean-sur-richelieu/" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Saint-Jean-sur-Richelieu</a>
+    <a href="/couvreur-granby/" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Granby</a>
     <a href="tel:+15148354820" onclick="this.closest('.mobile-menu').classList.remove('open')">Contactez-nous</a>
     <a href="tel:+15148354820">514-835-4820</a>
   </div>
