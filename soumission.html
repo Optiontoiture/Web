@@ -64,7 +64,7 @@
     .roof-card h2{font-size:1.6rem;margin-bottom:8px}
     .roof-address{color:var(--text-light);font-size:.9rem;margin-bottom:24px}
 
-    .roof-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
+    .roof-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:32px}
     .roof-stat{background:var(--cream-light);border-radius:var(--radius);padding:20px;text-align:center;border:1px solid var(--border)}
     .roof-stat-val{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gold);line-height:1}
     .roof-stat-label{font-size:.75rem;color:var(--text-muted);margin-top:6px;letter-spacing:.03em}
@@ -108,6 +108,14 @@
     /* FOOTER */
     .site-footer{background:var(--dark);padding:40px 0;text-align:center}
     .site-footer p{font-size:.8rem;color:rgba(255,255,255,.35)}
+
+    /* FIXED FLOATING FORM */
+    .fixed-form{position:fixed;top:84px;right:28px;width:340px;z-index:80;background:var(--white);border-radius:var(--radius-lg);box-shadow:0 12px 48px rgba(0,0,0,.18);overflow:hidden;max-height:calc(100vh - 100px);display:flex;flex-direction:column}
+    .fixed-form-header{background:var(--dark);color:#fff;padding:18px 20px;flex-shrink:0}
+    .fixed-form-header h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600}
+    .fixed-form-header p{font-size:.72rem;color:rgba(255,255,255,.5);margin-top:4px}
+    .fixed-form-body{padding:16px 20px;overflow-y:auto;flex:1}
+    @media(max-width:1100px){.fixed-form{display:none}}
 
     @media(max-width:768px){
       .roof-stats{grid-template-columns:1fr}
@@ -157,7 +165,7 @@
     <div class="loading" id="loading">
       <div class="spinner"></div>
       <p>Analyse de votre toiture en cours...</p>
-      <p style="font-size:.8rem;color:var(--text-muted);margin-top:8px">Imagerie satellite · Calcul de surface · Analyse de pente</p>
+      <p style="font-size:.8rem;color:var(--text-muted);margin-top:8px">Imagerie satellite · Calcul de surface</p>
     </div>
 
     <!-- ERROR -->
@@ -179,10 +187,6 @@
             <div class="roof-stat-label">Surface totale (pi²)</div>
           </div>
           <div class="roof-stat">
-            <div class="roof-stat-val" id="roofPitch">—</div>
-            <div class="roof-stat-label">Pente moyenne</div>
-          </div>
-          <div class="roof-stat">
             <div class="roof-stat-val" id="roofSegments">—</div>
             <div class="roof-stat-label">Segments de toit</div>
           </div>
@@ -195,9 +199,7 @@
         <h2>Estimation de votre projet</h2>
         <div class="estimate-lines">
           <div class="estimate-line"><span class="label">Surface du toit</span><span class="value" id="estArea">—</span></div>
-          <div class="estimate-line"><span class="label">Type de pente</span><span class="value" id="estPente">—</span></div>
           <div class="estimate-line"><span class="label">Prix de base</span><span class="value" id="estBase">—</span></div>
-          <div class="estimate-line"><span class="label">Ajustement pente</span><span class="value" id="estPenteAdj">—</span></div>
         </div>
         <div class="estimate-total">
           <div class="estimate-total-label">Estimation</div>
@@ -220,6 +222,18 @@
     </div>
 
   </div>
+
+  <!-- FIXED FLOATING FORM -->
+  <aside class="fixed-form">
+    <div class="fixed-form-header">
+      <h3>Soumission gratuite</h3>
+      <p>Réponse en moins de 24h</p>
+    </div>
+    <div class="fixed-form-body">
+      <script src="https://js-na3.hsforms.net/forms/embed/342479210.js" defer></script>
+      <div class="hs-form-frame" data-region="na3" data-form-id="5381510f-88aa-42fd-8032-bbbb8aa469c7" data-portal-id="342479210"></div>
+    </div>
+  </aside>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -355,7 +369,6 @@
       // Display roof info
       document.getElementById('roofAddress').textContent = address;
       document.getElementById('roofArea').textContent = Math.round(areaSqft).toLocaleString('fr-CA');
-      document.getElementById('roofPitch').textContent = Math.round(avgPitch) + '°';
       document.getElementById('roofSegments').textContent = segments.length;
 
       // Segment details
@@ -368,7 +381,6 @@
         div.innerHTML = '<span class="segment-name">Segment ' + (i+1) + '</span>'
           + '<span class="segment-details">'
           + '<span>' + Math.round(segSqft).toLocaleString('fr-CA') + ' pi²</span>'
-          + '<span>' + Math.round(seg.pitchDegrees) + '°</span>'
           + '<span>' + getDirection(seg.azimuthDegrees) + '</span>'
           + '</span>';
         segList.appendChild(div);
@@ -382,9 +394,7 @@
       var high = adjusted * MARGIN_HIGH;
 
       document.getElementById('estArea').textContent = Math.round(areaSqft).toLocaleString('fr-CA') + ' pi²';
-      document.getElementById('estPente').textContent = getPenteLabel(penteType) + ' — ' + Math.round(avgPitch) + '°';
-      document.getElementById('estBase').textContent = fmt(base);
-      document.getElementById('estPenteAdj').textContent = '×' + mult.toFixed(2) + ' = ' + fmt(adjusted);
+      document.getElementById('estBase').textContent = fmt(adjusted);
       document.getElementById('estTotal').textContent = fmt(low) + ' — ' + fmt(high);
 
       document.getElementById('results').classList.add('active');
@@ -397,6 +407,19 @@
       document.getElementById('addressInput').value = '';
       document.getElementById('addressInput').focus();
     }
+
+    // Auto-fetch if coming from homepage with URL params
+    function checkUrlParams() {
+      var params = new URLSearchParams(window.location.search);
+      var lat = params.get('lat');
+      var lng = params.get('lng');
+      var addr = params.get('addr');
+      if (lat && lng && addr) {
+        document.getElementById('addressInput').value = decodeURIComponent(addr);
+        fetchSolarData(parseFloat(lat), parseFloat(lng), decodeURIComponent(addr));
+      }
+    }
+    window.addEventListener('load', function() { setTimeout(checkUrlParams, 500); });
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&libraries=places&callback=initAutocomplete" async defer></script>
 
