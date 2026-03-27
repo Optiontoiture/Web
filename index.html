@@ -265,35 +265,25 @@
     .garanties{padding:100px 0;background:var(--cream-light)}
     .garanties-intro{text-align:center;max-width:640px;margin:0 auto 48px;font-size:.95rem;color:var(--text-light);line-height:1.8}
     .garantie-golden{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:2px solid var(--gold);box-shadow:var(--shadow-lg);margin-bottom:32px}
-    .garantie-golden-img{background:var(--white);display:flex;align-items:center;justify-content:center;padding:40px}
-    .golden-badge{text-align:center}
-    .golden-badge .gaf-tag{background:#CC0000;color:#fff;font-size:.6rem;font-weight:800;padding:4px 10px;border-radius:4px;display:inline-block;margin-bottom:12px;letter-spacing:.06em}
-    .golden-badge h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--dark);line-height:1.2}
-    .golden-badge .stars{color:var(--gold);font-size:1.5rem;margin-top:8px;letter-spacing:4px}
-    .golden-badge .badge-sub{font-size:.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
-    .garantie-golden-details{padding:40px}
-    .garantie-golden-details .g-label{background:var(--gold);color:var(--dark);font-size:.6rem;font-weight:800;padding:5px 12px;border-radius:4px;display:inline-block;margin-bottom:16px;letter-spacing:.06em;text-transform:uppercase}
+    .garantie-golden-img{overflow:hidden;position:relative;min-height:360px}
+    .garantie-golden-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .garantie-golden-details{padding:36px 40px}
+    .garantie-golden-details .g-label{background:var(--gold);color:var(--dark);font-size:.6rem;font-weight:800;padding:6px 14px;border-radius:4px;display:inline-block;margin-bottom:16px;letter-spacing:.06em;text-transform:uppercase}
     .garantie-golden-details h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--dark);margin-bottom:20px}
     .garantie-list{list-style:none;padding:0;margin:0}
     .garantie-list li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;font-size:.88rem;color:var(--text-light);line-height:1.6}
-    .garantie-list li::before{content:'✓';flex-shrink:0;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700}
-    .garantie-golden .garantie-list li::before{background:rgba(201,149,44,.15);color:var(--gold-dark)}
+    .garantie-list .check{flex-shrink:0;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;background:rgba(22,163,74,.12);color:#16a34a}
     .garantie-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
     .garantie-card{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--border);overflow:hidden;transition:all .3s}
     .garantie-card:hover{border-color:var(--gold);box-shadow:var(--shadow-lg)}
     .garantie-card-header{padding:32px;text-align:center;background:var(--white);display:flex;align-items:center;justify-content:center;min-height:200px}
     .garantie-card-header img{max-width:180px;width:100%;height:auto}
-    .garantie-card-badge{margin-bottom:12px}
-    .garantie-card-badge .gaf-tag{background:#CC0000;color:#fff;font-size:.55rem;font-weight:800;padding:3px 8px;border-radius:3px;display:inline-block;margin-bottom:8px;letter-spacing:.06em}
-    .garantie-card-badge h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--dark)}
-    .garantie-card-badge .stars{font-size:1rem;letter-spacing:2px}
-    .garantie-card-badge .badge-sub{font-size:.55rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
-    .garantie-card-body{padding:24px 32px 32px}
+    .garantie-card-body{padding:24px 32px 32px;border-top:1px solid var(--border)}
     .garantie-card-body h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--dark);margin-bottom:16px}
-    .garantie-card .garantie-list li::before{background:rgba(100,116,139,.1);color:var(--text-muted)}
+    .garantie-card .check{background:rgba(100,116,139,.1);color:#64748b}
     .garantie-link{display:inline-flex;align-items:center;gap:8px;margin-top:32px;padding:12px 28px;border:1px solid var(--border);border-radius:8px;font-size:.85rem;font-weight:600;color:var(--text-light);text-decoration:none;transition:all .3s}
     .garantie-link:hover{border-color:var(--gold);color:var(--gold)}
-    @media(max-width:768px){.garantie-golden{grid-template-columns:1fr}.garantie-cards{grid-template-columns:1fr}.garanties{padding:64px 0}}
+    @media(max-width:768px){.garantie-golden{grid-template-columns:1fr}.garantie-golden-img{min-height:250px}.garantie-cards{grid-template-columns:1fr}.garanties{padding:64px 0}}
     .cta-final{padding:100px 0;background:var(--gold);text-align:center;position:relative;overflow:hidden}
     .cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(0,0,0,.1),transparent 60%);pointer-events:none}
     .cta-final h2{font-size:clamp(2rem,4vw,3rem);color:var(--dark);margin-bottom:16px}
@@ -664,19 +654,19 @@
         <!-- GOLDEN PLEDGE -->
         <div class="garantie-golden reveal">
           <div class="garantie-golden-img">
-            <img src="/images/garanties/golden-pledge.webp" alt="GAF Golden Pledge — meilleure garantie toiture 50 ans" style="max-width:280px;width:100%;height:auto;filter:drop-shadow(0 8px 24px rgba(0,0,0,.15))">
+            <img src="/images/garanties/golden-pledge.webp" alt="GAF Golden Pledge — meilleure garantie toiture 50 ans">
           </div>
           <div class="garantie-golden-details">
             <span class="g-label">Notre meilleure garantie</span>
             <h3>Golden Pledge®</h3>
             <ul class="garantie-list">
-              <li>Tout ce qui est inclus dans Silver Pledge</li>
-              <li>Garantie main-d'œuvre de 25 ans</li>
-              <li>Couverture matériaux 50 ans non proratée à 100%</li>
-              <li>Coûts d'arrachage et de disposition couverts</li>
-              <li>Inspection professionnelle 40 points par GAF</li>
-              <li>Transférable au prochain propriétaire (dans les 20 ans)</li>
-              <li>La garantie GAF la plus complète</li>
+              <li><span class="check">✓</span>Tout ce qui est inclus dans Silver Pledge</li>
+              <li><span class="check">✓</span>Garantie main-d'œuvre de 25 ans</li>
+              <li><span class="check">✓</span>Couverture matériaux 50 ans non proratée à 100%</li>
+              <li><span class="check">✓</span>Coûts d'arrachage et de disposition couverts</li>
+              <li><span class="check">✓</span>Inspection professionnelle 40 points par GAF</li>
+              <li><span class="check">✓</span>Transférable au prochain propriétaire (dans les 20 ans)</li>
+              <li><span class="check">✓</span>La garantie GAF la plus complète</li>
             </ul>
           </div>
         </div>
@@ -690,10 +680,10 @@
             <div class="garantie-card-body">
               <h4>Garantie Système Plus</h4>
               <ul class="garantie-list">
-                <li>Couverture à vie sur bardeaux &amp; accessoires</li>
-                <li>Période de 50 ans non proratée pour défauts de fabrication</li>
-                <li>Coûts d'arrachage couverts</li>
-                <li>Coûts de main-d'œuvre d'installation couverts</li>
+                <li><span class="check">✓</span>Couverture à vie sur bardeaux &amp; accessoires</li>
+                <li><span class="check">✓</span>Période de 50 ans non proratée pour défauts de fabrication</li>
+                <li><span class="check">✓</span>Coûts d'arrachage couverts</li>
+                <li><span class="check">✓</span>Coûts de main-d'œuvre d'installation couverts</li>
               </ul>
             </div>
           </div>
@@ -704,11 +694,11 @@
             <div class="garantie-card-body">
               <h4>Silver Pledge™</h4>
               <ul class="garantie-list">
-                <li>Tout ce qui est inclus dans Système Plus</li>
-                <li>Garantie main-d'œuvre de 10 ans</li>
-                <li>Coûts de disposition couverts</li>
-                <li>Appuyée par GAF même si l'entrepreneur ferme</li>
-                <li>Couverture matériaux 50 ans non proratée</li>
+                <li><span class="check">✓</span>Tout ce qui est inclus dans Système Plus</li>
+                <li><span class="check">✓</span>Garantie main-d'œuvre de 10 ans</li>
+                <li><span class="check">✓</span>Coûts de disposition couverts</li>
+                <li><span class="check">✓</span>Appuyée par GAF même si l'entrepreneur ferme</li>
+                <li><span class="check">✓</span>Couverture matériaux 50 ans non proratée</li>
               </ul>
             </div>
           </div>
