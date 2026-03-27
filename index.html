@@ -265,8 +265,7 @@
     .garanties{padding:100px 0;background:var(--cream-light)}
     .garanties-intro{text-align:center;max-width:640px;margin:0 auto 48px;font-size:.95rem;color:var(--text-light);line-height:1.8}
     .garantie-golden{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:2px solid var(--gold);box-shadow:var(--shadow-lg);margin-bottom:32px}
-    .garantie-golden-img{background:var(--cream);display:flex;align-items:center;justify-content:center;padding:40px;position:relative;overflow:hidden}
-    .garantie-golden-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,149,44,.08),transparent)}
+    .garantie-golden-img{background:var(--white);display:flex;align-items:center;justify-content:center;padding:40px}
     .golden-badge{text-align:center}
     .golden-badge .gaf-tag{background:#CC0000;color:#fff;font-size:.6rem;font-weight:800;padding:4px 10px;border-radius:4px;display:inline-block;margin-bottom:12px;letter-spacing:.06em}
     .golden-badge h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--dark);line-height:1.2}
@@ -282,7 +281,8 @@
     .garantie-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
     .garantie-card{background:var(--white);border-radius:var(--radius-lg);border:1px solid var(--border);overflow:hidden;transition:all .3s}
     .garantie-card:hover{border-color:var(--gold);box-shadow:var(--shadow-lg)}
-    .garantie-card-header{padding:32px;text-align:center;background:var(--cream)}
+    .garantie-card-header{padding:32px;text-align:center;background:var(--white);display:flex;align-items:center;justify-content:center;min-height:200px}
+    .garantie-card-header img{max-width:180px;width:100%;height:auto}
     .garantie-card-badge{margin-bottom:12px}
     .garantie-card-badge .gaf-tag{background:#CC0000;color:#fff;font-size:.55rem;font-weight:800;padding:3px 8px;border-radius:3px;display:inline-block;margin-bottom:8px;letter-spacing:.06em}
     .garantie-card-badge h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--dark)}
@@ -495,7 +495,7 @@
             </div>
           </div>
         </div>
-        <a href="#conseils">Conseils</a>
+        <a href="#garanties">Garanties</a>
       </nav>
       <div class="header-right">
         <a href="tel:+15148354820" class="header-phone">📞 514-835-4820</a>
@@ -655,32 +655,11 @@
     </div>
   </section>
 
-  <!-- GUIDE + GARANTIES -->
-  <section class="guide" id="conseils">
+  <!-- GARANTIES GAF -->
+  <section class="guide" id="garanties">
     <div class="container">
-      <div class="section-header reveal"><span class="overline">Conseils d'experts</span><h2 class="section-heading">Guide des bardeaux et <em>garanties GAF</em></h2></div>
-
-      <!-- TABLEAU COMPARATIF -->
-      <div class="reveal">
-      <table class="guide-table">
-        <thead><tr><th>Caractéristique</th><th>3 pattes</th><th class="recommended">Architectural ★</th><th>Designer</th></tr></thead>
-        <tbody>
-          <tr><td>Durée de vie</td><td>15 — 20 ans</td><td class="recommended"><strong>25 — 40 ans</strong></td><td>40 — 50+ ans</td></tr>
-          <tr><td>Résistance vent</td><td>110 km/h</td><td class="recommended"><strong>209 km/h</strong></td><td>209 km/h</td></tr>
-          <tr><td>Apparence</td><td>Plate, uniforme</td><td class="recommended"><strong>Dimensionnelle</strong></td><td>Haut de gamme</td></tr>
-          <tr><td>Anti-algues</td><td style="color:var(--red)">✗</td><td class="recommended">✓ StainGuard</td><td>✓ StainGuard Plus</td></tr>
-          <tr><td>Garantie</td><td>25 ans</td><td class="recommended"><strong>50 ans</strong></td><td>Lifetime</td></tr>
-          <tr><td>Exemple GAF</td><td>Royal Sovereign</td><td class="recommended"><strong>Timberline HDZ</strong></td><td>Grand Canyon</td></tr>
-          <tr><td>Prix</td><td>$</td><td class="recommended"><strong>$$ Meilleur rapport</strong></td><td>$$$</td></tr>
-          <tr><td>Recommandation</td><td>Budget serré</td><td class="recommended"><strong>★ 90% des maisons</strong></td><td>Haut de gamme</td></tr>
-        </tbody>
-      </table>
-      </div>
-
-      <!-- GARANTIES GAF -->
-      <div style="margin-top:80px">
-        <div class="section-header reveal"><span class="overline">Garanties GAF</span><h2 class="section-heading">Les garanties les plus complètes <em>de l'industrie</em></h2></div>
-        <p class="reveal" style="text-align:center;max-width:640px;margin:0 auto 48px;font-size:.95rem;color:var(--text-light);line-height:1.8">En tant qu'entrepreneur certifié GAF Master Elite — un titre détenu par seulement 2% des couvreurs en Amérique du Nord — nous offrons les garanties les plus complètes de l'industrie.</p>
+      <div class="section-header reveal"><span class="overline">Garanties GAF</span><h2 class="section-heading">Les garanties les plus complètes <em>de l'industrie</em></h2></div>
+      <p class="reveal" style="text-align:center;max-width:640px;margin:0 auto 48px;font-size:.95rem;color:var(--text-light);line-height:1.8">En tant qu'entrepreneur certifié GAF Master Elite — un titre détenu par seulement 2% des couvreurs en Amérique du Nord — nous offrons les garanties les plus complètes de l'industrie.</p>
 
         <!-- GOLDEN PLEDGE -->
         <div class="garantie-golden reveal">
@@ -738,7 +717,6 @@
         <div style="text-align:center;margin-top:32px" class="reveal">
           <a href="https://www.gaf.ca/fr/garantie" target="_blank" rel="noopener" class="garantie-link">🔗 En savoir plus sur gaf.ca</a>
         </div>
-      </div>
     </div>
   </section>
 
