@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.optiontoiture.com/couvreur-sainte-julie/">
   <meta property="og:title" content="Couvreur à Sainte-Julie | Option Toiture">
-  <meta property="og:description" content="Couvreur certifié GAF à Sainte-Julie. Installation, réparation, remplacement. Soumission gratuite.">
+  <meta property="og:description" content="Couvreur certifié GAF à Sainte-Julie. Soumission gratuite.">
   <meta property="og:url" content="https://www.optiontoiture.com/couvreur-sainte-julie/">
   <meta property="og:locale" content="fr_CA">
   <meta name="geo.region" content="CA-QC">
@@ -37,7 +37,7 @@
     .header-right{display:flex;align-items:center;gap:16px}
     .header-phone{font-size:.85rem;font-weight:700;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:6px}.header-phone:hover{color:var(--gold)}
     .header-cta{display:inline-flex;align-items:center;background:var(--gold);color:var(--dark);padding:10px 22px;border-radius:var(--radius);font-weight:700;font-size:.82rem;text-decoration:none;transition:all var(--transition)}.header-cta:hover{background:var(--gold-dark);transform:translateY(-1px)}
-    .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;font-size:1.4rem}
+    .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;font-size:1.4rem;color:var(--white)}
     .mobile-menu{display:none;position:fixed;inset:0;background:var(--white);z-index:200;flex-direction:column;padding:80px 24px 24px;overflow-y:auto;-webkit-overflow-scrolling:touch}
     .mobile-menu.open{display:flex}
     .mobile-menu a{font-size:1.1rem;font-weight:600;color:var(--dark);text-decoration:none;padding:16px 0;border-bottom:1px solid var(--border)}
@@ -104,12 +104,12 @@
     .cta-phone{margin-top:20px;font-size:1.1rem;font-weight:700;color:var(--dark)}.cta-phone a{color:var(--dark);text-decoration:none}
     .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
     @media(max-width:768px){.hero-banner{min-height:auto}.hero-banner-content{padding:60px 0}.hero-stats{gap:20px}.hero-actions{flex-direction:column;align-items:flex-start}.cta h2{font-size:1.8rem}}
-  </style>
+</style>
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="/" class="header-logo"><img src="/images/logos/option-toiture-header.png" alt="Option Toiture — Couvreur Sainte-Julie" style="height:36px;width:auto;object-fit:contain;"></a>
+      <a href="/" class="header-logo"><img src="/images/logos/option-toiture-header.png" alt="Option Toiture" style="height:36px;width:auto;object-fit:contain;"></a>
       <nav class="header-nav">
         <a href="/">Accueil</a>
         <a href="/installation-rona">Installation RONA</a>
@@ -126,21 +126,13 @@
   </header>
   <div id="mm" class="mobile-menu">
     <button class="mobile-close" onclick="this.parentElement.classList.remove('open')">✕</button>
-    <a href="/">Accueil</a>
-    <a href="/installation-rona">Installation RONA</a>
-    <a href="/services/reparation-toiture">Réparation</a>
-    <a href="/#services">Services</a>
-    <a href="/#garanties">Garanties</a>
+    <a href="/">Accueil</a><a href="/installation-rona">Installation RONA</a><a href="/services/reparation-toiture">Réparation</a><a href="/#services">Services</a><a href="/#garanties">Garanties</a>
     <a href="tel:+15148354820" style="color:var(--gold)">📞 514-835-4820</a>
     <a href="https://rona-wizard.myhomeprojectcenter.com/fr-CA/quick-wizard" style="color:var(--gold);font-weight:700">Soumission gratuite</a>
   </div>
-
   <section class="breadcrumb-bar"><div class="container"><nav><a href="/">Accueil</a><span class="sep">›</span><span>Sainte-Julie</span></nav></div></section>
-
   <section class="hero-banner">
-    <div class="hero-banner-bg">
-      <img src="/images/photos/chantier-rona-camion-2.webp" alt="Couvreur à Sainte-Julie — Option Toiture" loading="eager">
-    </div>
+    <div class="hero-banner-bg"><img src="/images/photos/chantier-rona-camion-2.webp" alt="Couvreur à Sainte-Julie — Option Toiture" loading="eager"></div>
     <div class="container"><div class="hero-banner-content">
       <span class="overline">Installateur officiel RONA · Certifié GAF Master Elite</span>
       <h1>Couvreur à <em>Sainte-Julie</em></h1>
@@ -157,7 +149,6 @@
       </div>
     </div></div>
   </section>
-
   <section class="services-hub">
     <div class="container">
       <div class="section-header">
@@ -166,7 +157,6 @@
         <p class="section-subtitle">Du remplacement complet à la réparation d'urgence, notre équipe intervient partout à Sainte-Julie et dans les environs.</p>
       </div>
       <div class="services-grid">
-
         <a href="/couvreur-sainte-julie/installation-toiture" class="service-card fade-in">
           <div class="service-card-img">
             <img src="/images/services/installation-toiture.webp" alt="Installation de toiture à Sainte-Julie" loading="lazy" onerror="this.parentElement.classList.add('img-err')">
@@ -232,11 +222,9 @@
             <p>Gouttières aluminium, solins, drains. Installation et réparation.</p>
             <span class="service-link">En savoir plus →</span>
           </div>
-        </a>
-      </div>
+        </a></div>
     </div>
   </section>
-
   <section class="map-zone"><div class="container">
     <div class="section-header">
       <span class="overline">Zone de service</span>
@@ -253,8 +241,7 @@
   function initMap(){
     const cityPos={lat:45.5882,lng:-73.3342};
     const map=new google.maps.Map(document.getElementById('zoneMap'),{
-      center:cityPos,zoom:12,
-      disableDefaultUI:true,zoomControl:true,
+      center:cityPos,zoom:13,disableDefaultUI:true,zoomControl:true,
       styles:[
         {elementType:'geometry',stylers:[{color:'#1a1a2e'}]},
         {elementType:'labels.text.fill',stylers:[{color:'#8a8a9a'}]},
@@ -269,46 +256,39 @@
       ]
     });
     new google.maps.Polygon({
-      paths:[{"lat": 45.615, "lng": -73.36}, {"lat": 45.615, "lng": -73.3}, {"lat": 45.59, "lng": -73.275}, {"lat": 45.565, "lng": -73.285}, {"lat": 45.555, "lng": -73.32}, {"lat": 45.565, "lng": -73.37}, {"lat": 45.59, "lng": -73.385}, {"lat": 45.615, "lng": -73.36}],
+      paths:[{"lat": 45.6086, "lng": -73.3834}, {"lat": 45.5862, "lng": -73.3598}, {"lat": 45.5835, "lng": -73.3603}, {"lat": 45.5812, "lng": -73.3607}, {"lat": 45.5674, "lng": -73.3327}, {"lat": 45.5608, "lng": -73.3202}, {"lat": 45.5611, "lng": -73.3146}, {"lat": 45.5623, "lng": -73.3128}, {"lat": 45.5643, "lng": -73.3125}, {"lat": 45.5665, "lng": -73.3124}, {"lat": 45.5667, "lng": -73.31}, {"lat": 45.5617, "lng": -73.2911}, {"lat": 45.5672, "lng": -73.2902}, {"lat": 45.5806, "lng": -73.297}, {"lat": 45.5838, "lng": -73.2931}, {"lat": 45.5898, "lng": -73.2845}, {"lat": 45.6279, "lng": -73.3014}, {"lat": 45.6345, "lng": -73.3233}, {"lat": 45.6403, "lng": -73.343}, {"lat": 45.6354, "lng": -73.3469}, {"lat": 45.6379, "lng": -73.3577}, {"lat": 45.6351, "lng": -73.3656}, {"lat": 45.6342, "lng": -73.3691}, {"lat": 45.6298, "lng": -73.3734}, {"lat": 45.6254, "lng": -73.3701}, {"lat": 45.623, "lng": -73.3745}, {"lat": 45.6158, "lng": -73.378}, {"lat": 45.6086, "lng": -73.3834}],
       strokeColor:'#D4A03C',strokeOpacity:0.9,strokeWeight:2,
-      fillColor:'#D4A03C',fillOpacity:0.15,
-      map:map
+      fillColor:'#D4A03C',fillOpacity:0.15,map:map
     });
-    new google.maps.Marker({
-      position:cityPos,map:map,title:'Sainte-Julie',
+    new google.maps.Marker({position:cityPos,map:map,title:'Sainte-Julie',
       icon:{path:google.maps.SymbolPath.CIRCLE,scale:10,fillColor:'#D4A03C',fillOpacity:1,strokeColor:'#fff',strokeWeight:2}
     });
   }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&callback=initMap" async defer></script>
-
-  <section class="cta">
-    <div class="container">
-      <h2>Prêt pour votre projet à Sainte-Julie ?</h2>
-      <p>Soumission gratuite, sans engagement. Réponse en 24h.</p>
-      <a href="https://rona-wizard.myhomeprojectcenter.com/fr-CA/quick-wizard" class="btn-dark" rel="noopener">📋 Obtenir ma soumission gratuite</a>
-      <div class="cta-phone">ou appelez le <a href="tel:+15148354820">514-835-4820</a></div>
+  <section class="cta"><div class="container">
+    <h2>Prêt pour votre projet à Sainte-Julie ?</h2>
+    <p>Soumission gratuite, sans engagement. Réponse en 24h.</p>
+    <a href="https://rona-wizard.myhomeprojectcenter.com/fr-CA/quick-wizard" class="btn-dark" rel="noopener">📋 Obtenir ma soumission gratuite</a>
+    <div class="cta-phone">ou appelez le <a href="tel:+15148354820">514-835-4820</a></div>
+  </div></section>
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-top">
+    <div class="footer-brand"><h4>Conçu pour les propriétaires</h4><p>Fondée sur une passion pour l'excellence, <strong>Option Toiture</strong> est une entreprise établie à Marieville spécialisée dans les solutions de recouvrement résidentielles et commerciales.</p></div>
+    <div class="footer-col"><h4>Services à Sainte-Julie</h4>
+      <a href="/couvreur-sainte-julie/installation-toiture">Installation de toiture</a>
+      <a href="/couvreur-sainte-julie/reparation-toiture">Réparation de toiture</a>
+      <a href="/couvreur-sainte-julie/remplacement-toiture">Remplacement de toiture</a>
+      <a href="/couvreur-sainte-julie/ventilation-entretoit">Ventilation d'entretoit</a>
+      <a href="/couvreur-sainte-julie/toiture-commerciale">Toiture commerciale</a>
+      <a href="/couvreur-sainte-julie/ferblanterie-gouttieres">Ferblanterie &amp; gouttières</a>
     </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="footer-inner"><div class="footer-top">
-      <div class="footer-brand"><h4>Conçu pour les propriétaires</h4><p>Fondée sur une passion pour l'excellence, <strong>Option Toiture</strong> est une entreprise établie à Marieville spécialisée dans les solutions de recouvrement résidentielles et commerciales.</p></div>
-      <div class="footer-col"><h4>Services à Sainte-Julie</h4>
-        <a href="/couvreur-sainte-julie/installation-toiture">Installation de toiture</a>
-        <a href="/couvreur-sainte-julie/reparation-toiture">Réparation de toiture</a>
-        <a href="/couvreur-sainte-julie/remplacement-toiture">Remplacement de toiture</a>
-        <a href="/couvreur-sainte-julie/ventilation-entretoit">Ventilation d'entretoit</a>
-        <a href="/couvreur-sainte-julie/toiture-commerciale">Toiture commerciale</a>
-        <a href="/couvreur-sainte-julie/ferblanterie-gouttieres">Ferblanterie &amp; gouttières</a>
-      </div>
-      <div class="footer-col"><h4>Contact</h4>
-        <div class="footer-address"><strong>Option Toiture Inc.</strong><br>3320 route 112<br>Marieville, QC J3M 1P1</div><br>
-        <a href="tel:+15148354820">📞 514-835-4820</a>
-        <a href="mailto:info@optiontoiture.com">✉ info@optiontoiture.com</a>
-      </div>
-    </div></div>
-    <div class="footer-bottom"><span>© 2026 Option Toiture Inc. — RBQ 5665-8412-01</span><a href="/">optiontoiture.com</a></div>
+    <div class="footer-col"><h4>Contact</h4>
+      <div class="footer-address"><strong>Option Toiture Inc.</strong><br>3320 route 112<br>Marieville, QC J3M 1P1</div><br>
+      <a href="tel:+15148354820">📞 514-835-4820</a>
+      <a href="mailto:info@optiontoiture.com">✉ info@optiontoiture.com</a>
+    </div>
+  </div></div>
+  <div class="footer-bottom"><span>© 2026 Option Toiture Inc. — RBQ 5665-8412-01</span><a href="/">optiontoiture.com</a></div>
   </footer>
   <script>
     const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible')});},{threshold:.1});
