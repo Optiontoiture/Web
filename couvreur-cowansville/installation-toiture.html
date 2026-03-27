@@ -86,7 +86,23 @@
     .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
     @media(max-width:992px){.about-service-grid,.why-grid{grid-template-columns:1fr}.process-card{position:static}.real-grid{grid-template-columns:1fr}h1.section-heading,h2.section-heading{font-size:2rem}}
     @media(max-width:768px){.hero-banner{min-height:auto}.hero-banner-content{padding:60px 0}.hero-stats{gap:20px}.hero-actions{flex-direction:column;align-items:flex-start}.why-right{grid-template-columns:1fr 1fr}.cta h2{font-size:1.8rem}}
-  </style>
+  
+    .map-zone{padding:60px 0;background:var(--dark-bg)}
+    .map-zone .section-header{margin-bottom:32px}
+    .map-zone .section-header .overline{color:var(--gold)}
+    .map-zone .section-header h2{color:var(--white)}
+    .map-zone .section-header p{color:rgba(255,255,255,.6)}
+    .map-wrap{border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.3);position:relative}
+    .map-wrap #zoneMap{width:100%;height:450px}
+    .map-legend{display:flex;gap:24px;margin-top:16px;justify-content:center;flex-wrap:wrap}
+    .map-legend-item{display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.65)}
+    .map-legend-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0}
+    .map-legend-dot.gold{background:var(--gold)}
+    .map-legend-dot.zone{background:rgba(212,160,60,.25);border:2px solid var(--gold)}
+    .map-legend-dot.hq{background:#d44a3c}
+    @media(max-width:768px){.map-wrap #zoneMap{height:350px}.map-zone{padding:48px 0}}
+
+</style>
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Installation de toiture à Cowansville | Option Toiture">
@@ -137,6 +153,72 @@
   </section>
 
   <!-- SERVICES & PROCESS -->
+  
+  <!-- ZONE DE SERVICE — CARTE -->
+  <section class="map-zone"><div class="container">
+    <div class="section-header">
+      <span class="overline">Zone de service</span>
+      <h2 class="section-heading">Nous desservons Cowansville et les environs</h2>
+      <p class="section-subtitle">Notre équipe basée à Marieville couvre toute la Rive-Sud et la Montérégie.</p>
+    </div>
+    <div class="map-wrap">
+      <div id="zoneMap"></div>
+    </div>
+    <div class="map-legend">
+      <div class="map-legend-item"><div class="map-legend-dot gold"></div>Cowansville</div>
+      <div class="map-legend-item"><div class="map-legend-dot hq"></div>Siège social — Marieville</div>
+      <div class="map-legend-item"><div class="map-legend-dot zone"></div>Zone de service</div>
+    </div>
+  </div></section>
+  <script>
+  function initMap(){
+    const cityPos={lat:45.2,lng:-72.75};
+    const hqPos={lat:45.4374,lng:-73.1584};
+    const map=new google.maps.Map(document.getElementById('zoneMap'),{
+      center:cityPos,zoom:10,
+      disableDefaultUI:true,zoomControl:true,
+      styles:[
+        {elementType:'geometry',stylers:[{color:'#1a1a2e'}]},
+        {elementType:'labels.text.fill',stylers:[{color:'#8a8a9a'}]},
+        {elementType:'labels.text.stroke',stylers:[{color:'#1a1a2e'}]},
+        {featureType:'road',elementType:'geometry',stylers:[{color:'#2a2a3e'}]},
+        {featureType:'road',elementType:'labels.text.fill',stylers:[{color:'#6a6a7a'}]},
+        {featureType:'water',elementType:'geometry',stylers:[{color:'#0e0e1a'}]},
+        {featureType:'water',elementType:'labels.text.fill',stylers:[{color:'#3a3a5a'}]},
+        {featureType:'poi',stylers:[{visibility:'off'}]},
+        {featureType:'transit',stylers:[{visibility:'off'}]},
+        {featureType:'administrative.locality',elementType:'labels.text.fill',stylers:[{color:'#b0b0c0'}]}
+      ]
+    });
+    const zone=new google.maps.Polygon({
+      paths:[{"lat": 45.54, "lng": -73.57}, {"lat": 45.42, "lng": -73.56}, {"lat": 45.35, "lng": -73.54}, {"lat": 45.25, "lng": -73.2}, {"lat": 45.16, "lng": -72.82}, {"lat": 45.16, "lng": -72.58}, {"lat": 45.32, "lng": -72.56}, {"lat": 45.42, "lng": -72.65}, {"lat": 45.55, "lng": -72.85}, {"lat": 45.68, "lng": -72.88}, {"lat": 45.68, "lng": -73.12}, {"lat": 45.64, "lng": -73.32}, {"lat": 45.64, "lng": -73.4}, {"lat": 45.54, "lng": -73.57}],
+      strokeColor:'#D4A03C',strokeOpacity:0.8,strokeWeight:2,
+      fillColor:'#D4A03C',fillOpacity:0.12
+    });
+    zone.setMap(map);
+    new google.maps.Marker({
+      position:cityPos,map:map,
+      title:'Cowansville',
+      icon:{
+        path:google.maps.SymbolPath.CIRCLE,
+        scale:10,fillColor:'#D4A03C',fillOpacity:1,
+        strokeColor:'#fff',strokeWeight:2
+      }
+    });
+    new google.maps.Marker({
+      position:hqPos,map:map,
+      title:'Siège social — Marieville',
+      icon:{
+        path:google.maps.SymbolPath.CIRCLE,
+        scale:7,fillColor:'#d44a3c',fillOpacity:1,
+        strokeColor:'#fff',strokeWeight:2
+      }
+    });
+  }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&callback=initMap" async defer></script>
+
+
   <section class="about-service"><div class="container">
     <div class="section-header"><span class="overline">Notre expertise à Cowansville</span><h2 class="section-heading">Installation de toiture à Cowansville</h2></div>
     <div class="about-service-grid">
