@@ -260,6 +260,9 @@
   <div class="footer-bottom"><span>© 2026 Option Toiture Inc. — RBQ 5665-8412-01</span><a href="/">optiontoiture.com</a></div>
   </footer>
   <script>
+    // Header scroll effect
+    var hdr=document.getElementById('siteHeader');
+    window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>60)});
     // Auto-resize iframe calculateur
     window.addEventListener('message', function(e) {
       if (e.data && e.data.type === 'optime-resize') {
