@@ -28,7 +28,6 @@
     h2.section-heading{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--dark);line-height:1.2;margin-bottom:20px}
     .section-subtitle{color:var(--text-light);font-size:1.05rem;max-width:700px}
     .section-header{text-align:center;margin-bottom:60px}.section-header .section-subtitle{margin:0 auto}
-
     .site-header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);background:rgba(255,255,255,0.95)}
     .header-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px}
     .header-logo img{height:36px;width:auto;object-fit:contain}.header-logo{text-decoration:none;display:flex;align-items:center}
@@ -46,7 +45,6 @@
     .mobile-menu a{font-size:1.1rem;font-weight:600;color:var(--dark);text-decoration:none;padding:16px 0;border-bottom:1px solid var(--border)}
     .mobile-close{position:absolute;top:20px;right:20px;background:none;border:none;font-size:1.6rem;cursor:pointer}
     @media(max-width:992px){.header-nav{display:none}.mobile-toggle{display:block}}
-
     .site-footer{background:var(--dark-bg);color:var(--white);padding:80px 0 0}
     .footer-inner{max-width:1200px;margin:0 auto;padding:0 24px}
     .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:60px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08)}
@@ -60,9 +58,7 @@
     .footer-bottom a{color:rgba(255,255,255,.3);text-decoration:none}.footer-bottom a:hover{color:var(--gold)}
     @media(max-width:992px){.footer-top{grid-template-columns:1fr}}
     @media(max-width:768px){.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
-
     .breadcrumb-bar{background:var(--cream-light);border-bottom:1px solid var(--border);padding:14px 0}.breadcrumb-bar nav{font-size:.82rem;color:var(--text-muted)}.breadcrumb-bar a{color:var(--text-light);text-decoration:none}.breadcrumb-bar a:hover{color:var(--gold)}.breadcrumb-bar .sep{margin:0 8px;color:var(--border)}
-
     .hero-banner{position:relative;min-height:380px;display:flex;align-items:center;overflow:hidden;background:var(--dark-bg)}
     .hero-banner-bg{position:absolute;inset:0}.hero-banner-bg img{width:100%;height:100%;object-fit:cover;opacity:.3}
     .hero-banner-content{position:relative;z-index:2;padding:80px 0}
@@ -75,7 +71,6 @@
     .hero-stats{display:flex;gap:32px;margin-top:36px;flex-wrap:wrap}
     .hero-stat-val{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--gold);line-height:1}
     .hero-stat-label{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:4px}
-
     .services-hub{padding:100px 0;background:var(--cream)}
     .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
     .service-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;text-decoration:none;color:inherit;transition:all var(--transition);display:flex;flex-direction:column}
@@ -92,7 +87,6 @@
     .service-card:hover .service-link{gap:6px}
     @media(max-width:992px){.services-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:576px){.services-grid{grid-template-columns:1fr}}
-
     .map-zone{padding:60px 0;background:var(--dark-bg)}
     .map-zone .section-header{margin-bottom:32px}
     .map-zone .section-header .overline{color:var(--gold)}
@@ -104,16 +98,13 @@
     .map-legend-item{display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.65)}
     .map-legend-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0}
     .map-legend-dot.gold{background:var(--gold)}
-    .map-legend-dot.zone{background:rgba(212,160,60,.25);border:2px solid var(--gold)}
-    .map-legend-dot.hq{background:#d44a3c}
+    .map-legend-dot.circle{width:14px;height:14px;border-radius:50%;background:rgba(212,160,60,.25);border:2px solid var(--gold)}
     @media(max-width:768px){.map-wrap #zoneMap{height:320px}}
-
     .cta{padding:80px 0;background:var(--gold);text-align:center}
     .cta h2{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--dark);margin-bottom:16px}
     .cta p{font-size:1rem;color:rgba(0,0,0,.7);margin-bottom:32px}
     .btn-dark{display:inline-flex;align-items:center;gap:10px;background:var(--dark);color:var(--white);padding:18px 36px;border-radius:var(--radius);font-weight:700;font-size:1rem;text-decoration:none;transition:all var(--transition)}.btn-dark:hover{background:#000;transform:translateY(-2px)}
     .cta-phone{margin-top:20px;font-size:1.1rem;font-weight:700;color:var(--dark)}.cta-phone a{color:var(--dark);text-decoration:none}
-
     .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
     @media(max-width:768px){.hero-banner{min-height:auto}.hero-banner-content{padding:60px 0}.hero-stats{gap:20px}.hero-actions{flex-direction:column;align-items:flex-start}.cta h2{font-size:1.8rem}}
   </style>
@@ -252,22 +243,20 @@
   <section class="map-zone"><div class="container">
     <div class="section-header">
       <span class="overline">Zone de service</span>
-      <h2 class="section-heading">Nous desservons Saint-Bruno-de-Montarville et les environs</h2>
-      <p class="section-subtitle">Notre équipe basée à Marieville couvre toute la Rive-Sud et la Montérégie.</p>
+      <h2 class="section-heading">Nous intervenons à Saint-Bruno-de-Montarville</h2>
+      <p class="section-subtitle">Notre équipe couvre Saint-Bruno-de-Montarville et les secteurs adjacents.</p>
     </div>
     <div class="map-wrap"><div id="zoneMap"></div></div>
     <div class="map-legend">
       <div class="map-legend-item"><div class="map-legend-dot gold"></div>Saint-Bruno-de-Montarville</div>
-      <div class="map-legend-item"><div class="map-legend-dot hq"></div>Siège social — Marieville</div>
-      <div class="map-legend-item"><div class="map-legend-dot zone"></div>Zone de service</div>
+      <div class="map-legend-item"><div class="map-legend-dot circle"></div>Zone desservie</div>
     </div>
   </div></section>
   <script>
   function initMap(){
     const cityPos={lat:45.5371,lng:-73.3544};
-    const hqPos={lat:45.4374,lng:-73.1584};
     const map=new google.maps.Map(document.getElementById('zoneMap'),{
-      center:cityPos,zoom:11,
+      center:cityPos,zoom:12,
       disableDefaultUI:true,zoomControl:true,
       styles:[
         {elementType:'geometry',stylers:[{color:'#1a1a2e'}]},
@@ -282,14 +271,17 @@
         {featureType:'administrative.locality',elementType:'labels.text.fill',stylers:[{color:'#b0b0c0'}]}
       ]
     });
-    const zone=new google.maps.Polygon({
-      paths:[{"lat":45.54,"lng":-73.57},{"lat":45.42,"lng":-73.56},{"lat":45.35,"lng":-73.54},{"lat":45.25,"lng":-73.2},{"lat":45.16,"lng":-72.82},{"lat":45.16,"lng":-72.58},{"lat":45.32,"lng":-72.56},{"lat":45.42,"lng":-72.65},{"lat":45.55,"lng":-72.85},{"lat":45.68,"lng":-72.88},{"lat":45.68,"lng":-73.12},{"lat":45.64,"lng":-73.32},{"lat":45.64,"lng":-73.4},{"lat":45.54,"lng":-73.57}],
-      strokeColor:'#D4A03C',strokeOpacity:0.8,strokeWeight:2,
-      fillColor:'#D4A03C',fillOpacity:0.12
+    new google.maps.Circle({
+      center:cityPos,
+      radius:4000,
+      strokeColor:'#D4A03C',strokeOpacity:0.9,strokeWeight:2,
+      fillColor:'#D4A03C',fillOpacity:0.15,
+      map:map
     });
-    zone.setMap(map);
-    new google.maps.Marker({position:cityPos,map:map,title:'Saint-Bruno-de-Montarville',icon:{path:google.maps.SymbolPath.CIRCLE,scale:10,fillColor:'#D4A03C',fillOpacity:1,strokeColor:'#fff',strokeWeight:2}});
-    new google.maps.Marker({position:hqPos,map:map,title:'Siège social — Marieville',icon:{path:google.maps.SymbolPath.CIRCLE,scale:7,fillColor:'#d44a3c',fillOpacity:1,strokeColor:'#fff',strokeWeight:2}});
+    new google.maps.Marker({
+      position:cityPos,map:map,title:'Saint-Bruno-de-Montarville',
+      icon:{path:google.maps.SymbolPath.CIRCLE,scale:10,fillColor:'#D4A03C',fillOpacity:1,strokeColor:'#fff',strokeWeight:2}
+    });
   }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&callback=initMap" async defer></script>
@@ -306,7 +298,7 @@
   <footer class="site-footer">
     <div class="footer-inner"><div class="footer-top">
       <div class="footer-brand"><h4>Conçu pour les propriétaires</h4><p>Fondée sur une passion pour l'excellence, <strong>Option Toiture</strong> est une entreprise établie à Marieville spécialisée dans les solutions de recouvrement résidentielles et commerciales.</p></div>
-      <div class="footer-col"><h4>Services</h4>
+      <div class="footer-col"><h4>Services à Saint-Bruno-de-Montarville</h4>
         <a href="/couvreur-saint-bruno-de-montarville/installation-toiture">Installation de toiture</a>
         <a href="/couvreur-saint-bruno-de-montarville/reparation-toiture">Réparation de toiture</a>
         <a href="/couvreur-saint-bruno-de-montarville/remplacement-toiture">Remplacement de toiture</a>
