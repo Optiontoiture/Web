@@ -462,7 +462,7 @@
       </nav>
       <div class="header-right">
         <a href="tel:+15148354820" class="header-phone">514-835-4820</a>
-        <a href="#soumission" class="header-cta">Soumission gratuite</a>
+        <a href="#" onclick="document.getElementById('formModal').style.display='flex';return false;" class="header-cta">Soumission gratuite</a>
       </div>
       <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">&#9776;</button>
     </div>
@@ -505,7 +505,7 @@
       <h1>L'excellence en toiture<br>sur la <em>Rive-Sud</em></h1>
       <p class="hero-sub">Plus de 1 000 projets complétés en Montérégie. Garantie 50 ans, valeur à neuf 100%. Installateur officiel RONA.</p>
       <div class="hero-actions">
-        <a href="#soumission" class="btn btn-gold">Soumission gratuite</a>
+        <a href="#" onclick="document.getElementById('formModal').style.display='flex';return false;" class="btn btn-gold">Soumission gratuite</a>
         <a href="tel:+15148354820" class="btn btn-ghost">514-835-4820</a>
       </div>
     </div>
@@ -679,17 +679,25 @@
     </div>
   </section>
 
-  <!-- CTA FINAL + FORMULAIRE -->
+  <!-- CTA FINAL -->
   <section class="cta-final" id="soumission">
     <div class="container">
       <h2 class="reveal">Prêt à protéger votre maison?</h2>
-      <p class="reveal reveal-d1">Remplissez le formulaire et accédez à votre portail client. Réponse en moins de 24h.</p>
-      <div class="form-embed reveal reveal-d2">
-        <iframe src="https://app.optiontoiture.com/formulaire" style="width:100%;max-width:500px;height:580px;border:none;border-radius:16px;margin:0 auto;display:block;" allowtransparency="true" title="Soumission gratuite"></iframe>
+      <p class="reveal reveal-d1">Obtenez une soumission gratuite sans engagement. Notre équipe vous accompagne du début à la fin.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px">
+        <a href="#" onclick="document.getElementById('formModal').style.display='flex';return false;" class="btn-dark reveal reveal-d2">Obtenir une soumission gratuite</a>
+        <a href="tel:+15148354820" class="btn btn-ghost reveal reveal-d3" style="color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.15);padding:16px 36px;border-radius:6px;font-size:.8rem;font-weight:600;text-decoration:none">📞 514-835-4820</a>
       </div>
-      <div class="cta-phone reveal reveal-d3">ou appelez : <a href="tel:+15148354820">514-835-4820</a></div>
     </div>
   </section>
+
+  <!-- MODAL FORMULAIRE -->
+  <div id="formModal" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px" onclick="if(event.target===this)this.style.display='none'">
+    <div style="position:relative;width:100%;max-width:480px;max-height:90vh;background:var(--cream-light);border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.4)">
+      <button onclick="document.getElementById('formModal').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text-muted);z-index:10">✕</button>
+      <iframe src="https://app.optiontoiture.com/formulaire" style="width:100%;height:680px;border:none;display:block" allowtransparency="true" title="Soumission gratuite"></iframe>
+    </div>
+  </div>
 
 
   <!-- FORMULAIRE OPTIME FLOTTANT -->
