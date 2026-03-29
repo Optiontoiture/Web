@@ -29,37 +29,7 @@
     .section-subtitle{color:var(--text-light);font-size:1.05rem;max-width:700px}
     .section-header{text-align:center;margin-bottom:60px}.section-header .section-subtitle{margin:0 auto}
 
-    .site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;transition:all .4s ease}
-    .site-header.scrolled{background:rgba(20,18,16,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-    .header-inner{max-width:1320px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:72px}
-    .header-logo{text-decoration:none;display:flex;align-items:center;gap:10px}
-    .header-logo img{height:42px;width:auto;object-fit:contain;display:block}
-    .rona-badge{display:inline-block;background:#003DA5;color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:8px 16px;border-radius:5px;white-space:nowrap;text-decoration:none;transition:background .3s}.rona-badge:hover{background:#0052E0}
-    .header-nav{display:flex;align-items:center;gap:4px}
-    .header-nav>a{font-size:.78rem;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;padding:8px 16px;border-radius:6px;transition:all .3s;letter-spacing:.04em}.header-nav>a:hover{color:#fff;background:rgba(255,255,255,.08)}
-    .nav-drop{position:relative}
-    .nav-drop>a{display:flex;align-items:center;gap:4px;cursor:pointer;font-size:.78rem;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;padding:8px 16px;border-radius:6px;transition:all .3s;letter-spacing:.04em}
-    .nav-drop>a::after{content:'';border:solid rgba(255,255,255,.5);border-width:0 1.5px 1.5px 0;padding:2px;transform:rotate(45deg);margin-top:-2px;transition:transform .3s}
-    .nav-drop:hover>a{color:#fff;background:rgba(255,255,255,.08)}.nav-drop:hover>a::after{transform:rotate(-135deg)}
-    .nav-drop .drop-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:rgba(20,18,16,.97);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 0;min-width:240px;opacity:0;visibility:hidden;pointer-events:none;transition:all .25s;box-shadow:0 16px 48px rgba(0,0,0,.5);z-index:100}
-    .nav-drop .drop-menu::before{content:'';position:absolute;top:-16px;left:0;right:0;height:16px}
-    .nav-drop:hover .drop-menu{opacity:1;visibility:visible;pointer-events:auto}
-    .drop-menu a{display:block;padding:8px 20px;font-size:.8rem;color:rgba(255,255,255,.6);text-decoration:none;white-space:nowrap}.drop-menu a:hover{background:rgba(201,149,44,.1);color:#e4b94a}
-    .drop-menu .drop-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#c9952c;padding:12px 20px 4px;pointer-events:none}
-    .drop-cols{display:grid;grid-template-columns:1fr 1fr;min-width:420px}.drop-col{padding:4px 0}
-    .header-right{display:flex;align-items:center;gap:16px}
-    .header-phone{font-size:.78rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;transition:color .3s;white-space:nowrap}.header-phone:hover{color:#e4b94a}
-    .header-cta{background:#c9952c;color:#141210;padding:11px 26px;border-radius:8px;font-weight:700;font-size:.8rem;text-decoration:none;letter-spacing:.05em;text-transform:uppercase;transition:all .3s;white-space:nowrap;box-shadow:0 2px 12px rgba(201,149,44,.35)}.header-cta:hover{background:#e4b94a;transform:translateY(-2px);box-shadow:0 4px 20px rgba(201,149,44,.5)}
-    .mobile-toggle{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.5rem;padding:8px}
-    .mobile-menu{display:none;position:fixed;inset:0;background:#141210;z-index:200;flex-direction:column;padding:80px 32px 32px;overflow-y:auto;-webkit-overflow-scrolling:touch}
-    .mobile-menu.open{display:flex}
-    .mobile-menu a{font-size:1.1rem;font-weight:500;color:#fff;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}.mobile-menu a.sub-link{font-size:.9rem;padding:10px 0 10px 16px;color:rgba(255,255,255,.7)}.mobile-menu a:hover{color:#e4b94a}
-    .mobile-menu .close-btn{position:absolute;top:24px;right:28px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:rgba(255,255,255,.6)}
-    .form-modal{display:none;position:fixed;inset:0;z-index:300;align-items:center;justify-content:center;background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}.form-modal.open{display:flex}
-    .form-modal-inner{position:relative;width:100%;max-width:520px;height:80vh;background:#141210;border-radius:14px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.5)}
-    .form-modal-close{position:absolute;top:12px;right:12px;z-index:10;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:1.2rem;width:32px;height:32px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}.form-modal-close:hover{background:rgba(255,255,255,.2)}
-    .form-modal iframe{width:100%;height:100%;border:none}
-    @media(max-width:992px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.header-inner{height:56px;padding:0 16px}.header-logo img{height:30px}.rona-badge{display:none}}
+    @media(max-width:992px){}
     .site-footer{background:var(--dark-bg);color:var(--white);padding:80px 0 0}
     .footer-inner{max-width:1200px;margin:0 auto;padding:0 24px}
     .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:60px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08)}
@@ -81,7 +51,7 @@
     .img-placeholder .ph-label{position:relative;z-index:1;padding:12px;background:rgba(255,255,255,.3);border-radius:8px;font-size:.82rem}
     .has-img img{width:100%;height:100%;object-fit:cover;display:block}
 
-    .breadcrumb-bar{background:var(--cream-light);border-bottom:1px solid var(--border);padding:14px 0;margin-top:72px}.breadcrumb-bar nav{font-size:.82rem;color:var(--text-muted)}.breadcrumb-bar a{color:var(--text-light);text-decoration:none}.breadcrumb-bar a:hover{color:var(--gold)}.breadcrumb-bar .sep{margin:0 8px;color:var(--border)}
+    .breadcrumb-bar{background:var(--cream-light);border-bottom:1px solid var(--border);padding:14px 0;margin-top:72px;margin-top:72px}.breadcrumb-bar nav{font-size:.82rem;color:var(--text-muted)}.breadcrumb-bar a{color:var(--text-light);text-decoration:none}.breadcrumb-bar a:hover{color:var(--gold)}.breadcrumb-bar .sep{margin:0 8px;color:var(--border)}
     .hero-banner{position:relative;min-height:420px;display:flex;align-items:center;overflow:hidden;background:var(--dark-bg)}
     .hero-banner-bg{position:absolute;inset:0}.hero-banner-bg img{width:100%;height:100%;object-fit:cover;opacity:.35}.hero-banner-bg .img-placeholder{width:100%;height:100%;opacity:.5}
     .hero-banner-content{position:relative;z-index:2;padding:80px 0}.hero-banner-content .overline{color:var(--gold)}.hero-banner-content h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:16px}.hero-banner-content h1 em{font-style:italic;color:var(--gold)}.hero-banner-content p{color:rgba(255,255,255,.65);font-size:1rem;max-width:540px;line-height:1.8;margin-bottom:28px}
@@ -116,7 +86,55 @@
     .map-legend-dot.hq{background:#d44a3c}
     @media(max-width:768px){.map-wrap #zoneMap{height:350px}.map-zone{padding:48px 0}}
 
-</style>
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s ease}
+    .site-header.scrolled{background:rgba(20,18,16,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .header-inner{max-width:1320px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:72px}
+    .header-logo{text-decoration:none;display:flex;align-items:center;gap:10px}
+    .header-logo img{height:42px;width:auto;object-fit:contain;display:block}
+    .rona-badge{display:inline-block;background:#003DA5;color:#fff;font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:8px 16px;border-radius:5px;white-space:nowrap;line-height:1.2;text-decoration:none;transition:background .3s}
+    .rona-badge:hover{background:#0052E0}
+    .header-nav{display:flex;align-items:center;gap:4px}
+    .header-nav a{font-size:.78rem;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;padding:8px 16px;border-radius:6px;transition:all .3s;letter-spacing:.04em}
+    .header-nav a:hover{color:#fff;background:rgba(255,255,255,.08)}
+    .nav-drop{position:relative}
+    .nav-drop>a{display:flex;align-items:center;gap:4px;cursor:pointer}
+    .nav-drop>a::after{content:'';border:solid rgba(255,255,255,.5);border-width:0 1.5px 1.5px 0;padding:2px;transform:rotate(45deg);margin-top:-2px;transition:transform .3s}
+    .nav-drop:hover>a::after{transform:rotate(-135deg)}
+    .nav-drop .drop-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:rgba(20,18,16,.97);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--radius);padding:12px 0;min-width:240px;opacity:0;visibility:hidden;pointer-events:none;transition:all .25s;box-shadow:0 16px 48px rgba(0,0,0,.5);z-index:100}
+    .nav-drop .drop-menu::before{content:'';position:absolute;top:-16px;left:0;right:0;height:16px}
+    .nav-drop:hover .drop-menu{opacity:1;visibility:visible;pointer-events:auto}
+    .drop-menu a{display:block;padding:8px 20px;font-size:.8rem;color:rgba(255,255,255,.6);border-radius:0;white-space:nowrap}
+    .drop-menu a:hover{background:rgba(201,149,44,.1);color:var(--gold-light)}
+    .drop-menu .drop-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);padding:12px 20px 4px;pointer-events:none}
+    .drop-menu .drop-label:first-child{padding-top:4px}
+    .drop-cols{display:grid;grid-template-columns:1fr 1fr;min-width:420px}
+    .drop-col{padding:4px 0}
+    .header-right{display:flex;align-items:center;gap:16px}
+    .header-phone{font-size:.78rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;transition:color .3s;white-space:nowrap}
+    .header-phone:hover{color:var(--gold-light)}
+    .header-cta{background:var(--gold);color:var(--dark);padding:8px 20px;border-radius:6px;font-weight:600;font-size:.72rem;text-decoration:none;letter-spacing:.04em;text-transform:uppercase;transition:all .3s;white-space:nowrap}
+    .header-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+    .mobile-toggle{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.5rem;padding:8px}
+    .mobile-menu{display:none;position:fixed;inset:0;background:var(--dark);z-index:200;flex-direction:column;padding:80px 32px 32px;opacity:0;transition:opacity .3s;overflow-y:auto;-webkit-overflow-scrolling:touch}
+    .mobile-menu.open{display:flex;opacity:1}
+    .mobile-menu a{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:500;color:#fff;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .mobile-menu a.sub-link{font-size:.9rem;font-weight:400;padding:10px 0 10px 16px;color:rgba(255,255,255,.7)}
+    .mobile-menu a:hover{color:var(--gold-light)}
+    .mobile-menu .close-btn{position:absolute;top:24px;right:28px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:rgba(255,255,255,.6)}
+    .form-modal{display:none;position:fixed;inset:0;z-index:300;align-items:center;justify-content:center;background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
+    .form-modal.open{display:flex}
+    .form-modal-inner{position:relative;width:100%;max-width:520px;height:80vh;background:var(--dark);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.5)}
+    .form-modal-close{position:absolute;top:12px;right:12px;z-index:10;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:1.2rem;width:32px;height:32px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    .form-modal-close:hover{background:rgba(255,255,255,.2)}
+    .form-modal iframe{width:100%;height:100%;border:none}
+    @media(max-width:768px){
+      .header-nav,.header-right{display:none}
+      .mobile-toggle{display:block}
+      .header-inner{height:56px;padding:0 16px}
+      .header-logo img{height:30px}
+      .rona-badge{display:none}
+    }
+  </style>
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Remplacement de toiture à Saint-Jean sur-Richelieu | Option Toiture">
@@ -125,7 +143,7 @@
   <meta property="og:site_name" content="Option Toiture">
 </head>
 <body>
-    <header class="site-header" id="siteHeader">
+      <header class="site-header" id="siteHeader">
     <div class="header-inner">
       <div style="display:flex;align-items:center;gap:10px">
         <a href="/" class="header-logo"><img src="/images/logos/option-toiture-header.png" alt="Option Toiture"></a>
@@ -133,52 +151,61 @@
       </div>
       <nav class="header-nav">
         <a href="/">Accueil</a>
-        <div class="nav-drop"><a>Services</a><div class="drop-menu">
-          <a href="/services/installation-toiture">Installation de toiture</a>
-          <a href="/services/reparation-toiture">Réparation de toiture</a>
-          <a href="/services/remplacement-toiture">Remplacement de toiture</a>
-          <a href="/services/ventilation-entretoit">Ventilation d'entretoit</a>
-          <a href="/services/toiture-commerciale">Toiture commerciale</a>
-          <a href="/services/ferblanterie-gouttieres">Ferblanterie et gouttières</a>
-        </div></div>
-        <div class="nav-drop"><a>Secteurs</a><div class="drop-menu"><div class="drop-cols">
-          <div class="drop-col">
-            <div class="drop-label">Rive-Sud</div>
-            <a href="/couvreur-longueuil/">Longueuil</a>
-            <a href="/couvreur-brossard/">Brossard</a>
-            <a href="/couvreur-boucherville/">Boucherville</a>
-            <a href="/couvreur-saint-lambert/">Saint-Lambert</a>
-            <a href="/couvreur-la-prairie/">La Prairie</a>
-            <a href="/couvreur-candiac/">Candiac</a>
-            <a href="/couvreur-sainte-julie/">Sainte-Julie</a>
-            <a href="/couvreur-saint-bruno-de-montarville/">Saint-Bruno</a>
-            <a href="/couvreur-carignan/">Carignan</a>
+        <div class="nav-drop">
+          <a>Services</a>
+          <div class="drop-menu">
+            <a href="/services/installation-toiture">Installation de toiture</a>
+            <a href="/services/reparation-toiture">Réparation de toiture</a>
+            <a href="/services/remplacement-toiture">Remplacement de toiture</a>
+            <a href="/services/ventilation-entretoit">Ventilation d'entretoit</a>
+            <a href="/services/toiture-commerciale">Toiture commerciale</a>
+            <a href="/services/ferblanterie-gouttieres">Ferblanterie et gouttières</a>
           </div>
-          <div class="drop-col">
-            <div class="drop-label">Montérégie</div>
-            <a href="/couvreur-chambly/">Chambly</a>
-            <a href="/couvreur-richelieu/">Richelieu</a>
-            <a href="/couvreur-marieville/">Marieville</a>
-            <a href="/couvreur-mont-saint-hilaire/">Mont-Saint-Hilaire</a>
-            <a href="/couvreur-saint-jean-sur-richelieu/">Saint-Jean</a>
-            <a href="/couvreur-saint-hyacinthe/">Saint-Hyacinthe</a>
-            <a href="/couvreur-granby/">Granby</a>
-            <a href="/couvreur-bromont/">Bromont</a>
-            <a href="/couvreur-cowansville/">Cowansville</a>
+        </div>
+        <div class="nav-drop">
+          <a>Secteurs</a>
+          <div class="drop-menu">
+            <div class="drop-cols">
+              <div class="drop-col">
+                <div class="drop-label">Rive-Sud</div>
+                <a href="/couvreur-longueuil/">Longueuil</a>
+                <a href="/couvreur-brossard/">Brossard</a>
+                <a href="/couvreur-boucherville/">Boucherville</a>
+                <a href="/couvreur-saint-lambert/">Saint-Lambert</a>
+                <a href="/couvreur-la-prairie/">La Prairie</a>
+                <a href="/couvreur-candiac/">Candiac</a>
+                <a href="/couvreur-sainte-julie/">Sainte-Julie</a>
+                <a href="/couvreur-saint-bruno-de-montarville/">Saint-Bruno</a>
+                <a href="/couvreur-carignan/">Carignan</a>
+              </div>
+              <div class="drop-col">
+                <div class="drop-label">Montérégie</div>
+                <a href="/couvreur-chambly/">Chambly</a>
+                <a href="/couvreur-richelieu/">Richelieu</a>
+                <a href="/couvreur-marieville/">Marieville</a>
+                <a href="/couvreur-mont-saint-hilaire/">Mont-Saint-Hilaire</a>
+                <a href="/couvreur-saint-jean-sur-richelieu/">Saint-Jean</a>
+                <a href="/couvreur-saint-hyacinthe/">Saint-Hyacinthe</a>
+                <a href="/couvreur-granby/">Granby</a>
+                <a href="/couvreur-bromont/">Bromont</a>
+                <a href="/couvreur-cowansville/">Cowansville</a>
+              </div>
+            </div>
           </div>
-        </div></div></div>
+        </div>
         <a href="/#garanties">Garanties</a>
       </nav>
       <div class="header-right">
         <a href="tel:+15148354820" class="header-phone">📞 514-835-4820</a>
-        <a href="#" onclick="document.getElementById('formIframe').src='https://app.optiontoiture.com/formulaire';document.getElementById('formModal').classList.add('open');return false;" class="header-cta">Soumission gratuite</a>
+        <a href="#" onclick="document.getElementById('formIframe').src='https://app.optiontoiture.com/formulaire';document.getElementById('formModal').style.display='flex';return false;" class="header-cta">Soumission gratuite</a>
       </div>
       <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">&#9776;</button>
     </div>
   </header>
   <div class="mobile-menu" id="mobileMenu">
     <button class="close-btn" onclick="this.parentElement.classList.remove('open')">&#10005;</button>
-    <a href="/">Accueil</a><a href="/installation-rona">Installation RONA+</a>
+    <a href="/">Accueil</a>
+    <a href="/installation-rona">Installation RONA+</a>
     <div class="drop-label" style="color:var(--gold);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 0 4px">Services</div>
     <a href="/services/installation-toiture" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Installation de toiture</a>
     <a href="/services/reparation-toiture" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Réparation de toiture</a>
@@ -192,102 +219,16 @@
     <a href="/couvreur-chambly/" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Chambly</a>
     <a href="/couvreur-saint-jean-sur-richelieu/" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Saint-Jean-sur-Richelieu</a>
     <a href="/couvreur-granby/" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Granby</a>
-    <a href="tel:+15148354820" style="color:var(--gold)">📞 514-835-4820</a>
-    <a href="#" onclick="document.getElementById('formIframe').src='https://app.optiontoiture.com/formulaire';document.getElementById('formModal').classList.add('open');this.closest('.mobile-menu').classList.remove('open');return false;" style="color:var(--gold);font-weight:700">Soumission gratuite</a>
+    <a href="tel:+15148354820" onclick="this.closest('.mobile-menu').classList.remove('open')">Contactez-nous</a>
+    <a href="tel:+15148354820">514-835-4820</a>
   </div>
-  <div class="form-modal" id="formModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="form-modal" id="formModal" onclick="if(event.target===this)this.style.display='none'">
     <div class="form-modal-inner">
-      <button class="form-modal-close" onclick="document.getElementById('formModal').classList.remove('open')">&#10005;</button>
+      <button class="form-modal-close" onclick="document.getElementById('formModal').style.display='none'">&#10005;</button>
       <iframe id="formIframe" src="about:blank" allowtransparency="true" title="Soumission gratuite"></iframe>
     </div>
   </div>
-<section class="breadcrumb-bar"><div class="container"><nav><a href="/">Accueil</a><span class="sep">›</span><a href="/couvreur-saint-jean-sur-richelieu">Saint-Jean-sur-Richelieu</a><span class="sep">›</span><span>Remplacement de toiture</span></nav></div></section>
 
-  <!-- HERO avec photo -->
-  <section class="hero-banner">
-    <div class="hero-banner-bg">
-      <!-- REMPLACER: ajouter votre photo hero ici -->
-      <img src="/images/photos/chantier-drone-camion.webp" alt="Remplacement de toiture à Saint-Jean-sur-Richelieu — Option Toiture" loading="eager">
-    </div>
-    <div class="container"><div class="hero-banner-content">
-      <span class="overline">Installateur officiel RONA · Certifié GAF Master Elite</span>
-      <h1>Remplacement de toiture à <em>Saint-Jean-sur-Richelieu</em></h1>
-      <p>Toiture de plus de 20 ans? Retrait complet, vérification du pontage, nouveau système avec membrane, sous-couche et ventilation optimisée.</p>
-      <div class="hero-actions"><a href="https://rona-wizard.myhomeprojectcenter.com/fr-CA/quick-wizard" class="btn-gold" rel="noopener">📋 Soumission gratuite →</a><a href="tel:+15148354820" class="btn-outline-white">📞 514-835-4820</a></div>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-val">15+</div><div class="hero-stat-label">Années d'expérience</div></div>
-        <div class="hero-stat"><div class="hero-stat-val">1 000+</div><div class="hero-stat-label">Projets complétés</div></div>
-        <div class="hero-stat"><div class="hero-stat-val">50 ans</div><div class="hero-stat-label">Garantie matériaux</div></div>
-        <div class="hero-stat"><div class="hero-stat-val">4.8 ⭐</div><div class="hero-stat-label">Note Google</div></div>
-      </div>
-    </div></div>
-  </section>
-
-  <!-- SERVICES & PROCESS -->
-  
-  <!-- ZONE DE SERVICE — CARTE -->
-  <section class="map-zone"><div class="container">
-    <div class="section-header">
-      <span class="overline">Zone de service</span>
-      <h2 class="section-heading">Nous desservons Saint-Jean-sur-Richelieu et les environs</h2>
-      <p class="section-subtitle">Notre équipe basée à Marieville couvre toute la Rive-Sud et la Montérégie.</p>
-    </div>
-    <div class="map-wrap">
-      <div id="zoneMap"></div>
-    </div>
-    <div class="map-legend">
-      <div class="map-legend-item"><div class="map-legend-dot gold"></div>Saint-Jean-sur-Richelieu</div>
-      <div class="map-legend-item"><div class="map-legend-dot hq"></div>Siège social — Marieville</div>
-      <div class="map-legend-item"><div class="map-legend-dot zone"></div>Zone de service</div>
-    </div>
-  </div></section>
-  <script>
-  function initMap(){
-    const cityPos={lat:45.3131,lng:-73.262};
-    const hqPos={lat:45.4374,lng:-73.1584};
-    const map=new google.maps.Map(document.getElementById('zoneMap'),{
-      center:cityPos,zoom:10,
-      disableDefaultUI:true,zoomControl:true,
-      styles:[
-        {elementType:'geometry',stylers:[{color:'#1a1a2e'}]},
-        {elementType:'labels.text.fill',stylers:[{color:'#8a8a9a'}]},
-        {elementType:'labels.text.stroke',stylers:[{color:'#1a1a2e'}]},
-        {featureType:'road',elementType:'geometry',stylers:[{color:'#2a2a3e'}]},
-        {featureType:'road',elementType:'labels.text.fill',stylers:[{color:'#6a6a7a'}]},
-        {featureType:'water',elementType:'geometry',stylers:[{color:'#0e0e1a'}]},
-        {featureType:'water',elementType:'labels.text.fill',stylers:[{color:'#3a3a5a'}]},
-        {featureType:'poi',stylers:[{visibility:'off'}]},
-        {featureType:'transit',stylers:[{visibility:'off'}]},
-        {featureType:'administrative.locality',elementType:'labels.text.fill',stylers:[{color:'#b0b0c0'}]}
-      ]
-    });
-    const zone=new google.maps.Polygon({
-      paths:[{"lat": 45.54, "lng": -73.57}, {"lat": 45.42, "lng": -73.56}, {"lat": 45.35, "lng": -73.54}, {"lat": 45.25, "lng": -73.2}, {"lat": 45.16, "lng": -72.82}, {"lat": 45.16, "lng": -72.58}, {"lat": 45.32, "lng": -72.56}, {"lat": 45.42, "lng": -72.65}, {"lat": 45.55, "lng": -72.85}, {"lat": 45.68, "lng": -72.88}, {"lat": 45.68, "lng": -73.12}, {"lat": 45.64, "lng": -73.32}, {"lat": 45.64, "lng": -73.4}, {"lat": 45.54, "lng": -73.57}],
-      strokeColor:'#D4A03C',strokeOpacity:0.8,strokeWeight:2,
-      fillColor:'#D4A03C',fillOpacity:0.12
-    });
-    zone.setMap(map);
-    new google.maps.Marker({
-      position:cityPos,map:map,
-      title:'Saint-Jean-sur-Richelieu',
-      icon:{
-        path:google.maps.SymbolPath.CIRCLE,
-        scale:10,fillColor:'#D4A03C',fillOpacity:1,
-        strokeColor:'#fff',strokeWeight:2
-      }
-    });
-    new google.maps.Marker({
-      position:hqPos,map:map,
-      title:'Siège social — Marieville',
-      icon:{
-        path:google.maps.SymbolPath.CIRCLE,
-        scale:7,fillColor:'#d44a3c',fillOpacity:1,
-        strokeColor:'#fff',strokeWeight:2
-      }
-    });
-  }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&callback=initMap" async defer></script>
 
 
   <section class="about-service"><div class="container">
@@ -436,6 +377,30 @@
       document.querySelectorAll('p,span,div,h1,h2,h3').forEach(function(el) {
         if (el.children.length === 0 && /514[-. ]?835[-. ]?4820/.test(el.innerText))
           el.innerText = el.innerText.replace(/[\d]{3}[-. ][\d]{3}[-. ][\d]{4}/, ADS_DISPLAY);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', swapNumbers);
+    window.addEventListener('load', swapNumbers);
+    setTimeout(swapNumbers, 1500);
+  })();
+  </script>
+  <script>
+    // Header scroll
+    var hdr=document.getElementById('siteHeader');
+    window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>60);});
+  </script>
+  <script>
+  (function() {
+    var ADS_DISPLAY = '(450) 489-9220';
+    var ADS_HREF    = 'tel:+14504899220';
+    var isAds = window.location.search.indexOf('gclid') > -1 ||
+                window.location.search.indexOf('utm_source=google') > -1 ||
+                window.location.search.indexOf('utm_medium=cpc') > -1;
+    if (!isAds) return;
+    function swapNumbers() {
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+        el.href = ADS_HREF;
+        if (/[0-9]{3}/.test(el.innerText)) el.innerText = ADS_DISPLAY;
       });
     }
     document.addEventListener('DOMContentLoaded', swapNumbers);
