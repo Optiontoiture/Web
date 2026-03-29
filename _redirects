@@ -1,0 +1,47 @@
+# Redirections 301 — anciennes URLs Wix/Odoo vers nouveau site
+# Format: ancienne_url  nouvelle_url  code_http
+
+# Pages services Wix
+/nos-services/  /  301
+/nos-services/toiture-en-bardeaux/  /services/installation-toiture  301
+/nos-services/toiture-en-bardeaux  /services/installation-toiture  301
+/travaux-de-gouttieres/  /services/ferblanterie-gouttieres  301
+/travaux-de-gouttieres  /services/ferblanterie-gouttieres  301
+
+# Pages infos Wix
+/decouvrir-nos-secteurs  /  301
+/estimation/  /  301
+/estimation  /  301
+/carriere/  /  301
+/carriere  /  301
+/contactus  /  301
+/contactus/  /  301
+/contact  /  301
+/contact/  /  301
+
+# Pages anglaises Wix
+/en/*  /  301
+
+# Ancien service-offert / reparation (liens internes legacy)
+/service-offert  /  301
+/reparation-infiltration-nettoyage  /services/reparation-toiture  301
+
+# Assurer trailing slash sur hubs (Cloudflare Pages sert index.html dans dossiers)
+/couvreur-longueuil  /couvreur-longueuil/  301
+/couvreur-brossard  /couvreur-brossard/  301
+/couvreur-boucherville  /couvreur-boucherville/  301
+/couvreur-saint-lambert  /couvreur-saint-lambert/  301
+/couvreur-la-prairie  /couvreur-la-prairie/  301
+/couvreur-candiac  /couvreur-candiac/  301
+/couvreur-sainte-julie  /couvreur-sainte-julie/  301
+/couvreur-saint-bruno-de-montarville  /couvreur-saint-bruno-de-montarville/  301
+/couvreur-carignan  /couvreur-carignan/  301
+/couvreur-chambly  /couvreur-chambly/  301
+/couvreur-richelieu  /couvreur-richelieu/  301
+/couvreur-marieville  /couvreur-marieville/  301
+/couvreur-mont-saint-hilaire  /couvreur-mont-saint-hilaire/  301
+/couvreur-saint-jean-sur-richelieu  /couvreur-saint-jean-sur-richelieu/  301
+/couvreur-saint-hyacinthe  /couvreur-saint-hyacinthe/  301
+/couvreur-granby  /couvreur-granby/  301
+/couvreur-bromont  /couvreur-bromont/  301
+/couvreur-cowansville  /couvreur-cowansville/  301
