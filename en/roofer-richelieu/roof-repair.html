@@ -137,6 +137,9 @@
       .header-logo img{height:30px}
       .rona-badge{display:none}
     }
+      .fixed-form{position:fixed;top:84px;right:20px;width:340px;z-index:80;background:transparent;border-radius:var(--radius-lg);overflow:visible;height:auto;max-height:calc(100vh - 120px);display:flex;flex-direction:column;box-shadow:none;pointer-events:none}
+    .fixed-form-body{flex:1;overflow:hidden;pointer-events:auto;height:580px}
+    @media(max-width:1200px){.fixed-form{display:none}}
   </style>
 </head>
 <body>
@@ -326,6 +329,12 @@
     <a href="#" onclick="document.getElementById('formIframe').src='https://app.optiontoiture.com/formulaire?lang=en';document.getElementById('formModal').style.display='flex';return false;" class="btn-dark">📋 Free Estimate</a>
     <div class="cta-phone">or call: <a href="tel:+15148354820">514-835-4820</a></div>
   </div></section>
+
+  <aside class="fixed-form" id="optimeFloat">
+    <div class="fixed-form-body">
+      <iframe src="https://app.optiontoiture.com/formulaire?lang=en" style="width:100%;height:580px;border:none;border-radius:16px;" allowtransparency="true" title="Free Estimate"></iframe>
+    </div>
+  </aside>
 
   <footer class="site-footer">
     <div class="footer-inner"><div class="footer-top">
