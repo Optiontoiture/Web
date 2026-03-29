@@ -205,6 +205,19 @@
     </div></div>
   </section>
 
+  <section class="map-zone"><div class="container">
+    <div class="section-header">
+      <span class="overline">Service Area</span>
+      <h2 class="section-heading" style="color:var(--white)">We serve à Richelieu</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,.6);margin:0 auto">Notre équipe couvre l'ensemble du territoire de Richelieu.</p>
+    </div>
+    <div class="map-wrap"><div id="zoneMap"></div></div>
+    <div class="map-legend">
+      <div class="map-legend-item"><div class="map-legend-dot"></div>Richelieu</div>
+      <div class="map-legend-item"><div class="map-legend-dot poly"></div>Territoire desservi</div>
+    </div>
+  </div></section>
+
   <section class="calc-optime" id="calculateur" style="display:none;">
     <div class="container">
       <div class="section-header" style="margin-bottom:32px">
@@ -275,11 +288,85 @@
   </div></div>
   <div class="footer-bottom"><span>© 2026 Option Toiture Inc. — RBQ 5665-8412-01</span><a href="/en/">optiontoiture.com</a></div>
   </footer>
-  <script>
-    var hdr=document.getElementById('siteHeader');
-    window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>60);});
-  </script>
 
+
+
+
+
+  <script>
+    // Header scroll effect
+    var hdr=document.getElementById('siteHeader');
+    window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>60)});
+    // Auto-resize iframe calculator
+    window.addEventListener('message', function(e) {
+      if (e.data && e.data.type === 'optime-resize') {
+        var frame = document.getElementById('optime-calc');
+        if (frame) { frame.style.height = e.data.height + 'px'; frame.style.boxShadow = '0 8px 32px rgba(0,0,0,.15)'; }
+      }
+    });
+    // Send address to calculator
+    function sendToCalc() {
+      var addr = document.getElementById('heroAddress').value.trim();
+      if (!addr) { document.getElementById('heroAddress').focus(); return; }
+      document.getElementById('calculateur').style.display = 'block';
+      document.getElementById('optime-calc').src = 'https://app.optiontoiture.com/calculateur?lang=en&search=' + encodeURIComponent(addr);
+      setTimeout(function(){ document.getElementById('calculateur').scrollIntoView({behavior:'smooth',block:'start'}); }, 300);
+    }
+    document.getElementById('heroAddress').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault(); sendToCalc(); }
+    });
+    function initPage() {
+      // Carte zone municipale
+      var cityPos = {lat:45.4333,lng:-73.25};
+      var map = new google.maps.Map(document.getElementById('zoneMap'), {
+        center: cityPos, zoom: 13, disableDefaultUI: true, zoomControl: true,
+        styles: [
+          {elementType:'geometry',stylers:[{color:'#1a1a2e'}]},
+          {elementType:'labels.text.fill',stylers:[{color:'#8a8a9a'}]},
+          {elementType:'labels.text.stroke',stylers:[{color:'#1a1a2e'}]},
+          {featureType:'road',elementType:'geometry',stylers:[{color:'#2a2a3e'}]},
+          {featureType:'road',elementType:'labels.text.fill',stylers:[{color:'#6a6a7a'}]},
+          {featureType:'water',elementType:'geometry',stylers:[{color:'#0e0e1a'}]},
+          {featureType:'water',elementType:'labels.text.fill',stylers:[{color:'#3a3a5a'}]},
+          {featureType:'poi',stylers:[{visibility:'off'}]},
+          {featureType:'transit',stylers:[{visibility:'off'}]},
+          {featureType:'administrative.locality',elementType:'labels.text.fill',stylers:[{color:'#b0b0c0'}]}
+        ]
+      });
+      new google.maps.Polygon({paths:[{"lat": 45.4531, "lng": -73.277}, {"lat": 45.4499, "lng": -73.27}, {"lat": 45.4476, "lng": -73.2643}, {"lat": 45.4432, "lng": -73.2577}, {"lat": 45.4351, "lng": -73.2506}, {"lat": 45.4232, "lng": -73.2451}, {"lat": 45.4149, "lng": -73.2429}, {"lat": 45.4108, "lng": -73.2466}, {"lat": 45.4046, "lng": -73.2538}, {"lat": 45.4005, "lng": -73.2563}, {"lat": 45.3964, "lng": -73.2541}, {"lat": 45.3911, "lng": -73.254}, {"lat": 45.3833, "lng": -73.2494}, {"lat": 45.3815, "lng": -73.2471}, {"lat": 45.3785, "lng": -73.2428}, {"lat": 45.3718, "lng": -73.2335}, {"lat": 45.3658, "lng": -73.2192}, {"lat": 45.4029, "lng": -73.1971}, {"lat": 45.4235, "lng": -73.2037}, {"lat": 45.4297, "lng": -73.2023}, {"lat": 45.4381, "lng": -73.2026}, {"lat": 45.446, "lng": -73.2252}, {"lat": 45.443, "lng": -73.2403}, {"lat": 45.4544, "lng": -73.2684}, {"lat": 45.4563, "lng": -73.2708}],strokeColor:'#c9952c',strokeOpacity:.9,strokeWeight:2,fillColor:'#c9952c',fillOpacity:.15,map:map});
+      new google.maps.Marker({position:cityPos,map:map,title:'Richelieu',icon:{path:google.maps.SymbolPath.CIRCLE,scale:10,fillColor:'#c9952c',fillOpacity:1,strokeColor:'#fff',strokeWeight:2}});
+      // Autocomplete barre d'adresse
+      var heroInput = document.getElementById('heroAddress');
+      if (heroInput) {
+        var ac = new google.maps.places.Autocomplete(heroInput, {
+          types: ['address'], componentRestrictions: {country:'ca'}, fields: ['formatted_address']
+        });
+        ac.addListener('place_changed', function() {
+          var place = ac.getPlace();
+          if (place.formatted_address) { heroInput.value = place.formatted_address; sendToCalc(); }
+        });
+      }
+    }
+      // Autocomplete barre d'adresse
+      var heroInput = document.getElementById('heroAddress');
+      if (heroInput) {
+        var ac = new google.maps.places.Autocomplete(heroInput, {
+          types: ['address'], componentRestrictions: {country:'ca'}, fields: ['formatted_address']
+        });
+        ac.addListener('place_changed', function() {
+          var place = ac.getPlace();
+          if (place.formatted_address) { heroInput.value = place.formatted_address; sendToCalc(); }
+        });
+      }
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&libraries=places&callback=initPage" async defer></script>
+  <script>
+    const obs = new IntersectionObserver(e => {
+      e.forEach(i => { if (i.isIntersecting) i.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
   <script>
   (function() {
     var ADS_DISPLAY = '(450) 489-9220';
@@ -298,32 +385,6 @@
     window.addEventListener('load', swapNumbers);
     setTimeout(swapNumbers, 1500);
   })();
-  </script>
-  <script>
-    const obs = new IntersectionObserver(e => {
-      e.forEach(i => { if (i.isIntersecting) i.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-  </script>
-  <script>
-    // Auto-resize calculator iframe
-    window.addEventListener('message', function(e) {
-      if (e.data && e.data.type === 'optime-resize') {
-        var frame = document.getElementById('optime-calc');
-        if (frame) { frame.style.height = e.data.height + 'px'; frame.style.boxShadow = '0 8px 32px rgba(0,0,0,.15)'; }
-      }
-    });
-    // Send address to calculator
-    function sendToCalc() {
-      var addr = document.getElementById('heroAddress').value.trim();
-      if (!addr) { document.getElementById('heroAddress').focus(); return; }
-      document.getElementById('calculateur').style.display = 'block';
-      document.getElementById('optime-calc').src = 'https://app.optiontoiture.com/calculateur?lang=en&search=' + encodeURIComponent(addr);
-      setTimeout(function(){ document.getElementById('calculateur').scrollIntoView({behavior:'smooth',block:'start'}); }, 300);
-    }
-    document.getElementById('heroAddress').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') { e.preventDefault(); sendToCalc(); }
-    });
   </script>
 </body>
 </html>

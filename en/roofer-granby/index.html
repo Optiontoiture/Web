@@ -205,6 +205,19 @@
     </div></div>
   </section>
 
+  <section class="map-zone"><div class="container">
+    <div class="section-header">
+      <span class="overline">Service Area</span>
+      <h2 class="section-heading" style="color:var(--white)">We serve à Granby</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,.6);margin:0 auto">Notre équipe couvre l'ensemble du territoire de Granby.</p>
+    </div>
+    <div class="map-wrap"><div id="zoneMap"></div></div>
+    <div class="map-legend">
+      <div class="map-legend-item"><div class="map-legend-dot"></div>Granby</div>
+      <div class="map-legend-item"><div class="map-legend-dot poly"></div>Territoire desservi</div>
+    </div>
+  </div></section>
+
   <section class="calc-optime" id="calculateur" style="display:none;">
     <div class="container">
       <div class="section-header" style="margin-bottom:32px">
@@ -275,11 +288,85 @@
   </div></div>
   <div class="footer-bottom"><span>© 2026 Option Toiture Inc. — RBQ 5665-8412-01</span><a href="/en/">optiontoiture.com</a></div>
   </footer>
-  <script>
-    var hdr=document.getElementById('siteHeader');
-    window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>60);});
-  </script>
 
+
+
+
+
+  <script>
+    // Header scroll effect
+    var hdr=document.getElementById('siteHeader');
+    window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>60)});
+    // Auto-resize iframe calculator
+    window.addEventListener('message', function(e) {
+      if (e.data && e.data.type === 'optime-resize') {
+        var frame = document.getElementById('optime-calc');
+        if (frame) { frame.style.height = e.data.height + 'px'; frame.style.boxShadow = '0 8px 32px rgba(0,0,0,.15)'; }
+      }
+    });
+    // Send address to calculator
+    function sendToCalc() {
+      var addr = document.getElementById('heroAddress').value.trim();
+      if (!addr) { document.getElementById('heroAddress').focus(); return; }
+      document.getElementById('calculateur').style.display = 'block';
+      document.getElementById('optime-calc').src = 'https://app.optiontoiture.com/calculateur?lang=en&search=' + encodeURIComponent(addr);
+      setTimeout(function(){ document.getElementById('calculateur').scrollIntoView({behavior:'smooth',block:'start'}); }, 300);
+    }
+    document.getElementById('heroAddress').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault(); sendToCalc(); }
+    });
+    function initPage() {
+      // Carte zone municipale
+      var cityPos = {lat:45.4,lng:-72.7333};
+      var map = new google.maps.Map(document.getElementById('zoneMap'), {
+        center: cityPos, zoom: 12, disableDefaultUI: true, zoomControl: true,
+        styles: [
+          {elementType:'geometry',stylers:[{color:'#1a1a2e'}]},
+          {elementType:'labels.text.fill',stylers:[{color:'#8a8a9a'}]},
+          {elementType:'labels.text.stroke',stylers:[{color:'#1a1a2e'}]},
+          {featureType:'road',elementType:'geometry',stylers:[{color:'#2a2a3e'}]},
+          {featureType:'road',elementType:'labels.text.fill',stylers:[{color:'#6a6a7a'}]},
+          {featureType:'water',elementType:'geometry',stylers:[{color:'#0e0e1a'}]},
+          {featureType:'water',elementType:'labels.text.fill',stylers:[{color:'#3a3a5a'}]},
+          {featureType:'poi',stylers:[{visibility:'off'}]},
+          {featureType:'transit',stylers:[{visibility:'off'}]},
+          {featureType:'administrative.locality',elementType:'labels.text.fill',stylers:[{color:'#b0b0c0'}]}
+        ]
+      });
+      new google.maps.Polygon({paths:[{"lat": 45.3684, "lng": -72.8459}, {"lat": 45.3548, "lng": -72.7888}, {"lat": 45.3547, "lng": -72.7775}, {"lat": 45.3416, "lng": -72.7575}, {"lat": 45.3415, "lng": -72.7607}, {"lat": 45.3416, "lng": -72.7624}, {"lat": 45.3414, "lng": -72.7638}, {"lat": 45.3405, "lng": -72.7469}, {"lat": 45.3394, "lng": -72.7057}, {"lat": 45.3381, "lng": -72.7013}, {"lat": 45.3392, "lng": -72.6994}, {"lat": 45.3381, "lng": -72.6675}, {"lat": 45.352, "lng": -72.6665}, {"lat": 45.3656, "lng": -72.6656}, {"lat": 45.3788, "lng": -72.6656}, {"lat": 45.406, "lng": -72.6647}, {"lat": 45.4331, "lng": -72.6639}, {"lat": 45.4473, "lng": -72.6633}, {"lat": 45.4482, "lng": -72.6949}, {"lat": 45.4574, "lng": -72.7021}, {"lat": 45.4578, "lng": -72.7265}, {"lat": 45.4578, "lng": -72.7427}, {"lat": 45.4578, "lng": -72.7745}, {"lat": 45.4579, "lng": -72.7968}, {"lat": 45.4567, "lng": -72.8164}, {"lat": 45.4458, "lng": -72.8216}, {"lat": 45.4365, "lng": -72.8232}, {"lat": 45.4217, "lng": -72.8272}, {"lat": 45.3818, "lng": -72.8412}],strokeColor:'#c9952c',strokeOpacity:.9,strokeWeight:2,fillColor:'#c9952c',fillOpacity:.15,map:map});
+      new google.maps.Marker({position:cityPos,map:map,title:'Granby',icon:{path:google.maps.SymbolPath.CIRCLE,scale:10,fillColor:'#c9952c',fillOpacity:1,strokeColor:'#fff',strokeWeight:2}});
+      // Autocomplete barre d'adresse
+      var heroInput = document.getElementById('heroAddress');
+      if (heroInput) {
+        var ac = new google.maps.places.Autocomplete(heroInput, {
+          types: ['address'], componentRestrictions: {country:'ca'}, fields: ['formatted_address']
+        });
+        ac.addListener('place_changed', function() {
+          var place = ac.getPlace();
+          if (place.formatted_address) { heroInput.value = place.formatted_address; sendToCalc(); }
+        });
+      }
+    }
+      // Autocomplete barre d'adresse
+      var heroInput = document.getElementById('heroAddress');
+      if (heroInput) {
+        var ac = new google.maps.places.Autocomplete(heroInput, {
+          types: ['address'], componentRestrictions: {country:'ca'}, fields: ['formatted_address']
+        });
+        ac.addListener('place_changed', function() {
+          var place = ac.getPlace();
+          if (place.formatted_address) { heroInput.value = place.formatted_address; sendToCalc(); }
+        });
+      }
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&libraries=places&callback=initPage" async defer></script>
+  <script>
+    const obs = new IntersectionObserver(e => {
+      e.forEach(i => { if (i.isIntersecting) i.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
   <script>
   (function() {
     var ADS_DISPLAY = '(450) 489-9220';
@@ -298,32 +385,6 @@
     window.addEventListener('load', swapNumbers);
     setTimeout(swapNumbers, 1500);
   })();
-  </script>
-  <script>
-    const obs = new IntersectionObserver(e => {
-      e.forEach(i => { if (i.isIntersecting) i.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-  </script>
-  <script>
-    // Auto-resize calculator iframe
-    window.addEventListener('message', function(e) {
-      if (e.data && e.data.type === 'optime-resize') {
-        var frame = document.getElementById('optime-calc');
-        if (frame) { frame.style.height = e.data.height + 'px'; frame.style.boxShadow = '0 8px 32px rgba(0,0,0,.15)'; }
-      }
-    });
-    // Send address to calculator
-    function sendToCalc() {
-      var addr = document.getElementById('heroAddress').value.trim();
-      if (!addr) { document.getElementById('heroAddress').focus(); return; }
-      document.getElementById('calculateur').style.display = 'block';
-      document.getElementById('optime-calc').src = 'https://app.optiontoiture.com/calculateur?lang=en&search=' + encodeURIComponent(addr);
-      setTimeout(function(){ document.getElementById('calculateur').scrollIntoView({behavior:'smooth',block:'start'}); }, 300);
-    }
-    document.getElementById('heroAddress').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') { e.preventDefault(); sendToCalc(); }
-    });
   </script>
 </body>
 </html>

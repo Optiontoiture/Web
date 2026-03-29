@@ -205,6 +205,19 @@
     </div></div>
   </section>
 
+  <section class="map-zone"><div class="container">
+    <div class="section-header">
+      <span class="overline">Service Area</span>
+      <h2 class="section-heading" style="color:var(--white)">We serve à Marieville</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,.6);margin:0 auto">Notre équipe couvre l'ensemble du territoire de Marieville.</p>
+    </div>
+    <div class="map-wrap"><div id="zoneMap"></div></div>
+    <div class="map-legend">
+      <div class="map-legend-item"><div class="map-legend-dot"></div>Marieville</div>
+      <div class="map-legend-item"><div class="map-legend-dot poly"></div>Territoire desservi</div>
+    </div>
+  </div></section>
+
   <section class="calc-optime" id="calculateur" style="display:none;">
     <div class="container">
       <div class="section-header" style="margin-bottom:32px">
@@ -275,11 +288,85 @@
   </div></div>
   <div class="footer-bottom"><span>© 2026 Option Toiture Inc. — RBQ 5665-8412-01</span><a href="/en/">optiontoiture.com</a></div>
   </footer>
-  <script>
-    var hdr=document.getElementById('siteHeader');
-    window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>60);});
-  </script>
 
+
+
+
+
+  <script>
+    // Header scroll effect
+    var hdr=document.getElementById('siteHeader');
+    window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>60)});
+    // Auto-resize iframe calculator
+    window.addEventListener('message', function(e) {
+      if (e.data && e.data.type === 'optime-resize') {
+        var frame = document.getElementById('optime-calc');
+        if (frame) { frame.style.height = e.data.height + 'px'; frame.style.boxShadow = '0 8px 32px rgba(0,0,0,.15)'; }
+      }
+    });
+    // Send address to calculator
+    function sendToCalc() {
+      var addr = document.getElementById('heroAddress').value.trim();
+      if (!addr) { document.getElementById('heroAddress').focus(); return; }
+      document.getElementById('calculateur').style.display = 'block';
+      document.getElementById('optime-calc').src = 'https://app.optiontoiture.com/calculateur?lang=en&search=' + encodeURIComponent(addr);
+      setTimeout(function(){ document.getElementById('calculateur').scrollIntoView({behavior:'smooth',block:'start'}); }, 300);
+    }
+    document.getElementById('heroAddress').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault(); sendToCalc(); }
+    });
+    function initPage() {
+      // Carte zone municipale
+      var cityPos = {lat:45.4374,lng:-73.1584};
+      var map = new google.maps.Map(document.getElementById('zoneMap'), {
+        center: cityPos, zoom: 13, disableDefaultUI: true, zoomControl: true,
+        styles: [
+          {elementType:'geometry',stylers:[{color:'#1a1a2e'}]},
+          {elementType:'labels.text.fill',stylers:[{color:'#8a8a9a'}]},
+          {elementType:'labels.text.stroke',stylers:[{color:'#1a1a2e'}]},
+          {featureType:'road',elementType:'geometry',stylers:[{color:'#2a2a3e'}]},
+          {featureType:'road',elementType:'labels.text.fill',stylers:[{color:'#6a6a7a'}]},
+          {featureType:'water',elementType:'geometry',stylers:[{color:'#0e0e1a'}]},
+          {featureType:'water',elementType:'labels.text.fill',stylers:[{color:'#3a3a5a'}]},
+          {featureType:'poi',stylers:[{visibility:'off'}]},
+          {featureType:'transit',stylers:[{visibility:'off'}]},
+          {featureType:'administrative.locality',elementType:'labels.text.fill',stylers:[{color:'#b0b0c0'}]}
+        ]
+      });
+      new google.maps.Polygon({paths:[{"lat": 45.4213, "lng": -73.2113}, {"lat": 45.395, "lng": -73.1978}, {"lat": 45.3788, "lng": -73.155}, {"lat": 45.4014, "lng": -73.1274}, {"lat": 45.4146, "lng": -73.1252}, {"lat": 45.4234, "lng": -73.0972}, {"lat": 45.4372, "lng": -73.0955}, {"lat": 45.4901, "lng": -73.1679}, {"lat": 45.4878, "lng": -73.1699}, {"lat": 45.4859, "lng": -73.1714}, {"lat": 45.4828, "lng": -73.1693}, {"lat": 45.479, "lng": -73.1693}, {"lat": 45.4771, "lng": -73.1693}, {"lat": 45.4762, "lng": -73.1696}, {"lat": 45.4738, "lng": -73.1733}, {"lat": 45.4758, "lng": -73.1859}, {"lat": 45.472, "lng": -73.1942}, {"lat": 45.4614, "lng": -73.1999}, {"lat": 45.4555, "lng": -73.2011}, {"lat": 45.4435, "lng": -73.2024}, {"lat": 45.4412, "lng": -73.2051}, {"lat": 45.4342, "lng": -73.2028}, {"lat": 45.4292, "lng": -73.2025}, {"lat": 45.4246, "lng": -73.2031}, {"lat": 45.4213, "lng": -73.2113}],strokeColor:'#c9952c',strokeOpacity:.9,strokeWeight:2,fillColor:'#c9952c',fillOpacity:.15,map:map});
+      new google.maps.Marker({position:cityPos,map:map,title:'Marieville',icon:{path:google.maps.SymbolPath.CIRCLE,scale:10,fillColor:'#c9952c',fillOpacity:1,strokeColor:'#fff',strokeWeight:2}});
+      // Autocomplete barre d'adresse
+      var heroInput = document.getElementById('heroAddress');
+      if (heroInput) {
+        var ac = new google.maps.places.Autocomplete(heroInput, {
+          types: ['address'], componentRestrictions: {country:'ca'}, fields: ['formatted_address']
+        });
+        ac.addListener('place_changed', function() {
+          var place = ac.getPlace();
+          if (place.formatted_address) { heroInput.value = place.formatted_address; sendToCalc(); }
+        });
+      }
+    }
+      // Autocomplete barre d'adresse
+      var heroInput = document.getElementById('heroAddress');
+      if (heroInput) {
+        var ac = new google.maps.places.Autocomplete(heroInput, {
+          types: ['address'], componentRestrictions: {country:'ca'}, fields: ['formatted_address']
+        });
+        ac.addListener('place_changed', function() {
+          var place = ac.getPlace();
+          if (place.formatted_address) { heroInput.value = place.formatted_address; sendToCalc(); }
+        });
+      }
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&libraries=places&callback=initPage" async defer></script>
+  <script>
+    const obs = new IntersectionObserver(e => {
+      e.forEach(i => { if (i.isIntersecting) i.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
   <script>
   (function() {
     var ADS_DISPLAY = '(450) 489-9220';
@@ -298,32 +385,6 @@
     window.addEventListener('load', swapNumbers);
     setTimeout(swapNumbers, 1500);
   })();
-  </script>
-  <script>
-    const obs = new IntersectionObserver(e => {
-      e.forEach(i => { if (i.isIntersecting) i.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-  </script>
-  <script>
-    // Auto-resize calculator iframe
-    window.addEventListener('message', function(e) {
-      if (e.data && e.data.type === 'optime-resize') {
-        var frame = document.getElementById('optime-calc');
-        if (frame) { frame.style.height = e.data.height + 'px'; frame.style.boxShadow = '0 8px 32px rgba(0,0,0,.15)'; }
-      }
-    });
-    // Send address to calculator
-    function sendToCalc() {
-      var addr = document.getElementById('heroAddress').value.trim();
-      if (!addr) { document.getElementById('heroAddress').focus(); return; }
-      document.getElementById('calculateur').style.display = 'block';
-      document.getElementById('optime-calc').src = 'https://app.optiontoiture.com/calculateur?lang=en&search=' + encodeURIComponent(addr);
-      setTimeout(function(){ document.getElementById('calculateur').scrollIntoView({behavior:'smooth',block:'start'}); }, 300);
-    }
-    document.getElementById('heroAddress').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') { e.preventDefault(); sendToCalc(); }
-    });
   </script>
 </body>
 </html>
