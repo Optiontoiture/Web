@@ -115,6 +115,7 @@
     .header-phone:hover{color:var(--gold-light)}
     .header-cta{background:var(--gold);color:var(--dark);padding:8px 20px;border-radius:6px;font-weight:600;font-size:.72rem;text-decoration:none;letter-spacing:.04em;text-transform:uppercase;transition:all .3s;white-space:nowrap}
     .header-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+        .lang-switch{display:flex;align-items:center;gap:2px;margin-left:8px}.lang-switch a{color:rgba(255,255,255,.5);font-size:.75rem;font-weight:600;text-decoration:none;padding:4px 6px;border-radius:4px;letter-spacing:.04em;transition:all .3s}.lang-switch a:hover{color:#fff}.lang-switch a.active{color:#fff;background:rgba(255,255,255,.12)}.lang-switch .sep{color:rgba(255,255,255,.25);font-size:.7rem}
     .mobile-toggle{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.5rem;padding:8px}
     .mobile-menu{display:none;position:fixed;inset:0;background:var(--dark);z-index:200;flex-direction:column;padding:80px 32px 32px;opacity:0;transition:opacity .3s;overflow-y:auto;-webkit-overflow-scrolling:touch}
     .mobile-menu.open{display:flex;opacity:1}
@@ -200,7 +201,7 @@
       <div class="header-right">
         <a href="tel:+15148354820" class="header-phone">📞 514-835-4820</a>
         <a href="#" onclick="document.getElementById('formIframe').src='https://app.optiontoiture.com/formulaire';document.getElementById('formModal').style.display='flex';return false;" class="header-cta">Free Estimate</a>
-      </div>
+      <div class="lang-switch"><a href="/couvreur-carignan/reparation-toiture">FR</a><span class="sep">|</span><a href="#" class="active">EN</a></div></div>
       <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">&#9776;</button>
     </div>
   </header>
@@ -223,6 +224,7 @@
     <a href="/en/roofer-granby/" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Granby</a>
     <a href="tel:+15148354820" onclick="this.closest('.mobile-menu').classList.remove('open')">Contact Us</a>
     <a href="tel:+15148354820">514-835-4820</a>
+      <a href="/couvreur-carignan/reparation-toiture" style="background:rgba(255,255,255,.08);text-align:center;font-weight:700;letter-spacing:.1em;font-size:.85rem">🌐 Français</a>
   </div>
   <div class="form-modal" id="formModal" onclick="if(event.target===this)this.style.display='none'">
     <div class="form-modal-inner">

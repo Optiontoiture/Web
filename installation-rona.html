@@ -509,7 +509,8 @@
         .header-phone:hover{color:var(--yellow)}
         .header-cta-btn{background:var(--yellow);color:var(--dark);padding:10px 22px;border-radius:6px;font-weight:600;font-size:.78rem;text-decoration:none;letter-spacing:.04em;text-transform:uppercase;transition:all .3s}
         .header-cta-btn:hover{background:var(--yellow-hover);transform:translateY(-1px)}
-        .mobile-toggle{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.5rem;padding:8px}
+            .lang-switch{display:flex;align-items:center;gap:2px;margin-left:8px}.lang-switch a{color:rgba(255,255,255,.5);font-size:.75rem;font-weight:600;text-decoration:none;padding:4px 6px;border-radius:4px;letter-spacing:.04em;transition:all .3s}.lang-switch a:hover{color:#fff}.lang-switch a.active{color:#fff;background:rgba(255,255,255,.12)}.lang-switch .sep{color:rgba(255,255,255,.25);font-size:.7rem}
+    .mobile-toggle{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.5rem;padding:8px}
         .mobile-menu{display:none;position:fixed;inset:0;background:var(--rona);z-index:200;flex-direction:column;padding:80px 32px 32px;overflow-y:auto;-webkit-overflow-scrolling:touch}
         .mobile-menu.open{display:flex}
         .mobile-menu a{font-size:1.2rem;font-weight:500;color:#fff;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
@@ -531,7 +532,7 @@
             <div class="header-right">
                 <a href="tel:+18444541454" class="header-phone">1-844-454-1454</a>
                 <a href="https://rona-wizard.myhomeprojectcenter.com/fr-CA/quick-wizard" class="header-cta-btn" rel="noopener">Soumission gratuite</a>
-            </div>
+            <div class="lang-switch"><a href="#" class="active">FR</a><span class="sep">|</span><a href="/en/rona-installation">EN</a></div></div>
             <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu">&#9776;</button>
         </div>
     </nav>
