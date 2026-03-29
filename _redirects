@@ -20,7 +20,14 @@
 /contact/  /  301
 
 # Pages anglaises Wix
-/en/*  /  301
+# Old Wix English pages → new English site
+/en/achievements/  /en/  301
+/en/achievements  /en/  301
+/en/our-services/  /en/  301
+/en/our-services/roof-repair/  /en/services/roof-repair  301
+/en/our-services/roof-repair  /en/services/roof-repair  301
+/en/contact/  /en/  301
+/en/contact  /en/  301
 
 # Ancien service-offert / reparation (liens internes legacy)
 /service-offert  /  301
