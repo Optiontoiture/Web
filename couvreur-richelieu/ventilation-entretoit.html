@@ -445,5 +445,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     setTimeout(swapNumbers, 1500);
   })();
   </script>
+  <script>
+  // Optime form conversion tracking via postMessage → GTM dataLayer
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.event === 'optime_form_submitted') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ 'event': 'form_conversion' });
+    }
+  });
+  </script>
 </body>
 </html>
