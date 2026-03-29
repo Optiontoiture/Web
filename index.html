@@ -10,6 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Option Toiture | Couvreur certifié GAF Master Elite — Rive-Sud">
   <meta property="og:description" content="Couvreur certifié GAF Master Elite à Marieville. 1 000+ projets en Montérégie. Garantie 50 ans, valeur à neuf 100%.">
+  <meta property="og:image" content="https://www.optiontoiture.com/images/photos/chantier-rona-camion-2.webp">
   <meta property="og:locale" content="fr_CA">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"RoofingContractor","name":"Option Toiture inc.","url":"https://www.optiontoiture.com","telephone":"+1-514-835-4820","foundingDate":"2012","address":{"@type":"PostalAddress","streetAddress":"3320 route 112","addressLocality":"Marieville","addressRegion":"QC","postalCode":"J3M 1P1","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":45.4369,"longitude":-73.1759},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"150","bestRating":"5"},"areaServed":[{"@type":"City","name":"Marieville"},{"@type":"City","name":"Chambly"},{"@type":"City","name":"Longueuil"},{"@type":"City","name":"Brossard"},{"@type":"City","name":"Saint-Jean-sur-Richelieu"},{"@type":"City","name":"Boucherville"},{"@type":"City","name":"Granby"},{"@type":"City","name":"Bromont"}]}
@@ -847,5 +848,30 @@
     }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&libraries=places&callback=initFloatAutocomplete" async defer></script>
+  <script>
+  (function() {
+    var ADS_NUMBER  = '+14504899220';
+    var ADS_DISPLAY = '(450) 489-9220';
+    var ADS_HREF    = 'tel:+14504899220';
+    var isAds = window.location.search.indexOf('gclid') > -1 ||
+                window.location.search.indexOf('utm_source=google') > -1 ||
+                window.location.search.indexOf('utm_medium=cpc') > -1;
+    if (!isAds) return;
+    function swapNumbers() {
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+        el.href = ADS_HREF;
+        if (/\d{3}/.test(el.innerText)) el.innerText = ADS_DISPLAY;
+      });
+      document.querySelectorAll('p, span, div, h1, h2, h3').forEach(function(el) {
+        if (el.children.length === 0 && /514[-.\s]?835[-.\s]?4820/.test(el.innerText)) {
+          el.innerText = el.innerText.replace(/[\d]{3}[-.\s][\d]{3}[-.\s][\d]{4}/, ADS_DISPLAY);
+        }
+      });
+    }
+    document.addEventListener('DOMContentLoaded', swapNumbers);
+    window.addEventListener('load', swapNumbers);
+    setTimeout(swapNumbers, 1500);
+  })();
+  </script>
 </body>
 </html>
