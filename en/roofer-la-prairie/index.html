@@ -273,5 +273,11 @@
     setTimeout(swapNumbers, 1500);
   })();
   </script>
+  <script>
+    const obs = new IntersectionObserver(e => {
+      e.forEach(i => { if (i.isIntersecting) i.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>
