@@ -190,10 +190,27 @@
         <div class="hero-stat"><div class="hero-stat-val">50-Year</div><div class="hero-stat-label">Material Warranty</div></div>
         <div class="hero-stat"><div class="hero-stat-val">4.8 ⭐</div><div class="hero-stat-label">Google Rating</div></div>
       </div>
+          <div class="hero-search-center">
+        <span class="hero-search-label">GET YOUR INSTANT ESTIMATE</span>
+        <div class="hero-search-wrap">
+          <span class="hero-search-icon">📍</span>
+          <input type="text" id="heroAddress" placeholder="Enter your address..." autocomplete="off">
+          <button class="hero-search-btn" onclick="sendToCalc()">ESTIMATE →</button>
+        </div>
+        <p class="hero-search-hint">Enter your address for an instant estimate</p>
+      </div>
     </div></div>
   </section>
 
-
+  <section class="calc-optime" id="calculateur" style="display:none;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom:32px">
+        <span class="overline">Instant Estimate</span>
+        <h2 class="section-heading">Estimate the Cost of Your <em>Roof</em></h2>
+      </div>
+      <iframe id="optime-calc" src="about:blank" style="width:100%;min-height:0;height:0;border:none;border-radius:var(--radius-lg);overflow:hidden;transition:height .3s;" allowtransparency="true" title="Roof Estimate"></iframe>
+    </div>
+  </section>
 
   <section class="services-hub"><div class="container">
     <div class="section-header"><span class="overline">Our Services in Bromont</span><h2 class="section-heading">What Can We Do for You?</h2><p class="section-subtitle">From complete replacement to emergency repair, our team serves all of Bromont and surrounding areas.</p></div>
@@ -278,6 +295,26 @@
       e.forEach(i => { if (i.isIntersecting) i.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+  <script>
+    // Auto-resize calculator iframe
+    window.addEventListener('message', function(e) {
+      if (e.data && e.data.type === 'optime-resize') {
+        var frame = document.getElementById('optime-calc');
+        if (frame) { frame.style.height = e.data.height + 'px'; frame.style.boxShadow = '0 8px 32px rgba(0,0,0,.15)'; }
+      }
+    });
+    // Send address to calculator
+    function sendToCalc() {
+      var addr = document.getElementById('heroAddress').value.trim();
+      if (!addr) { document.getElementById('heroAddress').focus(); return; }
+      document.getElementById('calculateur').style.display = 'block';
+      document.getElementById('optime-calc').src = 'https://app.optiontoiture.com/calculateur?lang=en&search=' + encodeURIComponent(addr);
+      setTimeout(function(){ document.getElementById('calculateur').scrollIntoView({behavior:'smooth',block:'start'}); }, 300);
+    }
+    document.getElementById('heroAddress').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault(); sendToCalc(); }
+    });
   </script>
 </body>
 </html>
