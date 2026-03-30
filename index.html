@@ -12,12 +12,13 @@
   <meta property="og:description" content="Couvreur certifié GAF Master Elite à Marieville. 1 000+ projets en Montérégie. Garantie 50 ans, valeur à neuf 100%.">
   <meta property="og:image" content="https://www.optiontoiture.com/images/photos/chantier-rona-camion-2.webp">
   <meta property="og:locale" content="fr_CA">
+  <link rel="preload" as="image" href="/images/photos/chantier-rona-camion-2.webp" fetchpriority="high">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"RoofingContractor","name":"Option Toiture inc.","url":"https://www.optiontoiture.com","telephone":"+1-514-835-4820","foundingDate":"2012","address":{"@type":"PostalAddress","streetAddress":"3320 route 112","addressLocality":"Marieville","addressRegion":"QC","postalCode":"J3M 1P1","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":45.4369,"longitude":-73.1759},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"150","bestRating":"5"},"areaServed":[{"@type":"City","name":"Marieville"},{"@type":"City","name":"Chambly"},{"@type":"City","name":"Longueuil"},{"@type":"City","name":"Brossard"},{"@type":"City","name":"Saint-Jean-sur-Richelieu"},{"@type":"City","name":"Boucherville"},{"@type":"City","name":"Granby"},{"@type":"City","name":"Bromont"}]}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root{
       --cream:#f3ede3;--cream-light:#faf7f1;--gold:#c9952c;--gold-light:#e4b94a;--gold-dark:#a67a1a;
@@ -531,7 +532,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg"><img src="images/photos/chantier-rona-camion-2.webp" alt="Chantier Option Toiture"></div>
+    <div class="hero-bg"><img src="images/photos/chantier-rona-camion-2.webp" alt="Chantier Option Toiture" fetchpriority="high" loading="eager"></div>
     <div class="hero-search-center">
       <span class="hero-search-label">Obtenez votre estimation instantanée</span>
       <div class="hero-search-wrap">
@@ -787,7 +788,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- FORMULAIRE OPTIME FLOTTANT (desktop seulement) -->
   <aside class="fixed-form" id="optimeFloat">
     <div class="fixed-form-body">
-      <iframe src="https://app.optiontoiture.com/formulaire" style="width:100%;height:580px;border:none;border-radius:16px;" allowtransparency="true" title="Soumission gratuite"></iframe>
+      <iframe id="floatIframe" src="about:blank" style="width:100%;height:580px;border:none;border-radius:16px;" allowtransparency="true" title="Soumission gratuite"></iframe>
     </div>
   </aside>
 
@@ -843,7 +844,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (e.key === 'Enter') { e.preventDefault(); sendToCalc(); }
     });
 
-    // Google Autocomplete
+    // Google Autocomplete — lazy-load Maps API on first focus
+    var mapsLoaded = false;
+    function loadMapsAPI() {
+      if (mapsLoaded) return;
+      mapsLoaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&libraries=places&callback=initFloatAutocomplete';
+      s.async = true; s.defer = true;
+      document.head.appendChild(s);
+    }
     function initFloatAutocomplete() {
       var heroInput = document.getElementById('heroAddress');
       if (heroInput) {
@@ -861,8 +871,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
       }
     }
+    document.getElementById('heroAddress').addEventListener('focus', loadMapsAPI, {once:true});
+    // Lazy-load floating form when visible
+    var floatFrame = document.getElementById('floatIframe');
+    if (floatFrame && window.innerWidth > 1200) {
+      var fObs = new IntersectionObserver(function(e) {
+        if (e[0].isIntersecting) { floatFrame.src = 'https://app.optiontoiture.com/formulaire'; fObs.disconnect(); }
+      }, {rootMargin:'200px'});
+      fObs.observe(floatFrame);
+    }
   </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmWYFOj2tO_eEN0TgNZDavJoKqV2fsNrU&libraries=places&callback=initFloatAutocomplete" async defer></script>
   <script>
   (function() {
     var ADS_NUMBER  = '+14504899220';

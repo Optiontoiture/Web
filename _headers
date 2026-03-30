@@ -1,0 +1,24 @@
+# Images - cache 1 year (immutable content, filenames change on update)
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts (if self-hosted in future)
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages - cache 1 hour, revalidate
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/*/
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Sitemap and robots
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Cache-Control: public, max-age=86400
