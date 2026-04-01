@@ -28,7 +28,7 @@
     .section-header{text-align:center;margin-bottom:60px}.section-header .section-subtitle{margin:0 auto}
     .site-header{position:sticky;top:0;z-index:100;background:rgba(20,18,16,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
     .header-inner{max-width:1320px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:72px}
-    .header-logo{text-decoration:none;display:flex;align-items:center;gap:10px}
+    .header-logo{text-decoration:none;display:flex;flex-direction:column;gap:1px}.header-logo::after{content:'Couvreur certifiÃ© GAF Master Elite';font-family:'Outfit',sans-serif;font-size:.55rem;color:rgba(255,255,255,.5);letter-spacing:.05em;white-space:nowrap}html[lang=en] .header-logo::after{content:'GAF Master Elite Certified Roofer'}@media(max-width:768px){.header-logo::after{display:none}}
     .header-logo img{height:42px;width:auto;object-fit:contain}
     .rona-badge{display:inline-block;background:#003DA5;color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:8px 16px;border-radius:5px;white-space:nowrap;text-decoration:none;transition:background .3s}.rona-badge:hover{background:#0052E0}
     .header-nav{display:flex;align-items:center;gap:4px}
@@ -110,7 +110,7 @@
     .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
       .fixed-form{position:fixed;top:84px;right:20px;width:340px;z-index:80;background:transparent;border-radius:var(--radius-lg);overflow:visible;height:auto;max-height:calc(100vh - 120px);display:flex;flex-direction:column;box-shadow:none;pointer-events:none}
     .fixed-form-body{flex:1;overflow:hidden;pointer-events:auto;height:580px}
-    @media(max-width:1200px){.fixed-form{display:none}.header-phone{display:none}.header-nav a,.header-nav>a{padding:8px 10px;font-size:.72rem}.header-right{gap:10px}.header-cta{padding:8px 14px}.rona-badge{font-size:.6rem;padding:6px 10px}}@media(min-width:1201px) and (max-width:1440px){.hero-content{padding-right:380px}.hero-search-center{max-width:540px}}
+    @media(max-width:1200px){.fixed-form{display:none}.header-phone{display:none}.header-nav a,.header-nav>a{padding:8px 10px;font-size:.72rem}.header-right{gap:10px}.header-cta{padding:8px 14px}.rona-badge{font-size:.6rem;padding:6px 10px}}@media(min-width:1201px) and (max-width:1440px){.hero-content{padding-right:380px;padding-top:60px}.hero-search-center{max-width:540px}}
   </style>
   <link rel="alternate" hreflang="fr" href="https://www.optiontoiture.com/couvreur-cowansville/">
   <link rel="alternate" hreflang="en" href="https://www.optiontoiture.com/en/roofer-cowansville/">
