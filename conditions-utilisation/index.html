@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions d'utilisation | Option Toiture</title>
+  <meta name="description" content="Conditions d'utilisation du site web optiontoiture.com et de l'application app.optiontoiture.com — Option Toiture inc.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Conditions d'utilisation | Option Toiture">
+  <meta property="og:description" content="Conditions d'utilisation d'Option Toiture inc.">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:site_name" content="Option Toiture">
+  <link rel="canonical" href="https://www.optiontoiture.com/conditions-utilisation">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --font-display:'Cormorant Garamond',Georgia,serif;
+      --font-body:'Outfit',system-ui,sans-serif;
+      --color-bg:#0a0a0a;--color-surface:#141414;--color-surface-2:#1e1e1e;
+      --color-text:#f0ece4;--color-text-muted:#a09a8e;
+      --color-accent:#c8a96e;--color-accent-hover:#d4ba82;
+      --color-border:rgba(200,169,110,0.15);--color-white:#fff;
+      --container:1200px;--radius:12px
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);background:var(--color-bg);color:var(--color-text);line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased}
+    body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.03;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+    .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+    a{color:var(--color-accent);text-decoration:none;transition:color .3s}a:hover{color:var(--color-accent-hover)}
+    img{max-width:100%;height:auto;display:block}
+
+    /* HEADER */
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(10,10,10,0.3);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:all .4s}
+    .site-header.scrolled{background:rgba(10,10,10,0.92);border-bottom-color:var(--color-border);padding:10px 0}
+    .header-inner{max-width:var(--container);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+    .logo{height:48px;width:auto;object-fit:contain;transition:height .3s}.site-header.scrolled .logo{height:38px}
+    .main-nav{display:flex;align-items:center;gap:8px}.nav-close{display:none}
+    .main-nav a{font-family:var(--font-body);font-size:.88rem;font-weight:400;color:var(--color-text-muted);padding:8px 14px;border-radius:6px;transition:all .3s;white-space:nowrap}
+    .main-nav a:hover,.main-nav a.active{color:var(--color-text);background:rgba(200,169,110,0.08)}.main-nav a.active{color:var(--color-accent)}
+    .nav-dropdown{position:relative}.nav-dropdown>a{display:flex;align-items:center;gap:4px}
+    .nav-dropdown>a::after{content:'';border:solid var(--color-text-muted);border-width:0 1.5px 1.5px 0;padding:2.5px;transform:rotate(45deg);margin-top:-2px;transition:transform .3s}
+    .nav-dropdown:hover>a::after{transform:rotate(-135deg)}
+    .dropdown-menu{position:absolute;top:100%;left:0;background:rgba(20,20,20,0.97);backdrop-filter:blur(16px);border:1px solid var(--color-border);border-radius:var(--radius);padding:8px 0;min-width:260px;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .3s;box-shadow:0 16px 48px rgba(0,0,0,0.4)}
+    .dropdown-menu::before{content:"";position:absolute;top:-16px;left:0;right:0;height:16px}
+    .nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+    .dropdown-menu a{display:block;padding:10px 20px;font-size:.86rem;color:var(--color-text-muted);border-radius:0}.dropdown-menu a:hover{background:rgba(200,169,110,0.08);color:var(--color-accent)}
+    .header-phone{font-size:.88rem;color:var(--color-text-muted);transition:color .3s;white-space:nowrap}.header-phone:hover{color:var(--color-accent)}
+    .hamburger{display:none;background:none;border:none;cursor:pointer;width:32px;height:24px;position:relative}
+    .hamburger span{display:block;position:absolute;left:0;width:100%;height:2px;background:var(--color-text);transition:all .3s;border-radius:2px}
+    .hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:50%;transform:translateY(-50%)}.hamburger span:nth-child(3){bottom:0}
+    .hamburger.open span:nth-child(1){top:50%;transform:translateY(-50%) rotate(45deg)}.hamburger.open span:nth-child(2){opacity:0}.hamburger.open span:nth-child(3){bottom:50%;transform:translateY(50%) rotate(-45deg)}
+
+    /* LEGAL CONTENT */
+    .legal-hero{padding:140px 0 60px;background:var(--color-surface);border-bottom:1px solid var(--color-border)}
+    .legal-hero h1{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--color-white);margin-bottom:8px}
+    .legal-hero p{color:var(--color-text-muted);font-size:.9rem}
+    .legal-content{padding:64px 0 80px}
+    .legal-content .container{max-width:800px}
+    .legal-content h2{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--color-accent);margin:48px 0 16px;padding-top:24px;border-top:1px solid var(--color-border)}
+    .legal-content h2:first-of-type{margin-top:0;border-top:none;padding-top:0}
+    .legal-content p{margin-bottom:16px;color:var(--color-text);font-size:.92rem;line-height:1.8}
+    .legal-content ul{margin:0 0 16px 24px;color:var(--color-text);font-size:.92rem;line-height:2}
+    .legal-content strong{font-weight:600;color:var(--color-white)}
+
+    /* FOOTER */
+    .site-footer{background:var(--color-surface);border-top:1px solid var(--color-border);padding:60px 0 24px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px}
+    .footer-col h4{font-family:var(--font-body);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--color-accent);margin-bottom:16px}
+    .footer-col p,.footer-col a{display:block;font-size:.88rem;color:var(--color-text-muted);line-height:1.8}.footer-col a:hover{color:var(--color-accent)}
+    .footer-bottom{border-top:1px solid var(--color-border);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--color-text-muted)}
+    .footer-bottom a{color:var(--color-text-muted)}.footer-bottom a:hover{color:var(--color-accent)}
+
+    /* RESPONSIVE */
+    @media(max-width:992px){
+      .main-nav{display:none}
+      .main-nav.open{display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;bottom:0;background:rgba(10,10,10,0.97);padding:24px;gap:4px;z-index:999;overflow-y:auto}
+      .main-nav.open .nav-dropdown .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;background:transparent;border:none;box-shadow:none;padding:0 0 0 16px;min-width:0}
+      .main-nav.open .nav-close{display:block;position:absolute;top:16px;right:24px;background:none;border:none;color:var(--color-text);font-size:1.5rem;cursor:pointer}
+      .hamburger{display:block}
+      .header-phone{display:none}
+      .footer-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:768px){
+      .legal-hero{padding:100px 0 40px}
+      .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+    }
+  </style>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WKBWJLWZ');</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKBWJLWZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="/"><img src="/images/logos/option-toiture-header.png" alt="Option Toiture" class="logo"></a>
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-close" onclick="document.getElementById('mainNav').classList.remove('open');document.getElementById('hamburger').classList.remove('open')" aria-label="Fermer">✕</button>
+        <a href="/">Accueil</a>
+        <div class="nav-dropdown">
+          <a href="/services/installation-toiture">Services</a>
+          <div class="dropdown-menu">
+            <a href="/services/installation-toiture">Installation de toiture</a>
+            <a href="/services/reparation-toiture">Réparation de toiture</a>
+            <a href="/services/remplacement-toiture">Remplacement de toiture</a>
+            <a href="/services/ventilation-entretoit">Ventilation d'entretoit</a>
+            <a href="/services/toiture-commerciale">Toiture commerciale</a>
+            <a href="/services/ferblanterie-gouttieres">Ferblanterie et gouttières</a>
+          </div>
+        </div>
+        <a href="/installation-rona">RONA+</a>
+        <a href="/soumission">Soumission</a>
+      </nav>
+      <a href="tel:+15148354820" class="header-phone">📞 514-835-4820</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="legal-hero">
+    <div class="container" style="max-width:800px">
+      <h1>Conditions d'utilisation</h1>
+      <p>Dernière mise à jour : 1er avril 2026</p>
+    </div>
+  </section>
+
+  <section class="legal-content">
+    <div class="container">
+
+      <h2>1. Acceptation des conditions</h2>
+      <p>En accédant au site web <strong>optiontoiture.com</strong> ou à l'application <strong>app.optiontoiture.com</strong> (collectivement, les « Services »), vous acceptez d'être lié par les présentes conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos Services.</p>
+
+      <h2>2. Description des Services</h2>
+      <p>Option Toiture inc. offre des services d'installation, de réparation et de remplacement de toitures résidentielles et commerciales sur la Rive-Sud de Montréal et en Montérégie. Nos Services en ligne comprennent :</p>
+      <ul>
+        <li>Un outil d'estimation de toiture utilisant des données satellites (Google Solar API)</li>
+        <li>Des formulaires de demande de soumission gratuite</li>
+        <li>Un espace client pour le suivi de projets et la messagerie</li>
+        <li>Du contenu informatif sur les services de toiture</li>
+      </ul>
+
+      <h2>3. Estimations et soumissions</h2>
+      <p>Les estimations fournies par notre outil en ligne sont des <strong>approximations préliminaires</strong> basées sur des données satellites et des prix moyens. Elles ne constituent pas une soumission formelle ni un engagement contractuel. Une soumission officielle sera préparée par notre équipe après une évaluation sur place de votre propriété. Les prix, la disponibilité des matériaux et les délais peuvent varier.</p>
+
+      <h2>4. Compte et espace client</h2>
+      <p>L'accès à certaines fonctionnalités de l'application Optime (espace client) peut nécessiter la création d'un compte. Vous êtes responsable de maintenir la confidentialité de vos identifiants et de toute activité effectuée sous votre compte. Vous acceptez de nous aviser immédiatement de toute utilisation non autorisée de votre compte.</p>
+
+      <h2>5. Communications électroniques</h2>
+      <p>En utilisant nos Services, vous consentez à recevoir des communications électroniques de notre part, incluant des courriels, des messages SMS/RCS et des notifications via l'espace client. Ces communications peuvent inclure des confirmations de soumission, des suivis de projet, des rappels de rendez-vous et des informations sur nos services. Consultez notre <a href="/politique-de-confidentialite">politique de confidentialité</a> pour plus de détails sur les SMS/RCS et le retrait du consentement.</p>
+
+      <h2>6. Propriété intellectuelle</h2>
+      <p>L'ensemble du contenu présent sur nos Services — incluant les textes, images, logos, photographies, vidéos, design et code source — est la propriété d'Option Toiture inc. ou de ses concédants de licence. Ce contenu est protégé par les lois canadiennes et internationales sur le droit d'auteur et la propriété intellectuelle. Toute reproduction, distribution ou utilisation non autorisée est strictement interdite.</p>
+
+      <h2>7. Utilisation acceptable</h2>
+      <p>Vous vous engagez à ne pas :</p>
+      <ul>
+        <li>Utiliser nos Services à des fins illégales ou non autorisées</li>
+        <li>Tenter d'accéder sans autorisation à nos systèmes ou données</li>
+        <li>Soumettre des informations fausses ou trompeuses</li>
+        <li>Copier, reproduire ou distribuer le contenu de nos Services sans autorisation</li>
+        <li>Interférer avec le fonctionnement normal de nos Services</li>
+        <li>Utiliser des robots, scrapers ou outils automatisés pour extraire des données</li>
+      </ul>
+
+      <h2>8. Limitation de responsabilité</h2>
+      <p>Nos Services en ligne sont fournis « tels quels » sans garantie d'aucune sorte. Option Toiture inc. ne peut être tenue responsable des dommages directs, indirects, accessoires ou consécutifs résultant de l'utilisation ou de l'impossibilité d'utiliser nos Services, incluant toute perte découlant d'estimations préliminaires ou de données satellites inexactes.</p>
+      <p>En ce qui concerne les travaux de toiture, notre responsabilité est régie par les contrats de service individuels et les garanties applicables (garantie fabricant GAF, garantie main-d'œuvre Option Toiture).</p>
+
+      <h2>9. Liens externes</h2>
+      <p>Nos Services peuvent contenir des liens vers des sites web tiers (Google, RONA, Finance It, Flexiti, etc.). Nous n'avons aucun contrôle sur le contenu ou les pratiques de ces sites et déclinons toute responsabilité à leur égard. L'accès à ces sites se fait à vos propres risques.</p>
+
+      <h2>10. Indemnisation</h2>
+      <p>Vous acceptez d'indemniser et de dégager de toute responsabilité Option Toiture inc., ses dirigeants, employés et sous-traitants contre toute réclamation, dommage ou dépense découlant de votre utilisation de nos Services en violation des présentes conditions.</p>
+
+      <h2>11. Droit applicable</h2>
+      <p>Les présentes conditions sont régies par les lois de la province de Québec et les lois fédérales du Canada applicables. Tout litige sera soumis à la compétence exclusive des tribunaux du district judiciaire de Saint-Hyacinthe, Québec.</p>
+
+      <h2>12. Modifications</h2>
+      <p>Nous nous réservons le droit de modifier ces conditions à tout moment. Les modifications entrent en vigueur dès leur publication sur cette page. Votre utilisation continue de nos Services après la publication des modifications constitue votre acceptation des conditions modifiées.</p>
+
+      <h2>13. Contact</h2>
+      <p>Pour toute question relative aux présentes conditions d'utilisation :</p>
+      <p><strong>Option Toiture inc.</strong><br>3320 route 112, Marieville, QC J3M 1P1<br>Téléphone : <a href="tel:+15148354820">514-835-4820</a><br>Courriel : <a href="mailto:info@optiontoiture.com">info@optiontoiture.com</a></p>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Option Toiture</h4>
+          <p>Fondée en 2012 à Marieville, Option Toiture se spécialise dans l'installation, la réparation et le remplacement de toitures résidentielles et commerciales sur la Rive-Sud de Montréal. Installateur officiel RONA+.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/services/installation-toiture">Installation de toiture</a>
+          <a href="/services/reparation-toiture">Réparation de toiture</a>
+          <a href="/services/remplacement-toiture">Remplacement de toiture</a>
+          <a href="/services/ventilation-entretoit">Ventilation d'entretoit</a>
+          <a href="/services/toiture-commerciale">Toiture commerciale</a>
+          <a href="/services/ferblanterie-gouttieres">Ferblanterie et gouttières</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p><strong>Option Toiture Inc.</strong></p>
+          <p>3320 route 112<br>Marieville, QC J3M 1P1</p>
+          <a href="tel:+15148354820">📞 514-835-4820</a>
+          <a href="mailto:info@optiontoiture.com">✉ info@optiontoiture.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Option Toiture Inc. — Licence RBQ 5665-8412-01 — <a href="/politique-de-confidentialite">Confidentialité</a> — <a href="/conditions-utilisation">Conditions</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 60); });
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('mainNav');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); nav.classList.toggle('open'); });
+  </script>
+  <script>
+  (function() {
+    var ADS_NUMBER  = '+14504899220';
+    var ADS_DISPLAY = '(450) 489-9220';
+    var ADS_HREF    = 'tel:+14504899220';
+    var isAds = window.location.search.indexOf('gclid') > -1 ||
+                window.location.search.indexOf('utm_source=google') > -1 ||
+                window.location.search.indexOf('utm_medium=cpc') > -1;
+    if (!isAds) return;
+    function swapNumbers() {
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+        el.href = ADS_HREF;
+        if (/\d{3}/.test(el.innerText)) el.innerText = ADS_DISPLAY;
+      });
+    }
+    document.addEventListener('DOMContentLoaded', swapNumbers);
+    window.addEventListener('load', swapNumbers);
+    setTimeout(swapNumbers, 1500);
+  })();
+  </script>
+  <script>
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.event === 'optime_form_submitted') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ 'event': 'form_conversion' });
+    }
+  });
+  </script>
+</body>
+</html>
