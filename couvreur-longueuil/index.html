@@ -15,6 +15,7 @@
   <meta property="og:locale" content="fr_CA">
   <meta name="geo.region" content="CA-QC"><meta name="geo.placename" content="Longueuil">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"RoofingContractor","name":"Option Toiture Inc.","telephone":"+1-514-835-4820","url":"https://www.optiontoiture.com","address":{"@type":"PostalAddress","streetAddress":"3320 route 112","addressLocality":"Marieville","addressRegion":"QC","postalCode":"J3M 1P1","addressCountry":"CA"},"areaServed":{"@type":"City","name":"Longueuil"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte une nouvelle toiture à Longueuil ?","acceptedAnswer":{"@type":"Answer","text":"Le prix d'une toiture neuve à Longueuil se situe généralement entre 9 000 $ et 25 000 $, selon la superficie, la pente du toit et le type de bardeaux choisi. Les maisons plus anciennes du Vieux-Longueuil peuvent nécessiter des travaux de structure additionnels. Option Toiture offre une soumission gratuite et détaillée sur place."}},{"@type":"Question","name":"Faut-il un permis pour refaire sa toiture à Longueuil ?","acceptedAnswer":{"@type":"Answer","text":"À Longueuil, un permis de construction est requis pour le remplacement complet d'une toiture résidentielle. La Ville de Longueuil exige une demande auprès du service d'urbanisme. Option Toiture s'occupe de toutes les démarches administratives pour vous."}},{"@type":"Question","name":"Quel est le délai pour une installation de toiture à Longueuil ?","acceptedAnswer":{"@type":"Answer","text":"La plupart des projets résidentiels à Longueuil sont complétés en 1 à 3 jours ouvrables, selon la taille de la maison et la météo. Notre équipe dessert Longueuil régulièrement, ce qui nous permet de planifier votre projet rapidement, souvent dans un délai de 2 à 3 semaines."}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -113,6 +114,23 @@
       .fixed-form{position:fixed;top:84px;right:20px;width:340px;z-index:80;background:transparent;border-radius:var(--radius-lg);overflow:visible;height:auto;max-height:calc(100vh - 120px);display:flex;flex-direction:column;box-shadow:none;pointer-events:none}
     .fixed-form-body{flex:1;overflow:hidden;pointer-events:auto;height:580px}
     @media(max-width:1200px){.fixed-form{display:none}.header-phone{display:none}.header-nav a,.header-nav>a{padding:8px 10px;font-size:.72rem}.header-right{gap:10px}.header-cta{padding:8px 14px}.rona-badge{font-size:.6rem;padding:6px 10px}}@media(min-width:1201px) and (max-width:1440px){.hero-content{padding-right:380px}.hero{min-height:90vh}.hero-search-center{max-width:540px;top:25%}}
+
+    /* SEO — FAQ & Local Content */
+    .faq-hub{padding:80px 0;background:var(--cream-light)}
+    .faq-hub .faq-list{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+    .faq-hub .faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:box-shadow .3s}
+    .faq-hub .faq-item:hover{box-shadow:var(--shadow)}
+    .faq-hub .faq-q{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:.95rem;gap:16px}
+    .faq-hub .faq-q:hover{background:var(--cream)}
+    .faq-hub .faq-toggle{color:var(--gold);font-size:1.4rem;font-weight:300;transition:transform .3s;flex-shrink:0}
+    .faq-hub .faq-item.open .faq-toggle{transform:rotate(45deg)}
+    .faq-hub .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease}
+    .faq-hub .faq-item.open .faq-a{max-height:400px;padding:0 24px 20px}
+    .faq-hub .faq-a p{font-size:.92rem;color:var(--text-light);line-height:1.7}
+    .local-content{padding:80px 0;background:var(--cream)}
+    .local-text{max-width:800px;margin:0 auto;text-align:center}
+    .local-text p{font-size:1.05rem;color:var(--text-light);line-height:1.85}
+    @media(max-width:768px){.faq-hub{padding:48px 0}.faq-hub .faq-q{padding:16px 18px;font-size:.88rem}.local-content{padding:48px 0}}
   </style>
   <link rel="alternate" hreflang="fr" href="https://www.optiontoiture.com/couvreur-longueuil/">
   <link rel="alternate" hreflang="en" href="https://www.optiontoiture.com/en/roofer-longueuil/">
@@ -245,6 +263,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="services-grid"><a href="/couvreur-longueuil/installation-toiture" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/installation-toiture.webp" alt="Installation de toiture à Longueuil" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🏠</div><h3>Installation de toiture</h3><p>Remplacement complet, bardeaux GAF Timberline HDZ, membrane Ice &amp; Water Shield.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-longueuil/reparation-toiture" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/reparation-toiture.webp" alt="Réparation de toiture à Longueuil" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🔧</div><h3>Réparation de toiture</h3><p>Infiltrations, bardeaux manquants, urgences. Diagnostic gratuit.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-longueuil/remplacement-toiture" class="service-card fade-in"><div class="service-card-img"><img src="/images/photos/chantier-drone-camion.webp" alt="Remplacement de toiture à Longueuil" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🔄</div><h3>Remplacement de toiture</h3><p>Toiture neuve clé en main. Retrait de l'ancienne toiture inclus.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-longueuil/ventilation-entretoit" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/ventilation-entretoit.webp" alt="Ventilation d'entretoit à Longueuil" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">💨</div><h3>Ventilation d'entretoit</h3><p>Diagnostic et optimisation de la ventilation pour prévenir les problèmes.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-longueuil/toiture-commerciale" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/toiture-commerciale.webp" alt="Toiture commerciale à Longueuil" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🏢</div><h3>Toiture commerciale</h3><p>Membrane TPO, EPDM, toiture plate. Bâtiments commerciaux et industriels.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-longueuil/ferblanterie-gouttieres" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/ferblanterie-gouttieres.webp" alt="Ferblanterie &amp; gouttières à Longueuil" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🌧️</div><h3>Ferblanterie &amp; gouttières</h3><p>Gouttières aluminium, solins, drains. Installation et réparation.</p><span class="service-link">En savoir plus →</span></div></a></div>
     </div>
   </section>
+  <section class="faq-hub" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">FAQ</span>
+        <h2 class="section-heading">Questions fréquentes</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-q">Combien coûte une nouvelle toiture à Longueuil ?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Le prix d'une toiture neuve à Longueuil se situe généralement entre 9 000 $ et 25 000 $, selon la superficie, la pente du toit et le type de bardeaux choisi. Les maisons plus anciennes du Vieux-Longueuil peuvent nécessiter des travaux de structure additionnels. Option Toiture offre une soumission gratuite et détaillée sur place.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Faut-il un permis pour refaire sa toiture à Longueuil ?<span class="faq-toggle">+</span></div><div class="faq-a"><p>À Longueuil, un permis de construction est requis pour le remplacement complet d'une toiture résidentielle. La Ville de Longueuil exige une demande auprès du service d'urbanisme. Option Toiture s'occupe de toutes les démarches administratives pour vous.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Quel est le délai pour une installation de toiture à Longueuil ?<span class="faq-toggle">+</span></div><div class="faq-a"><p>La plupart des projets résidentiels à Longueuil sont complétés en 1 à 3 jours ouvrables, selon la taille de la maison et la météo. Notre équipe dessert Longueuil régulièrement, ce qui nous permet de planifier votre projet rapidement, souvent dans un délai de 2 à 3 semaines.</p></div></div>
+      </div>
+    </div>
+  </section>
+
   <section class="map-zone"><div class="container">
     <div class="section-header">
       <span class="overline">Zone de service</span>
@@ -257,6 +289,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="map-legend-item"><div class="map-legend-dot poly"></div>Territoire desservi</div>
     </div>
   </div></section>
+  <section class="local-content">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-heading">Votre couvreur de confiance à <em>Longueuil</em></h2>
+      </div>
+      <div class="local-text">
+        <p>Plus grande ville de la Rive-Sud avec ses quartiers diversifiés — du Vieux-Longueuil historique aux développements modernes de Saint-Hubert — Longueuil présente une variété de défis en toiture. Les maisons des années 1960-1980 qui dominent plusieurs secteurs arrivent souvent à la fin de vie de leur deuxième ou troisième toiture, nécessitant parfois des corrections de ventilation et de structure. Notre équipe connaît bien les particularités des bungalows, cottages et jumelés typiques de Longueuil. Situés à seulement 25 minutes, nous intervenons rapidement partout dans l'arrondissement, de LeMoyne jusqu'à Greenfield Park.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-section"><div class="container">
     <h2>Prêt pour votre projet à Longueuil ?</h2>
     <p>Soumission gratuite, sans engagement. Réponse en 24h.</p>

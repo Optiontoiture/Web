@@ -15,6 +15,7 @@
   <meta property="og:locale" content="fr_CA">
   <meta name="geo.region" content="CA-QC"><meta name="geo.placename" content="Richelieu">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"RoofingContractor","name":"Option Toiture Inc.","telephone":"+1-514-835-4820","url":"https://www.optiontoiture.com","address":{"@type":"PostalAddress","streetAddress":"3320 route 112","addressLocality":"Marieville","addressRegion":"QC","postalCode":"J3M 1P1","addressCountry":"CA"},"areaServed":{"@type":"City","name":"Richelieu"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte une toiture à Richelieu ?","acceptedAnswer":{"@type":"Answer","text":"Le coût d'une toiture résidentielle à Richelieu varie entre 8 000 $ et 20 000 $. Les maisons typiques du secteur sont souvent des bungalows ou des maisons à un étage et demi qui permettent un remplacement rapide et efficace. Soumission gratuite disponible."}},{"@type":"Question","name":"Êtes-vous proches de Richelieu ?","acceptedAnswer":{"@type":"Answer","text":"Très proches. Notre siège social de Marieville est à seulement 10 minutes de Richelieu. C'est l'une des municipalités où nous sommes les plus rapides à intervenir, que ce soit pour un projet planifié ou une urgence."}},{"@type":"Question","name":"Quels types de toitures faites-vous à Richelieu ?","acceptedAnswer":{"@type":"Answer","text":"Nous réalisons tous les types de projets : remplacement complet en bardeaux d'asphalte, réparation de fuites, toiture de bâtiments agricoles et commerciaux, installation de ventilation d'entretoit et ferblanterie. Nos solutions s'adaptent à tous les bâtiments de Richelieu."}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -113,6 +114,23 @@
       .fixed-form{position:fixed;top:84px;right:20px;width:340px;z-index:80;background:transparent;border-radius:var(--radius-lg);overflow:visible;height:auto;max-height:calc(100vh - 120px);display:flex;flex-direction:column;box-shadow:none;pointer-events:none}
     .fixed-form-body{flex:1;overflow:hidden;pointer-events:auto;height:580px}
     @media(max-width:1200px){.fixed-form{display:none}.header-phone{display:none}.header-nav a,.header-nav>a{padding:8px 10px;font-size:.72rem}.header-right{gap:10px}.header-cta{padding:8px 14px}.rona-badge{font-size:.6rem;padding:6px 10px}}@media(min-width:1201px) and (max-width:1440px){.hero-content{padding-right:380px}.hero{min-height:90vh}.hero-search-center{max-width:540px;top:25%}}
+
+    /* SEO — FAQ & Local Content */
+    .faq-hub{padding:80px 0;background:var(--cream-light)}
+    .faq-hub .faq-list{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+    .faq-hub .faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:box-shadow .3s}
+    .faq-hub .faq-item:hover{box-shadow:var(--shadow)}
+    .faq-hub .faq-q{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:.95rem;gap:16px}
+    .faq-hub .faq-q:hover{background:var(--cream)}
+    .faq-hub .faq-toggle{color:var(--gold);font-size:1.4rem;font-weight:300;transition:transform .3s;flex-shrink:0}
+    .faq-hub .faq-item.open .faq-toggle{transform:rotate(45deg)}
+    .faq-hub .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease}
+    .faq-hub .faq-item.open .faq-a{max-height:400px;padding:0 24px 20px}
+    .faq-hub .faq-a p{font-size:.92rem;color:var(--text-light);line-height:1.7}
+    .local-content{padding:80px 0;background:var(--cream)}
+    .local-text{max-width:800px;margin:0 auto;text-align:center}
+    .local-text p{font-size:1.05rem;color:var(--text-light);line-height:1.85}
+    @media(max-width:768px){.faq-hub{padding:48px 0}.faq-hub .faq-q{padding:16px 18px;font-size:.88rem}.local-content{padding:48px 0}}
   </style>
   <link rel="alternate" hreflang="fr" href="https://www.optiontoiture.com/couvreur-richelieu/">
   <link rel="alternate" hreflang="en" href="https://www.optiontoiture.com/en/roofer-richelieu/">
@@ -245,6 +263,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="services-grid"><a href="/couvreur-richelieu/installation-toiture" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/installation-toiture.webp" alt="Installation de toiture à Richelieu" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🏠</div><h3>Installation de toiture</h3><p>Remplacement complet, bardeaux GAF Timberline HDZ, membrane Ice &amp; Water Shield.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-richelieu/reparation-toiture" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/reparation-toiture.webp" alt="Réparation de toiture à Richelieu" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🔧</div><h3>Réparation de toiture</h3><p>Infiltrations, bardeaux manquants, urgences. Diagnostic gratuit.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-richelieu/remplacement-toiture" class="service-card fade-in"><div class="service-card-img"><img src="/images/photos/chantier-drone-camion.webp" alt="Remplacement de toiture à Richelieu" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🔄</div><h3>Remplacement de toiture</h3><p>Toiture neuve clé en main. Retrait de l'ancienne toiture inclus.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-richelieu/ventilation-entretoit" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/ventilation-entretoit.webp" alt="Ventilation d'entretoit à Richelieu" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">💨</div><h3>Ventilation d'entretoit</h3><p>Diagnostic et optimisation de la ventilation pour prévenir les problèmes.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-richelieu/toiture-commerciale" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/toiture-commerciale.webp" alt="Toiture commerciale à Richelieu" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🏢</div><h3>Toiture commerciale</h3><p>Membrane TPO, EPDM, toiture plate. Bâtiments commerciaux et industriels.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-richelieu/ferblanterie-gouttieres" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/ferblanterie-gouttieres.webp" alt="Ferblanterie &amp; gouttières à Richelieu" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🌧️</div><h3>Ferblanterie &amp; gouttières</h3><p>Gouttières aluminium, solins, drains. Installation et réparation.</p><span class="service-link">En savoir plus →</span></div></a></div>
     </div>
   </section>
+  <section class="faq-hub" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">FAQ</span>
+        <h2 class="section-heading">Questions fréquentes</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-q">Combien coûte une toiture à Richelieu ?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Le coût d'une toiture résidentielle à Richelieu varie entre 8 000 $ et 20 000 $. Les maisons typiques du secteur sont souvent des bungalows ou des maisons à un étage et demi qui permettent un remplacement rapide et efficace. Soumission gratuite disponible.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Êtes-vous proches de Richelieu ?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Très proches. Notre siège social de Marieville est à seulement 10 minutes de Richelieu. C'est l'une des municipalités où nous sommes les plus rapides à intervenir, que ce soit pour un projet planifié ou une urgence.</p></div></div>
+        <div class="faq-item"><div class="faq-q">Quels types de toitures faites-vous à Richelieu ?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Nous réalisons tous les types de projets : remplacement complet en bardeaux d'asphalte, réparation de fuites, toiture de bâtiments agricoles et commerciaux, installation de ventilation d'entretoit et ferblanterie. Nos solutions s'adaptent à tous les bâtiments de Richelieu.</p></div></div>
+      </div>
+    </div>
+  </section>
+
   <section class="map-zone"><div class="container">
     <div class="section-header">
       <span class="overline">Zone de service</span>
@@ -257,6 +289,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="map-legend-item"><div class="map-legend-dot poly"></div>Territoire desservi</div>
     </div>
   </div></section>
+  <section class="local-content">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-heading">Votre couvreur voisin à <em>Richelieu</em></h2>
+      </div>
+      <div class="local-text">
+        <p>Richelieu, petite municipalité paisible le long de la rivière Richelieu, bénéficie de notre proximité immédiate puisque notre siège social de Marieville n'est qu'à 10 minutes. Cette proximité nous permet d'offrir le meilleur temps de réponse de toute notre zone de desserte. Les résidences de Richelieu, un mélange de maisons traditionnelles et de constructions plus récentes, font face aux défis de l'humidité riveraine et des vents du corridor de la rivière. Notre équipe connaît intimement ce secteur et peut intervenir rapidement, même pour les urgences en dehors des heures normales.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-section"><div class="container">
     <h2>Prêt pour votre projet à Richelieu ?</h2>
     <p>Soumission gratuite, sans engagement. Réponse en 24h.</p>

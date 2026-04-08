@@ -1,0 +1,832 @@
+{
+  "cities": [
+    {
+      "slug": "longueuil",
+      "displayName": "Longueuil",
+      "projectCount": 180,
+      "distanceFromHQ": "25 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une nouvelle toiture à Longueuil ?",
+            "answer": "Le prix d'une toiture neuve à Longueuil se situe généralement entre 9 000 $ et 25 000 $, selon la superficie, la pente du toit et le type de bardeaux choisi. Les maisons plus anciennes du Vieux-Longueuil peuvent nécessiter des travaux de structure additionnels. Option Toiture offre une soumission gratuite et détaillée sur place."
+          },
+          {
+            "question": "Faut-il un permis pour refaire sa toiture à Longueuil ?",
+            "answer": "À Longueuil, un permis de construction est requis pour le remplacement complet d'une toiture résidentielle. La Ville de Longueuil exige une demande auprès du service d'urbanisme. Option Toiture s'occupe de toutes les démarches administratives pour vous."
+          },
+          {
+            "question": "Quel est le délai pour une installation de toiture à Longueuil ?",
+            "answer": "La plupart des projets résidentiels à Longueuil sont complétés en 1 à 3 jours ouvrables, selon la taille de la maison et la météo. Notre équipe dessert Longueuil régulièrement, ce qui nous permet de planifier votre projet rapidement, souvent dans un délai de 2 à 3 semaines."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Votre couvreur de confiance à <em>Longueuil</em>",
+          "text": "Plus grande ville de la Rive-Sud avec ses quartiers diversifiés — du Vieux-Longueuil historique aux développements modernes de Saint-Hubert — Longueuil présente une variété de défis en toiture. Les maisons des années 1960-1980 qui dominent plusieurs secteurs arrivent souvent à la fin de vie de leur deuxième ou troisième toiture, nécessitant parfois des corrections de ventilation et de structure. Notre équipe connaît bien les particularités des bungalows, cottages et jumelés typiques de Longueuil. Situés à seulement 25 minutes, nous intervenons rapidement partout dans l'arrondissement, de LeMoyne jusqu'à Greenfield Park."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a new roof cost in Longueuil?",
+            "answer": "A new roof in Longueuil typically costs between $9,000 and $25,000, depending on the size, roof slope, and shingle type chosen. Older homes in Vieux-Longueuil may require additional structural work. Option Toiture provides free, detailed on-site estimates."
+          },
+          {
+            "question": "Do I need a permit to replace my roof in Longueuil?",
+            "answer": "Yes, the City of Longueuil requires a building permit for complete roof replacements. An application must be submitted to the urban planning department. Option Toiture handles all the administrative steps for you."
+          },
+          {
+            "question": "How long does a roof installation take in Longueuil?",
+            "answer": "Most residential projects in Longueuil are completed within 1 to 3 business days, depending on the house size and weather conditions. Our team serves Longueuil regularly, allowing us to schedule your project quickly, often within 2 to 3 weeks."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Your Trusted Roofer in <em>Longueuil</em>",
+          "text": "As the largest city on the South Shore, Longueuil features diverse neighbourhoods — from historic Vieux-Longueuil to the modern developments of Saint-Hubert. This variety brings unique roofing challenges. Homes built in the 1960s-1980s, which dominate many areas, are often reaching the end of their second or third roof, sometimes requiring ventilation and structural corrections. Our team is well familiar with the bungalows, cottages, and semi-detached homes typical of Longueuil. Located just 25 minutes away, we respond quickly across the entire borough, from LeMoyne to Greenfield Park."
+        }
+      }
+    },
+    {
+      "slug": "brossard",
+      "displayName": "Brossard",
+      "projectCount": 120,
+      "distanceFromHQ": "30 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte le remplacement d'une toiture à Brossard ?",
+            "answer": "À Brossard, le coût d'un remplacement de toiture varie entre 10 000 $ et 28 000 $. Les maisons plus récentes du secteur DIX30 et du quartier M ont souvent des toitures à géométrie complexe qui influencent le prix. Contactez-nous pour une soumission gratuite adaptée à votre propriété."
+          },
+          {
+            "question": "Est-ce qu'Option Toiture dessert tout Brossard ?",
+            "answer": "Oui, nous couvrons l'ensemble de Brossard : le secteur DIX30, le Quartier M, le Vieux-Brossard, le secteur A et tous les quartiers résidentiels. Notre équipe intervient aussi dans les copropriétés et les immeubles commerciaux du boulevard Taschereau."
+          },
+          {
+            "question": "Quels bardeaux recommandez-vous pour les maisons neuves de Brossard ?",
+            "answer": "Pour les constructions récentes de Brossard, nous recommandons les bardeaux GAF Timberline HDZ avec la garantie Golden Pledge. Ces bardeaux résistent aux vents de 210 km/h et offrent une protection optimale pour les 50 prochaines années. Comme installateur certifié GAF Master Elite, nous sommes parmi les seuls à offrir cette garantie complète."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur certifié à <em>Brossard</em>",
+          "text": "Brossard est en pleine transformation avec ses quartiers modernes comme le secteur DIX30 et le Quartier M, tout en conservant des secteurs résidentiels établis depuis les années 1970-1990. Les maisons neuves présentent des toitures architecturales complexes avec multiples pentes et lucarnes, tandis que les propriétés plus anciennes du Vieux-Brossard nécessitent souvent une mise à niveau complète incluant membrane d'étanchéité et ventilation. À environ 30 minutes de notre siège social de Marieville, notre équipe dessert régulièrement tous les quartiers de Brossard, des condos du boulevard Rome aux maisons unifamiliales du secteur A."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a roof replacement cost in Brossard?",
+            "answer": "In Brossard, roof replacement costs range from $10,000 to $28,000. Newer homes in the DIX30 area and Quartier M often feature complex roof geometries that affect pricing. Contact us for a free estimate tailored to your property."
+          },
+          {
+            "question": "Does Option Toiture serve all of Brossard?",
+            "answer": "Yes, we cover all of Brossard: the DIX30 area, Quartier M, Vieux-Brossard, Sector A, and all residential neighbourhoods. Our team also works on condominiums and commercial buildings along Taschereau Boulevard."
+          },
+          {
+            "question": "Which shingles do you recommend for newer Brossard homes?",
+            "answer": "For Brossard's newer constructions, we recommend GAF Timberline HDZ shingles with the Golden Pledge warranty. These shingles withstand winds up to 210 km/h and provide optimal protection for the next 50 years. As a GAF Master Elite certified installer, we are among the few who can offer this complete warranty."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Certified Roofer in <em>Brossard</em>",
+          "text": "Brossard is undergoing a major transformation with modern neighbourhoods like the DIX30 area and Quartier M, while maintaining established residential sectors from the 1970s-1990s. Newer homes feature complex architectural roofs with multiple slopes and dormers, while older properties in Vieux-Brossard often need full upgrades including waterproofing membrane and ventilation. About 30 minutes from our Marieville headquarters, our team regularly serves all Brossard neighbourhoods, from the condos on Boulevard Rome to the single-family homes in Sector A."
+        }
+      }
+    },
+    {
+      "slug": "boucherville",
+      "displayName": "Boucherville",
+      "projectCount": 95,
+      "distanceFromHQ": "30 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une toiture neuve à Boucherville ?",
+            "answer": "Une toiture résidentielle neuve à Boucherville coûte entre 9 500 $ et 24 000 $. Les maisons du Vieux-Boucherville avec leurs toitures patrimoniales peuvent nécessiter des matériaux spécifiques qui influencent le coût. Demandez votre soumission gratuite pour un prix exact."
+          },
+          {
+            "question": "Travaillez-vous sur les maisons patrimoniales du Vieux-Boucherville ?",
+            "answer": "Absolument. Notre équipe a l'expérience des toitures de maisons patrimoniales et respecte les exigences architecturales du Vieux-Boucherville. Nous utilisons des bardeaux qui s'harmonisent avec le cachet historique tout en offrant une protection moderne."
+          },
+          {
+            "question": "Quelle est la meilleure période pour refaire sa toiture à Boucherville ?",
+            "answer": "La saison idéale s'étend de mai à octobre, mais nous réalisons des travaux toute l'année selon les conditions. À Boucherville, nous recommandons de planifier votre projet au printemps pour éviter l'achalandage de l'été. Les urgences (fuites, dommages de tempête) sont traitées en priorité, peu importe la saison."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur d'expérience à <em>Boucherville</em>",
+          "text": "Boucherville allie charme historique et modernité avec son Vieux-Boucherville patrimonial et ses quartiers résidentiels développés depuis les années 1980. La proximité du fleuve Saint-Laurent expose les toitures à des conditions d'humidité particulières qui accélèrent le vieillissement des bardeaux. Les grands vents provenant du fleuve exigent une installation soignée avec des fixations renforcées. Notre équipe comprend ces défis locaux et adapte chaque projet en conséquence. À 30 minutes de Marieville, nous sommes présents régulièrement à Boucherville, des rues historiques jusqu'aux développements du boulevard de Montarville."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a new roof cost in Boucherville?",
+            "answer": "A new residential roof in Boucherville costs between $9,500 and $24,000. Heritage homes in Vieux-Boucherville may require specific materials that influence the cost. Request your free estimate for an exact price."
+          },
+          {
+            "question": "Do you work on heritage homes in Vieux-Boucherville?",
+            "answer": "Absolutely. Our team has experience with heritage home roofing and respects the architectural requirements of Vieux-Boucherville. We use shingles that blend with the historic character while providing modern protection."
+          },
+          {
+            "question": "When is the best time to replace a roof in Boucherville?",
+            "answer": "The ideal season runs from May to October, but we perform work year-round depending on conditions. In Boucherville, we recommend planning your project in spring to avoid the summer rush. Emergencies (leaks, storm damage) are treated as priority regardless of season."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Experienced Roofer in <em>Boucherville</em>",
+          "text": "Boucherville combines historic charm with modernity through its heritage Vieux-Boucherville and residential neighbourhoods developed since the 1980s. The proximity to the St. Lawrence River exposes roofs to particular humidity conditions that accelerate shingle aging. Strong winds from the river demand careful installation with reinforced fastening. Our team understands these local challenges and adapts each project accordingly. Just 30 minutes from Marieville, we are regularly present in Boucherville, from the historic streets to the developments along Boulevard de Montarville."
+        }
+      }
+    },
+    {
+      "slug": "saint-lambert",
+      "displayName": "Saint-Lambert",
+      "projectCount": 65,
+      "distanceFromHQ": "30 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une toiture à Saint-Lambert ?",
+            "answer": "Le coût d'une toiture à Saint-Lambert varie entre 10 000 $ et 30 000 $. Les grandes résidences cossues du quartier résidentiel et les maisons de style anglais nécessitent souvent des toitures plus élaborées. Notre soumission gratuite inclut une inspection complète de votre toiture actuelle."
+          },
+          {
+            "question": "Respectez-vous les normes architecturales de Saint-Lambert ?",
+            "answer": "Oui, nous connaissons les exigences du comité consultatif d'urbanisme de Saint-Lambert concernant l'apparence extérieure des bâtiments. Nous proposons des bardeaux qui respectent le caractère architectural du quartier tout en offrant les meilleures performances."
+          },
+          {
+            "question": "Offrez-vous des garanties sur vos travaux à Saint-Lambert ?",
+            "answer": "En tant qu'installateur certifié GAF Master Elite, nous offrons la garantie Golden Pledge de 50 ans sur les matériaux et 25 ans sur la main-d'œuvre. C'est la garantie la plus complète de l'industrie, disponible seulement chez les 2 % des couvreurs certifiés Master Elite en Amérique du Nord."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur de qualité à <em>Saint-Lambert</em>",
+          "text": "Saint-Lambert se distingue par ses résidences cossues, ses rues bordées d'arbres matures et son patrimoine architectural remarquable. Les grandes maisons de style anglais, les cottages d'époque et les propriétés de prestige exigent un travail de toiture à la hauteur de leur cachet. La proximité du fleuve et l'exposition aux vents demandent des matériaux de qualité supérieure et une installation impeccable. Notre équipe est habituée aux standards élevés de Saint-Lambert et livre un travail soigné qui met en valeur l'esthétique de chaque propriété. À 30 minutes de Marieville, nous sommes rapidement sur place pour protéger votre investissement."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a roof cost in Saint-Lambert?",
+            "answer": "Roofing costs in Saint-Lambert range from $10,000 to $30,000. The large upscale residences and English-style homes often require more elaborate roofing. Our free estimate includes a complete inspection of your current roof."
+          },
+          {
+            "question": "Do you comply with Saint-Lambert's architectural standards?",
+            "answer": "Yes, we are familiar with Saint-Lambert's urban planning advisory committee requirements regarding building exteriors. We offer shingles that respect the neighbourhood's architectural character while delivering top performance."
+          },
+          {
+            "question": "Do you offer warranties on your work in Saint-Lambert?",
+            "answer": "As a GAF Master Elite certified installer, we offer the Golden Pledge warranty — 50 years on materials and 25 years on workmanship. It's the most comprehensive warranty in the industry, available only from the top 2% of Master Elite certified roofers in North America."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Quality Roofer in <em>Saint-Lambert</em>",
+          "text": "Saint-Lambert stands out with its upscale residences, tree-lined streets, and remarkable architectural heritage. Large English-style homes, period cottages, and prestige properties demand roofing work that matches their character. The proximity to the river and wind exposure require premium materials and flawless installation. Our team is accustomed to Saint-Lambert's high standards and delivers meticulous work that enhances each property's aesthetics. Just 30 minutes from Marieville, we arrive quickly to protect your investment."
+        }
+      }
+    },
+    {
+      "slug": "la-prairie",
+      "displayName": "La Prairie",
+      "projectCount": 75,
+      "distanceFromHQ": "30 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Quel est le prix d'une toiture neuve à La Prairie ?",
+            "answer": "Une toiture neuve à La Prairie coûte entre 8 500 $ et 22 000 $ selon la superficie et le type de bardeaux. Les nouvelles constructions du secteur ouest ont souvent des toitures architecturales qui demandent plus de matériaux. Nous offrons des soumissions gratuites partout à La Prairie."
+          },
+          {
+            "question": "Desservez-vous le Vieux-La Prairie et les nouveaux quartiers ?",
+            "answer": "Oui, nous couvrons tout La Prairie : le quartier historique du Vieux-La Prairie, les secteurs résidentiels établis et les nouveaux développements près de l'autoroute 30. Que votre maison date de 1850 ou de 2020, notre équipe a l'expertise nécessaire."
+          },
+          {
+            "question": "Combien de temps prend le remplacement d'une toiture à La Prairie ?",
+            "answer": "Un remplacement complet de toiture à La Prairie prend habituellement 1 à 2 jours pour une maison standard. Les projets plus complexes avec lucarnes et multiples versants peuvent nécessiter 3 jours. Nous planifions autour de la météo pour assurer un travail de qualité."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur professionnel à <em>La Prairie</em>",
+          "text": "La Prairie offre un mélange unique d'histoire et de modernité, avec son noyau villageois patrimonial et ses développements résidentiels en pleine expansion. Les nouvelles constructions du secteur ouest présentent des toitures architecturales modernes, tandis que les maisons plus anciennes du centre nécessitent des rénovations respectueuses de leur caractère. Le secteur est exposé aux vents du corridor de la rivière Saint-Jacques, ce qui rend la qualité de l'installation critique. Notre équipe dessert régulièrement La Prairie depuis Marieville, à seulement 30 minutes, et connaît bien les spécificités de chaque quartier."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a new roof cost in La Prairie?",
+            "answer": "A new roof in La Prairie costs between $8,500 and $22,000, depending on the size and shingle type. Newer constructions in the western sector often feature architectural roofs that require more materials. We offer free estimates throughout La Prairie."
+          },
+          {
+            "question": "Do you serve Vieux-La Prairie and new developments?",
+            "answer": "Yes, we cover all of La Prairie: the historic Vieux-La Prairie neighbourhood, established residential sectors, and the new developments near Highway 30. Whether your home dates from 1850 or 2020, our team has the expertise."
+          },
+          {
+            "question": "How long does a roof replacement take in La Prairie?",
+            "answer": "A complete roof replacement in La Prairie usually takes 1 to 2 days for a standard home. More complex projects with dormers and multiple slopes may require 3 days. We schedule around weather to ensure quality work."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Professional Roofer in <em>La Prairie</em>",
+          "text": "La Prairie offers a unique blend of history and modernity, with its heritage village core and expanding residential developments. New constructions in the western sector feature modern architectural roofs, while older homes in the centre need renovations that respect their character. The area is exposed to winds from the Saint-Jacques River corridor, making installation quality critical. Our team regularly serves La Prairie from Marieville, just 30 minutes away, and knows the specificities of each neighbourhood."
+        }
+      }
+    },
+    {
+      "slug": "candiac",
+      "displayName": "Candiac",
+      "projectCount": 55,
+      "distanceFromHQ": "30 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte refaire sa toiture à Candiac ?",
+            "answer": "Le coût moyen pour refaire une toiture à Candiac se situe entre 9 000 $ et 23 000 $. Les maisons typiques de Candiac, construites principalement entre 1960 et 2000, sont souvent des bungalows ou des cottages qui permettent un remplacement efficace. Soumission gratuite sur place."
+          },
+          {
+            "question": "Quels sont les signes qu'il faut remplacer sa toiture à Candiac ?",
+            "answer": "Les signes à surveiller incluent : bardeaux qui gondolent ou se soulèvent, granules dans les gouttières, taches d'humidité au plafond, et une toiture de plus de 20-25 ans. Le climat québécois avec ses cycles gel-dégel accélère l'usure. Nous offrons une inspection gratuite pour évaluer l'état de votre toiture."
+          },
+          {
+            "question": "Est-ce qu'Option Toiture offre du financement à Candiac ?",
+            "answer": "Oui, nous offrons du financement Flexiti avec des options de 0 % d'intérêt. Cela vous permet de protéger votre maison maintenant et de payer à votre rythme. L'approbation est rapide et se fait directement lors de la soumission."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur fiable à <em>Candiac</em>",
+          "text": "Ville planifiée par excellence, Candiac est composée majoritairement de maisons unifamiliales construites par phases depuis les années 1960. Cela signifie que des quartiers entiers arrivent simultanément à la fin de vie de leur toiture. Les bungalows et split-levels caractéristiques du secteur bénéficient de notre approche efficace qui minimise le temps de travaux. La topographie plate de Candiac expose les toitures à des vents soutenus qui exigent une fixation conforme aux normes les plus strictes. À 30 minutes de notre siège social, notre équipe intervient rapidement et connaît bien les quartiers de Candiac."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does it cost to redo a roof in Candiac?",
+            "answer": "The average cost to replace a roof in Candiac ranges from $9,000 to $23,000. Typical Candiac homes, built mainly between 1960 and 2000, are often bungalows or cottages that allow for efficient replacement. Free on-site estimate available."
+          },
+          {
+            "question": "What are signs that I need to replace my roof in Candiac?",
+            "answer": "Signs to watch for include: curling or lifting shingles, granules in gutters, moisture stains on ceilings, and a roof over 20-25 years old. Quebec's freeze-thaw cycles accelerate wear. We offer a free inspection to evaluate your roof's condition."
+          },
+          {
+            "question": "Does Option Toiture offer financing in Candiac?",
+            "answer": "Yes, we offer Flexiti financing with 0% interest options. This allows you to protect your home now and pay at your own pace. Approval is quick and done directly during the estimate visit."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Reliable Roofer in <em>Candiac</em>",
+          "text": "A quintessential planned city, Candiac is largely composed of single-family homes built in phases since the 1960s. This means entire neighbourhoods reach the end of their roof's lifespan simultaneously. The characteristic bungalows and split-levels benefit from our efficient approach that minimizes work time. Candiac's flat topography exposes roofs to sustained winds requiring fastening that meets the strictest standards. Just 30 minutes from our headquarters, our team responds quickly and knows Candiac's neighbourhoods well."
+        }
+      }
+    },
+    {
+      "slug": "sainte-julie",
+      "displayName": "Sainte-Julie",
+      "projectCount": 70,
+      "distanceFromHQ": "25 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Quel est le coût d'une toiture à Sainte-Julie ?",
+            "answer": "Le prix d'une toiture à Sainte-Julie varie entre 9 000 $ et 24 000 $ selon la taille et la complexité. Plusieurs maisons de Sainte-Julie ont des toitures à forte pente qui nécessitent des équipements de sécurité spéciaux. Notre soumission gratuite détaille tous les coûts."
+          },
+          {
+            "question": "Travaillez-vous dans tous les quartiers de Sainte-Julie ?",
+            "answer": "Oui, nous desservons l'ensemble de Sainte-Julie : le secteur du Mont-Saint-Bruno, les quartiers près du parc Edmour-J.-Harvey, le Vieux-Sainte-Julie et tous les développements récents. Notre équipe est présente à Sainte-Julie chaque semaine."
+          },
+          {
+            "question": "Comment choisir entre réparation et remplacement de toiture ?",
+            "answer": "Si votre toiture a moins de 15 ans et que les dommages sont localisés (quelques bardeaux manquants, petite fuite), une réparation suffit souvent. Au-delà de 20 ans, ou si les problèmes sont généralisés, le remplacement complet est habituellement plus économique à long terme. Nous offrons un diagnostic honnête et gratuit."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur de proximité à <em>Sainte-Julie</em>",
+          "text": "Sainte-Julie, nichée au pied du mont Saint-Bruno, est une ville résidentielle prisée pour sa qualité de vie et ses grands terrains boisés. Le couvert forestier environnant crée des conditions d'ombre et d'humidité qui favorisent l'accumulation de mousse sur les toitures, un facteur de dégradation à surveiller. Les quartiers résidentiels construits depuis les années 1980 offrent un parc immobilier relativement homogène avec des cottages et des maisons à deux étages. À seulement 25 minutes de Marieville, Sainte-Julie fait partie de notre zone de desserte principale, ce qui nous permet d'offrir un service rapide et un suivi de proximité."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a roof cost in Sainte-Julie?",
+            "answer": "A roof in Sainte-Julie ranges from $9,000 to $24,000 depending on size and complexity. Many Sainte-Julie homes have steep-pitched roofs requiring special safety equipment. Our free estimate details all costs."
+          },
+          {
+            "question": "Do you work in all Sainte-Julie neighbourhoods?",
+            "answer": "Yes, we serve all of Sainte-Julie: the Mont-Saint-Bruno sector, neighbourhoods near Edmour-J.-Harvey Park, Vieux-Sainte-Julie, and all recent developments. Our team is in Sainte-Julie every week."
+          },
+          {
+            "question": "How do I choose between roof repair and replacement?",
+            "answer": "If your roof is under 15 years old and damage is localized (a few missing shingles, small leak), repair is often sufficient. Beyond 20 years, or if problems are widespread, full replacement is usually more economical long-term. We provide an honest, free diagnosis."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Neighbourhood Roofer in <em>Sainte-Julie</em>",
+          "text": "Sainte-Julie, nestled at the foot of Mont Saint-Bruno, is a prized residential city known for its quality of life and large wooded lots. The surrounding forest cover creates shade and humidity conditions that promote moss accumulation on roofs — a degradation factor to watch for. Residential neighbourhoods built since the 1980s offer a relatively homogeneous housing stock of cottages and two-storey homes. Just 25 minutes from Marieville, Sainte-Julie is part of our primary service area, allowing us to provide quick service and close follow-up."
+        }
+      }
+    },
+    {
+      "slug": "saint-bruno-de-montarville",
+      "displayName": "Saint-Bruno-de-Montarville",
+      "projectCount": 60,
+      "distanceFromHQ": "25 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une toiture à Saint-Bruno-de-Montarville ?",
+            "answer": "À Saint-Bruno, le prix d'une toiture se situe entre 10 000 $ et 28 000 $. Les propriétés haut de gamme du secteur du lac du Village et du Sommet comportent souvent des toitures complexes avec tourelles et multiples pentes. Soumission gratuite et détaillée sur place."
+          },
+          {
+            "question": "Les bardeaux GAF résistent-ils au climat de Saint-Bruno ?",
+            "answer": "Oui, les bardeaux GAF Timberline HDZ sont conçus pour le climat québécois. Ils résistent aux vents de 210 km/h, aux cycles gel-dégel et aux fortes pluies. L'altitude légèrement plus élevée de Saint-Bruno, au pied de la montagne, n'affecte pas leur performance."
+          },
+          {
+            "question": "Faites-vous aussi la ventilation d'entretoit à Saint-Bruno ?",
+            "answer": "Oui, la ventilation d'entretoit est essentielle, surtout à Saint-Bruno où la proximité de la montagne crée des accumulations de neige importantes. Une mauvaise ventilation cause des barrières de glace et réduit la durée de vie de la toiture. Nous évaluons et corrigeons la ventilation lors de chaque projet."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur certifié à <em>Saint-Bruno-de-Montarville</em>",
+          "text": "Saint-Bruno-de-Montarville, au pied du mont Saint-Bruno, est reconnue pour ses résidences de prestige entourées de nature. L'altitude et la proximité de la montagne créent un microclimat avec des accumulations de neige plus importantes que dans les villes avoisinantes, ce qui met les toitures à rude épreuve. Les grandes propriétés du secteur du lac du Village et les maisons haut de gamme du Sommet exigent un travail de qualité supérieure. Notre certification GAF Master Elite et notre expérience locale nous permettent de répondre aux standards élevés des propriétaires de Saint-Bruno. À 25 minutes de Marieville, nous sommes votre couvreur de proximité."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a roof cost in Saint-Bruno-de-Montarville?",
+            "answer": "In Saint-Bruno, roofing costs range from $10,000 to $28,000. Upscale properties near Lac du Village and Le Sommet often feature complex roofs with turrets and multiple slopes. Free detailed on-site estimate available."
+          },
+          {
+            "question": "Can GAF shingles withstand Saint-Bruno's climate?",
+            "answer": "Yes, GAF Timberline HDZ shingles are designed for Quebec's climate. They withstand winds up to 210 km/h, freeze-thaw cycles, and heavy rain. Saint-Bruno's slightly higher elevation at the foot of the mountain does not affect their performance."
+          },
+          {
+            "question": "Do you also handle attic ventilation in Saint-Bruno?",
+            "answer": "Yes, attic ventilation is essential, especially in Saint-Bruno where the mountain proximity creates significant snow accumulation. Poor ventilation causes ice dams and reduces roof lifespan. We evaluate and correct ventilation with every project."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Certified Roofer in <em>Saint-Bruno-de-Montarville</em>",
+          "text": "Saint-Bruno-de-Montarville, at the foot of Mont Saint-Bruno, is known for its prestigious residences surrounded by nature. The elevation and mountain proximity create a microclimate with heavier snow accumulation than neighbouring cities, putting roofs to the test. Large properties near Lac du Village and upscale homes in Le Sommet demand superior quality work. Our GAF Master Elite certification and local experience allow us to meet Saint-Bruno homeowners' high standards. Just 25 minutes from Marieville, we are your neighbourhood roofer."
+        }
+      }
+    },
+    {
+      "slug": "carignan",
+      "displayName": "Carignan",
+      "projectCount": 45,
+      "distanceFromHQ": "15 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une toiture à Carignan ?",
+            "answer": "Le coût d'une toiture à Carignan varie entre 9 000 $ et 26 000 $. Les propriétés sur grands terrains et les maisons de campagne avec des toitures étendues représentent un investissement plus important. Nous offrons une soumission détaillée gratuite pour chaque projet."
+          },
+          {
+            "question": "Desservez-vous les rangs et les zones rurales de Carignan ?",
+            "answer": "Oui, nous couvrons tout le territoire de Carignan, incluant les rangs, les zones agricoles et le village. Carignan étant à seulement 15 minutes de notre siège social de Marieville, c'est l'une des villes où nous intervenons le plus rapidement."
+          },
+          {
+            "question": "Peut-on remplacer sa toiture en automne à Carignan ?",
+            "answer": "Oui, l'automne est une excellente période pour remplacer sa toiture. Les bardeaux GAF peuvent être installés jusqu'aux premières gelées importantes. L'avantage : les délais sont souvent plus courts qu'en été et vous protégez votre maison avant l'hiver québécois."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur près de chez vous à <em>Carignan</em>",
+          "text": "Carignan, avec son caractère champêtre et ses grandes propriétés, est une municipalité où les maisons ont souvent des toitures de grande superficie. Les résidences sur terrains agricoles et les propriétés équestres nécessitent des matériaux durables capables de résister aux vents ouverts de la plaine. À seulement 15 minutes de notre siège social de Marieville, Carignan est l'une des villes les plus proches de notre base d'opérations. Cela nous permet d'offrir un service particulièrement réactif, que ce soit pour un remplacement planifié ou une urgence après une tempête."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a roof cost in Carignan?",
+            "answer": "Roofing costs in Carignan range from $9,000 to $26,000. Properties on large lots and country homes with expansive roofs represent a bigger investment. We offer a free detailed estimate for every project."
+          },
+          {
+            "question": "Do you serve rural roads and farm areas in Carignan?",
+            "answer": "Yes, we cover all of Carignan, including rural roads, agricultural zones, and the village. Carignan is only 15 minutes from our Marieville headquarters, making it one of the cities where we respond fastest."
+          },
+          {
+            "question": "Can I replace my roof in the fall in Carignan?",
+            "answer": "Yes, fall is an excellent time for roof replacement. GAF shingles can be installed until the first significant frost. The advantage: wait times are often shorter than summer, and you protect your home before the Quebec winter."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Your Neighbourhood Roofer in <em>Carignan</em>",
+          "text": "Carignan, with its rural character and large properties, is a municipality where homes often have expansive roof areas. Residences on agricultural land and equestrian properties need durable materials capable of withstanding open-field winds. Just 15 minutes from our Marieville headquarters, Carignan is one of the closest cities to our base of operations. This allows us to offer particularly responsive service, whether for a planned replacement or an emergency after a storm."
+        }
+      }
+    },
+    {
+      "slug": "chambly",
+      "displayName": "Chambly",
+      "projectCount": 85,
+      "distanceFromHQ": "15 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une toiture neuve à Chambly ?",
+            "answer": "Le prix d'une toiture à Chambly se situe entre 8 500 $ et 23 000 $. Les maisons du secteur historique près du Fort Chambly et du bassin ont des caractéristiques architecturales qui peuvent influencer le coût. Demandez votre soumission gratuite."
+          },
+          {
+            "question": "L'humidité du bassin de Chambly affecte-t-elle les toitures ?",
+            "answer": "Oui, la proximité du bassin de Chambly et de la rivière Richelieu crée un environnement plus humide qui peut favoriser la mousse et accélérer le vieillissement des bardeaux. Nous recommandons des bardeaux avec protection algicide et une ventilation d'entretoit optimisée pour les propriétés riveraines."
+          },
+          {
+            "question": "Option Toiture est-il un couvreur local à Chambly ?",
+            "answer": "Absolument. Notre siège social est à Marieville, à seulement 15 minutes de Chambly. C'est l'une de nos zones principales d'intervention. Nous avons réalisé des dizaines de projets dans tous les quartiers de Chambly et pouvons fournir des références locales sur demande."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur local à <em>Chambly</em>",
+          "text": "Chambly, ville historique bordée par le bassin de Chambly et la rivière Richelieu, offre un cadre pittoresque mais exigeant pour les toitures. L'humidité constante provenant des plans d'eau favorise le développement de mousse et d'algues sur les bardeaux, nécessitant des produits avec protection spécifique. Le secteur patrimonial près du Fort Chambly comprend des maisons centenaires qui demandent une attention particulière. Situés à seulement 15 minutes à Marieville, nous sommes véritablement le couvreur du coin pour Chambly. Notre connaissance approfondie du secteur et des dizaines de projets réalisés localement témoignent de notre engagement envers la communauté."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a new roof cost in Chambly?",
+            "answer": "A roof in Chambly costs between $8,500 and $23,000. Homes in the historic area near Fort Chambly and the basin have architectural features that can influence the cost. Request your free estimate."
+          },
+          {
+            "question": "Does the Chambly Basin's humidity affect roofs?",
+            "answer": "Yes, the proximity to Chambly Basin and the Richelieu River creates a more humid environment that can promote moss and accelerate shingle aging. We recommend shingles with algae protection and optimized attic ventilation for waterfront properties."
+          },
+          {
+            "question": "Is Option Toiture a local roofer in Chambly?",
+            "answer": "Absolutely. Our headquarters is in Marieville, just 15 minutes from Chambly. It's one of our primary service areas. We've completed dozens of projects in every Chambly neighbourhood and can provide local references upon request."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Local Roofer in <em>Chambly</em>",
+          "text": "Chambly, a historic town bordered by the Chambly Basin and Richelieu River, offers a picturesque but demanding environment for roofing. Constant humidity from the waterways promotes moss and algae growth on shingles, requiring products with specific protection. The heritage area near Fort Chambly includes century-old homes that need special attention. Located just 15 minutes away in Marieville, we are truly the local roofer for Chambly. Our deep knowledge of the area and dozens of locally completed projects demonstrate our commitment to the community."
+        }
+      }
+    },
+    {
+      "slug": "richelieu",
+      "displayName": "Richelieu",
+      "projectCount": 35,
+      "distanceFromHQ": "10 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une toiture à Richelieu ?",
+            "answer": "Le coût d'une toiture résidentielle à Richelieu varie entre 8 000 $ et 20 000 $. Les maisons typiques du secteur sont souvent des bungalows ou des maisons à un étage et demi qui permettent un remplacement rapide et efficace. Soumission gratuite disponible."
+          },
+          {
+            "question": "Êtes-vous proches de Richelieu ?",
+            "answer": "Très proches. Notre siège social de Marieville est à seulement 10 minutes de Richelieu. C'est l'une des municipalités où nous sommes les plus rapides à intervenir, que ce soit pour un projet planifié ou une urgence."
+          },
+          {
+            "question": "Quels types de toitures faites-vous à Richelieu ?",
+            "answer": "Nous réalisons tous les types de projets : remplacement complet en bardeaux d'asphalte, réparation de fuites, toiture de bâtiments agricoles et commerciaux, installation de ventilation d'entretoit et ferblanterie. Nos solutions s'adaptent à tous les bâtiments de Richelieu."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Votre couvreur voisin à <em>Richelieu</em>",
+          "text": "Richelieu, petite municipalité paisible le long de la rivière Richelieu, bénéficie de notre proximité immédiate puisque notre siège social de Marieville n'est qu'à 10 minutes. Cette proximité nous permet d'offrir le meilleur temps de réponse de toute notre zone de desserte. Les résidences de Richelieu, un mélange de maisons traditionnelles et de constructions plus récentes, font face aux défis de l'humidité riveraine et des vents du corridor de la rivière. Notre équipe connaît intimement ce secteur et peut intervenir rapidement, même pour les urgences en dehors des heures normales."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a roof cost in Richelieu?",
+            "answer": "A residential roof in Richelieu costs between $8,000 and $20,000. Typical homes in the area are often bungalows or one-and-a-half storey houses that allow for quick, efficient replacement. Free estimate available."
+          },
+          {
+            "question": "Are you close to Richelieu?",
+            "answer": "Very close. Our Marieville headquarters is just 10 minutes from Richelieu. It's one of the municipalities where we can respond fastest, whether for a planned project or an emergency."
+          },
+          {
+            "question": "What types of roofing do you do in Richelieu?",
+            "answer": "We handle all project types: complete asphalt shingle replacement, leak repair, agricultural and commercial building roofing, attic ventilation installation, and flashing work. Our solutions adapt to all buildings in Richelieu."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Your Neighbouring Roofer in <em>Richelieu</em>",
+          "text": "Richelieu, a peaceful small municipality along the Richelieu River, benefits from our immediate proximity — our Marieville headquarters is just 10 minutes away. This closeness allows us to offer the best response time in our entire service area. Richelieu's homes, a mix of traditional houses and newer constructions, face the challenges of riverside humidity and winds from the river corridor. Our team knows this area intimately and can respond quickly, even for after-hours emergencies."
+        }
+      }
+    },
+    {
+      "slug": "marieville",
+      "displayName": "Marieville",
+      "projectCount": 90,
+      "distanceFromHQ": "0 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une toiture à Marieville ?",
+            "answer": "Le prix d'une toiture à Marieville varie entre 8 000 $ et 22 000 $ selon la taille de la maison et les matériaux choisis. En tant qu'entreprise basée à Marieville, nous n'avons pas de frais de déplacement, ce qui peut représenter des économies pour nos clients locaux."
+          },
+          {
+            "question": "Pourquoi choisir Option Toiture à Marieville ?",
+            "answer": "Option Toiture a son siège social à Marieville, au 3320 route 112. Nous sommes un acteur local établi depuis plus de 15 ans. Choisir Option Toiture, c'est encourager une entreprise de chez vous et bénéficier du service le plus rapide possible — nous sommes littéralement vos voisins."
+          },
+          {
+            "question": "Offrez-vous des références de clients à Marieville ?",
+            "answer": "Oui, avec plus de 90 projets réalisés à Marieville et dans les environs immédiats, nous pouvons vous fournir des références de voisins satisfaits. Plusieurs de nos réalisations sont visibles directement depuis la route 112 et les rues avoisinantes."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Votre couvreur <em>à Marieville</em> même",
+          "text": "Marieville est notre chez-nous. Notre siège social situé au 3320 route 112 fait de nous le couvreur le plus local que vous puissiez trouver. Depuis plus de 15 ans, nous avons réalisé des projets sur presque toutes les rues de la ville, des résidences historiques du centre-ville aux maisons plus récentes des nouveaux développements. Nos voisins nous connaissent et nous font confiance — plusieurs de nos plus belles réalisations sont visibles simplement en se promenant dans les rues de Marieville. Aucun frais de déplacement, un temps de réponse imbattable et un engagement profond envers notre communauté."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a roof cost in Marieville?",
+            "answer": "A roof in Marieville ranges from $8,000 to $22,000 depending on house size and materials chosen. As a Marieville-based company, we have no travel costs, which can mean savings for our local clients."
+          },
+          {
+            "question": "Why choose Option Toiture in Marieville?",
+            "answer": "Option Toiture is headquartered in Marieville at 3320 Route 112. We've been an established local business for over 15 years. Choosing Option Toiture means supporting a hometown company and getting the fastest possible service — we're literally your neighbours."
+          },
+          {
+            "question": "Can you provide references from Marieville clients?",
+            "answer": "Yes, with over 90 projects completed in Marieville and its immediate surroundings, we can provide references from satisfied neighbours. Several of our completed projects are visible directly from Route 112 and surrounding streets."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Your Roofer <em>in Marieville</em> Itself",
+          "text": "Marieville is our home. Our headquarters at 3320 Route 112 makes us the most local roofer you can find. For over 15 years, we've completed projects on nearly every street in town, from historic downtown residences to newer homes in recent developments. Our neighbours know us and trust us — several of our finest projects are visible simply by walking through Marieville's streets. No travel fees, unbeatable response time, and a deep commitment to our community."
+        }
+      }
+    },
+    {
+      "slug": "mont-saint-hilaire",
+      "displayName": "Mont-Saint-Hilaire",
+      "projectCount": 50,
+      "distanceFromHQ": "15 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une toiture à Mont-Saint-Hilaire ?",
+            "answer": "À Mont-Saint-Hilaire, le prix d'une toiture varie entre 9 500 $ et 26 000 $. Les résidences du secteur de la montagne et du village ont souvent des toitures à pentes prononcées qui nécessitent plus de matériaux et d'équipements de sécurité."
+          },
+          {
+            "question": "La neige supplémentaire en montagne affecte-t-elle la toiture ?",
+            "answer": "Oui, Mont-Saint-Hilaire reçoit des accumulations de neige supérieures à la moyenne de la Rive-Sud en raison de l'effet orographique de la montagne. Cela augmente la charge sur la toiture et rend la ventilation d'entretoit cruciale pour prévenir les barrières de glace. Nous dimensionnons nos installations en conséquence."
+          },
+          {
+            "question": "Travaillez-vous sur les pentes raides à Mont-Saint-Hilaire ?",
+            "answer": "Oui, notre équipe est équipée et formée pour travailler sur les toitures à forte pente, courantes à Mont-Saint-Hilaire. Nous utilisons des ancrages de sécurité, des harnais et des techniques spécifiques qui garantissent un travail de qualité même sur les pentes les plus abruptes."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur spécialisé à <em>Mont-Saint-Hilaire</em>",
+          "text": "Mont-Saint-Hilaire, réserve de la biosphère de l'UNESCO, est un joyau naturel où les résidences s'harmonisent avec le paysage montagneux. Les maisons en altitude sont soumises à des conditions climatiques plus rigoureuses : accumulations de neige importantes, vents plus forts et cycles gel-dégel amplifiés. Les toitures à forte pente, caractéristiques du secteur, exigent une expertise particulière et des mesures de sécurité renforcées. Notre équipe, à seulement 15 minutes depuis Marieville, possède l'équipement et le savoir-faire pour ces projets exigeants. Nous protégeons les maisons de Mont-Saint-Hilaire depuis plus de 15 ans."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a roof cost in Mont-Saint-Hilaire?",
+            "answer": "In Mont-Saint-Hilaire, roofing costs range from $9,500 to $26,000. Residences near the mountain and in the village often have steep-pitched roofs requiring more materials and safety equipment."
+          },
+          {
+            "question": "Does the extra mountain snow affect roofing?",
+            "answer": "Yes, Mont-Saint-Hilaire receives above-average snow accumulation for the South Shore due to the mountain's orographic effect. This increases the load on roofs and makes attic ventilation crucial for preventing ice dams. We size our installations accordingly."
+          },
+          {
+            "question": "Do you work on steep slopes in Mont-Saint-Hilaire?",
+            "answer": "Yes, our team is equipped and trained for steep-pitched roofs, which are common in Mont-Saint-Hilaire. We use safety anchors, harnesses, and specific techniques that guarantee quality work even on the steepest slopes."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Specialized Roofer in <em>Mont-Saint-Hilaire</em>",
+          "text": "Mont-Saint-Hilaire, a UNESCO biosphere reserve, is a natural gem where residences blend with the mountainous landscape. Homes at elevation face more rigorous climate conditions: heavy snow accumulation, stronger winds, and amplified freeze-thaw cycles. Steep-pitched roofs, characteristic of the area, require particular expertise and enhanced safety measures. Our team, just 15 minutes from Marieville, has the equipment and know-how for these demanding projects. We've been protecting Mont-Saint-Hilaire homes for over 15 years."
+        }
+      }
+    },
+    {
+      "slug": "saint-jean-sur-richelieu",
+      "displayName": "Saint-Jean-sur-Richelieu",
+      "projectCount": 110,
+      "distanceFromHQ": "20 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une toiture à Saint-Jean-sur-Richelieu ?",
+            "answer": "Le prix d'une toiture à Saint-Jean-sur-Richelieu varie entre 8 500 $ et 24 000 $. La ville offre une grande variété de propriétés, des maisons centenaires du Vieux-Saint-Jean aux bungalows d'Iberville et aux constructions neuves du secteur nord. Soumission gratuite et sans engagement."
+          },
+          {
+            "question": "Desservez-vous Iberville et Saint-Jean ?",
+            "answer": "Oui, nous couvrons toute la ville fusionnée de Saint-Jean-sur-Richelieu : l'ancien Saint-Jean, Iberville, Saint-Luc, L'Acadie et Saint-Athanase. À seulement 20 minutes de Marieville, c'est l'une de nos principales zones d'intervention."
+          },
+          {
+            "question": "Mon assurance couvre-t-elle les dommages de toiture à Saint-Jean ?",
+            "answer": "Les dommages causés par des événements soudains (tempête, grêle, vent violent) sont généralement couverts par votre assurance habitation. L'usure normale ne l'est pas. Nous pouvons vous aider avec le processus de réclamation en documentant les dommages et en fournissant une soumission détaillée à votre assureur."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur d'expérience à <em>Saint-Jean-sur-Richelieu</em>",
+          "text": "Saint-Jean-sur-Richelieu, deuxième plus grande ville de la Montérégie, offre un parc immobilier varié allant des maisons patrimoniales du Vieux-Saint-Jean aux développements modernes du secteur nord. La ville, traversée par la rivière Richelieu, est connue pour son Festival international de montgolfières mais aussi pour ses hivers rigoureux qui mettent les toitures à l'épreuve. Les quartiers d'Iberville et de Saint-Luc présentent beaucoup de maisons des années 1970-1990 dont les toitures arrivent en fin de vie. À 20 minutes de notre siège social de Marieville, nous avons complété plus d'une centaine de projets dans le grand Saint-Jean."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a roof cost in Saint-Jean-sur-Richelieu?",
+            "answer": "A roof in Saint-Jean-sur-Richelieu ranges from $8,500 to $24,000. The city offers a wide variety of properties, from century-old homes in Vieux-Saint-Jean to Iberville bungalows and new constructions in the northern sector. Free, no-obligation estimate."
+          },
+          {
+            "question": "Do you serve both Iberville and Saint-Jean?",
+            "answer": "Yes, we cover the entire merged city of Saint-Jean-sur-Richelieu: former Saint-Jean, Iberville, Saint-Luc, L'Acadie, and Saint-Athanase. Just 20 minutes from Marieville, it's one of our primary service areas."
+          },
+          {
+            "question": "Does my insurance cover roof damage in Saint-Jean?",
+            "answer": "Damage caused by sudden events (storms, hail, high winds) is generally covered by your home insurance. Normal wear and tear is not. We can help with the claims process by documenting the damage and providing a detailed estimate to your insurer."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Experienced Roofer in <em>Saint-Jean-sur-Richelieu</em>",
+          "text": "Saint-Jean-sur-Richelieu, the second largest city in Montérégie, offers varied housing stock from heritage homes in Vieux-Saint-Jean to modern developments in the northern sector. The city, crossed by the Richelieu River, is known for its International Balloon Festival but also for its harsh winters that put roofs to the test. The Iberville and Saint-Luc neighbourhoods have many 1970s-1990s homes whose roofs are reaching end of life. Just 20 minutes from our Marieville headquarters, we've completed over a hundred projects across greater Saint-Jean."
+        }
+      }
+    },
+    {
+      "slug": "saint-hyacinthe",
+      "displayName": "Saint-Hyacinthe",
+      "projectCount": 40,
+      "distanceFromHQ": "30 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une toiture à Saint-Hyacinthe ?",
+            "answer": "Le prix d'une toiture neuve à Saint-Hyacinthe se situe entre 8 000 $ et 22 000 $. Les propriétés du centre-ville historique et les maisons de ferme des rangs environnants ont des besoins différents que nous évaluons gratuitement lors de la soumission."
+          },
+          {
+            "question": "Option Toiture se déplace-t-il jusqu'à Saint-Hyacinthe ?",
+            "answer": "Oui, Saint-Hyacinthe fait partie de notre zone de desserte. À environ 30 minutes de notre siège social de Marieville via la route 112, nous desservons Saint-Hyacinthe régulièrement. Aucun frais de déplacement supplémentaire n'est facturé."
+          },
+          {
+            "question": "Les vents de la plaine agricole affectent-ils les toitures ?",
+            "answer": "Oui, Saint-Hyacinthe est située en zone agricole ouverte où les vents peuvent être plus soutenus qu'en milieu urbain protégé. C'est pourquoi nous utilisons des bardeaux GAF résistants aux vents de 210 km/h et des techniques de fixation renforcées pour toutes nos installations dans le secteur."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur de confiance à <em>Saint-Hyacinthe</em>",
+          "text": "Saint-Hyacinthe, la Technopole agroalimentaire du Canada, est une ville dynamique avec un centre-ville historique vibrant et de vastes zones agricoles environnantes. Les toitures dans ce secteur font face à des défis particuliers : les vents soutenus de la plaine agricole, l'absence de brise-vent naturels et les variations de température importantes entre la vallée de la Yamaska et les terres plus élevées. Les propriétés vont des maisons victoriennes du centre-ville aux résidences modernes et aux bâtiments agricoles. À 30 minutes de Marieville par la route 112, notre équipe dessert Saint-Hyacinthe avec le même engagement de qualité que nos clients les plus proches."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a roof cost in Saint-Hyacinthe?",
+            "answer": "A new roof in Saint-Hyacinthe costs between $8,000 and $22,000. Historic downtown properties and rural farmhouses in surrounding ranges have different needs that we evaluate at no charge during the estimate."
+          },
+          {
+            "question": "Does Option Toiture travel to Saint-Hyacinthe?",
+            "answer": "Yes, Saint-Hyacinthe is within our service area. About 30 minutes from our Marieville headquarters via Route 112, we serve Saint-Hyacinthe regularly. No extra travel fees are charged."
+          },
+          {
+            "question": "Do agricultural plain winds affect roofs?",
+            "answer": "Yes, Saint-Hyacinthe sits in an open agricultural zone where winds can be more sustained than in sheltered urban areas. That's why we use GAF shingles rated for 210 km/h winds and reinforced fastening techniques for all our installations in the area."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Trusted Roofer in <em>Saint-Hyacinthe</em>",
+          "text": "Saint-Hyacinthe, Canada's Agri-Food Technopole, is a dynamic city with a vibrant historic downtown and vast surrounding agricultural areas. Roofs in this area face particular challenges: sustained winds from the agricultural plain, lack of natural windbreaks, and significant temperature variations between the Yamaska valley and higher ground. Properties range from Victorian downtown homes to modern residences and agricultural buildings. Just 30 minutes from Marieville via Route 112, our team serves Saint-Hyacinthe with the same quality commitment as our closest clients."
+        }
+      }
+    },
+    {
+      "slug": "granby",
+      "displayName": "Granby",
+      "projectCount": 55,
+      "distanceFromHQ": "35 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une toiture à Granby ?",
+            "answer": "Le prix d'une toiture résidentielle à Granby varie entre 8 500 $ et 23 000 $. Les maisons de Granby, souvent des cottages et des bungalows des années 1970-2000, permettent généralement un remplacement efficace. Nous offrons une soumission gratuite sans engagement."
+          },
+          {
+            "question": "Est-ce que Granby fait partie de votre territoire ?",
+            "answer": "Oui, Granby est dans notre zone de desserte. À environ 35 minutes de notre siège social de Marieville, nous desservons Granby et ses environs régulièrement. Nos équipes planifient les projets de Granby et des Cantons-de-l'Est en journées groupées pour une efficacité maximale."
+          },
+          {
+            "question": "Le climat des Cantons-de-l'Est exige-t-il des matériaux spéciaux ?",
+            "answer": "Le secteur de Granby reçoit généralement plus de neige que la plaine de la Rive-Sud. Nous recommandons toujours la membrane d'étanchéité Ice & Water Shield sur les débords et dans les vallées, ainsi qu'une ventilation d'entretoit optimisée pour prévenir les barrières de glace."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur certifié à <em>Granby</em>",
+          "text": "Granby, porte d'entrée des Cantons-de-l'Est et ville du célèbre Zoo de Granby, connaît un climat légèrement plus rigoureux que la plaine de la Rive-Sud. Les accumulations de neige supérieures et les températures plus froides en hiver exigent des toitures robustes avec une excellente ventilation d'entretoit. Le parc immobilier de Granby, composé de maisons des années 1960 à aujourd'hui, présente une variété de styles et de défis. Notre équipe, basée à 35 minutes à Marieville, dessert régulièrement Granby et les environs en regroupant nos interventions dans les Cantons-de-l'Est pour un service efficace et sans délai."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a roof cost in Granby?",
+            "answer": "A residential roof in Granby costs between $8,500 and $23,000. Granby homes, often cottages and bungalows from the 1970s-2000s, generally allow for efficient replacement. We offer free, no-obligation estimates."
+          },
+          {
+            "question": "Is Granby within your service area?",
+            "answer": "Yes, Granby is in our service territory. About 35 minutes from our Marieville headquarters, we serve Granby and surrounding areas regularly. Our teams plan Granby and Eastern Townships projects in grouped days for maximum efficiency."
+          },
+          {
+            "question": "Does the Eastern Townships climate require special materials?",
+            "answer": "The Granby area generally receives more snow than the South Shore plain. We always recommend Ice & Water Shield membrane on overhangs and in valleys, plus optimized attic ventilation to prevent ice dams."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Certified Roofer in <em>Granby</em>",
+          "text": "Granby, gateway to the Eastern Townships and home of the famous Granby Zoo, experiences a slightly harsher climate than the South Shore plain. Higher snow accumulation and colder winter temperatures demand robust roofs with excellent attic ventilation. Granby's housing stock, spanning from the 1960s to today, presents a variety of styles and challenges. Our team, based 35 minutes away in Marieville, regularly serves Granby and surroundings by grouping our Eastern Townships interventions for efficient, timely service."
+        }
+      }
+    },
+    {
+      "slug": "bromont",
+      "displayName": "Bromont",
+      "projectCount": 35,
+      "distanceFromHQ": "35 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une toiture à Bromont ?",
+            "answer": "Le coût d'une toiture à Bromont varie entre 9 000 $ et 28 000 $. Les chalets et résidences de montagne présentent souvent des toitures complexes avec fortes pentes et lucarnes qui influencent le prix. Notre soumission gratuite vous donne un portrait complet."
+          },
+          {
+            "question": "Travaillez-vous sur les chalets de montagne à Bromont ?",
+            "answer": "Oui, nous avons l'expérience des toitures de chalets et de résidences en altitude à Bromont. Nos équipes sont formées pour travailler sur les fortes pentes typiques des constructions de montagne et utilisent des équipements de sécurité adaptés."
+          },
+          {
+            "question": "Quelle est la durée de vie d'une toiture à Bromont ?",
+            "answer": "Avec les bardeaux GAF Timberline HDZ que nous installons, la durée de vie est de 25 à 50 ans selon l'exposition. Les conditions plus rudes de Bromont (neige abondante, vents de montagne) peuvent réduire légèrement la durée de vie, d'où l'importance d'une installation professionnelle et d'une ventilation optimale."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur spécialiste à <em>Bromont</em>",
+          "text": "Bromont, station quatre saisons réputée pour son ski et ses activités plein air, possède un parc immobilier unique mélangeant chalets de montagne, résidences de villégiature et maisons permanentes. L'altitude et l'exposition aux éléments créent des conditions parmi les plus exigeantes de notre zone de desserte : neige abondante, vents de montagne et variations de température importantes. Les toitures à forte pente, typiques de l'architecture de montagne, nécessitent une expertise et des techniques spécifiques. À environ 35 minutes de Marieville, notre équipe dessert Bromont avec une connaissance approfondie des défis propres aux constructions en altitude."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a roof cost in Bromont?",
+            "answer": "Roofing costs in Bromont range from $9,000 to $28,000. Mountain chalets and residences often have complex roofs with steep slopes and dormers that affect pricing. Our free estimate gives you the full picture."
+          },
+          {
+            "question": "Do you work on mountain chalets in Bromont?",
+            "answer": "Yes, we have experience with chalet and mountain residence roofing in Bromont. Our teams are trained for the steep slopes typical of mountain construction and use appropriate safety equipment."
+          },
+          {
+            "question": "How long does a roof last in Bromont?",
+            "answer": "With the GAF Timberline HDZ shingles we install, lifespan is 25 to 50 years depending on exposure. Bromont's harsher conditions (heavy snow, mountain winds) can slightly reduce lifespan, making professional installation and optimal ventilation all the more important."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Specialist Roofer in <em>Bromont</em>",
+          "text": "Bromont, a renowned four-season resort known for skiing and outdoor activities, has a unique housing stock mixing mountain chalets, vacation residences, and permanent homes. The elevation and element exposure create some of the most demanding conditions in our service area: heavy snow, mountain winds, and significant temperature swings. Steep-pitched roofs, typical of mountain architecture, require specific expertise and techniques. About 35 minutes from Marieville, our team serves Bromont with thorough knowledge of the challenges unique to elevated construction."
+        }
+      }
+    },
+    {
+      "slug": "cowansville",
+      "displayName": "Cowansville",
+      "projectCount": 30,
+      "distanceFromHQ": "40 min",
+      "fr": {
+        "faq": [
+          {
+            "question": "Combien coûte une toiture à Cowansville ?",
+            "answer": "À Cowansville, le prix d'une toiture résidentielle se situe entre 8 000 $ et 21 000 $. Les maisons plus modestes et les cottages typiques de la région permettent souvent un remplacement à coût raisonnable. Nous offrons une soumission gratuite sans obligation."
+          },
+          {
+            "question": "Cowansville est-elle dans votre zone de service ?",
+            "answer": "Oui, Cowansville est la limite est de notre territoire principal. À environ 40 minutes de Marieville, nous desservons Cowansville régulièrement en groupant nos interventions dans les Cantons-de-l'Est. Aucun supplément de déplacement n'est facturé."
+          },
+          {
+            "question": "Faites-vous des toitures commerciales à Cowansville ?",
+            "answer": "Oui, nous réalisons des projets résidentiels et commerciaux à Cowansville. Pour les toitures plates commerciales, nous installons des membranes TPO et EPDM, en plus de notre expertise en bardeaux d'asphalte pour le résidentiel."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Couvreur de confiance à <em>Cowansville</em>",
+          "text": "Cowansville, ville bilingue au cœur de la région de Brome-Missisquoi, offre un environnement de petite ville avec des besoins en toiture spécifiques aux Cantons-de-l'Est. Le climat plus froid et les chutes de neige supérieures à la moyenne régionale demandent des toitures bien isolées et ventilées. Le parc immobilier, comprenant des maisons ancestrales du centre-ville et des constructions plus récentes en périphérie, requiert des approches adaptées. Notre équipe fait le trajet depuis Marieville, à 40 minutes, et regroupe les projets de Cowansville et des environs pour assurer un service régulier et efficace."
+        }
+      },
+      "en": {
+        "faq": [
+          {
+            "question": "How much does a roof cost in Cowansville?",
+            "answer": "In Cowansville, residential roofing costs range from $8,000 to $21,000. The more modest homes and cottages typical of the region often allow for cost-effective replacement. We offer free, no-obligation estimates."
+          },
+          {
+            "question": "Is Cowansville in your service area?",
+            "answer": "Yes, Cowansville is the eastern edge of our primary territory. About 40 minutes from Marieville, we serve Cowansville regularly by grouping our Eastern Townships interventions. No travel surcharge is applied."
+          },
+          {
+            "question": "Do you do commercial roofing in Cowansville?",
+            "answer": "Yes, we handle both residential and commercial projects in Cowansville. For flat commercial roofs, we install TPO and EPDM membranes, in addition to our asphalt shingle expertise for residential work."
+          }
+        ],
+        "localParagraph": {
+          "heading": "Trusted Roofer in <em>Cowansville</em>",
+          "text": "Cowansville, a bilingual town in the heart of the Brome-Missisquoi region, offers a small-town environment with roofing needs specific to the Eastern Townships. The colder climate and above-average snowfall require well-insulated and ventilated roofs. The housing stock, including heritage homes downtown and newer constructions on the outskirts, demands adapted approaches. Our team travels from Marieville, 40 minutes away, grouping Cowansville and area projects for consistent, efficient service."
+        }
+      }
+    }
+  ]
+}
