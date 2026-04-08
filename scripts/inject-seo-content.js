@@ -175,7 +175,7 @@ function processPage(filePath, cityData, lang) {
   }
 
   // 5. Inject FAQ accordion JS before </body>
-  if (!html.includes('.faq-hub .faq-q')) {
+  if (!html.includes("classList.toggle('open')})});</script>")) {
     html = html.replace('</body>', FAQ_JS + '\n</body>');
     changes++;
   }

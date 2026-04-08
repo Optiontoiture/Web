@@ -405,5 +405,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   });
   </script>
+<script>document.querySelectorAll('.faq-hub .faq-q').forEach(function(q){q.addEventListener('click',function(){var i=q.parentElement;document.querySelectorAll('.faq-hub .faq-item').forEach(function(x){if(x!==i)x.classList.remove('open')});i.classList.toggle('open')})});</script>
 </body>
 </html>
