@@ -32,7 +32,7 @@ const TRUST_HTML_FR = `  <section class="trust-bar">
     <div class="container">
       <div class="trust-bar-inner">
         <div class="trust-badge">
-          <img src="/images/gaf-master-elite.webp" alt="GAF Master Elite" loading="lazy">
+          <img src="/images/logos/gaf-master-elite.webp" alt="GAF Master Elite" loading="lazy">
           <div class="trust-badge-text">
             <span class="trust-badge-label">Certifié</span>
             <span class="trust-badge-value">GAF Master Elite</span>
@@ -40,7 +40,7 @@ const TRUST_HTML_FR = `  <section class="trust-bar">
         </div>
         <div class="trust-divider"></div>
         <div class="trust-badge">
-          <img src="/images/rona-plus.webp" alt="RONA+" loading="lazy">
+          <img src="/images/logos/rona-plus.webp" alt="RONA+" loading="lazy">
           <div class="trust-badge-text">
             <span class="trust-badge-label">Installateur officiel</span>
             <span class="trust-badge-value">RONA+</span>
@@ -76,7 +76,7 @@ const TRUST_HTML_EN = `  <section class="trust-bar">
     <div class="container">
       <div class="trust-bar-inner">
         <div class="trust-badge">
-          <img src="/images/gaf-master-elite.webp" alt="GAF Master Elite" loading="lazy">
+          <img src="/images/logos/gaf-master-elite.webp" alt="GAF Master Elite" loading="lazy">
           <div class="trust-badge-text">
             <span class="trust-badge-label">Certified</span>
             <span class="trust-badge-value">GAF Master Elite</span>
@@ -84,7 +84,7 @@ const TRUST_HTML_EN = `  <section class="trust-bar">
         </div>
         <div class="trust-divider"></div>
         <div class="trust-badge">
-          <img src="/images/rona-plus.webp" alt="RONA+" loading="lazy">
+          <img src="/images/logos/rona-plus.webp" alt="RONA+" loading="lazy">
           <div class="trust-badge-text">
             <span class="trust-badge-label">Official Installer</span>
             <span class="trust-badge-value">RONA+</span>
