@@ -131,6 +131,24 @@
     .local-text{max-width:800px;margin:0 auto;text-align:center}
     .local-text p{font-size:1.05rem;color:var(--text-light);line-height:1.85}
     @media(max-width:768px){.faq-hub{padding:48px 0}.faq-hub .faq-q{padding:16px 18px;font-size:.88rem}.local-content{padding:48px 0}}
+
+    /* Process Section */
+    .process-section{padding:80px 0;background:var(--dark);overflow:hidden}
+    .process-section .section-heading{color:var(--white)}
+    .process-section .section-subtitle{color:rgba(255,255,255,.55)}
+    .process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;max-width:1100px;margin:0 auto;position:relative}
+    .process-steps::before{content:'';position:absolute;top:44px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold),var(--gold),transparent)}
+    .process-step{text-align:center;padding:0 12px;position:relative}
+    .process-num{width:88px;height:88px;border-radius:50%;background:var(--dark-mid);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:2rem;position:relative;z-index:2;transition:transform .3s,background .3s}
+    .process-step:hover .process-num{transform:scale(1.1);background:var(--gold)}
+    .process-step:hover .process-num span{filter:brightness(0)}
+    .process-step h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--white);margin-bottom:8px}
+    .process-step p{font-size:.82rem;color:var(--text-muted);line-height:1.6}
+    .process-guarantee{margin-top:48px;text-align:center;padding:28px 32px;background:rgba(201,149,44,.08);border:1px solid rgba(201,149,44,.2);border-radius:var(--radius-lg);max-width:800px;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+    .process-guarantee .guarantee-icon{font-size:2rem}
+    .process-guarantee p{color:rgba(255,255,255,.8);font-size:.95rem;margin:0}
+    .process-guarantee strong{color:var(--gold)}
+    @media(max-width:768px){.process-section{padding:48px 0}.process-steps{grid-template-columns:1fr;gap:32px;max-width:320px}.process-steps::before{display:none}.process-num{width:72px;height:72px;font-size:1.6rem}.process-guarantee{flex-direction:column;text-align:center;padding:20px}}
   </style>
   <link rel="alternate" hreflang="fr" href="https://www.optiontoiture.com/couvreur-la-prairie/">
   <link rel="alternate" hreflang="en" href="https://www.optiontoiture.com/en/roofer-la-prairie/">
@@ -263,6 +281,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="services-grid"><a href="/couvreur-la-prairie/installation-toiture" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/installation-toiture.webp" alt="Installation de toiture à La Prairie" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🏠</div><h3>Installation de toiture</h3><p>Remplacement complet, bardeaux GAF Timberline HDZ, membrane Ice &amp; Water Shield.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-la-prairie/reparation-toiture" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/reparation-toiture.webp" alt="Réparation de toiture à La Prairie" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🔧</div><h3>Réparation de toiture</h3><p>Infiltrations, bardeaux manquants, urgences. Diagnostic gratuit.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-la-prairie/remplacement-toiture" class="service-card fade-in"><div class="service-card-img"><img src="/images/photos/chantier-drone-camion.webp" alt="Remplacement de toiture à La Prairie" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🔄</div><h3>Remplacement de toiture</h3><p>Toiture neuve clé en main. Retrait de l'ancienne toiture inclus.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-la-prairie/ventilation-entretoit" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/ventilation-entretoit.webp" alt="Ventilation d'entretoit à La Prairie" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">💨</div><h3>Ventilation d'entretoit</h3><p>Diagnostic et optimisation de la ventilation pour prévenir les problèmes.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-la-prairie/toiture-commerciale" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/toiture-commerciale.webp" alt="Toiture commerciale à La Prairie" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🏢</div><h3>Toiture commerciale</h3><p>Membrane TPO, EPDM, toiture plate. Bâtiments commerciaux et industriels.</p><span class="service-link">En savoir plus →</span></div></a><a href="/couvreur-la-prairie/ferblanterie-gouttieres" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/ferblanterie-gouttieres.webp" alt="Ferblanterie &amp; gouttières à La Prairie" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🌧️</div><h3>Ferblanterie &amp; gouttières</h3><p>Gouttières aluminium, solins, drains. Installation et réparation.</p><span class="service-link">En savoir plus →</span></div></a></div>
     </div>
   </section>
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">Notre processus</span>
+        <h2 class="section-heading">5 étapes simples vers votre <em>nouvelle toiture</em></h2>
+        <p class="section-subtitle">Un processus clair et transparent, du premier appel à la garantie finale.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-num"><span>📞</span></div>
+          <h3>1. Contactez-nous</h3>
+          <p>Appelez ou remplissez le formulaire. Réponse en moins de 24 h.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num"><span>🏠</span></div>
+          <h3>2. Inspection gratuite</h3>
+          <p>Un expert se déplace chez vous pour évaluer votre toiture. Sans frais, sans engagement.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num"><span>📋</span></div>
+          <h3>3. Soumission détaillée</h3>
+          <p>Vous recevez un prix clair et complet, sans surprise. Financement disponible.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num"><span>🔨</span></div>
+          <h3>4. Installation</h3>
+          <p>Notre équipe certifiée réalise les travaux selon les normes GAF. Chantier propre garanti.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num"><span>🛡️</span></div>
+          <h3>5. Garantie complète</h3>
+          <p>Garantie Golden Pledge : 50 ans matériaux, 25 ans main-d'œuvre. Suivi après travaux inclus.</p>
+        </div>
+      </div>
+      <div class="process-guarantee">
+        <span class="guarantee-icon">✅</span>
+        <p><strong>Payez seulement quand le travail est complété</strong> à votre entière satisfaction.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="faq-hub" id="faq">
     <div class="container">
       <div class="section-header">

@@ -130,6 +130,24 @@
     .local-text{max-width:800px;margin:0 auto;text-align:center}
     .local-text p{font-size:1.05rem;color:var(--text-light);line-height:1.85}
     @media(max-width:768px){.faq-hub{padding:48px 0}.faq-hub .faq-q{padding:16px 18px;font-size:.88rem}.local-content{padding:48px 0}}
+
+    /* Process Section */
+    .process-section{padding:80px 0;background:var(--dark);overflow:hidden}
+    .process-section .section-heading{color:var(--white)}
+    .process-section .section-subtitle{color:rgba(255,255,255,.55)}
+    .process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;max-width:1100px;margin:0 auto;position:relative}
+    .process-steps::before{content:'';position:absolute;top:44px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold),var(--gold),transparent)}
+    .process-step{text-align:center;padding:0 12px;position:relative}
+    .process-num{width:88px;height:88px;border-radius:50%;background:var(--dark-mid);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:2rem;position:relative;z-index:2;transition:transform .3s,background .3s}
+    .process-step:hover .process-num{transform:scale(1.1);background:var(--gold)}
+    .process-step:hover .process-num span{filter:brightness(0)}
+    .process-step h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--white);margin-bottom:8px}
+    .process-step p{font-size:.82rem;color:var(--text-muted);line-height:1.6}
+    .process-guarantee{margin-top:48px;text-align:center;padding:28px 32px;background:rgba(201,149,44,.08);border:1px solid rgba(201,149,44,.2);border-radius:var(--radius-lg);max-width:800px;margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+    .process-guarantee .guarantee-icon{font-size:2rem}
+    .process-guarantee p{color:rgba(255,255,255,.8);font-size:.95rem;margin:0}
+    .process-guarantee strong{color:var(--gold)}
+    @media(max-width:768px){.process-section{padding:48px 0}.process-steps{grid-template-columns:1fr;gap:32px;max-width:320px}.process-steps::before{display:none}.process-num{width:72px;height:72px;font-size:1.6rem}.process-guarantee{flex-direction:column;text-align:center;padding:20px}}
   </style>
   <link rel="alternate" hreflang="en" href="https://www.optiontoiture.com/en/roofer-carignan/">
   <link rel="alternate" hreflang="fr" href="https://www.optiontoiture.com/couvreur-carignan/">
@@ -254,6 +272,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="services-grid"><a href="/en/roofer-carignan/roof-installation" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/installation-toiture.webp" alt="Roof Installation in Carignan" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🏠</div><h3>Roof Installation</h3><p>Complete replacement with GAF Timberline HDZ shingles. Ice & Water Shield membrane.</p><span class="service-link">Learn more →</span></div></a><a href="/en/roofer-carignan/roof-repair" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/reparation-toiture.webp" alt="Roof Repair in Carignan" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🔧</div><h3>Roof Repair</h3><p>Leaks, missing shingles, storm damage. Free diagnosis.</p><span class="service-link">Learn more →</span></div></a><a href="/en/roofer-carignan/roof-replacement" class="service-card fade-in"><div class="service-card-img"><img src="/images/photos/chantier-drone-camion.webp" alt="Roof Replacement in Carignan" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🔄</div><h3>Roof Replacement</h3><p>Turnkey new roof. Old roof tear-off included.</p><span class="service-link">Learn more →</span></div></a><a href="/en/roofer-carignan/attic-ventilation" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/ventilation-entretoit.webp" alt="Attic Ventilation in Carignan" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">💨</div><h3>Attic Ventilation</h3><p>Diagnosis and optimization of ventilation to prevent problems.</p><span class="service-link">Learn more →</span></div></a><a href="/en/roofer-carignan/commercial-roofing" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/toiture-commerciale.webp" alt="Commercial Roofing in Carignan" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🏢</div><h3>Commercial Roofing</h3><p>TPO membrane, EPDM, flat roofing. Commercial and industrial buildings.</p><span class="service-link">Learn more →</span></div></a><a href="/en/roofer-carignan/flashing-gutters" class="service-card fade-in"><div class="service-card-img"><img src="/images/services/ferblanterie-gouttieres.webp" alt="Flashing & Gutters in Carignan" loading="lazy" onerror="this.parentElement.classList.add('img-err')"></div><div class="service-card-body"><div class="service-icon">🌧️</div><h3>Flashing & Gutters</h3><p>Aluminum gutters, flashing, drains. Installation and repair.</p><span class="service-link">Learn more →</span></div></a></div>
     </div>
   </section>
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">Our Process</span>
+        <h2 class="section-heading">5 simple steps to your <em>new roof</em></h2>
+        <p class="section-subtitle">A clear, transparent process from the first call to your final warranty.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-num"><span>📞</span></div>
+          <h3>1. Contact Us</h3>
+          <p>Call or fill out the form. Response within 24 hours.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num"><span>🏠</span></div>
+          <h3>2. Free Inspection</h3>
+          <p>An expert visits your home to evaluate your roof. No charge, no obligation.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num"><span>📋</span></div>
+          <h3>3. Detailed Estimate</h3>
+          <p>You receive a clear, complete price with no surprises. Financing available.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num"><span>🔨</span></div>
+          <h3>4. Installation</h3>
+          <p>Our certified team completes the work to GAF standards. Clean job site guaranteed.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-num"><span>🛡️</span></div>
+          <h3>5. Full Warranty</h3>
+          <p>Golden Pledge warranty: 50 years on materials, 25 years on workmanship. Post-work follow-up included.</p>
+        </div>
+      </div>
+      <div class="process-guarantee">
+        <span class="guarantee-icon">✅</span>
+        <p><strong>Pay only when the job is completed</strong> to your full satisfaction.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="faq-hub" id="faq">
     <div class="container">
       <div class="section-header">
