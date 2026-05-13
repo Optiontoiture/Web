@@ -230,11 +230,11 @@
             font-size: 14px; color: var(--text-light); line-height: 1.5;
         }
         .financing-options {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
         }
         .fin-card {
             border: 1px solid var(--border); border-radius: 10px;
-            padding: 24px 20px; text-align: center; position: relative;
+            padding: 28px 24px; text-align: center; position: relative;
             transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
         }
         .fin-card:hover {
@@ -249,6 +249,65 @@
         .fin-rate-suffix { font-size: 16px; }
         .fin-term { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
         .fin-desc { font-size: 13px; color: var(--text-light); line-height: 1.5; }
+        .fin-card-title {
+            font-size: 11px; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--rona);
+            margin-bottom: 14px;
+        }
+        .fin-options-list { list-style: none; padding: 0; margin: 0; }
+        .fin-options-list li {
+            font-size: 14px; color: var(--text); padding: 6px 0;
+            border-bottom: 1px dashed var(--border);
+        }
+        .fin-options-list li:last-child { border-bottom: none; }
+        .fin-options-list strong { color: var(--rona); font-weight: 700; }
+
+        /* PROMO BANNER */
+        .promo-banner {
+            position: relative; margin-bottom: 28px;
+            background: linear-gradient(135deg, #E91E63 0%, #C2185B 100%);
+            border-radius: 12px; padding: 24px 28px;
+            color: #fff; overflow: hidden;
+            box-shadow: 0 6px 24px rgba(233,30,99,0.25);
+        }
+        .promo-banner::before {
+            content: ''; position: absolute; top: -50%; right: -10%;
+            width: 280px; height: 280px; border-radius: 50%;
+            background: rgba(255,255,255,0.08); pointer-events: none;
+        }
+        .promo-pill {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px; padding: 4px 12px;
+            font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+            text-transform: uppercase; margin-bottom: 12px;
+            position: relative; z-index: 1;
+        }
+        .promo-pill::before {
+            content: ''; width: 6px; height: 6px; border-radius: 50%;
+            background: #FFEB3B; display: inline-block;
+            animation: pulse-dot 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.6)} }
+        .promo-banner h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(24px, 3.2vw, 32px); font-weight: 400;
+            line-height: 1.15; margin-bottom: 6px;
+            position: relative; z-index: 1;
+        }
+        .promo-banner h3 strong {
+            font-style: italic; color: #FFEB3B; font-weight: 400;
+        }
+        .promo-meta {
+            font-size: 14px; opacity: 0.92; line-height: 1.6;
+            position: relative; z-index: 1;
+        }
+        .promo-meta strong { font-weight: 700; }
+        @media (max-width: 540px) {
+            .financing-options { grid-template-columns: 1fr; }
+            .promo-banner { padding: 20px; }
+        }
+
         .financing-footer { margin-top: 24px; text-align: center; }
         .financing-footer p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
         .financing-footer a {
@@ -560,18 +619,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
 
+                <!-- Promotion limitée -->
+                <div class="promo-banner" role="alert">
+                    <span class="promo-pill">Offre limitée — du 7 au 20 mai 2026</span>
+                    <h3>36 mois à <strong>0 %</strong> d'intérêt</h3>
+                    <p class="promo-meta">Plan de paiements mensuels égaux • Achat minimum de <strong>2 499 $</strong> • Toutes bannières RONA</p>
+                </div>
+
                 <div class="financing-options">
 
                     <div class="fin-card">
+                        <div class="fin-card-title">Paiement différé</div>
                         <div class="fin-rate">0<span class="fin-rate-suffix">%</span></div>
-                        <div class="fin-term">18 mois</div>
-                        <div class="fin-desc">Notre option régulière sans intérêt. Idéale pour les projets de toute taille.</div>
+                        <div class="fin-term">12 mois</div>
+                        <div class="fin-desc">Aucun paiement, aucun intérêt pendant 12 mois. Idéal si vous voulez reporter le paiement.</div>
                     </div>
 
                     <div class="fin-card">
-                        <div class="fin-rate">9,99<span class="fin-rate-suffix">%</span></div>
-                        <div class="fin-term">60 mois</div>
-                        <div class="fin-desc">Paiements mensuels réduits sur 5 ans pour les plus gros projets.</div>
+                        <div class="fin-card-title">Paiements mensuels égaux</div>
+                        <ul class="fin-options-list" aria-label="Options de paiements mensuels égaux">
+                            <li><strong>6, 12 ou 18 mois</strong> à 0 %</li>
+                            <li><strong>36 mois</strong> à 4,99 %</li>
+                        </ul>
+                        <div class="fin-desc" style="margin-top:12px">Mensualités fixes pour étaler le coût de votre projet sans surprise.</div>
                     </div>
 
                 </div>
