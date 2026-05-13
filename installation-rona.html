@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="robots" content="index, follow">
 
     <title>Installateur officiel RONA+ Rive-Sud | Option Toiture</title>
@@ -143,16 +147,14 @@
         }
         .hero-badges {
             display: flex; align-items: center; justify-content: center;
-            gap: 12px; margin-bottom: 28px;
+            margin-bottom: 32px;
             opacity: 0; animation: fadeUp .6s ease .1s forwards;
         }
-        .badge {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 6px 16px; border-radius: 50px;
-            font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+        .hero-partner-logo {
+            height: 120px; width: auto; display: block; object-fit: contain;
+            filter: drop-shadow(0 4px 16px rgba(0,0,0,.35));
         }
-        .badge-rona { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.25); }
-        .badge-official { background: rgba(240,165,0,0.2); color: var(--yellow); border: 1px solid rgba(240,165,0,0.35); }
+        @media (max-width: 768px) { .hero-partner-logo { height: 88px; } }
         header.hero h1 {
             font-family: 'DM Serif Display', serif;
             font-size: clamp(34px, 5vw, 58px); font-weight: 400;
@@ -373,6 +375,7 @@
             font-weight: 800; font-size: 11px; letter-spacing: 0.5px; flex-shrink: 0;
         }
         .logo-rona { background: var(--rona); color: var(--white); }
+        .logo-img-rona { height: 52px; width: auto; max-width: 180px; object-fit: contain; flex-shrink: 0; display: block; }
         .logo-gaf  { background: #CC0000; color: var(--white); }
         .logo-flexiti { background: #6B2D8B; color: var(--white); font-size: 9px; }
         .logo-apchq { background: #0090D4; color: var(--white); font-size: 9px; }
@@ -473,6 +476,7 @@
         .mobile-menu a{font-size:1.2rem;font-weight:500;color:#fff;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
         .mobile-menu a:hover{color:var(--yellow)}
         .mobile-menu .close-btn{position:absolute;top:24px;right:28px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:rgba(255,255,255,.6)}
+        @media(max-width:1200px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}}
         @media(max-width:768px){.header-nav,.header-right{display:none}.mobile-toggle{display:block}.header-inner{height:56px;padding:0 16px}.header-logo img{height:30px}}
     </style>
 <!-- Google Tag Manager -->
@@ -516,10 +520,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- HERO -->
     <header class="hero" role="banner">
         <div class="hero-badges">
-            <span class="badge badge-rona">RONA+</span>
-            <span class="badge badge-official">Installateur officiel</span>
+            <img src="/images/logos/rona-services-installation-reverse-fr.webp" alt="Logo officiel RONA Services d'installation" class="hero-partner-logo" width="415" height="120">
         </div>
-        <h1>Services d'installation<br><em>RONA+</em> sur la Rive-Sud</h1>
+        <h1>Partenaire d'installation officiel<br><em>RONA</em> sur la Rive-Sud</h1>
         <p class="hero-sub">Option Toiture est le partenaire d'installation officiel des magasins RONA sur la Rive-Sud de Montréal. Un seul appel suffit.</p>
         <a href="https://rona-wizard.myhomeprojectcenter.com/fr-CA/quick-wizard" class="hero-cta" rel="noopener" aria-label="Obtenir une soumission gratuite via le portail RONA">Obtenir une soumission gratuite</a>
     </header>
@@ -659,8 +662,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="trust-logos">
                 <div class="trust-logo-card">
-                    <div class="logo-circle logo-rona" aria-hidden="true">RONA</div>
-                    <div class="trust-logo-info"><h4>RONA+</h4><p>Partenaire installateur officiel sur la Rive-Sud</p></div>
+                    <img src="/images/logos/rona-services-installation-color-fr-600.webp" alt="RONA Services d'installation" class="logo-img-rona" loading="lazy">
+                    <div class="trust-logo-info"><h4>RONA</h4><p>Partenaire des services d'installation sur la Rive-Sud</p></div>
                 </div>
                 <div class="trust-logo-card">
                     <div class="logo-circle logo-gaf" aria-hidden="true">GAF</div>
