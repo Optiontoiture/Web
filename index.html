@@ -579,7 +579,10 @@
     .fixed-form{position:fixed;top:84px;right:20px;width:340px;z-index:80;background:transparent;border-radius:var(--radius-lg);overflow:visible;height:auto;max-height:calc(100vh - 120px);display:flex;flex-direction:column;box-shadow:none;pointer-events:none}
     .fixed-form-header{display:none}
     .fixed-form-body{flex:1;overflow:hidden;pointer-events:auto;height:580px}
-    @media(max-width:1200px){.fixed-form{display:none}.header-phone{display:none}.header-nav a,.header-nav>a{padding:8px 10px;font-size:.72rem}.header-right{gap:10px}.header-cta{padding:8px 14px}.rona-badge img{height:30px}}@media(min-width:1201px){.hero-search-center{left:calc(50% - 180px)}}@media(min-width:1201px) and (max-width:1440px){.hero-content{padding-right:380px}.hero{min-height:90vh}.hero-search-center{max-width:540px;top:25%}}
+    @media(max-width:1200px){.header-phone{display:none}.header-nav a,.header-nav>a{padding:8px 10px;font-size:.72rem}.header-right{gap:10px}.header-cta{padding:8px 14px}.rona-badge img{height:30px}}
+    @media(max-width:1560px){.fixed-form{display:none}}
+    @media(min-width:1201px){.hero-search-center{left:calc(50% - 180px)}}
+    @media(min-width:1561px){.site-fade-wrap{padding-right:380px}.hero-search-center{max-width:540px;top:25%}}
 
     /* RESPONSIVE */
     @media(max-width:992px){.about-grid,.why-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:repeat(2,1fr)}.zone-grid{grid-template-columns:1fr}.hero-stats{gap:32px;margin-top:28px}.hero-stat-num{font-size:2rem}.guide-table{font-size:.8rem}}
@@ -1290,7 +1293,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.getElementById('heroAddress').addEventListener('focus', loadMapsAPI, {once:true});
     // Lazy-load floating form when visible
     var floatFrame = document.getElementById('floatIframe');
-    if (floatFrame && window.innerWidth > 1200) {
+    if (floatFrame && window.innerWidth > 1560) {
       var fObs = new IntersectionObserver(function(e) {
         if (e[0].isIntersecting) { floatFrame.src = 'https://app.optiontoiture.com/formulaire'; fObs.disconnect(); }
       }, {rootMargin:'200px'});
