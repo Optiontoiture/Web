@@ -229,15 +229,7 @@
     const nav = document.getElementById('mainNav');
     hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); nav.classList.toggle('open'); });
   </script>
-  <script>
-  (function() {
-    var ADS_NUMBER  = '+14504899220';var ADS_DISPLAY = '(450) 489-9220';var ADS_HREF = 'tel:+14504899220';
-    var isAds = window.location.search.indexOf('gclid') > -1 || window.location.search.indexOf('utm_source=google') > -1 || window.location.search.indexOf('utm_medium=cpc') > -1;
-    if (!isAds) return;
-    function swapNumbers() { document.querySelectorAll('a[href^="tel:"]').forEach(function(el) { el.href = ADS_HREF; if (/\d{3}/.test(el.innerText)) el.innerText = ADS_DISPLAY; }); }
-    document.addEventListener('DOMContentLoaded', swapNumbers);window.addEventListener('load', swapNumbers);setTimeout(swapNumbers, 1500);
-  })();
-  </script>
+  
   <script>window.addEventListener('message', function(e) { if (e.data && e.data.event === 'optime_form_submitted') { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'form_conversion' }); } });</script>
 
   <!-- Cookie Banner -->

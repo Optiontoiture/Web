@@ -20,12 +20,18 @@
   var STORAGE_KEY  = 'ot_ads_visitor';         // clé localStorage
   var DURATION_MS  = 90 * 24 * 60 * 60 * 1000; // 90 jours en ms
 
-  /* ── 1. Détection du paramètre gclid dans l'URL ────────────────── */
-  function hasGclid() {
+  /* ── 1. Détection visiteur Google Ads dans l'URL ───────────────── */
+  // Détecte gclid (clic direct sur annonce) ou paramètres UTM Google CPC
+  function hasAdsParams() {
     try {
-      return new URLSearchParams(window.location.search).has('gclid');
+      var p = new URLSearchParams(window.location.search);
+      return p.has('gclid') ||
+             (p.get('utm_source') === 'google' && p.get('utm_medium') === 'cpc') ||
+             p.get('utm_medium') === 'cpc';
     } catch (e) {
-      return window.location.search.indexOf('gclid=') !== -1;
+      var s = window.location.search;
+      return s.indexOf('gclid=') !== -1 ||
+             (s.indexOf('utm_source=google') !== -1 && s.indexOf('utm_medium=cpc') !== -1);
     }
   }
 
@@ -114,8 +120,8 @@
 
   /* ── 4. Initialisation ─────────────────────────────────────────── */
 
-  // Si gclid présent dans l'URL → mémoriser pour 90 jours
-  if (hasGclid()) {
+  // Si paramètres Google Ads présents → mémoriser pour 90 jours
+  if (hasAdsParams()) {
     setAdsState();
   }
 
