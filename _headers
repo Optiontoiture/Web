@@ -1,3 +1,10 @@
+# ── Sécurité (toutes les pages) ──────────────────────────────
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
 # Images - cache 1 year (immutable content, filenames change on update)
 /images/*
   Cache-Control: public, max-age=31536000, immutable

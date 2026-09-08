@@ -1,0 +1,25 @@
+# Secrets et variables d'environnement — ne JAMAIS committer
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+service-account*.json
+
+# Dépendances
+node_modules/
+
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+
+# Fichiers temporaires
+*.log
+*.tmp
