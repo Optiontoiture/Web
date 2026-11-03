@@ -8,11 +8,48 @@
  * l'évènement `form_conversion` dans le dataLayer de Google Tag Manager.
  * Le formulaire se règle dans Espace Soumission : Paramètres > Portail client
  * > Formulaire du site.
+ *
+ * Depuis le 3 novembre 2026, les utm de l'arrivée sont gardés 90 jours dans le
+ * stockage local (la durée du témoin de Google), sur n'importe quelle page :
+ * le visiteur qui revient plus tard sans eux garde sa campagne et son
+ * mot-clé. Une nouvelle arrivée avec utm les remplace; un nouveau clic sans
+ * utm (Google, Facebook, Microsoft) les efface, et ils ne reviennent qu'avec
+ * le clic Google qui les accompagnait, pour ne pas prêter l'ancienne campagne
+ * à un autre clic.
  */
 (function () {
   var ORIGIN = 'https://mon.espacesoumission.com';
   var FORM = ORIGIN + '/formulaire/option-toiture-inc-4ad4a27f.2ad2fc0f-05a1-40d5-b92b-8c7f3386fdbb.EM3uUIBz3Kmw7fqAUu3DIUzT';
   var AD_PARAMS = ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  var UTM_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  var CLICK_PARAMS = ['gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid'];
+  var UTM_STORE = 'espace-soumission:utm';
+  var UTM_DURATION_MS = 90 * 24 * 60 * 60 * 1000;
+
+  function keepArrivalUtm() {
+    try {
+      var host = new URLSearchParams(window.location.search);
+      var arrival = {};
+      UTM_PARAMS.forEach(function (name) { if (host.get(name)) arrival[name] = host.get(name).slice(0, 200); });
+      if (Object.keys(arrival).length) {
+        window.localStorage.setItem(UTM_STORE, JSON.stringify({ at: Date.now(), click: host.get('gclid') || '', utm: arrival }));
+      } else if (CLICK_PARAMS.some(function (name) { return host.get(name); })) {
+        window.localStorage.removeItem(UTM_STORE);
+      }
+    } catch (error) {}
+  }
+
+  function keptUtm(click) {
+    try {
+      var kept = JSON.parse(window.localStorage.getItem(UTM_STORE) || 'null');
+      var fresh = kept && kept.utm && (kept.click || '') === click && Date.now() - kept.at < UTM_DURATION_MS;
+      return fresh ? kept.utm : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  keepArrivalUtm();
 
   function cookieClick(name) {
     var match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
@@ -26,6 +63,13 @@
       var value = host.get(name);
       if (value) url.searchParams.set(name, value);
     });
+    var hasArrival = AD_PARAMS.some(function (name) { return host.get(name); });
+    var kept = hasArrival ? null : keptUtm(cookieClick('_gcl_aw'));
+    if (kept) {
+      UTM_PARAMS.forEach(function (name) {
+        if (typeof kept[name] === 'string') url.searchParams.set(name, kept[name]);
+      });
+    }
     if (!url.searchParams.get('gclid') && cookieClick('_gcl_aw')) url.searchParams.set('gclid', cookieClick('_gcl_aw'));
     if (!url.searchParams.get('gbraid') && cookieClick('_gcl_gb')) url.searchParams.set('gbraid', cookieClick('_gcl_gb'));
     if (document.referrer) url.searchParams.set('ref', document.referrer);
