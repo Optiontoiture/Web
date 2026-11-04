@@ -79,11 +79,19 @@
     return url.toString();
   };
 
-  // Les cadres intégrés dans la page (sans modale) se chargent au chargement.
-  document.addEventListener('DOMContentLoaded', function () {
+  // Les cadres intégrés dans la page (sans modale) se chargent quand ils sont
+  // visibles : le formulaire flottant est caché jusqu'à 1560 px de large, et ne
+  // se charge que si la fenêtre s'élargit assez pour le montrer.
+  function chargerVisibles() {
     var frames = document.querySelectorAll('iframe[data-es-formulaire]');
-    for (var i = 0; i < frames.length; i++) frames[i].src = window.esFormulaireUrl();
-  });
+    for (var i = 0; i < frames.length; i++) {
+      if (frames[i].getAttribute('data-es-charge') || !frames[i].getClientRects().length) continue;
+      frames[i].setAttribute('data-es-charge', '1');
+      frames[i].src = window.esFormulaireUrl();
+    }
+  }
+  document.addEventListener('DOMContentLoaded', chargerVisibles);
+  window.addEventListener('resize', chargerVisibles);
 
   window.addEventListener('message', function (event) {
     if (event.origin !== ORIGIN || !event.data) return;
