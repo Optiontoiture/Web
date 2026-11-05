@@ -96,8 +96,13 @@
   window.addEventListener('message', function (event) {
     if (event.origin !== ORIGIN || !event.data) return;
     if (event.data.type === 'espace-soumission:lead-submitted') {
+      // L'estimateur (estimateur-es.js) compte la même conversion, marquée
+      // pour la distinguer du formulaire dans Tag Manager.
+      var estimateur = document.querySelector('iframe[data-es-estimateur]');
+      var conversion = { event: 'form_conversion' };
+      if (estimateur && estimateur.contentWindow === event.source) conversion.es_form = 'estimateur';
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'form_conversion' });
+      window.dataLayer.push(conversion);
     }
     if (event.data.type === 'espace-soumission:height' && event.data.height > 0) {
       var frames = document.getElementsByTagName('iframe');
