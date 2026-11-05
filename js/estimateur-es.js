@@ -15,7 +15,7 @@
  * Estimateur de toiture du site, une fois l'estimateur allumé.
  */
 (function () {
-  var JETON = '';
+  var JETON = 'option-toiture-inc-4ad4a27f.347d70ba-1564-488a-b6c3-f7791dd59a2e.uqaVnb3gXLp5jn8ZakWmbUhD';
   if (!JETON || typeof window.esFormulaireUrl !== 'function') return;
 
   function estimateurUrl(adresse) {
