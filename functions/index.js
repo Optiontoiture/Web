@@ -7,9 +7,10 @@
  *   aucun témoin, `Cache-Control: private, no-cache`.
  * - Test actif : témoin `ot_ab` (90 jours) qui garde la version; sinon tirage
  *   selon les parts. Réponse `Cache-Control: private, no-cache`,
- *   `Vary: Cookie`, `X-OT-Version`; évènement `ab_exposition` injecté en tête
- *   de <head>, avant Google Tag Manager. Google voit les versions en rotation
- *   comme les visiteurs (D9) : jamais de traitement à part pour les robots.
+ *   `Vary: Cookie`, `X-OT-Version`; évènement `ab_exposition` injecté à la fin
+ *   de <head>, APRÈS le consentement par défaut et le chargeur de Google Tag
+ *   Manager (voir servir()). Google voit les versions en rotation comme les
+ *   visiteurs (D9) : jamais de traitement à part pour les robots.
  * - Toute erreur sert A0.
  * - Jamais de règle `_headers` ou `_redirects` sur `/_ab/*` : les versions se
  *   lisent par env.ASSETS, et functions/_ab/[[chemin]].js écarte les visites
@@ -68,8 +69,15 @@ async function servir(context, config, code, apercu) {
   const test = apercu ? 'apercu' : config.id;
   const donnees = JSON.stringify({ event: 'ab_exposition', ab_test: test, ab_version: code });
   const script = `<script>window.OT_AB=${JSON.stringify({ test, version: code })};window.dataLayer=window.dataLayer||[];window.dataLayer.push(${donnees});</script>`;
+  // À la fin de <head>, jamais en tête : le premier message de la couche de
+  // données doit être le consentement par défaut (« denied »), posé juste
+  // avant le chargeur GTM. Un `ab_exposition` placé avant lui faisait
+  // s'initialiser GTM sans consentement connu, lu comme accordé : GA4
+  // recevait page vue et exposition avant tout choix (aperçu GTM, 22 nov. 2026).
+  // GTM traite les messages dans l'ordre, qu'il se charge avant ou après ce
+  // script : l'exposition arrive toujours après le consentement.
   const transformee = new HTMLRewriter()
-    .on('head', { element(el) { el.prepend(script, { html: true }); } })
+    .on('head', { element(el) { el.append(script, { html: true }); } })
     .transform(reponse);
   const finale = new Response(transformee.body, transformee);
   finale.headers.delete('ETag');
