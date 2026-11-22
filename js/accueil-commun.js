@@ -166,6 +166,13 @@
   }
 
   /* ── Bandeau des témoins (même choix que l'accueil actuel) ───────── */
+  // Le choix passe par otConsentement (posé dans <head> par
+  // scripts/inject-consentement.js), qui met aussi à jour le mode
+  // consentement de Google.
+  function enregistrerChoix(c) {
+    if (typeof window.otConsentement === 'function') { window.otConsentement(c); return; }
+    try { window.localStorage.setItem('cookieConsent', c); } catch (erreur) {}
+  }
   var bandeau = document.getElementById('cookie-banner');
   if (bandeau) {
     var choix = null;
@@ -174,13 +181,13 @@
     bandeau.addEventListener('click', function (e) {
       var bouton = e.target.closest ? e.target.closest('[data-temoins]') : null;
       if (!bouton) return;
-      try { window.localStorage.setItem('cookieConsent', bouton.getAttribute('data-temoins')); } catch (erreur) {}
+      enregistrerChoix(bouton.getAttribute('data-temoins'));
       bandeau.hidden = true;
     });
   }
   // A0 expose setCookieChoice; on le garde pour un script qui l'appellerait.
   window.setCookieChoice = function (c) {
-    try { window.localStorage.setItem('cookieConsent', c); } catch (erreur) {}
+    enregistrerChoix(c);
     if (bandeau) bandeau.hidden = true;
   };
 })();
