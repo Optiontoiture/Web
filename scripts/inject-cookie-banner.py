@@ -9,7 +9,7 @@ BANNER = '''
   <!-- Cookie Banner -->
   <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:99998;background:rgba(20,18,16,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(201,149,44,.25);padding:16px 28px;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
     <p id="cookie-text" style="font-family:'Outfit',sans-serif;font-size:.84rem;color:rgba(255,255,255,.75);margin:0;line-height:1.6;flex:1;min-width:220px">
-      Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez leur utilisation.&#160;<a href="/politique-de-confidentialite/" id="cookie-link" style="color:#c9952c;text-decoration:underline;white-space:nowrap">Politique de confidentialité</a>
+      Nous aimerions utiliser des témoins (cookies) pour mesurer la fréquentation du site et l'efficacité de nos publicités. Les acceptez-vous? Vous pourrez changer d'avis en tout temps.&#160;<a href="/politique-de-confidentialite/" id="cookie-link" style="color:#c9952c;text-decoration:underline;white-space:nowrap">Politique de confidentialité</a>
     </p>
     <div style="display:flex;gap:10px;flex-shrink:0">
       <button onclick="setCookieChoice('refused')" id="cookie-refuse" style="font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:500;padding:8px 18px;border:1px solid rgba(255,255,255,.22);border-radius:6px;background:transparent;color:rgba(255,255,255,.65);cursor:pointer">Refuser</button>
@@ -22,14 +22,14 @@ BANNER = '''
     var b=document.getElementById('cookie-banner');
     var isEn=(document.documentElement.lang||'').startsWith('en');
     if(isEn){
-      document.getElementById('cookie-text').innerHTML='We use cookies to improve your experience. By continuing, you agree to their use.&#160;<a href="/en/privacy-policy/" style="color:#c9952c;text-decoration:underline;white-space:nowrap">Privacy Policy</a>';
+      document.getElementById('cookie-text').innerHTML='We would like to use cookies to measure site traffic and the performance of our ads. Do you accept them? You can change your mind at any time.&#160;<a href="/en/privacy-policy/" style="color:#c9952c;text-decoration:underline;white-space:nowrap">Privacy Policy</a>';
       document.getElementById('cookie-refuse').textContent='Decline';
       document.getElementById('cookie-accept').textContent='Accept';
     }
     b.style.display='flex';
   })();
   function setCookieChoice(c){
-    localStorage.setItem('cookieConsent',c);
+    if(window.otConsentement){otConsentement(c);}else{try{localStorage.setItem('cookieConsent',c);}catch(e){}}
     document.getElementById('cookie-banner').style.display='none';
   }
   </script>'''
