@@ -300,7 +300,7 @@ ${cartes}
   </div></section>`;
 }
 
-const RE_FAQ = /(<section class="faq"><div class="container">[\s\S]*?<div class="faq-list"[^>]*>)([\s\S]*?)(\n    <\/div>\n  <\/div><\/section>)/;
+const RE_FAQ = /(<section class="faq"><div class="container">[\s\S]*?<div class="faq-list"[^>]*>)([\s\S]*?)(\r?\n    <\/div>\r?\n  <\/div><\/section>)/;
 const RE_ITEM = /<div class="faq-item"><div class="faq-q">([\s\S]*?)<span class="plus">\+<\/span><\/div><div class="faq-a"><p>([\s\S]*?)<\/p><\/div><\/div>/g;
 const RE_PRIX = /co[uû]t|prix|cost|price|ça coûte/i;
 
@@ -335,7 +335,8 @@ function passeVague1() {
           return `        <div class="faq-item"><div class="faq-q">${q}<span class="plus">+</span></div><div class="faq-a"><p>${a}</p></div></div>`;
         }).join('\n');
         const ouverture = m[1].replace(/<div class="faq-list"[^>]*>$/, '<div class="faq-list" data-seo="lot19">');
-        let html = avant.replace(RE_FAQ, `${ouverture}\n${items}${m[3]}`);
+        // Fonction de remplacement : un « $ » des réponses ($8,000…) ne doit pas être lu comme $1, $2.
+        let html = avant.replace(RE_FAQ, () => `${ouverture}\n${items}${m[3]}`);
 
         // Balisage FAQPage, posé ou remplacé.
         const schema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(x => ({ '@type': 'Question', name: texte(x.q), acceptedAnswer: { '@type': 'Answer', text: texte(x.a) } })) };
