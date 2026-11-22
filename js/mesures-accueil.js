@@ -14,8 +14,8 @@
  *
  * Chaque évènement porte `ab_test` et `ab_version` quand la répartition de
  * l'accueil (functions/index.js) a choisi une version : lus dans
- * window.OT_AB, injecté par la répartition, sinon dans le témoin `ot_ab`.
- * Sans test en cours, ils valent '' et l'évènement part quand même.
+ * window.OT_AB, injecté par la répartition (ab_test vaut 'apercu' sous
+ * `?ab=`). Sans test en cours, ils valent '' et l'évènement part quand même.
  *
  * La configuration GTM et GA4 (variable, déclencheur, balise, dimensions) se
  * fait dans les consoles, avec le propriétaire : rien ici n'en dépend.
@@ -24,10 +24,11 @@
   if (window.otMesure) return;
 
   function version() {
+    // Seule la répartition dit quelle version la page montre : un témoin
+    // `ot_ab` resté d'un test arrêté ne doit rien étiqueter.
     var ab = window.OT_AB;
     if (ab && ab.version) return { ab_test: ab.test || '', ab_version: ab.version };
-    var match = document.cookie.match(/(?:^|; )ot_ab=([a-z0-9]+)/);
-    return { ab_test: match ? 'accueil1' : '', ab_version: match ? match[1] : '' };
+    return { ab_test: '', ab_version: '' };
   }
 
   // Pousse un évènement avec la version vue; ne lève jamais d'erreur.

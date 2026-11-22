@@ -63,8 +63,11 @@ async function servir(context, config, code, apercu) {
     code = 'a0';
     reponse = await env.ASSETS.fetch(new Request(new URL('/', request.url).toString(), { method: request.method }));
   }
-  const donnees = JSON.stringify({ event: 'ab_exposition', ab_test: config.id, ab_version: code, ab_apercu: apercu });
-  const script = `<script>window.OT_AB=${JSON.stringify({ test: config.id, version: code })};window.dataLayer=window.dataLayer||[];window.dataLayer.push(${donnees});</script>`;
+  // Un aperçu porte ab_test 'apercu' sur tous ses évènements : la recette ne
+  // se compte jamais dans les résultats du test.
+  const test = apercu ? 'apercu' : config.id;
+  const donnees = JSON.stringify({ event: 'ab_exposition', ab_test: test, ab_version: code });
+  const script = `<script>window.OT_AB=${JSON.stringify({ test, version: code })};window.dataLayer=window.dataLayer||[];window.dataLayer.push(${donnees});</script>`;
   const transformee = new HTMLRewriter()
     .on('head', { element(el) { el.prepend(script, { html: true }); } })
     .transform(reponse);
