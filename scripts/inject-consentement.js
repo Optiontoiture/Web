@@ -18,6 +18,14 @@
  * Idempotent : une page déjà traitée n'est pas modifiée. Les fins de ligne
  * de chaque fichier sont gardées.
  *
+ * Contrôle d'ordre (22 novembre 2026, après Optiontoiture/Web#24) : dans
+ * chaque page, le bloc de consentement doit précéder le chargeur GTM, les
+ * deux dans <head>, et aucun `ab_exposition` ne doit les devancer. Pour la
+ * répartition de l'accueil (functions/index.js), le script `ab_exposition`
+ * doit être ajouté à la FIN de <head> (`.append`), jamais en tête : sinon GTM
+ * s'initialise sans consentement connu, lu comme accordé, et GA4 reçoit des
+ * données avant tout choix. Un écart fait sortir le script en erreur.
+ *
  *   node scripts/inject-consentement.js          (écrit)
  *   node scripts/inject-consentement.js --verif  (compte, n'écrit rien)
  */
@@ -74,7 +82,34 @@ function pages(dossier, liste = []) {
   return liste;
 }
 
-const bilan = { pages: 0, consentement: 0, misAJour: 0, deja: 0, choix: 0, textes: 0, sansGtm: [] };
+// Rend la raison d'un ordre fautif dans une page, ou null si l'ordre est bon :
+// consentement, puis chargeur GTM, les deux avant </head>, et aucun
+// `ab_exposition` avant le chargeur.
+function ordreFautif(html) {
+  const consentement = html.indexOf(MARQUE);
+  const gtm = html.indexOf("'gtm.start'");
+  const finHead = html.search(/<\/head>/i);
+  const exposition = html.indexOf('ab_exposition');
+  if (consentement < 0) return 'consentement absent';
+  if (consentement > gtm) return 'consentement après le chargeur GTM';
+  if (finHead >= 0 && gtm > finHead) return 'chargeur GTM hors de <head>';
+  if (exposition >= 0 && exposition < gtm) return 'ab_exposition avant le chargeur GTM';
+  return null;
+}
+
+// La répartition (functions/index.js) doit ajouter son script à la fin de
+// <head> : `.append`, jamais `.prepend`.
+function repartitionFautive() {
+  const fichier = path.join(RACINE, 'functions', 'index.js');
+  if (!fs.existsSync(fichier)) return null;
+  const code = fs.readFileSync(fichier, 'utf8');
+  const tete = code.match(/\.on\(\s*['"]head['"][\s\S]*?\.(prepend|append)\(/);
+  if (!tete) return "functions/index.js : gestionnaire de <head> introuvable";
+  if (tete[1] !== 'append') return "functions/index.js : le script ab_exposition doit être ajouté par .append (fin de <head>)";
+  return null;
+}
+
+const bilan = { pages: 0, consentement: 0, misAJour: 0, deja: 0, choix: 0, textes: 0, sansGtm: [], ordre: [] };
 for (const fichier of pages(RACINE)) {
   const avant = fs.readFileSync(fichier, 'utf8');
   if (!avant.includes("'gtm.start'")) continue;
@@ -95,6 +130,11 @@ for (const fichier of pages(RACINE)) {
     if (s.includes(ancien)) { s = s.split(ancien).join(nouveau); bilan.textes++; }
   }
   if (s !== avant && !VERIF) fs.writeFileSync(fichier, s, 'utf8');
+  // L'ordre se juge sur la page telle qu'elle est (--verif) ou sera écrite.
+  const raison = ordreFautif(VERIF ? avant : s);
+  if (raison) bilan.ordre.push(path.relative(RACINE, fichier) + ' : ' + raison);
 }
+const repartition = repartitionFautive();
+if (repartition) bilan.ordre.push(repartition);
 console.log(JSON.stringify(bilan, null, 2));
-if (bilan.sansGtm.length) process.exitCode = 1;
+if (bilan.sansGtm.length || bilan.ordre.length) process.exitCode = 1;
