@@ -1,0 +1,121 @@
+{
+  "_note": "Lots 17 et 19 (22 nov. 2026). Voisins géographiques de chaque ville et contenu des pages réparation et remplacement de la vague 1. Chaque phrase propre à une ville reprend un fait déjà publié dans data/city-seo-content.json ou sur le site ; rien d'inventé. Les faits à obtenir du propriétaire sont listés dans « aCompleter » et laissés en commentaire HTML dans les pages, invisibles.",
+  "voisins": {
+    "longueuil": ["saint-lambert", "brossard", "boucherville", "saint-bruno-de-montarville", "carignan", "chambly"],
+    "brossard": ["saint-lambert", "longueuil", "la-prairie", "candiac", "carignan"],
+    "boucherville": ["longueuil", "sainte-julie", "saint-bruno-de-montarville", "saint-lambert"],
+    "saint-lambert": ["longueuil", "brossard", "boucherville", "la-prairie"],
+    "la-prairie": ["candiac", "brossard", "saint-lambert", "carignan", "saint-jean-sur-richelieu"],
+    "candiac": ["la-prairie", "brossard", "saint-lambert", "saint-jean-sur-richelieu"],
+    "sainte-julie": ["boucherville", "saint-bruno-de-montarville", "mont-saint-hilaire", "longueuil"],
+    "saint-bruno-de-montarville": ["longueuil", "boucherville", "sainte-julie", "mont-saint-hilaire", "carignan", "chambly"],
+    "carignan": ["chambly", "saint-bruno-de-montarville", "longueuil", "brossard", "richelieu", "saint-jean-sur-richelieu"],
+    "chambly": ["carignan", "richelieu", "marieville", "saint-jean-sur-richelieu", "saint-bruno-de-montarville", "longueuil"],
+    "richelieu": ["chambly", "marieville", "carignan", "saint-jean-sur-richelieu", "mont-saint-hilaire"],
+    "marieville": ["richelieu", "chambly", "saint-jean-sur-richelieu", "mont-saint-hilaire", "saint-hyacinthe"],
+    "mont-saint-hilaire": ["saint-bruno-de-montarville", "sainte-julie", "marieville", "richelieu", "saint-hyacinthe", "chambly"],
+    "saint-jean-sur-richelieu": ["chambly", "carignan", "richelieu", "marieville", "la-prairie", "candiac"],
+    "saint-hyacinthe": ["mont-saint-hilaire", "marieville", "granby", "sainte-julie"],
+    "granby": ["bromont", "cowansville", "saint-hyacinthe", "marieville"],
+    "bromont": ["granby", "cowansville", "saint-hyacinthe", "marieville"],
+    "cowansville": ["bromont", "granby", "marieville", "saint-jean-sur-richelieu"]
+  },
+  "vague1": {
+    "longueuil": {
+      "fr": {
+        "contexte": "Plusieurs secteurs de Longueuil sont bâtis de maisons des années 1960 à 1980, souvent rendues à la fin de leur deuxième ou troisième toiture. Sur ces bungalows, cottages et jumelés, une fuite vient souvent d'un problème de ventilation ou de structure qu'il faut corriger en même temps. À 25 minutes de Marieville, notre équipe se rend partout, de LeMoyne à Greenfield Park.",
+        "faqReparation": { "q": "Pourquoi les vieilles toitures de Longueuil fuient-elles si souvent ?", "a": "Beaucoup de maisons de Longueuil datent des années 1960 à 1980 et portent leur deuxième ou troisième toiture. À cet âge, une infiltration cache souvent une ventilation d'entretoit insuffisante ou une faiblesse de structure. Notre diagnostic cherche la cause exacte, pour que la réparation tienne." },
+        "faqRemplacement": { "q": "Faut-il un permis pour refaire sa toiture à Longueuil ?", "a": "Oui. La Ville de Longueuil exige un permis de construction pour le remplacement complet d'une toiture résidentielle, demandé au service d'urbanisme. Option Toiture s'occupe de ces démarches pour vous." },
+        "delaiRemplacement": "La plupart des projets résidentiels à Longueuil se font en 1 à 3 jours ouvrables, selon la taille de la maison et la météo, et se planifient souvent dans un délai de 2 à 3 semaines."
+      },
+      "en": {
+        "contexte": "Many parts of Longueuil are built with homes from the 1960s to the 1980s, often at the end of their second or third roof. On these bungalows, cottages and semi-detached homes, a leak often comes from a ventilation or structural problem that needs fixing at the same time. Just 25 minutes from Marieville, our team covers the whole city, from LeMoyne to Greenfield Park.",
+        "faqReparation": { "q": "Why do older roofs in Longueuil leak so often?", "a": "Many Longueuil homes date from the 1960s to the 1980s and are on their second or third roof. At that age, a leak often hides insufficient attic ventilation or a structural weakness. Our diagnosis looks for the exact cause, so the repair lasts." },
+        "faqRemplacement": { "q": "Do I need a permit to replace my roof in Longueuil?", "a": "Yes. The City of Longueuil requires a building permit for a complete residential roof replacement, filed with the urban planning department. Option Toiture handles these steps for you." },
+        "delaiRemplacement": "Most residential projects in Longueuil take 1 to 3 business days, depending on the house size and the weather, and can often be scheduled within 2 to 3 weeks."
+      }
+    },
+    "brossard": {
+      "fr": {
+        "contexte": "Brossard réunit deux parcs de maisons très différents : les toitures architecturales à multiples pentes et lucarnes du secteur DIX30 et du Quartier M, et les maisons des années 1970 à 1990 du Vieux-Brossard, qui demandent souvent une mise à niveau de la membrane d'étanchéité et de la ventilation. Nous intervenons dans tous les quartiers, y compris les copropriétés et les immeubles commerciaux du boulevard Taschereau, à environ 30 minutes de Marieville.",
+        "faqReparation": { "q": "Réparez-vous les toitures complexes des maisons récentes de Brossard ?", "a": "Oui. Les maisons du secteur DIX30 et du Quartier M ont souvent des toitures à multiples pentes et lucarnes, où les noues et les solins sont les points les plus exposés. Nos couvreurs certifiés GAF Master Elite trouvent la source exacte de la fuite et réparent seulement ce qui doit l'être." },
+        "faqRemplacement": { "q": "Quels bardeaux posez-vous sur les maisons de Brossard ?", "a": "Pour les constructions récentes de Brossard, nous recommandons les bardeaux GAF Timberline HDZ, qui résistent aux vents de 210 km/h, avec la garantie Golden Pledge. Comme installateur certifié GAF Master Elite, nous pouvons offrir cette garantie complète." }
+      },
+      "en": {
+        "contexte": "Brossard has two very different kinds of homes: the multi-slope roofs with dormers of the DIX30 area and Quartier M, and the 1970s to 1990s homes of Vieux-Brossard, which often need an upgrade of the waterproofing membrane and ventilation. We work in every neighbourhood, including the condos and commercial buildings on Taschereau Boulevard, about 30 minutes from Marieville.",
+        "faqReparation": { "q": "Do you repair the complex roofs of newer Brossard homes?", "a": "Yes. Homes in the DIX30 area and Quartier M often have multi-slope roofs with dormers, where valleys and flashing are the most exposed points. Our GAF Master Elite certified roofers find the exact source of the leak and repair only what needs it." },
+        "faqRemplacement": { "q": "Which shingles do you install on Brossard homes?", "a": "For newer Brossard homes, we recommend GAF Timberline HDZ shingles, rated for 210 km/h winds, with the Golden Pledge warranty. As a GAF Master Elite certified installer, we can offer this complete warranty." }
+      }
+    },
+    "candiac": {
+      "fr": {
+        "contexte": "Candiac s'est construite par phases depuis les années 1960 : des quartiers entiers de bungalows et de split-levels arrivent en même temps à la fin de vie de leur toiture. Sa topographie plate expose les toits à des vents soutenus, qui exigent une fixation conforme aux normes les plus strictes. Notre équipe est à 30 minutes et connaît bien les quartiers de Candiac.",
+        "faqReparation": { "q": "Le vent abîme-t-il davantage les toitures de Candiac ?", "a": "La topographie plate de Candiac expose les toits à des vents soutenus. Des bardeaux soulevés ou arrachés laissent entrer l'eau : mieux vaut les faire remplacer vite, avec une fixation conforme aux normes, avant que l'infiltration n'atteigne le pontage." },
+        "faqRemplacement": { "q": "Pourquoi tant de toitures sont-elles à refaire en même temps à Candiac ?", "a": "Candiac s'est construite par phases depuis les années 1960, si bien que des quartiers entiers de bungalows et de split-levels arrivent ensemble à la fin de vie de leur toiture. Les cycles gel-dégel du climat québécois accélèrent cette usure. Notre inspection gratuite vous dit où en est la vôtre." }
+      },
+      "en": {
+        "contexte": "Candiac was built in phases since the 1960s: entire neighbourhoods of bungalows and split-levels are reaching the end of their roof's life at the same time. Its flat terrain exposes roofs to sustained winds, which call for fastening to the strictest standards. Our team is 30 minutes away and knows Candiac's neighbourhoods well.",
+        "faqReparation": { "q": "Does wind damage roofs more in Candiac?", "a": "Candiac's flat terrain exposes roofs to sustained winds. Lifted or blown-off shingles let water in: it is best to have them replaced quickly, fastened to code, before the leak reaches the roof deck." },
+        "faqRemplacement": { "q": "Why are so many Candiac roofs due at the same time?", "a": "Candiac was built in phases since the 1960s, so entire neighbourhoods of bungalows and split-levels are reaching the end of their roof's life together. Quebec's freeze-thaw cycles speed up this wear. Our free inspection tells you where yours stands." }
+      }
+    },
+    "la-prairie": {
+      "fr": {
+        "contexte": "La Prairie mêle le noyau patrimonial du Vieux-La Prairie, dont les maisons demandent des travaux respectueux de leur caractère, et les nouveaux secteurs de l'ouest et de l'autoroute 30, aux toitures architecturales. La ville est exposée aux vents du corridor de la rivière Saint-Jacques, ce qui rend la qualité de l'installation critique. Nous y sommes à 30 minutes de Marieville.",
+        "faqReparation": { "q": "Intervenez-vous sur les maisons anciennes du Vieux-La Prairie ?", "a": "Oui, comme dans les nouveaux quartiers de l'ouest et près de l'autoroute 30. Sur une maison patrimoniale, la réparation respecte le caractère du bâtiment ; partout, nous identifions d'abord la cause exacte de la fuite." },
+        "faqRemplacement": { "q": "Combien de temps prend un remplacement de toiture à La Prairie ?", "a": "Un remplacement complet prend habituellement 1 à 2 jours pour une maison standard à La Prairie. Les toitures plus complexes, avec lucarnes et multiples versants, peuvent demander 3 jours. Nous planifions selon la météo." },
+        "delaiRemplacement": "Un remplacement complet prend habituellement 1 à 2 jours pour une maison standard à La Prairie, et jusqu'à 3 jours pour une toiture avec lucarnes et multiples versants."
+      },
+      "en": {
+        "contexte": "La Prairie combines the heritage core of Vieux-La Prairie, whose homes call for work that respects their character, with the newer western areas and Highway 30 developments and their architectural roofs. The city is exposed to winds from the Saint-Jacques River corridor, which makes installation quality critical. We are 30 minutes away in Marieville.",
+        "faqReparation": { "q": "Do you work on the older homes of Vieux-La Prairie?", "a": "Yes, as well as in the newer western neighbourhoods and near Highway 30. On a heritage home, the repair respects the building's character; everywhere, we first identify the exact cause of the leak." },
+        "faqRemplacement": { "q": "How long does a roof replacement take in La Prairie?", "a": "A complete replacement usually takes 1 to 2 days for a standard home in La Prairie. More complex roofs, with dormers and multiple slopes, can take 3 days. We schedule around the weather." },
+        "delaiRemplacement": "A complete replacement usually takes 1 to 2 days for a standard home in La Prairie, and up to 3 days for a roof with dormers and multiple slopes."
+      }
+    },
+    "saint-bruno-de-montarville": {
+      "fr": {
+        "contexte": "Au pied du mont Saint-Bruno, un microclimat laisse s'accumuler plus de neige que dans les villes voisines, ce qui met les toitures à rude épreuve et favorise les barrières de glace quand la ventilation est insuffisante. Les grandes propriétés du secteur du lac du Village et du Sommet ont souvent des toitures complexes, avec tourelles et multiples pentes. Nous sommes à 25 minutes, à Marieville.",
+        "faqReparation": { "q": "Les barrières de glace sont-elles fréquentes à Saint-Bruno ?", "a": "La proximité de la montagne crée des accumulations de neige importantes à Saint-Bruno. Avec une ventilation d'entretoit insuffisante, la neige fond puis regèle en bordure du toit et forme des barrières de glace qui font refouler l'eau sous les bardeaux. Nous réparons les dégâts et corrigeons la ventilation pour que le problème ne revienne pas." },
+        "faqRemplacement": { "q": "Les bardeaux GAF résistent-ils au climat de Saint-Bruno ?", "a": "Oui. Les bardeaux GAF Timberline HDZ résistent aux vents de 210 km/h, aux cycles gel-dégel et aux fortes pluies, et l'altitude légèrement plus élevée de Saint-Bruno n'affecte pas leur performance. Nous évaluons et corrigeons aussi la ventilation à chaque projet." }
+      },
+      "en": {
+        "contexte": "At the foot of Mont Saint-Bruno, a microclimate lets more snow build up than in neighbouring towns, which puts roofs to the test and encourages ice dams when ventilation is insufficient. The large properties around Lac du Village and the Sommet often have complex roofs, with turrets and multiple slopes. We are 25 minutes away in Marieville.",
+        "faqReparation": { "q": "Are ice dams common in Saint-Bruno?", "a": "Being close to the mountain brings heavy snow build-up in Saint-Bruno. With insufficient attic ventilation, snow melts and refreezes at the roof edge, forming ice dams that push water back under the shingles. We repair the damage and correct the ventilation so the problem does not come back." },
+        "faqRemplacement": { "q": "Do GAF shingles hold up to Saint-Bruno's climate?", "a": "Yes. GAF Timberline HDZ shingles are rated for 210 km/h winds, freeze-thaw cycles and heavy rain, and Saint-Bruno's slightly higher altitude does not affect their performance. We also assess and correct ventilation on every project." }
+      }
+    },
+    "chambly": {
+      "fr": {
+        "contexte": "Bordée par le bassin de Chambly et la rivière Richelieu, Chambly vit avec une humidité constante qui favorise la mousse et les algues sur les bardeaux et accélère leur vieillissement. Le secteur patrimonial près du Fort Chambly compte des maisons centenaires qui demandent une attention particulière. Notre siège social de Marieville est à 15 minutes : Chambly est l'une de nos zones principales.",
+        "faqReparation": { "q": "La mousse sur ma toiture à Chambly est-elle un problème ?", "a": "La proximité du bassin et de la rivière Richelieu crée un milieu humide qui favorise la mousse et accélère le vieillissement des bardeaux. La mousse retient l'eau et peut soulever les bardeaux. Lors d'une réparation, nous recommandons des bardeaux avec protection algicide et une ventilation d'entretoit adaptée aux propriétés riveraines." },
+        "faqRemplacement": { "q": "Quels bardeaux conviennent aux maisons riveraines de Chambly ?", "a": "Près du bassin de Chambly et de la rivière Richelieu, nous recommandons des bardeaux avec protection algicide et une ventilation d'entretoit optimisée, pour ralentir la mousse et le vieillissement dus à l'humidité." }
+      },
+      "en": {
+        "contexte": "Bordered by the Chambly Basin and the Richelieu River, Chambly lives with constant humidity that encourages moss and algae on shingles and speeds up their ageing. The heritage area near Fort Chambly includes century-old homes that need special care. Our head office in Marieville is 15 minutes away: Chambly is one of our main service areas.",
+        "faqReparation": { "q": "Is moss on my Chambly roof a problem?", "a": "Being close to the basin and the Richelieu River creates a humid environment that encourages moss and speeds up shingle ageing. Moss holds water and can lift shingles. When repairing, we recommend algae-resistant shingles and attic ventilation suited to waterfront homes." },
+        "faqRemplacement": { "q": "Which shingles suit Chambly's waterfront homes?", "a": "Near the Chambly Basin and the Richelieu River, we recommend algae-resistant shingles and optimized attic ventilation, to slow down the moss and ageing caused by humidity." }
+      }
+    },
+    "saint-jean-sur-richelieu": {
+      "fr": {
+        "contexte": "Saint-Jean-sur-Richelieu compte des maisons patrimoniales du Vieux-Saint-Jean, des développements récents au nord, et beaucoup de maisons des années 1970 à 1990 à Iberville et à Saint-Luc, dont les toitures arrivent en fin de vie. Ses hivers rigoureux mettent les toits à l'épreuve. Nous couvrons toute la ville fusionnée, y compris L'Acadie et Saint-Athanase, à 20 minutes de Marieville.",
+        "faqReparation": { "q": "Mon assurance couvre-t-elle une réparation de toiture à Saint-Jean ?", "a": "Les dommages causés par un événement soudain (tempête, grêle, vent violent) sont généralement couverts par l'assurance habitation ; l'usure normale ne l'est pas. Nous pouvons documenter les dommages et fournir une soumission détaillée à votre assureur." },
+        "faqRemplacement": { "q": "Desservez-vous Iberville, Saint-Luc et L'Acadie ?", "a": "Oui, nous couvrons toute la ville fusionnée de Saint-Jean-sur-Richelieu : l'ancien Saint-Jean, Iberville, Saint-Luc, L'Acadie et Saint-Athanase. Beaucoup de maisons des années 1970 à 1990 d'Iberville et de Saint-Luc arrivent à la fin de vie de leur toiture." }
+      },
+      "en": {
+        "contexte": "Saint-Jean-sur-Richelieu has heritage homes in Vieux-Saint-Jean, newer developments to the north, and many 1970s to 1990s homes in Iberville and Saint-Luc whose roofs are reaching the end of their life. Its harsh winters put roofs to the test. We cover the whole merged city, including L'Acadie and Saint-Athanase, 20 minutes from Marieville.",
+        "faqReparation": { "q": "Does my insurance cover a roof repair in Saint-Jean?", "a": "Damage from a sudden event (storm, hail, high winds) is generally covered by home insurance; normal wear is not. We can document the damage and provide a detailed estimate for your insurer." },
+        "faqRemplacement": { "q": "Do you serve Iberville, Saint-Luc and L'Acadie?", "a": "Yes, we cover the whole merged city of Saint-Jean-sur-Richelieu: former Saint-Jean, Iberville, Saint-Luc, L'Acadie and Saint-Athanase. Many 1970s to 1990s homes in Iberville and Saint-Luc are reaching the end of their roof's life." }
+      }
+    }
+  },
+  "aCompleter": [
+    "Un vrai chantier par ville de la vague 1 (quartier ou rue, problème trouvé, travaux faits, photo avant et après).",
+    "Un avis client réel par ville, avec la permission de le publier (prénom et ville).",
+    "Le nombre réel de toitures faites par ville : le champ projectCount de data/city-seo-content.json n'est pas publié et n'a pas été vérifié.",
+    "Les permis exigés par chaque ville autre que Longueuil pour un remplacement complet.",
+    "Une seule fourchette de prix de réparation : les pages publient aujourd'hui 300-1 500 $ / 3 000-5 000 $ (pages de ville FR), 175 $ + 95 $/h (service FR), 350-1 500 $ (service EN) et 500-3 000 $+ (pages de ville EN).",
+    "Une seule fourchette de prix de remplacement par ville : les pages remplacement disent 8 000-20 000 $, les pages de ville (FAQ) donnent d'autres montants par ville (Brossard 10 000-28 000 $, Longueuil 9 000-25 000 $, etc.)."
+  ]
+}
