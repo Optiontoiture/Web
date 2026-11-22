@@ -627,6 +627,20 @@
       .ei{grid-template-columns:1fr;gap:6px}
       .two-col{grid-template-columns:1fr}
     }
+  
+    /* COLLECTION VIP — bande sombre vers /bardeaux-vip/ */
+    .vip-bande{position:relative;overflow:hidden;background:#0f0e0c;min-height:560px;display:flex;align-items:flex-end}
+    .vip-bande>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+    .vip-bande-voile{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,14,12,.95) 0%,rgba(15,14,12,.86) 42%,rgba(15,14,12,.25) 78%),linear-gradient(0deg,rgba(15,14,12,.6),transparent 45%)}
+    .vip-bande-texte{position:relative;padding-top:120px;padding-bottom:96px;color:#f0ece4}
+    .vip-bande-texte .overline{color:#d4ba82}
+    .vip-bande h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(2.2rem,4.6vw,3.8rem);line-height:1.05;max-width:13ch;color:#fff;text-wrap:balance}
+    .vip-bande p{max-width:440px;margin:20px 0 36px;color:rgba(240,236,228,.75);line-height:1.7}
+    .vip-bande-btn{display:inline-flex;align-items:center;gap:10px;height:50px;padding:0 26px;border-radius:999px;background:linear-gradient(180deg,#d4ba82,#c8a96e);color:#141210;font-weight:600;font-size:.92rem;text-decoration:none;transition:filter .15s,transform .15s}
+    .vip-bande-btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+    .vip-bande-btn:focus-visible{outline:2px solid #d4ba82;outline-offset:4px}
+    @media(max-width:1024px){.vip-bande{min-height:520px}.vip-bande-voile{background:linear-gradient(0deg,rgba(15,14,12,.95) 0%,rgba(15,14,12,.75) 45%,rgba(15,14,12,.15) 100%)}}
+    @media(max-width:640px){.vip-bande{min-height:600px}.vip-bande>img{object-position:40% 30%}.vip-bande-texte{padding-top:220px;padding-bottom:64px}}
   </style>
   <link rel="alternate" hreflang="fr" href="https://www.optiontoiture.com/">
   <link rel="alternate" hreflang="en" href="https://www.optiontoiture.com/en/">
@@ -672,7 +686,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="/en/rona-installation" class="rona-badge" aria-label="Official RONA Installation Services Installer"><img src="/images/logos/rona-services-installation-color-en-600.webp" alt="Official RONA Installation Services Installer" width="139" height="40" loading="lazy"></a>
       </div>
       <nav class="header-nav">
-        <a href="/en/">Home</a>
+        <a href="/en/">Home</a><a href="/en/vip-shingles/" class="nav-vip" style="color:#d4ba82;white-space:nowrap">VIP</a>
         <div class="nav-drop">
           <a>Services</a>
           <div class="drop-menu">
@@ -727,7 +741,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="mobile-menu" id="mobileMenu">
     <button class="close-btn" onclick="this.parentElement.classList.remove('open')">&#10005;</button>
     <a href="tel:+15148354820" style="background:#b33;color:#fff;font-weight:800;text-align:center;border-radius:8px;padding:14px;font-size:1rem;border:none;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px" class="tracked-phone">ð¨ Roof Emergency 24/7 — Call</a>
-    <a href="/en/">Home</a>
+    <a href="/en/">Home</a><a href="/en/vip-shingles/" class="nav-vip" style="color:#d4ba82">VIP Collection</a>
     <a href="/en/rona-installation">RONA+ Installation</a>
     <div class="drop-label" style="color:var(--gold);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:16px 0 4px">Services</div>
     <a href="/en/services/roof-installation" class="sub-link" onclick="this.closest('.mobile-menu').classList.remove('open')">Roof Installation</a>
@@ -878,6 +892,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="step reveal reveal-d3"><div class="step-num">4</div><h4>Professional Work</h4><p>GAF standards and Building Code. Clean and safe worksite.</p></div>
         <div class="step reveal reveal-d4"><div class="step-num">5</div><h4>Warranty &amp; Follow-Up</h4><p>Final inspection, magnetic cleanup, GAF 50-year warranty activation.</p></div>
       </div>
+    </div>
+  </section>
+
+  <!-- COLLECTION VIP -->
+  <section class="vip-bande" id="collection-vip">
+    <img src="/images/vip/couverture.webp" alt="Stone house topped with GAF Camelot II shingles" loading="lazy">
+    <div class="vip-bande-voile"></div>
+    <div class="container vip-bande-texte reveal">
+      <span class="overline">VIP Collection · GAF Designer</span>
+      <h2>A roof worthy of your home.</h2>
+      <p>Camelot II, Slateline, Grand Sequoia and Woodland: GAF premium shingles in 16 colours, installed by a Master Elite roofer.</p>
+      <a class="vip-bande-btn" href="/en/vip-shingles/">Explore the collection <span aria-hidden="true">→</span></a>
     </div>
   </section>
 
