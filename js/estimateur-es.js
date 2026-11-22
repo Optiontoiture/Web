@@ -10,6 +10,10 @@
  * formulaire-es.js). La hauteur du cadre et la conversion `form_conversion`
  * passent par l'écoute de formulaire-es.js.
  *
+ * Chaque adresse envoyée pousse `estimateur_utilise` dans le dataLayer (par
+ * otMesure de mesures-accueil.js quand la page le charge, pour porter la
+ * version de l'accueil vue; sinon directement), 22 novembre 2026.
+ *
  * Tant que JETON est vide, rien ne change : le calculateur d'Optime reste.
  * Le jeton se copie dans Espace Soumission : Paramètres > Portail client >
  * Estimateur de toiture du site, une fois l'estimateur allumé.
@@ -32,6 +36,12 @@
     if (!champ || !section || !cadre) return;
     var adresse = champ.value.trim();
     if (!adresse) { champ.focus(); return; }
+    if (typeof window.otMesure === 'function') {
+      window.otMesure('estimateur_utilise');
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'estimateur_utilise' });
+    }
     section.style.display = 'block';
     cadre.setAttribute('data-es-estimateur', '1');
     cadre.style.minHeight = '560px';
