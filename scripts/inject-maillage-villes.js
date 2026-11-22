@@ -77,6 +77,7 @@ function poserBloc(html, nom, bloc, ancre, fichier) {
   const i = html.indexOf(debut);
   if (i > -1) {
     const j = html.indexOf(fin, i);
+    if (j < 0) { avertir(`marqueur ${fin} absent de ${fichier} : bloc laissé tel quel`); return html; }
     let k = j + fin.length;
     if (html[k] === '\n') k++;
     return html.slice(0, i) + complet + html.slice(k);
@@ -132,7 +133,8 @@ function passeVoisines() {
   for (const slug of slugs) {
     const voisins = maillage.voisins[slug];
     if (!voisins || voisins.length < 4 || voisins.length > 6) { avertir(`${slug} : il faut 4 à 6 voisins`); continue; }
-    for (const v of voisins) if (!nomDe[v]) avertir(`${slug} : voisin inconnu ${v}`);
+    const inconnus = voisins.filter(v => !nomDe[v]);
+    if (inconnus.length) { avertir(`${slug} : voisin inconnu ${inconnus.join(', ')}`); continue; }
     for (const lang of ['fr', 'en']) {
       const f = path.join(DOSSIER[lang](slug), 'index.html');
       const avant = lire(f);
@@ -218,7 +220,7 @@ const TEXTES = {
       h2: `Ce qu'il faut savoir avant de <em>faire réparer</em>`,
       cartes: [
         ['Signes d\'un bris', ['Bardeaux manquants, soulevés ou arrachés par le vent', 'Taches d\'eau au plafond ou peinture qui pèle', 'Moisissure dans l\'entretoit', 'Gouttes lors de fortes pluies', 'Mousse sur les bardeaux ou solins rouillés']],
-        ['Types de réparation', ['Bardeaux arrachés remplacés', 'Infiltrations d\'eau : source trouvée, réparation ciblée', 'Solins autour des cheminées, fenêtres de toit, murs et puits de lumière', 'Nettoyage de gouttières', 'Inspection préventive']],
+        ['Types de réparation', ['Bardeaux arrachés remplacés', 'Infiltrations d\'eau : source trouvée, réparation ciblée', 'Solins autour des cheminées, fenêtres de toit, murs et puits de lumière', 'Dégâts causés par les barrages de glace', 'Nettoyage de gouttières', 'Inspection préventive']],
         ['Délais', ['Urgence 24/7, toute l\'année : 514-835-4820', 'Visite sous 24 à 48 heures', 'Soumission en 24 heures', 'La plupart des réparations courantes se règlent en 1 à 3 heures']],
       ],
       faq: [
@@ -252,7 +254,7 @@ const TEXTES = {
       h2: `What to know <em>before a repair</em>`,
       cartes: [
         ['Signs of damage', ['Missing, lifted or blown-off shingles', 'Water stains on the ceiling or peeling paint', 'Mould in the attic', 'Drips during heavy rain', 'Moss on the shingles or rusted flashing']],
-        ['Types of repair', ['Blown-off shingles replaced', 'Leaks: source found, targeted repair', 'Flashing around chimneys, skylights, walls and roof windows', 'Ice dam damage', 'Preventive inspection']],
+        ['Types of repair', ['Blown-off shingles replaced', 'Leaks: source found, targeted repair', 'Flashing around chimneys, skylights, walls and roof windows', 'Ice dam damage', 'Gutter cleaning', 'Preventive inspection']],
         ['Timelines', ['24/7 emergency service, all year: 514-835-4820', 'Visit within 24 to 48 hours', 'Estimate within 24 hours', 'Most common repairs are done within a few hours']],
       ],
       faq: [
@@ -296,7 +298,6 @@ function blocGuide(t, contexte, nom, lang) {
     <div class="gv-grille">
 ${cartes}
     </div>
-    <!-- ${A_COMPLETER[lang](nom)} -->
   </div></section>`;
 }
 
