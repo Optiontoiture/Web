@@ -4,7 +4,7 @@
  * Détecte les visiteurs arrivant via une annonce Google (paramètre gclid)
  * et remplace le numéro entreprise par le numéro de tracking Google Ads.
  *
- * Numéro entreprise (défaut HTML) : 514-835-4820  →  tel:+15148354820
+ * Numéro entreprise (défaut HTML) : 514-835-4820 ou 514 835-4820  →  tel:+15148354820
  * Numéro Google Ads (tracking)    : 450 700-6549  →  tel:+14507006549
  *
  * Les éléments à modifier doivent porter la classe "tracked-phone".
@@ -14,7 +14,6 @@
 (function () {
 
   /* ── Configuration ─────────────────────────────────────────────── */
-  var NUM_DEFAULT  = '514-835-4820';           // texte affiché par défaut
   var NUM_ADS      = '450 700-6549';      // texte affiché aux visiteurs Google Ads (espace insécable)
   var TEL_ADS      = 'tel:+14507006549';       // href pour les liens d'appel
   var STORAGE_KEY  = 'ot_ads_visitor';         // clé sessionStorage
@@ -58,41 +57,31 @@
   }
 
   /* ── 3. Remplacement des numéros visibles ──────────────────────── */
-  function swapPhoneNumbers() {
+  // Le numéro entreprise s'écrit « 514-835-4820 » sur les pages actuelles et
+  // « 514 835-4820 » (espace, parfois insécable) sur les versions de l'accueil
+  // en test (22 novembre 2026) : les deux formes sont reconnues.
+  var NUM_MOTIF = /514[\s \-]835[\s \-]4820/g;
 
-    // 3a. Tous les éléments portant la classe "tracked-phone"
-    var links = document.querySelectorAll('.tracked-phone');
-    for (var i = 0; i < links.length; i++) {
-      var el = links[i];
+  function contientNumero(texte) {
+    NUM_MOTIF.lastIndex = 0;
+    return !!texte && NUM_MOTIF.test(texte);
+  }
 
-      // Remplacer le href sur les liens <a>
-      if (el.tagName === 'A') {
-        el.setAttribute('href', TEL_ADS);
-      }
-
-      // Remplacer le numéro dans le texte visible (seulement si le numéro y figure)
-      if (el.textContent.indexOf(NUM_DEFAULT) !== -1) {
-        el.textContent = el.textContent.replace(NUM_DEFAULT, NUM_ADS);
-      }
-    }
-
-    // 3b. Numéros en texte brut dans le <body> (sections process, FAQ, etc.)
-    // On utilise un TreeWalker pour parcourir les nœuds texte sans toucher
-    // aux balises <script>, <style> et aux attributs non-affichés.
+  // Remplace le numéro dans les nœuds texte sous `racine`, sans toucher aux
+  // balises script/style/noscript ni aux éléments enfants (icônes, <span>).
+  function remplacerTextes(racine) {
     var walker = document.createTreeWalker(
-      document.body,
+      racine,
       NodeFilter.SHOW_TEXT,
       {
         acceptNode: function (node) {
-          // Ignorer le contenu des balises script/style/noscript
           var parent = node.parentNode;
           if (!parent) return NodeFilter.FILTER_REJECT;
           var tag = parent.nodeName.toUpperCase();
           if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'NOSCRIPT') {
             return NodeFilter.FILTER_REJECT;
           }
-          // N'accepter que les nœuds qui contiennent le numéro entreprise
-          return node.nodeValue && node.nodeValue.indexOf(NUM_DEFAULT) !== -1
+          return contientNumero(node.nodeValue)
             ? NodeFilter.FILTER_ACCEPT
             : NodeFilter.FILTER_REJECT;
         }
@@ -100,19 +89,29 @@
       false
     );
 
+    // Modifier après la collecte (ne pas altérer le walker en cours de route)
     var textNodes = [];
     var n;
     while ((n = walker.nextNode())) {
       textNodes.push(n);
     }
-
-    // Modifier après la collecte (ne pas altérer le walker en cours de route)
     for (var j = 0; j < textNodes.length; j++) {
-      textNodes[j].nodeValue = textNodes[j].nodeValue.replace(
-        new RegExp(NUM_DEFAULT.replace(/-/g, '[\\s\\-]'), 'g'),
-        NUM_ADS
-      );
+      NUM_MOTIF.lastIndex = 0;
+      textNodes[j].nodeValue = textNodes[j].nodeValue.replace(NUM_MOTIF, NUM_ADS);
     }
+  }
+
+  function swapPhoneNumbers() {
+    // 3a. Liens d'appel portant la classe "tracked-phone"
+    var links = document.querySelectorAll('.tracked-phone');
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].tagName === 'A') {
+        links[i].setAttribute('href', TEL_ADS);
+      }
+    }
+
+    // 3b. Numéros visibles dans tout le <body> (liens, sections, FAQ, etc.)
+    remplacerTextes(document.body);
   }
 
   /* ── 4. Initialisation ─────────────────────────────────────────── */
