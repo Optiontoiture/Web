@@ -318,10 +318,8 @@ a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
   .volee-d{height:46vw}
   .mesure{margin-top:-16vw}
   .pv1{justify-self:start}
-  .collage{display:none}
-  .pv1{width:70vw;right:0;top:0}
-  .pv2{width:42vw;right:auto;left:0;top:34vw}
-  .pv3{width:48vw;right:4vw;top:62vw}
+  .pv2{width:34vw;left:52vw;top:104%}
+  .pv3{width:40vw;left:6vw;top:112%}
   .service{grid-template-columns:1fr;gap:14px;padding:18px;top:calc(env(safe-area-inset-top,0px) + 62px + var(--i,0) * 10px);margin-bottom:8vh;border-radius:22px}
   .service-img{aspect-ratio:16/10}
   .service .no{font-size:22px;margin-bottom:8px}
@@ -330,10 +328,10 @@ a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
   .service:nth-child(even) .service-img{order:0}
   .chantier-grille{grid-template-columns:1fr}
   .chiffres{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .etapes-piste{flex-direction:column;width:auto;padding-right:var(--gout-d);gap:26px}
-  .etapes-intro,.etape{width:auto}
-  .etape:nth-child(even){transform:rotate(1.2deg)}
-  .etape:last-child{margin-right:0}
+  .etapes-piste{gap:20px;padding-block:60px}
+  .etapes-intro{width:78vw}
+  .etape{width:76vw;padding:26px 22px 22px}
+  .etape .num{font-size:80px}
   .pied{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
@@ -889,15 +887,13 @@ a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
       onUpdate:()=>{b.textContent=(b.dataset.prefixe||'')+fmt.format(o.v)+(b.dataset.suffixe||'');}});
   });
 
-  // 9. Étapes : la piste glisse à l'horizontale pendant qu'on descend (ordinateur et tablette).
-  gsap.matchMedia().add('(min-width: 641px)',()=>{
+  // 9. Étapes : la piste glisse à l'horizontale pendant qu'on descend (les trois appareils).
+  gsap.matchMedia().add('all',()=>{
     const piste=document.getElementById('piste');
     gsap.to(piste,{x:()=>-(piste.scrollWidth-innerWidth),ease:'none',
       scrollTrigger:{trigger:'#etapes',start:'top top',end:()=>'+='+(piste.scrollWidth-innerWidth),pin:true,scrub:1,invalidateOnRefresh:true}});
   });
-  gsap.matchMedia().add('(max-width: 640px)',()=>{
-    gsap.utils.toArray('.etape').forEach(e=>gsap.from(e,{x:-40,rotate:-6,opacity:.3,duration:.8,ease:'power3.out',scrollTrigger:{trigger:e,start:'top 90%'}}));
-  });
+
 
   // 10. Ruban de chantiers : boucle infinie, accélère avec la vitesse de défilement.
   const ruban=document.getElementById('ruban');
