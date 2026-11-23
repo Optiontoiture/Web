@@ -331,9 +331,11 @@ a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
   .pied{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
-  *{transition:none!important;animation:none!important}
-  .manifeste .mot{opacity:1}
+  html:not(.forcer-anim) *{transition:none!important;animation:none!important}
+  html:not(.forcer-anim) .manifeste .mot{opacity:1}
 }
+.avis-calme{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);transform:translateX(-50%);z-index:70;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;width:min(560px,calc(100% - 32px));background:var(--encre);color:var(--blanc);border-radius:18px;padding:12px 16px;font-size:14px;box-shadow:0 18px 40px -16px rgba(0,0,0,.5)}
+.avis-calme button{background:var(--or);color:var(--encre);border:0;border-radius:999px;padding:10px 16px;font:700 14px var(--f-texte);cursor:pointer}
 </style>
 </head>
 <body>
@@ -654,12 +656,25 @@ a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
 </main>
 <span class="maquette-badge">Maquette · Option Toiture</span>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script src="js/lenis.min.js"></script>
 <script>
 (function(){
-  const reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // L'appareil demande moins de mouvement (iPhone, iPad : Réglages › Accessibilité › Mouvement).
+  // On respecte ce choix, mais on le dit, avec un bouton pour voir la maquette animée quand même.
+  const demandeCalme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let forcer = false;
+  try { forcer = /[?&]animations=1/.test(location.search) || sessionStorage.getItem('animations') === '1'; } catch (e) {}
+  if (forcer) document.documentElement.classList.add('forcer-anim');
+  const reduit = demandeCalme && !forcer;
+  if (reduit) {
+    const avis = document.createElement('div'); avis.className = 'avis-calme'; avis.setAttribute('role','status');
+    avis.innerHTML = '<span>Les animations sont coupées : votre appareil demande de réduire les animations.</span>';
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = 'Voir les animations quand même';
+    b.addEventListener('click', () => { try { sessionStorage.setItem('animations','1'); } catch (e) {} location.reload(); });
+    avis.appendChild(b); document.body.appendChild(avis);
+  }
 
   // Formulaire : maquette, aucun envoi.
   document.getElementById('formulaire').addEventListener('submit', e=>{
