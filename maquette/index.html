@@ -104,7 +104,8 @@ a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
 .tampon{border-radius:26px;padding:clamp(26px,3.4vw,46px);color:var(--blanc);position:relative;overflow:hidden;min-height:clamp(240px,24vw,330px);display:flex;flex-direction:column;justify-content:space-between;gap:22px}
 .tampon.gaf{background:var(--gaf);transform:rotate(-2deg)}
 .tampon.rona{background:var(--rona);transform:rotate(1.6deg)}
-.tampon .titre{font-size:clamp(30px,3.4vw,58px)}
+.tampon{container-type:inline-size}
+.tampon .titre{font-size:min(clamp(26px,3.4vw,58px),9.4cqi);overflow-wrap:normal}
 .tampon p{margin:0;max-width:34ch;font-size:17px;opacity:.92}
 .tampon .crayon{color:var(--blanc);font-size:28px;transform:rotate(-3deg);display:block}
 .tampon .marque{align-self:flex-start;background:var(--blanc);border-radius:14px;padding:10px 14px}
@@ -136,8 +137,9 @@ a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
   .service:nth-child(6){--carte:#EDE5D4}
   #services{padding-block:clamp(40px,6vw,80px)}
 }
-.service h2{font-size:clamp(30px,4.1vw,68px)}
-.service>div{min-width:0}
+.service>div{min-width:0;container-type:inline-size}
+/* Le titre suit la largeur de sa colonne : « REMPLACEMENT » (12 lettres larges) tient toujours sur une ligne. */
+.service h2{font-size:min(clamp(26px,4.1vw,68px),9.4cqi);overflow-wrap:normal}
 .service .no{font:400 clamp(26px,2.4vw,34px)/1 var(--f-crayon);color:var(--or);display:block;margin-bottom:14px;transform:rotate(-3deg)}
 .service p{max-width:46ch;font-size:18px;color:var(--encre-doux);margin:22px 0 0}
 .service p strong{color:var(--encre)}
