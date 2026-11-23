@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Option Toiture — maquette du site</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Caveat+Brush&family=Outfit:wght@300;400;600;700&display=swap">
+<style>
+/* Concept : un chantier vu d'en haut. Grand titre très gras et très large comme un lettrage de camion,
+   annotations au crayon gras de couvreur, photos qui ne passent sur le texte qu'en mouvement. */
+:root{
+  --sol:#E7E4DE;        /* gris béton chaud, fond principal */
+  --sol-2:#DCD8D0;
+  --encre:#1B1C1E;      /* noir asphalte */
+  --encre-doux:#4A4B4F;
+  --or:#C9952C;         /* or Option Toiture */
+  --or-pale:#E7C985;
+  --brique:#D6202A;     /* rouge GAF */
+  --gaf:#D6202A;        /* rouge GAF */
+  --rona:#0B4EA2;       /* bleu RONA */
+  --rona-fonce:#19325C; /* marine RONA Services d'installation */
+  --blanc:#FBFAF7;
+  --pledge-clair:#D8BC83; /* or du badge GAF Golden Pledge */
+  --pledge:#B69D66;
+  --pledge-brun:#4A2E1E;
+  --f-titre:"Archivo","Arial Black",Impact,sans-serif;
+  --f-texte:"Outfit","Segoe UI",system-ui,sans-serif;
+  --f-crayon:"Caveat Brush","Comic Sans MS",cursive;
+  --gout: max(16px, env(safe-area-inset-left,0px));
+  --gout-d: max(16px, env(safe-area-inset-right,0px));
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--sol);color:var(--encre);font-family:var(--f-texte);font-size:17px;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px;border-radius:4px}
+.enveloppe{padding-left:calc(var(--gout) + 2vw);padding-right:calc(var(--gout-d) + 2vw);max-width:1500px;margin:0 auto}
+.titre{font-family:var(--f-titre);font-weight:900;font-stretch:125%;text-transform:uppercase;line-height:.88;letter-spacing:-.01em;margin:0;overflow-wrap:anywhere;min-width:0}
+.crayon{font-family:var(--f-crayon);color:var(--or);font-weight:400;letter-spacing:.01em}
+.masque{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em;margin-bottom:-.06em}
+.masque>span{display:inline-block;will-change:transform}
+
+/* ---------- En-tête ---------- */
+.entete{position:fixed;inset:0 0 auto;z-index:50;padding-top:calc(env(safe-area-inset-top,0px) + 14px);padding-bottom:14px;transition:transform .45s cubic-bezier(.7,0,.2,1),background .3s}
+.entete.cache{transform:translateY(-110%)}
+.entete.plein{background:color-mix(in srgb,var(--sol) 88%,transparent);backdrop-filter:blur(10px)}
+.entete .enveloppe{display:flex;align-items:center;gap:24px}
+.marque-ot{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--encre)}
+.marque-ot svg{height:clamp(38px,3.6vw,48px);width:auto;flex:none;overflow:visible}
+.marque-ot svg path{fill:var(--or)}
+.nom-ot{font:900 clamp(15px,1.3vw,18px)/.92 var(--f-titre);font-stretch:118%;text-transform:uppercase;letter-spacing:.01em}
+.marque-ot.clair{color:var(--blanc)}
+.marque-ot.clair svg{height:56px}
+.nav{display:flex;gap:26px;margin-left:auto;list-style:none;padding:0;margin-block:0}
+.nav a{text-decoration:none;font-weight:600;font-size:15px}
+.roule{display:inline-flex;overflow:hidden;height:1.3em;line-height:1.3em}
+.roule .l{display:inline-flex;flex-direction:column;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.roule .l span{display:block;white-space:pre}
+a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
+.pilule{display:inline-flex;align-items:center;gap:10px;background:var(--or);color:var(--encre);border:0;border-radius:999px;padding:12px 22px;font:700 14px/1 var(--f-titre);font-stretch:110%;text-transform:uppercase;text-decoration:none;cursor:pointer;white-space:nowrap;will-change:transform}
+.pilule.sombre{background:var(--encre);color:var(--blanc)}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:2px solid var(--encre);background:transparent;cursor:pointer;margin-left:auto}
+.burger i{display:block;width:18px;height:2px;background:var(--encre);margin:4px auto}
+
+/* ---------- Héros ---------- */
+.heros{position:relative;padding-top:clamp(120px,16vw,190px);padding-bottom:40px}
+.heros .crayon{font-size:clamp(26px,3.2vw,42px);display:block;transform:rotate(-3deg);transform-origin:left;margin-bottom:10px}
+.heros h1{font-size:clamp(30px,8.6vw,150px);position:relative;z-index:1}
+.heros h1 .ligne{display:block}
+.heros h1 .ligne:nth-child(2){padding-left:9vw}
+.heros h1 .ligne:nth-child(3){padding-left:3vw;color:var(--or)}
+.heros h1 .ligne:nth-child(4){padding-left:14vw}
+.rangee-heros{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(24px,4vw,70px);margin-top:48px;align-items:start;position:relative;z-index:2}
+.chapeau{display:grid;gap:24px}
+.volee{position:relative;height:clamp(220px,20vw,300px);margin-top:10px}
+.volee-d{height:clamp(150px,13vw,210px);margin-top:14px}
+.vp{position:absolute;will-change:transform}
+.pv1{position:relative;width:100%;max-width:440px;justify-self:end;will-change:transform}
+.pv1 .cadre-photo{aspect-ratio:4/3}
+.legende-photo{display:block;font-size:24px;margin-top:10px;transform:rotate(-2deg);text-align:right}
+.cadre-photo{border-radius:14px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(27,28,30,.45);border:6px solid var(--blanc)}
+.chapeau p{font-size:clamp(19px,1.7vw,24px);line-height:1.4;max-width:34ch;margin:0}
+.chapeau p strong{font-weight:700}
+.chapeau .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.tel{font:800 clamp(20px,2vw,26px)/1 var(--f-titre);font-stretch:115%;user-select:all}
+.collage{position:absolute;inset:0;pointer-events:none;z-index:2}
+.photo-vol{position:absolute;will-change:transform}
+.cadre-photo img{width:100%;height:100%;object-fit:cover}
+/* Au repos, les photos sont sous le titre, à droite du texte : elles ne cachent rien.
+   Au défilement, elles montent trois à cinq fois plus vite que la page et traversent le titre en un éclair. */
+/* Les deux autres photos attendent sous les cartes GAF et RONA (qui les couvrent), puis remontent en flèche. */
+.pv2{width:min(18vw,250px);aspect-ratio:3/4;left:38vw;top:108%}
+.pv3{width:min(22vw,300px);aspect-ratio:1;left:8vw;top:118%}
+
+/* ---------- Tampons GAF et RONA ---------- */
+.tampons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,3vw,40px);padding-block:clamp(60px,9vw,130px) 20px;position:relative;z-index:3}
+.tampon{border-radius:26px;padding:clamp(26px,3.4vw,46px);color:var(--blanc);position:relative;overflow:hidden;min-height:clamp(240px,24vw,330px);display:flex;flex-direction:column;justify-content:space-between;gap:22px}
+.tampon.gaf{background:var(--gaf);transform:rotate(-2deg)}
+.tampon.rona{background:var(--rona);transform:rotate(1.6deg)}
+.tampon .titre{font-size:clamp(30px,3.4vw,58px)}
+.tampon p{margin:0;max-width:34ch;font-size:17px;opacity:.92}
+.tampon .crayon{color:var(--blanc);font-size:28px;transform:rotate(-3deg);display:block}
+.tampon .marque{align-self:flex-start;background:var(--blanc);border-radius:14px;padding:10px 14px}
+.tampon .marque img{height:clamp(34px,3.6vw,52px);width:auto}
+.losange{width:clamp(70px,7vw,104px);aspect-ratio:1;background:var(--blanc);transform:rotate(45deg);display:grid;place-items:center;border-radius:10px}
+.losange b{transform:rotate(-45deg);color:var(--gaf);font:900 clamp(18px,1.8vw,26px)/1 var(--f-titre);font-stretch:125%}
+.tampon.gaf .marque{background:transparent;padding:0;border-radius:0}
+.tampon.gaf .marque img{height:clamp(110px,10vw,150px);filter:drop-shadow(0 12px 18px rgba(0,0,0,.28))}
+
+/* ---------- Pastilles ---------- */
+
+/* ---------- Manifeste (mots qui s'allument) ---------- */
+.manifeste{padding-block:clamp(70px,10vw,140px)}
+.manifeste p{font-family:var(--f-titre);font-weight:700;font-stretch:100%;font-size:clamp(26px,3.5vw,54px);line-height:1.12;max-width:22ch;margin:0 auto;text-align:center;text-wrap:balance}
+.manifeste .mot{opacity:.16;transition:none}
+.manifeste em{font-style:normal;color:var(--or)}
+
+/* ---------- Services ---------- */
+.service{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,90px);align-items:center;padding-block:clamp(50px,7vw,100px);border-top:2px solid var(--encre)}
+.service:nth-child(even) .service-img{order:-1}
+/* Ordinateur et tablette : les services sont des cartes qui montent du bas et s'empilent, comme des gabarits posés l'un sur l'autre. */
+@media (min-width:641px){
+  .service{position:sticky;top:calc(env(safe-area-inset-top,0px) + 70px + var(--i,0) * 18px);border-top:0;background:var(--carte,var(--blanc));border-radius:28px;padding:clamp(30px,4vw,60px);margin-bottom:12vh;box-shadow:0 -18px 40px -24px rgba(27,28,30,.35);transform-origin:50% 0;will-change:transform}
+  .service:last-child{margin-bottom:4vh}
+  .service:nth-child(2){--carte:#EFE8DA}
+  .service:nth-child(3){--carte:#F6F2EA}
+  .service:nth-child(4){--carte:#E9E1D0}
+  .service:nth-child(5){--carte:#F3EEE4}
+  .service:nth-child(6){--carte:#EDE5D4}
+  #services{padding-block:clamp(40px,6vw,80px)}
+}
+.service h2{font-size:clamp(30px,4.1vw,68px)}
+.service>div{min-width:0}
+.service .no{font:400 clamp(26px,2.4vw,34px)/1 var(--f-crayon);color:var(--or);display:block;margin-bottom:14px;transform:rotate(-3deg)}
+.service p{max-width:46ch;font-size:18px;color:var(--encre-doux);margin:22px 0 0}
+.service p strong{color:var(--encre)}
+.service-img{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;clip-path:inset(0 0 0 0 round 18px)}
+.service-img img{width:100%;height:118%;object-fit:cover;will-change:transform}
+.lien-fleche{display:inline-flex;gap:10px;align-items:center;margin-top:26px;font-weight:700;text-decoration:none;border-bottom:2px solid var(--or);padding-bottom:4px}
+.lien-fleche span{transition:transform .3s}
+.lien-fleche:hover span{transform:translateX(6px)}
+
+/* ---------- Toit qui se pose ---------- */
+.chantier{background:linear-gradient(160deg,var(--pledge-clair),var(--pledge));color:var(--encre);padding-block:clamp(80px,10vw,150px);overflow:hidden;position:relative}
+.chantier-grille{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(30px,5vw,80px);align-items:center}
+.toit{position:relative;width:100%;aspect-ratio:16/9}
+.toit-forme{position:absolute;inset:0;clip-path:polygon(50% 0,100% 100%,0 100%);background:#2B2C2F;display:flex;flex-direction:column;justify-content:flex-end}
+.rang{display:flex;height:calc(100%/11);flex:none;margin-left:calc(var(--d) * -1)}
+.rang i{flex:none;width:calc(100%/14);height:100%;border-right:2px solid #1B1C1E;border-bottom:3px solid #121314;background:linear-gradient(180deg,#5C5A55,#45433F)}
+.rang:nth-child(odd) i{background:linear-gradient(180deg,#67645E,#4C4A46)}
+.faite{position:absolute;left:50%;top:-1.5%;width:5%;height:6%;background:var(--gaf);transform:translateX(-50%) rotate(45deg);border-radius:2px}
+.toit-legende{color:var(--pledge-brun);font-size:24px;margin-top:20px;display:block;transform:rotate(-2deg)}
+.compteur-ans{font-size:clamp(90px,15vw,240px);color:var(--encre);line-height:.8}
+.compteur-ans small{font-size:.32em;color:var(--pledge-brun);margin-left:.15em}
+.liste-garantie{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.liste-garantie li{display:flex;gap:14px;align-items:baseline;font-size:18px;border-bottom:1px solid rgba(74,46,30,.28);padding-bottom:12px}
+.liste-garantie li::before{content:"";flex:none;width:12px;height:12px;background:var(--gaf);transform:rotate(45deg) translateY(-2px)}
+.logos-pledge{display:flex;align-items:center;gap:clamp(16px,2.4vw,32px);margin-bottom:22px;flex-wrap:wrap}
+.badge-pledge{width:clamp(120px,11vw,170px);height:auto;filter:drop-shadow(0 14px 22px rgba(74,46,30,.35))}
+.badge-me{width:clamp(170px,16vw,240px);height:auto;border-radius:8px;box-shadow:0 10px 20px -8px rgba(74,46,30,.5)}
+.etiquette-gaf{display:inline-block;background:var(--gaf);color:var(--blanc);font:800 13px/1 var(--f-titre);font-stretch:115%;text-transform:uppercase;letter-spacing:.06em;padding:8px 12px;border-radius:6px;margin-bottom:14px}
+
+/* ---------- Chiffres ---------- */
+.chiffres{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;padding-block:clamp(60px,8vw,110px)}
+.chiffre{border-left:2px solid var(--encre);padding-left:18px}
+.chiffre b{display:block;font:900 clamp(34px,4.4vw,70px)/1 var(--f-titre);font-stretch:125%;font-variant-numeric:tabular-nums}
+.chiffre span{font-size:15px;color:var(--encre-doux)}
+
+/* ---------- Étapes horizontales ---------- */
+.etapes{position:relative;overflow:hidden;background:var(--or)}
+.etapes-piste{display:flex;gap:4vw;padding-block:clamp(70px,9vw,120px);padding-left:calc(var(--gout) + 2vw);width:max-content}
+.etapes-intro{width:min(70vw,560px);flex:none;align-self:center}
+.etapes-intro h2{font-size:clamp(44px,6.5vw,104px)}
+.etapes-intro .crayon{color:var(--encre);font-size:32px;display:block;margin-bottom:12px;transform:rotate(-3deg)}
+.etape{flex:none;width:min(78vw,400px);background:var(--sol);border-radius:22px;padding:34px 30px 30px;position:relative;align-self:center}
+.etape:nth-child(odd){transform:rotate(-1.5deg)}
+.etape:nth-child(even){transform:rotate(1.2deg) translateY(30px)}
+.etape .num{font:900 110px/0.8 var(--f-titre);font-stretch:125%;color:transparent;-webkit-text-stroke:2px var(--encre)}
+.etape h3{font:800 26px/1.05 var(--f-titre);font-stretch:112%;text-transform:uppercase;margin:22px 0 10px}
+.etape p{margin:0;color:var(--encre-doux)}
+.etape:last-child{margin-right:calc(var(--gout-d) + 6vw)}
+
+/* ---------- Défilé des chantiers ---------- */
+.defile{padding-block:clamp(70px,9vw,120px);overflow:hidden}
+.defile-entete{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:40px}
+.defile-entete h2{font-size:clamp(40px,6vw,96px)}
+.ruban{display:flex;gap:22px;width:max-content;will-change:transform}
+.ruban figure{margin:0;width:clamp(240px,28vw,420px);aspect-ratio:4/3;border-radius:16px;overflow:hidden;flex:none;position:relative}
+.ruban figure:nth-child(3n+2){transform:rotate(2deg) translateY(16px)}
+.ruban figure:nth-child(3n){transform:rotate(-1.5deg)}
+.ruban figure:nth-child(4n+1){width:clamp(200px,20vw,300px);aspect-ratio:3/4}
+.ruban figure img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.ruban figure:hover img{transform:scale(1.08)}
+.ruban img{width:100%;height:100%;object-fit:cover}
+.ruban figcaption{position:absolute;left:12px;bottom:12px;background:var(--blanc);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+
+/* ---------- Collection VIP ---------- */
+.vip{position:relative;height:clamp(460px,80vh,820px);overflow:hidden;color:var(--blanc)}
+.vip-img{position:absolute;inset:0;will-change:clip-path}
+.vip-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.25);will-change:transform}
+.vip::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,28,30,0) 30%,rgba(27,28,30,.75));pointer-events:none}
+.vip-texte{position:absolute;inset:auto 0 0;z-index:2;padding-bottom:clamp(40px,6vw,80px)}
+.vip-texte .crayon{font-size:clamp(26px,2.6vw,36px);display:block;transform:rotate(-3deg);color:var(--or-pale)}
+.vip-texte h2{font-size:clamp(40px,7vw,120px);max-width:12ch}
+.vip-texte p{max-width:48ch;font-size:18px;margin:18px 0 0}
+
+/* ---------- Secteurs ---------- */
+.secteurs{padding-block:clamp(70px,9vw,120px);overflow:hidden}
+.secteurs .crayon{font-size:34px;display:block;text-align:center;transform:rotate(-2deg);margin-bottom:24px}
+.ligne-villes{display:flex;gap:.45em;white-space:nowrap;font:900 clamp(48px,8vw,130px)/1.05 var(--f-titre);font-stretch:125%;text-transform:uppercase;width:max-content;will-change:transform}
+.ligne-villes .v{color:transparent;-webkit-text-stroke:2px var(--encre);transition:color .25s,-webkit-text-stroke-color .25s;cursor:default}
+.ligne-villes .v.allume{color:var(--encre)}
+.ligne-villes .v:hover{color:var(--or);-webkit-text-stroke-color:var(--or)}
+.ligne-villes:nth-of-type(2) .v.allume{color:var(--rona);-webkit-text-stroke-color:var(--rona)}
+.ligne-villes:nth-of-type(3) .v.allume{color:var(--gaf);-webkit-text-stroke-color:var(--gaf)}
+.ligne-villes .pt{color:var(--or);display:inline-block}
+
+/* ---------- Appel final ---------- */
+/* Mesure du toit : carte marine RONA sous l'intro; les photos qui volent passent derrière elle. */
+.mesure{position:relative;z-index:3;padding-block:0;margin-top:clamp(-230px,-15vw,-90px)}
+.mesure-carte{background:var(--rona-fonce);color:var(--blanc);border-radius:32px;padding:clamp(28px,4.5vw,70px)}
+.mesure .crayon{color:var(--or-pale);font-size:clamp(26px,2.6vw,36px);display:block;transform:rotate(-3deg);margin-bottom:14px}
+.mesure h2{font-size:clamp(36px,4.6vw,78px)}
+.mesure h2 .or{color:var(--or)}
+.fin-contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:center;gap:clamp(30px,5vw,80px)}
+/* Cachettes du formulaire « Recevoir mon portail » : la carte dépasse à peine, on clique, elle remonte. */
+.cachette{display:flex;align-items:flex-end;gap:18px;position:relative;z-index:4;margin-block:clamp(24px,4vw,50px)}
+.cachette.droite{justify-content:flex-end}
+.cachette.coin{position:absolute;top:clamp(84px,8vw,130px);right:calc(var(--gout-d) + 2vw);margin:0;z-index:6}
+.cachette.coin .cachette-boite{width:min(360px,30vw)}
+.cachette.coin .cachette-note{max-width:12ch}
+.cachette.gauche{flex-direction:row-reverse;justify-content:flex-end}
+.cachette-boite{width:min(400px,100%);height:86px;overflow:hidden;border-radius:24px 24px 6px 6px;cursor:pointer;position:relative;flex:none;box-shadow:0 -4px 0 0 rgba(27,28,30,.08) inset}
+.cachette-boite::after{content:"";position:absolute;inset:auto 0 0;height:46px;background:linear-gradient(180deg,rgba(231,228,222,0),var(--sol));pointer-events:none;transition:opacity .3s}
+.cachette.ouverte .cachette-boite{cursor:default;overflow:visible}
+.cachette.ouverte .cachette-boite::after{opacity:0}
+.cachette .portail-es{max-width:none;justify-self:auto;transform-origin:50% 100%;rotate:-3deg;box-shadow:0 20px 40px -20px rgba(27,28,30,.45)}
+.cachette.ouverte .portail-es{rotate:0deg}
+.cachette-note{font:400 clamp(22px,2vw,28px)/1.1 var(--f-crayon);color:var(--or);rotate:-4deg;padding-bottom:22px;max-width:16ch;text-align:right}
+.cachette.gauche .cachette-note{text-align:left}
+.cachette-fermer{position:absolute;top:10px;right:12px;width:36px;height:36px;border-radius:50%;border:0;background:#E9E5DA;color:#1F2A24;font-size:18px;cursor:pointer;display:none}
+.cachette.ouverte .cachette-fermer{display:block}
+.fin-ou{color:#C3CCDA;font-size:18px;max-width:40ch;margin:18px 0 0}
+.portail-es{background:#F7F5EF;color:#1F2A24;border-radius:24px;padding:clamp(24px,3vw,36px);display:grid;gap:12px;box-shadow:0 30px 60px -24px rgba(0,0,0,.5);max-width:440px;justify-self:end;width:100%}
+.portail-tete{display:flex;align-items:center;gap:14px;font:700 18px var(--f-texte)}
+.portail-tete svg{height:46px;width:auto}
+.portail-tete svg path{fill:#E0B23E}
+.portail-es h3{font:500 26px/1.2 var(--f-texte);margin:6px 0 0}
+.portail-es p{margin:0;color:#4F5B55;font-size:17px}
+.portail-es label{font-weight:700;font-size:15px;margin-top:6px}
+.portail-es input{border:1px solid #CFCBC0;border-radius:14px;padding:14px 16px;font:400 18px var(--f-texte);background:#fff;color:#1F2A24}
+.portail-es small{color:#5E6A64;font-size:13px}
+.portail-es button{background:#7A6A12;color:#fff;border:0;border-radius:14px;padding:16px;font:700 17px var(--f-texte);cursor:pointer}
+.portail-note{min-height:1.2em;font-size:14px;color:#7A6A12}
+.propulse{text-align:center;color:#5E6A64;font-size:13px}
+.fin-contact h2{font-size:clamp(40px,6vw,100px);max-width:14ch}
+.fin-contact h2 .or{color:var(--or)}
+.gros-tel{font-size:clamp(34px,4.4vw,70px);color:var(--or)}
+.final{background:var(--rona-fonce);color:var(--blanc);padding-block:clamp(80px,10vw,140px) 40px;position:relative;overflow:hidden}
+.final-grille{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,80px);align-items:center}
+.final .crayon{color:var(--or-pale);font-size:clamp(26px,2.6vw,36px);display:block;transform:rotate(-3deg);margin-bottom:14px}
+.final h2{font-size:clamp(40px,5.6vw,92px)}
+.final h2 .or{color:var(--or)}
+.plan{position:relative;aspect-ratio:1;max-width:560px;width:100%;justify-self:center}
+.plan svg{width:100%;height:100%;overflow:visible}
+.plan .terrain{fill:#22406F}
+.plan .toit-plan{fill:rgba(201,149,44,.18);stroke:var(--or);stroke-width:3;stroke-linejoin:round}
+.plan .arete{fill:none;stroke:var(--or-pale);stroke-width:2;stroke-dasharray:6 6}
+.plan .cote{fill:none;stroke:var(--blanc);stroke-width:1.5}
+.plan text{fill:var(--blanc);font:600 15px var(--f-texte)}
+.plan .viseur{fill:none;stroke:var(--gaf);stroke-width:3}
+.urgence{position:absolute;top:-18px;right:-10px;width:clamp(110px,11vw,150px);aspect-ratio:1;border-radius:50%;background:var(--gaf);color:var(--blanc);display:grid;place-items:center;text-align:center;font:900 15px/1.05 var(--f-titre);font-stretch:115%;text-transform:uppercase;z-index:2}
+.urgence svg{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px)}
+.urgence svg text{fill:var(--blanc);font:700 11px var(--f-texte);letter-spacing:.2em}
+.formulaire{display:flex;gap:12px;margin-top:36px;max-width:760px;flex-wrap:wrap}
+.formulaire label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.formulaire input{flex:1 1 280px;min-width:0;background:transparent;border:0;border-bottom:3px solid var(--or);color:var(--blanc);font:400 clamp(20px,2.2vw,28px)/1.2 var(--f-texte);padding:14px 4px}
+.formulaire input::placeholder{color:#8C8D91}
+.formulaire-note{min-height:1.5em;margin-top:14px;color:var(--or-pale);font-size:16px}
+.pied{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;margin-top:clamp(70px,9vw,120px);padding-top:30px;border-top:1px solid #34507E;font-size:15px;color:#C3CCDA}
+.pied b{display:block;color:var(--blanc);font-family:var(--f-titre);font-stretch:112%;text-transform:uppercase;font-size:13px;letter-spacing:.06em;margin-bottom:8px}
+.pied .marque-ot{margin-bottom:6px}
+.maquette-badge{position:fixed;left:calc(var(--gout) + 4px);bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:60;background:var(--encre);color:var(--blanc);font-size:12px;font-weight:600;border-radius:999px;padding:7px 14px;letter-spacing:.04em}
+
+/* ---------- Tablette ---------- */
+@media (max-width:1024px){
+  .nav{display:none}
+  .burger{display:block}
+  .entete .pilule{display:none}
+  .chiffres{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:34px}
+  .pied{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .final-grille{grid-template-columns:1fr}
+  .fin-contact{grid-template-columns:1fr}
+  .portail-es{justify-self:start}
+  .cachette,.cachette.gauche{flex-direction:column-reverse;align-items:stretch}
+  .cachette.coin{display:none}
+  .cachette-note,.cachette.gauche .cachette-note{text-align:left;padding-bottom:0}
+  .plan{max-width:440px}
+}
+/* ---------- Téléphone ---------- */
+@media (max-width:640px){
+  body{font-size:16px}
+  .heros h1 .ligne:nth-child(n){padding-left:0}
+  .heros h1 .ligne:nth-child(even){padding-left:6vw}
+  .tampons{grid-template-columns:1fr}
+  .urgence{width:96px;font-size:12px;right:0}
+  .rangee-heros{grid-template-columns:1fr}
+  .volee{height:70vw}
+  .volee-d{height:46vw}
+  .mesure{margin-top:-16vw}
+  .pv1{justify-self:start}
+  .collage{display:none}
+  .pv1{width:70vw;right:0;top:0}
+  .pv2{width:42vw;right:auto;left:0;top:34vw}
+  .pv3{width:48vw;right:4vw;top:62vw}
+  .service{grid-template-columns:1fr}
+  .service:nth-child(even) .service-img{order:0}
+  .chantier-grille{grid-template-columns:1fr}
+  .chiffres{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .etapes-piste{flex-direction:column;width:auto;padding-right:var(--gout-d);gap:26px}
+  .etapes-intro,.etape{width:auto}
+  .etape:nth-child(even){transform:rotate(1.2deg)}
+  .etape:last-child{margin-right:0}
+  .pied{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .manifeste .mot{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<header class="entete" id="entete">
+  <div class="enveloppe">
+    <a href="#haut" class="marque-ot" aria-label="Option Toiture, accueil"><svg class="maison-ot" viewBox="530 250 840 480" aria-hidden="true"><path d="M545 505 L660 415 L660 325 L735 325 L735 357 L850 265 L930 330 L880 372 L850 348 L655 505 Z"/><path d="M690 550 L1048 265 L1350 502 L1245 502 L1048 348 L795 550 Z"/><path d="M660 572 L735 572 L735 640 L880 640 L880 503 L955 503 L955 715 L660 715 Z"/><path d="M915 490 L995 425 L1105 425 L1180 490 L1082 490 L1082 715 L1010 715 L1010 490 Z"/></svg><span class="nom-ot">Option<br>Toiture</span></a>
+    <ul class="nav">
+      <li><a href="#services" data-roule>Services</a></li>
+      <li><a href="#chantier" data-roule>Garanties</a></li>
+      <li><a href="#realisations" data-roule>Réalisations</a></li>
+      <li><a href="#vip" data-roule>Collection VIP</a></li>
+      <li><a href="#secteurs" data-roule>Secteurs</a></li>
+    </ul>
+    <a class="pilule aimant" href="#soumission">Soumission gratuite</a>
+    <button class="burger" type="button" aria-label="Ouvrir le menu"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="haut">
+  <!-- HÉROS -->
+  <section class="heros enveloppe">
+    <span class="crayon" data-crayon>Couvreur GAF Master Elite · Rive-Sud</span>
+    <div class="cachette coin droite" data-cachette data-note="déjà client? votre portail est caché ici"></div>
+    <h1 class="titre" id="titre-heros">
+      <span class="ligne">Des toits</span>
+      <span class="ligne">qui tiennent</span>
+      <span class="ligne">cinquante</span>
+      <span class="ligne">hivers.</span>
+    </h1>
+    <!-- Au repos, la photo est à côté du texte, jamais dessus. Elle ne passe sur le titre qu'en mouvement. -->
+    <div class="rangee-heros">
+      <div class="chapeau">
+        <p data-apparait>Plus de <strong>1 000 toitures posées en Montérégie</strong> depuis 2012. Garantie Golden Pledge 50 ans, valeur à neuf 100 %. Installateur officiel RONA.</p>
+        <div class="actions" data-apparait>
+          <a class="pilule aimant" href="#soumission">Estimer mon toit →</a>
+          <span class="tel">514 835-4820</span>
+        </div>
+        <div class="volee" aria-hidden="true">
+          <div class="cadre-photo vp" data-vitesse="-2.6" style="width:20%;left:0%;top:4%;aspect-ratio:9/16;rotate:-6deg"><img src="img/r5.webp" decoding="async" alt=""></div>
+          <div class="cadre-photo vp" data-vitesse="-1.4" style="width:34%;left:18%;top:28%;aspect-ratio:3/2;rotate:4deg"><img src="img/r23.webp" decoding="async" alt=""></div>
+          <div class="cadre-photo vp" data-vitesse="-3.4" style="width:30%;left:62%;top:0%;aspect-ratio:3/2;rotate:-3deg"><img src="img/r60.webp" decoding="async" alt=""></div>
+          <div class="cadre-photo vp" data-vitesse="-2" style="width:22%;left:62%;top:36%;aspect-ratio:2/3;rotate:7deg"><img src="img/r14.webp" decoding="async" alt=""></div>
+          <div class="cadre-photo vp" data-vitesse="-2.9" style="width:28%;left:30%;top:-6%;aspect-ratio:3/2;rotate:-2deg"><img src="img/r79.webp" decoding="async" alt=""></div>
+          <div class="cadre-photo vp" data-vitesse="-1.8" style="width:26%;left:2%;top:62%;aspect-ratio:3/2;rotate:3deg"><img src="img/r87.webp" decoding="async" alt=""></div>
+          <div class="cadre-photo vp" data-vitesse="-3.1" style="width:28%;left:34%;top:64%;aspect-ratio:3/2;rotate:-4deg"><img src="img/r20.webp" decoding="async" alt=""></div>
+          <div class="cadre-photo vp" data-vitesse="-2.2" style="width:24%;left:74%;top:72%;aspect-ratio:3/2;rotate:5deg"><img src="img/r33.webp" decoding="async" alt=""></div>
+          <div class="cadre-photo vp" data-vitesse="-3.6" style="width:22%;left:86%;top:24%;aspect-ratio:3/2;rotate:-5deg"><img src="img/r18.webp" decoding="async" alt=""></div>
+        </div>
+      </div>
+      <div class="pv1" data-vitesse="-1.7">
+        <div class="cadre-photo"><img src="img/chantier-rona-camion-2.webp" decoding="async" alt="Chantier d'Option Toiture à Mont-Saint-Hilaire, avec un camion RONA"></div>
+        <span class="crayon legende-photo">un vrai chantier, à Mont-Saint-Hilaire</span>
+        <div class="volee volee-d" aria-hidden="true">
+          <div class="cadre-photo vp" data-vitesse="-2.3" style="width:46%;left:0%;top:2%;aspect-ratio:3/2;rotate:-3deg"><img src="img/r7.webp" decoding="async" alt=""></div>
+          <div class="cadre-photo vp" data-vitesse="-3.3" style="width:32%;left:54%;top:6%;aspect-ratio:1/1;rotate:5deg"><img src="img/r64.webp" decoding="async" alt=""></div>
+          <div class="cadre-photo vp" data-vitesse="-1.6" style="width:40%;left:8%;top:46%;aspect-ratio:3/2;rotate:3deg"><img src="img/r16.webp" decoding="async" alt=""></div>
+          <div class="cadre-photo vp" data-vitesse="-2.8" style="width:26%;left:62%;top:42%;aspect-ratio:2/3;rotate:-6deg"><img src="img/r38.webp" decoding="async" alt=""></div>
+          <div class="cadre-photo vp" data-vitesse="-3.9" style="width:36%;left:30%;top:76%;aspect-ratio:3/2;rotate:2deg"><img src="img/r82.webp" decoding="async" alt=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="collage" aria-hidden="true">
+      <div class="photo-vol cadre-photo pv2" data-vitesse="-3.2"><img src="img/r8.webp" decoding="async" alt=""></div>
+      <div class="photo-vol cadre-photo pv3" data-vitesse="-2.4"><img src="img/r13.webp" decoding="async" alt=""></div>
+    </div>
+  </section>
+
+  <!-- MESURE DU TOIT : le plan se trace pendant le défilement -->
+  <section class="mesure enveloppe" id="soumission">
+      <div class="mesure-carte final-grille">
+        <div>
+          <span class="crayon">soumission instantanée</span>
+          <h2 class="titre" data-titre>Votre adresse. <span class="or">Votre toit mesuré.</span></h2>
+          <p style="max-width:44ch;font-size:18px;color:#C3CCDA;margin:22px 0 0">On mesure votre toiture depuis les images satellites et vous recevez un prix tout de suite. La visite sur place confirme tout, gratuitement.</p>
+          <form class="formulaire" id="formulaire" novalidate>
+            <label for="adresse">Adresse de la propriété</label>
+            <input id="adresse" name="adresse" type="text" autocomplete="street-address" placeholder="Ex. : 3320, route 112, Marieville">
+            <button class="pilule aimant" type="submit">Mesurer mon toit →</button>
+          </form>
+          <div class="formulaire-note" id="note" role="status"></div>
+        </div>
+        <div class="plan">
+          <div class="urgence" id="urgence"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="cercle" d="M50 50 m-40 0 a40 40 0 1 1 80 0 a40 40 0 1 1 -80 0"/></defs><text><textPath href="#cercle">FUITE? ON SE DÉPLACE • FUITE? ON SE DÉPLACE • </textPath></text></svg><span>Urgence<br>24/7</span></div>
+          <svg viewBox="0 0 500 500" aria-hidden="true">
+            <rect class="terrain" x="20" y="20" width="460" height="460" rx="28"/>
+            <path class="toit-plan" id="plan-toit" d="M110 150 L390 150 L390 260 L330 260 L330 360 L110 360 Z"/>
+            <path class="arete" id="plan-aretes" d="M110 150 L170 205 L330 205 L390 150 M390 260 L330 205 M110 360 L170 305 L170 205 M330 360 L270 305 L170 305 M270 305 L330 260"/>
+            <g id="plan-cotes">
+              <path class="cote" d="M110 120 L390 120 M110 112 L110 128 M390 112 L390 128"/>
+              <text x="250" y="110" text-anchor="middle">exemple : 18 m</text>
+              <path class="cote" d="M420 150 L420 260 M412 150 L428 150 M412 260 L428 260"/>
+              <text x="432" y="210">pente 6/12</text>
+            </g>
+            <circle class="viseur" id="plan-viseur" cx="250" cy="255" r="26"/>
+            <path class="viseur" id="plan-croix" d="M250 215 L250 235 M250 275 L250 295 M210 255 L230 255 M270 255 L290 255"/>
+          </svg>
+        </div>
+      </div>
+  </section>
+
+  <!-- TAMPONS GAF ET RONA -->
+  <section class="tampons enveloppe" aria-label="Certifications">
+    <article class="tampon gaf">
+      <div class="marque"><img src="img/gaf-losange.png" decoding="async" loading="lazy" alt="GAF Master Elite, entrepreneur en toiture résidentielle"></div>
+      <span class="crayon">certifié</span>
+      <div>
+        <h2 class="titre">Master<br>Elite</h2>
+        <p>Environ 2 % des couvreurs en Amérique du Nord. C'est ce qui donne accès à la garantie Golden Pledge de 50 ans.</p>
+      </div>
+    </article>
+    <article class="tampon rona">
+      <div class="marque"><img src="img/rona-services-installation-color-fr-600.webp" decoding="async" loading="lazy" alt="RONA Services d'installation"></div>
+      <span class="crayon">partenaire officiel</span>
+      <div>
+        <h2 class="titre">Installateur<br>RONA+</h2>
+        <p>Achetez vos bardeaux chez RONA, on les pose. Une soumission, une équipe, un seul interlocuteur.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- Formulaire caché : on n'en voit qu'un bout; au clic, il remonte et s'ouvre. -->
+  <div class="cachette enveloppe droite" data-cachette data-note="psst… votre portail est caché ici"></div>
+
+  <!-- VIP -->
+  <section class="vip" id="vip">
+    <div class="vip-img" id="vip-img"><img src="img/couverture.webp" decoding="async" loading="lazy" alt="Maison en pierre coiffée de bardeaux GAF Camelot II"></div>
+    <div class="vip-texte enveloppe">
+      <span class="crayon">Collection VIP · GAF Designer</span>
+      <h2 class="titre" data-titre>Un toit à la hauteur de la maison.</h2>
+      <p>Camelot II, Slateline, Grand Sequoia et Woodland : les bardeaux haut de gamme de GAF, en 16 couleurs.</p>
+    </div>
+  </section>
+
+  <!-- MANIFESTE -->
+  <section class="manifeste enveloppe">
+    <p id="manifeste">Une toiture, c'est la seule partie de votre maison que vous ne regardez jamais. <em>Nous, on la regarde pour vous</em> : pontage, membrane, ventilation, solins, rang par rang, jusqu'au faîte.</p>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="enveloppe" id="services">
+    <article class="service" id="s-installation">
+      <div>
+        <span class="no">pour une toiture neuve</span>
+        <h2 class="titre" data-titre>Installation complète</h2>
+        <p>Retrait de l'ancien revêtement, <strong>inspection du pontage</strong>, membrane d'étanchéité et pose des bardeaux selon les spécifications GAF.</p>
+        <a class="lien-fleche" href="#soumission">Demander une visite <span>→</span></a>
+      </div>
+      <div class="service-img"><img src="img/r22.webp" decoding="async" loading="lazy" alt="Équipe d'Option Toiture qui pose des bardeaux à Saint-Basile-le-Grand"></div>
+    </article>
+    <article class="service" id="s-reparation">
+      <div>
+        <span class="no">fuite ou bardeaux arrachés</span>
+        <h2 class="titre" data-titre>Réparation &amp; infiltration</h2>
+        <p>Fuite, bardeaux envolés, solins endommagés : <strong>intervention rapide</strong>, inspection sous 24 à 48 h depuis Marieville.</p>
+        <a class="lien-fleche" href="#soumission">Signaler une fuite <span>→</span></a>
+      </div>
+      <div class="service-img"><img src="img/r88.webp" decoding="async" loading="lazy" alt="Couvreur qui pose un solin autour d'une ouverture"></div>
+    </article>
+    <article class="service" id="s-remplacement">
+      <div>
+        <span class="no">toit de 20 ans et plus</span>
+        <h2 class="titre" data-titre>Remplacement</h2>
+        <p>Retrait complet, vérification intégrale et <strong>nouveau système avec ventilation optimisée</strong>. On vous dit franchement si une réparation suffit.</p>
+        <a class="lien-fleche" href="#soumission">Faire évaluer mon toit <span>→</span></a>
+      </div>
+      <div class="service-img"><img src="img/r72.webp" decoding="async" loading="lazy" alt="Équipe qui refait la toiture d'une maison en pierre"></div>
+    </article>
+    <article class="service" id="s-ventilation">
+      <div>
+        <span class="no">glace l'hiver, chaleur l'été</span>
+        <h2 class="titre" data-titre>Ventilation</h2>
+        <p>Évents de faîte, soffites perforés, aérateurs Maximum. <strong>Fini les barrières de glace</strong> l'hiver et la surchauffe l'été.</p>
+        <a class="lien-fleche" href="#soumission">En savoir plus <span>→</span></a>
+      </div>
+      <div class="service-img"><img src="img/ventilation-entretoit.webp" decoding="async" loading="lazy" alt="Aérateurs installés sur une toiture"></div>
+    </article>
+    <article class="service" id="s-commerciale">
+      <div>
+        <span class="no">immeubles et multilogements</span>
+        <h2 class="titre" data-titre>Commercial</h2>
+        <p>Immeubles commerciaux et multilogements. <strong>Une seule équipe</strong> : couvreurs, charpentiers et ferblantiers.</p>
+        <a class="lien-fleche" href="#soumission">Parler d'un immeuble <span>→</span></a>
+      </div>
+      <div class="service-img"><img src="img/toiture-commerciale.webp" decoding="async" loading="lazy" alt="Toiture d'un immeuble commercial"></div>
+    </article>
+    <article class="service" id="s-ferblanterie">
+      <div>
+        <span class="no">gouttières et solins</span>
+        <h2 class="titre" data-titre>Ferblanterie</h2>
+        <p>Gouttières en aluminium, descentes pluviales, <strong>solins de cheminée</strong> et bordures de toit, façonnés directement au chantier.</p>
+        <a class="lien-fleche" href="#soumission">Voir les options <span>→</span></a>
+      </div>
+      <div class="service-img"><img src="img/ferblanterie-gouttieres.webp" decoding="async" loading="lazy" alt="Gouttières en aluminium neuves"></div>
+    </article>
+  </section>
+
+  <!-- Formulaire caché : on n'en voit qu'un bout; au clic, il remonte et s'ouvre. -->
+  <div class="cachette enveloppe gauche" data-cachette data-note="tirez, votre portail est dessous"></div>
+
+  <!-- TOIT QUI SE POSE -->
+  <section class="chantier" id="chantier">
+    <div class="enveloppe chantier-grille">
+      <div>
+        <div class="toit" id="toit" aria-label="Illustration : un toit se couvre de bardeaux rang par rang">
+          <div class="toit-forme" id="toit-forme"></div>
+          <div class="faite" id="faite"></div>
+        </div>
+        <span class="crayon toit-legende">on pose de l'avant-toit vers le faîte, rang par rang</span>
+      </div>
+      <div>
+        <div class="logos-pledge">
+          <img class="badge-pledge" src="img/golden-pledge-badge.png" decoding="async" loading="lazy" alt="Garantie GAF Golden Pledge">
+          <img class="badge-me" src="img/gaf-me-optime.webp" decoding="async" loading="lazy" alt="GAF Master Elite, Factory Certified">
+        </div>
+        <span class="etiquette-gaf">Garantie GAF Golden Pledge®</span>
+        <div class="titre compteur-ans"><span id="ans">0</span><small>ans</small></div>
+        <ul class="liste-garantie">
+          <li>Matériaux couverts 50 ans, non proratés, à 100 %</li>
+          <li>Main-d'œuvre garantie 25 ans</li>
+          <li>Arrachage et disposition couverts</li>
+          <li>Inspection 40 points faite par GAF</li>
+          <li>Transférable au prochain propriétaire</li>
+        </ul>
+        <p style="color:var(--pledge-brun);margin-top:22px;max-width:44ch">Réservée aux couvreurs GAF Master Elite : environ 2 % des entrepreneurs en Amérique du Nord.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHIFFRES -->
+  <section class="enveloppe chiffres" aria-label="Option Toiture en chiffres">
+    <div class="chiffre"><b data-compte="1000" data-suffixe="+">1000+</b><span>toitures complétées</span></div>
+    <div class="chiffre"><b data-compte="10" data-prefixe="" data-suffixe=" M$+">10 M$+</b><span>de projets réalisés</span></div>
+    <div class="chiffre"><b data-compte="4.9" data-dec="1" data-suffixe=" ★">4,9 ★</b><span>note Google</span></div>
+    <div class="chiffre"><b data-compte="24" data-suffixe=" h">24 h</b><span>pour recevoir la soumission</span></div>
+    <div class="chiffre"><b data-compte="2" data-prefixe="Top " data-suffixe=" %">Top 2 %</b><span>des couvreurs GAF</span></div>
+  </section>
+
+  <!-- ÉTAPES -->
+  <section class="etapes" id="etapes">
+    <div class="etapes-piste" id="piste">
+      <div class="etapes-intro">
+        <span class="crayon">comment ça se passe</span>
+        <h2 class="titre">Cinq étapes, un toit neuf.</h2>
+      </div>
+      <article class="etape"><div class="num">1</div><h3>L'appel</h3><p>Vous appelez au 514 835-4820. Visite planifiée sous 24 à 48 h.</p></article>
+      <article class="etape"><div class="num">2</div><h3>L'inspection</h3><p>Gratuite et complète : bardeaux, pontage, ventilation, solins.</p></article>
+      <article class="etape"><div class="num">3</div><h3>La soumission</h3><p>Écrite sous 24 h, avec matériaux, garanties et financement Flexiti.</p></article>
+      <article class="etape"><div class="num">4</div><h3>Les travaux</h3><p>Normes GAF et Code du bâtiment. Chantier propre et sécuritaire.</p></article>
+      <article class="etape"><div class="num">5</div><h3>La garantie</h3><p>Inspection finale, nettoyage magnétique, activation de la garantie GAF.</p></article>
+    </div>
+  </section>
+
+  <!-- Formulaire caché : on n'en voit qu'un bout; au clic, il remonte et s'ouvre. -->
+  <div class="cachette enveloppe droite" data-cachette data-note="encore lui! cliquez pour l'ouvrir"></div>
+
+  <!-- DÉFILÉ -->
+  <section class="defile" id="realisations">
+    <div class="enveloppe defile-entete">
+      <h2 class="titre" data-titre>Nos chantiers</h2>
+      <span class="crayon" style="font-size:30px;transform:rotate(-3deg);display:block">défilez plus vite, ça roule plus vite →</span>
+    </div>
+    <div class="ruban" id="ruban">
+      <figure><img src="img/r30.webp" decoding="async" loading="lazy" alt="Équipe sur le faîte d'un toit"><figcaption>Saint-Basile-le-Grand</figcaption></figure>
+      <figure><img src="img/r53.webp" decoding="async" loading="lazy" alt="Camion Option Toiture devant une maison en pierre"><figcaption>Maison en pierre</figcaption></figure>
+      <figure><img src="img/r17.webp" decoding="async" loading="lazy" alt="Deux couvreurs se passent un paquet de bardeaux"><figcaption>Saint-Basile-le-Grand</figcaption></figure>
+      <figure><img src="img/r84.webp" decoding="async" loading="lazy" alt="Équipe au travail sur une toiture en pente"><figcaption>Toiture en pente</figcaption></figure>
+      <figure><img src="img/r10.webp" decoding="async" loading="lazy" alt="Coupe du pontage à la scie"><figcaption>Coupe du pontage</figcaption></figure>
+      <figure><img src="img/r57.webp" decoding="async" loading="lazy" alt="Couvreur sur une lucarne en demi-cercle"><figcaption>Lucarne en demi-lune</figcaption></figure>
+      <figure><img src="img/r26.webp" decoding="async" loading="lazy" alt="Maison en brique pendant les travaux"><figcaption>Saint-Basile-le-Grand</figcaption></figure>
+      <figure><img src="img/r88.webp" decoding="async" loading="lazy" alt="Pose d'un solin"><figcaption>Solins sur mesure</figcaption></figure>
+      <figure><img src="img/r36.webp" decoding="async" loading="lazy" alt="Équipe de couvreurs vue d'en bas"><figcaption>L'équipe</figcaption></figure>
+      <figure><img src="img/r99.webp" decoding="async" loading="lazy" alt="Camion Option Toiture le soir devant une maison"><figcaption>Fin de chantier</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- Formulaire caché : on n'en voit qu'un bout; au clic, il remonte et s'ouvre. -->
+  <div class="cachette enveloppe gauche" data-cachette data-note="votre portail en un texto"></div>
+
+  <!-- SECTEURS -->
+  <section class="secteurs" id="secteurs" aria-label="Secteurs desservis">
+    <span class="crayon">on monte sur les toits de…</span>
+    <div class="ligne-villes" data-sens="-1" data-villes="Longueuil,Brossard,Boucherville,Saint-Lambert,La Prairie,Candiac"></div>
+    <div class="ligne-villes" data-sens="1" data-villes="Mont-Saint-Hilaire,Chambly,Carignan,Richelieu,Marieville,Sainte-Julie"></div>
+    <div class="ligne-villes" data-sens="-1" data-villes="Saint-Jean-sur-Richelieu,Saint-Bruno,Saint-Hyacinthe,Granby,Beloeil"></div>
+  </section>
+
+  <!-- APPEL FINAL -->
+  <section class="final" id="contact">
+    <div class="enveloppe fin-contact">
+      <div>
+        <h2 class="titre" data-titre>Une fuite? Un projet? <span class="or">On décroche.</span></h2>
+        <span class="tel gros-tel">514 835-4820</span>
+        <p class="fin-ou">Pas le temps d'appeler? Laissez votre cellulaire : on vous texte le lien de votre portail client.</p>
+      </div>
+      <!-- Maquette du formulaire « Recevoir mon portail » d'Espace Soumission. Sur le vrai site : le code à coller fourni par Espace Soumission (un cadre). -->
+      <form class="portail-es" id="portail-es" novalidate>
+        <div class="portail-tete"><svg class="maison-ot" viewBox="530 250 840 480" aria-hidden="true"><path d="M545 505 L660 415 L660 325 L735 325 L735 357 L850 265 L930 330 L880 372 L850 348 L655 505 Z"/><path d="M690 550 L1048 265 L1350 502 L1245 502 L1048 348 L795 550 Z"/><path d="M660 572 L735 572 L735 640 L880 640 L880 503 L955 503 L955 715 L660 715 Z"/><path d="M915 490 L995 425 L1105 425 L1180 490 L1082 490 L1082 715 L1010 715 L1010 490 Z"/></svg><b>Option Toiture Inc</b></div>
+        <h3>Recevoir mon portail</h3>
+        <p>Laissez votre cellulaire : vous recevez tout de suite, par texto, le lien de votre portail.</p>
+        <label for="cellulaire">Cellulaire</label>
+        <input id="cellulaire" name="cellulaire" type="tel" autocomplete="tel" inputmode="tel" placeholder="514 555-0123">
+        <small>En envoyant, vous acceptez de recevoir ce texto. Répondez ARRÊT pour vous désabonner.</small>
+        <button type="submit">Recevoir mon portail</button>
+        <div class="portail-note" id="portail-note" role="status"></div>
+        <span class="propulse">Propulsé par Espace Soumission</span>
+      </form>
+    </div>
+    <div class="enveloppe">
+      <footer class="pied">
+        <div><span class="marque-ot clair"><svg class="maison-ot" viewBox="530 250 840 480" aria-hidden="true"><path d="M545 505 L660 415 L660 325 L735 325 L735 357 L850 265 L930 330 L880 372 L850 348 L655 505 Z"/><path d="M690 550 L1048 265 L1350 502 L1245 502 L1048 348 L795 550 Z"/><path d="M660 572 L735 572 L735 640 L880 640 L880 503 L955 503 L955 715 L660 715 Z"/><path d="M915 490 L995 425 L1105 425 L1180 490 L1082 490 L1082 715 L1010 715 L1010 490 Z"/></svg><span class="nom-ot">Option<br>Toiture</span></span><p>Entrepreneur général, expert en toiture et rénovation depuis 2012.</p></div>
+        <div><b>Appelez-nous</b><span class="tel" style="font-size:20px;color:var(--blanc)">514 835-4820</span><br>Urgence 24/7</div>
+        <div><b>Passez nous voir</b>3320, route 112<br>Marieville (Québec)</div>
+        <div><b>En règle</b>Licence RBQ 5665-8412-01<br>Membre APCHQ · Partenaire RONA</div>
+      </footer>
+    </div>
+  </section>
+</main>
+<span class="maquette-badge">Maquette · Option Toiture</span>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  const reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Formulaire : maquette, aucun envoi.
+  document.getElementById('formulaire').addEventListener('submit', e=>{
+    e.preventDefault();
+    const v = document.getElementById('adresse').value.trim();
+    document.getElementById('note').textContent = v
+      ? 'Maquette : ici, le toit de « ' + v + ' » serait mesuré et chiffré en quelques secondes.'
+      : 'Entrez une adresse pour voir le toit se mesurer.';
+    if(v && window.tracerPlan) window.tracerPlan(true);
+  });
+
+  const modele=document.getElementById('portail-es');
+  document.querySelectorAll('[data-cachette]').forEach((spot,i)=>{
+    const f=modele.cloneNode(true); f.removeAttribute('id');
+    const champ=f.querySelector('input'), etiq=f.querySelector('label'), note=f.querySelector('.portail-note');
+    champ.id='cellulaire-'+(i+1); etiq.htmlFor=champ.id; note.removeAttribute('id');
+    f.querySelector('.portail-tete b').textContent='Option Toiture Inc';
+    const boite=document.createElement('div'); boite.className='cachette-boite';
+    boite.setAttribute('role','button'); boite.tabIndex=0; boite.setAttribute('aria-expanded','false');
+    boite.setAttribute('aria-label','Ouvrir le formulaire Recevoir mon portail');
+    const fermer=document.createElement('button'); fermer.type='button'; fermer.className='cachette-fermer'; fermer.textContent='✕'; fermer.setAttribute('aria-label','Refermer le formulaire');
+    f.appendChild(fermer); boite.appendChild(f);
+    const mot=document.createElement('span'); mot.className='cachette-note'; mot.textContent=spot.dataset.note+(spot.classList.contains('droite')?' →':' ←');
+    spot.append(mot,boite);
+    const ouvrir=()=>{
+      if(spot.classList.contains('ouverte')) return;
+      spot.classList.add('ouverte'); boite.removeAttribute('role'); boite.removeAttribute('tabindex'); boite.setAttribute('aria-expanded','true');
+      const haut=f.offsetHeight;
+      if(window.gsap && !reduit){
+        gsap.timeline()
+          .to(boite,{height:haut,duration:.7,ease:'expo.out'})
+          .fromTo(f,{y:40,rotate:-6},{y:-18,rotate:0,duration:.45,ease:'power3.out'},0)
+          .to(f,{y:0,duration:.6,ease:'bounce.out'})
+          .add(()=>{boite.style.height='auto';champ.focus({preventScroll:true});});
+      } else { boite.style.height='auto'; champ.focus({preventScroll:true}); }
+    };
+    const refermer=(e)=>{ e.stopPropagation(); spot.classList.remove('ouverte'); boite.style.height=''; boite.setAttribute('role','button'); boite.tabIndex=0; boite.setAttribute('aria-expanded','false'); if(window.gsap) gsap.set(f,{clearProps:'y,rotate'}); boite.focus(); };
+    boite.addEventListener('click',ouvrir);
+    boite.addEventListener('keydown',e=>{ if(!spot.classList.contains('ouverte') && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); ouvrir(); } });
+    fermer.addEventListener('click',refermer);
+  });
+  document.querySelectorAll('form.portail-es').forEach(f=>f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=f.querySelector('input').value.trim();
+    f.querySelector('.portail-note').textContent=v?'Maquette : ici, Espace Soumission texte le lien du portail.':'Entrez un numéro de cellulaire.';
+  }));
+
+  // Toit : génère les rangs de bardeaux (décalés d'un demi-bardeau, comme sur un vrai toit).
+  const forme = document.getElementById('toit-forme');
+  for(let r=0;r<11;r++){
+    const rang = document.createElement('div');
+    rang.className='rang'; rang.style.setProperty('--d', (r%2? 'calc(100%/28)':'0px'));
+    for(let i=0;i<16;i++) rang.appendChild(document.createElement('i'));
+    forme.appendChild(rang);
+  }
+
+  // Villes : chaque ligne porte sa liste deux fois, pour boucler sans trou.
+  document.querySelectorAll('.ligne-villes').forEach(l=>{
+    const villes=l.dataset.villes.split(',');
+    const html=villes.map(v=>'<span class="v">'+v+'</span><span class="pt" aria-hidden="true">✦</span>').join('');
+    l.innerHTML=html+html;
+  });
+
+  // Lettres qui roulent dans le menu.
+  document.querySelectorAll('[data-roule]').forEach(a=>{
+    const t=a.textContent; a.textContent='';
+    const w=document.createElement('span'); w.className='roule'; w.setAttribute('aria-hidden','true');
+    [...t].forEach((c,i)=>{
+      const l=document.createElement('span'); l.className='l'; l.style.transitionDelay=(i*0.018)+'s';
+      l.innerHTML='<span></span><span></span>'; l.children[0].textContent=c; l.children[1].textContent=c;
+      w.appendChild(l);
+    });
+    a.appendChild(w); a.setAttribute('aria-label',t);
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+    const h=a.getAttribute('href'); if(h.length>1){e.preventDefault();aller(h);}
+  }));
+  let lenis=null;
+  function aller(sel){const el=document.querySelector(sel); if(!el) return;
+    if(lenis) lenis.scrollTo(el,{offset:-80,duration:1.4}); else el.scrollIntoView({behavior:reduit?'auto':'smooth'});}
+
+  if(reduit || !window.gsap){ document.getElementById('ans').textContent='50'; return; }
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Défilement doux.
+  if(window.Lenis){
+    lenis = new Lenis({lerp:0.09});
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t=>lenis.raf(t*1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  // Découpe en mots masqués.
+  function mots(el){
+    const morceaux=[];
+    (function marche(n){
+      [...n.childNodes].forEach(c=>{
+        if(c.nodeType===3){
+          const frag=document.createDocumentFragment();
+          c.textContent.split(/(\s+)/).forEach(m=>{
+            if(!m) return;
+            if(/^\s+$/.test(m)){frag.appendChild(document.createTextNode(m));return;}
+            const o=document.createElement('span'); o.className='masque';
+            const i=document.createElement('span'); i.textContent=m; o.appendChild(i);
+            frag.appendChild(o); morceaux.push(i);
+          });
+          c.replaceWith(frag);
+        } else if(c.nodeType===1) marche(c);
+      });
+    })(el);
+    return morceaux;
+  }
+
+  // 1. Entrée du héros : chaque mot monte de son masque, en cascade.
+  const titre=document.getElementById('titre-heros');
+  const motsTitre=mots(titre);
+  const tl=gsap.timeline({defaults:{ease:'expo.out'}});
+  // Le logo s'assemble : la cheminée et le petit toit, le grand toit, le mur, puis le T.
+  tl.from('#entete .maison-ot path',{y:-40,opacity:0,duration:.7,stagger:.12,ease:'back.out(2.2)'})
+    .from('#entete .nom-ot',{x:-12,opacity:0,duration:.6},'-=.3')
+    .from('[data-crayon]',{clipPath:'inset(0 100% 0 0)',duration:1.1,ease:'power2.inOut'})
+    .from(motsTitre,{yPercent:115,rotate:6,duration:1.2,stagger:.07},'-=.6')
+    .from('[data-apparait]',{y:30,opacity:0,duration:1,stagger:.12},'-=.7')
+    .from('.pv1',{y:160,rotate:-4,opacity:0,duration:1.3,ease:'power3.out'},'-=1')
+    .from('.vp',{y:220,opacity:0,duration:1.1,stagger:{each:.08,from:'random'},ease:'power3.out'},'-=1.1');
+
+  // 2. Photos qui montent par-dessus le titre, chacune à sa vitesse.
+  gsap.matchMedia().add('(min-width: 641px)',()=>{
+    document.querySelectorAll('[data-vitesse]').forEach(p=>{
+      // Trois à cinq fois plus vite que la page : elles traversent le titre sans s'y arrêter.
+      if(p.classList.contains('photo-vol')) gsap.fromTo(p,{opacity:0},{opacity:1,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'+=120',scrub:true}});
+      gsap.to(p,{yPercent:parseFloat(p.dataset.vitesse)*100,rotate:()=>gsap.utils.random(-14,14),ease:'none',
+        scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:.4}});
+    });
+    gsap.to(titre,{yPercent:-8,ease:'none',scrollTrigger:{trigger:'.heros',start:'top top',end:'bottom top',scrub:true}});
+  });
+
+  // Tampons GAF et RONA : ils s'abattent comme un sceau.
+  gsap.utils.toArray('.tampon').forEach((t,i)=>{
+    const r=i?1.6:-2;
+    gsap.fromTo(t,{scale:1.35,rotate:r*6,opacity:0},{scale:1,rotate:r,opacity:1,duration:.7,ease:'back.out(1.6)',delay:i*.15,
+      scrollTrigger:{trigger:'.tampons',start:'top 80%'}});
+  });
+  gsap.from('.tampon .marque',{y:-30,rotate:-8,opacity:0,duration:.8,ease:'back.out(2.5)',stagger:.15,delay:.35,scrollTrigger:{trigger:'.tampons',start:'top 80%'}});
+
+  // En-tête qui se cache en descendant, revient en remontant.
+  const ent=document.getElementById('entete'); let dernier=0;
+  ScrollTrigger.create({onUpdate:s=>{
+    const y=s.scroll(); ent.classList.toggle('plein',y>40);
+    ent.classList.toggle('cache', y>300 && s.direction===1); dernier=y;
+  }});
+
+  // 4. Manifeste : les mots s'allument au fil du défilement.
+  const man=document.getElementById('manifeste');
+  (function(){ const ms=mots(man); ms.forEach(m=>{m.parentNode.classList.add('mot');});
+    gsap.to(man.querySelectorAll('.mot'),{opacity:1,stagger:.08,ease:'none',
+      scrollTrigger:{trigger:man,start:'top 80%',end:'bottom 45%',scrub:true}});
+  })();
+
+  // 5. Titres de section : les mots montent quand on arrive dessus.
+  document.querySelectorAll('[data-titre]').forEach(h=>{
+    const ms=mots(h);
+    gsap.from(ms,{yPercent:110,duration:1,ease:'expo.out',stagger:.06,scrollTrigger:{trigger:h,start:'top 88%'}});
+  });
+
+  // 6 bis. Cartes empilées : chaque service recule quand le suivant monte par-dessus.
+  gsap.matchMedia().add('(min-width: 641px)',()=>{
+    const cartes=gsap.utils.toArray('.service');
+    cartes.forEach((c,i)=>{
+      c.style.setProperty('--i',i);
+      const suivante=cartes[i+1]; if(!suivante) return;
+      gsap.to(c,{scale:.93,ease:'none',
+        scrollTrigger:{trigger:suivante,start:'top bottom',end:()=>'top '+(90+(i+1)*18)+'px',scrub:true}});
+    });
+    return ()=>cartes.forEach(c=>c.style.removeProperty('--i'));
+  });
+
+  // 6. Photos de service : rideau qui s'ouvre + parallaxe interne.
+  document.querySelectorAll('.service-img').forEach(b=>{
+    gsap.fromTo(b,{clipPath:'inset(18% 12% 18% 12% round 18px)'},{clipPath:'inset(0% 0% 0% 0% round 18px)',ease:'power2.out',
+      scrollTrigger:{trigger:b,start:'top 90%',end:'top 35%',scrub:true}});
+    gsap.fromTo(b.querySelector('img'),{yPercent:-12},{yPercent:0,ease:'none',
+      scrollTrigger:{trigger:b,start:'top bottom',end:'bottom top',scrub:true}});
+  });
+
+  // 7. Le toit se couvre : rangs du bas vers le haut, puis le faîte, et le compteur monte à 50.
+  const rangs=[...document.querySelectorAll('.rang')].reverse();
+  const compte={v:0};
+  const tlToit=gsap.timeline({scrollTrigger:{trigger:'#chantier',start:'top 70%',end:'center 40%',scrub:1}});
+  tlToit.from(rangs,{y:-60,opacity:0,stagger:.15,ease:'power2.out',duration:.6})
+        .from('#faite',{scale:0,rotate:225,duration:.4,ease:'back.out(2)'})
+        .to(compte,{v:50,duration:tlToit.duration(),ease:'none',onUpdate:()=>{document.getElementById('ans').textContent=Math.round(compte.v);}},0);
+
+  gsap.from('.badge-pledge',{y:-80,rotate:-45,scale:.6,opacity:0,duration:1,ease:'back.out(2)',scrollTrigger:{trigger:'.logos-pledge',start:'top 85%'}});
+  gsap.from('.badge-me',{x:60,opacity:0,duration:.9,delay:.2,ease:'expo.out',scrollTrigger:{trigger:'.logos-pledge',start:'top 85%'}});
+
+  gsap.utils.toArray('.cachette-boite').forEach(b=>gsap.fromTo(b,{y:30},{y:0,duration:.9,ease:'elastic.out(1,.35)',scrollTrigger:{trigger:b,start:'top 92%'}}));
+
+  // 8. Chiffres qui comptent.
+  document.querySelectorAll('[data-compte]').forEach(b=>{
+    const cible=parseFloat(b.dataset.compte), dec=+(b.dataset.dec||0), o={v:0};
+    const fmt=new Intl.NumberFormat('fr-CA',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+    gsap.to(o,{v:cible,duration:1.8,ease:'power3.out',scrollTrigger:{trigger:b,start:'top 90%'},
+      onUpdate:()=>{b.textContent=(b.dataset.prefixe||'')+fmt.format(o.v)+(b.dataset.suffixe||'');}});
+  });
+
+  // 9. Étapes : la piste glisse à l'horizontale pendant qu'on descend (ordinateur et tablette).
+  gsap.matchMedia().add('(min-width: 641px)',()=>{
+    const piste=document.getElementById('piste');
+    gsap.to(piste,{x:()=>-(piste.scrollWidth-innerWidth),ease:'none',
+      scrollTrigger:{trigger:'#etapes',start:'top top',end:()=>'+='+(piste.scrollWidth-innerWidth),pin:true,scrub:1,invalidateOnRefresh:true}});
+  });
+  gsap.matchMedia().add('(max-width: 640px)',()=>{
+    gsap.utils.toArray('.etape').forEach(e=>gsap.from(e,{x:-40,rotate:-6,opacity:.3,duration:.8,ease:'power3.out',scrollTrigger:{trigger:e,start:'top 90%'}}));
+  });
+
+  // 10. Ruban de chantiers : boucle infinie, accélère avec la vitesse de défilement.
+  const ruban=document.getElementById('ruban');
+  ruban.innerHTML+=ruban.innerHTML;
+  let pos=0, vitesse=1, dir=1;
+  gsap.ticker.add(()=>{
+    const moitie=ruban.scrollWidth/2;
+    pos-=vitesse*dir; if(pos<=-moitie) pos+=moitie; if(pos>0) pos-=moitie;
+    gsap.set(ruban,{x:pos}); vitesse+= (1-vitesse)*0.05;
+  });
+  ScrollTrigger.create({trigger:'#realisations',start:'top bottom',end:'bottom top',
+    onUpdate:s=>{vitesse=1+Math.min(Math.abs(s.getVelocity())/180,14); dir=s.direction;}});
+
+  // 11. VIP : la photo s'ouvre depuis une fente et se dézoome.
+  gsap.fromTo('#vip-img',{clipPath:'inset(30% 25% 30% 25% round 24px)'},{clipPath:'inset(0% 0% 0% 0% round 0px)',ease:'none',
+    scrollTrigger:{trigger:'#vip',start:'top 85%',end:'top 15%',scrub:true}});
+  gsap.to('#vip-img img',{scale:1,ease:'none',scrollTrigger:{trigger:'#vip',start:'top bottom',end:'bottom top',scrub:true}});
+
+  // 12. Villes : trois lignes qui défilent toujours, en sens contraire, plus vite quand on défile.
+  //     La ville qui passe au centre de l'écran s'allume (noir, bleu RONA, rouge GAF selon la ligne).
+  const lignes=[...document.querySelectorAll('.ligne-villes')].map(l=>({l,pos:0,s:+l.dataset.sens,v:[...l.querySelectorAll('.v')]}));
+  let elan=1;
+  gsap.ticker.add(()=>{
+    const cx=innerWidth/2;
+    lignes.forEach(o=>{
+      const moitie=o.l.scrollWidth/2;
+      o.pos+=o.s*1.1*elan; if(o.pos<=-moitie) o.pos+=moitie; if(o.pos>0) o.pos-=moitie;
+      o.l.style.transform='translateX('+o.pos+'px)';
+      o.v.forEach(v=>{const r=v.getBoundingClientRect(); v.classList.toggle('allume', r.left<cx && r.right>cx);});
+    });
+    elan+=(1-elan)*0.06;
+  });
+  ScrollTrigger.create({trigger:'#secteurs',start:'top bottom',end:'bottom top',
+    onUpdate:s=>{elan=1+Math.min(Math.abs(s.getVelocity())/150,12);}});
+  gsap.from('.ligne-villes',{yPercent:60,opacity:0,duration:1,stagger:.15,ease:'expo.out',scrollTrigger:{trigger:'#secteurs',start:'top 80%'}});
+
+  // 14. Fin : le plan du toit vu du ciel se trace (arrivée sur la section ou adresse entrée).
+  const planToit=document.getElementById('plan-toit'), aretes=document.getElementById('plan-aretes');
+  [planToit,aretes].forEach(p=>{const L=p.getTotalLength(); p.style.strokeDasharray=L; p.style.strokeDashoffset=L;});
+  aretes.style.strokeDasharray=aretes.getTotalLength();
+  const tlPlan=gsap.timeline()
+    .fromTo('#plan-viseur',{scale:3,opacity:0,transformOrigin:'50% 50%'},{scale:1,opacity:1,duration:.6,ease:'expo.out'})
+    .fromTo('#plan-croix',{opacity:0},{opacity:1,duration:.2})
+    .to(planToit,{strokeDashoffset:0,duration:1.4,ease:'power2.inOut'})
+    .fromTo(planToit,{fillOpacity:0},{fillOpacity:1,duration:.5},'-=.3')
+    .to(aretes,{strokeDashoffset:0,duration:1,ease:'power1.inOut'},'-=.2')
+    .from('#plan-cotes > *',{opacity:0,y:8,duration:.4,stagger:.08})
+    .to(['#plan-viseur','#plan-croix'],{opacity:0,duration:.4},'-=.2');
+  ScrollTrigger.create({trigger:'.plan',start:'top 90%',end:'bottom 55%',scrub:1,animation:tlPlan});
+  window.tracerPlan=()=>gsap.timeline()
+    .set(['#plan-viseur','#plan-croix'],{opacity:1})
+    .fromTo(['#plan-viseur','#plan-croix'],{x:-120,y:-90},{x:120,y:90,duration:1.2,ease:'sine.inOut'})
+    .to(['#plan-viseur','#plan-croix'],{x:0,y:0,duration:.6,ease:'expo.out'})
+    .fromTo('#plan-toit',{fillOpacity:.2},{fillOpacity:1,duration:.4,yoyo:true,repeat:3})
+    .to(['#plan-viseur','#plan-croix'],{opacity:0,duration:.4});
+  gsap.to('#urgence svg',{rotate:360,duration:14,ease:'none',repeat:-1,transformOrigin:'50% 50%'});
+  gsap.from('#urgence',{scale:0,rotate:-90,duration:.9,ease:'back.out(2)',scrollTrigger:{trigger:'.plan',start:'top 80%'}});
+
+  // 13. Boutons aimantés (pointeur fin seulement).
+  if(matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('.aimant').forEach(b=>{
+      b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();
+        gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.3,y:(e.clientY-r.top-r.height/2)*.4,duration:.4,ease:'power3.out'});});
+      b.addEventListener('mouseleave',()=>gsap.to(b,{x:0,y:0,duration:.7,ease:'elastic.out(1,.35)'}));
+    });
+  }
+
+  addEventListener('load',()=>ScrollTrigger.refresh());
+})();
+</script>
+
+</body>
+</html>

@@ -29,3 +29,7 @@
 
 /robots.txt
   Cache-Control: public, max-age=86400
+
+# Maquette du nouveau site : jamais dans Google
+/maquette/*
+  X-Robots-Tag: noindex, nofollow
