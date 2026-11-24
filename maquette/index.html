@@ -152,13 +152,14 @@ a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
 /* ---------- Toit qui se pose ---------- */
 .chantier{background:linear-gradient(160deg,var(--pledge-clair),var(--pledge));color:var(--encre);padding-block:clamp(80px,10vw,150px);overflow:hidden;position:relative}
 .chantier-grille{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(30px,5vw,80px);align-items:center}
-.toit{position:relative;width:100%;aspect-ratio:16/9}
-.toit-forme{position:absolute;inset:0;clip-path:polygon(50% 0,100% 100%,0 100%);background:#2B2C2F;display:flex;flex-direction:column;justify-content:flex-end}
-.rang{display:flex;height:calc(100%/11);flex:none;margin-left:calc(var(--d) * -1)}
-.rang i{flex:none;width:calc(100%/14);height:100%;border-right:2px solid #1B1C1E;border-bottom:3px solid #121314;background:linear-gradient(180deg,#5C5A55,#45433F)}
-.rang:nth-child(odd) i{background:linear-gradient(180deg,#67645E,#4C4A46)}
-.faite{position:absolute;left:50%;top:-1.5%;width:5%;height:6%;background:var(--gaf);transform:translateX(-50%) rotate(45deg);border-radius:2px}
-.toit-legende{color:var(--pledge-brun);font-size:24px;margin-top:20px;display:block;transform:rotate(-2deg)}
+.coupe{margin:0}
+.coupe svg{width:100%;height:auto;display:block;overflow:visible}
+.coupe figcaption{color:var(--pledge-brun);font-size:24px;display:block;transform:rotate(-2deg);margin:4px 0 14px}
+.couches{list-style:none;counter-reset:c;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px}
+.couches li{counter-increment:c;display:grid;grid-template-columns:28px 1fr;column-gap:10px;font-size:15px;line-height:1.3;color:var(--pledge-brun);opacity:.35;transition:opacity .35s}
+.couches li::before{content:counter(c);grid-row:span 2;width:28px;height:28px;border-radius:50%;background:var(--gaf);color:var(--blanc);font:800 14px/28px var(--f-titre);text-align:center}
+.couches li b{display:block;color:var(--encre);font-family:var(--f-titre);font-stretch:110%;text-transform:uppercase;font-size:14px;letter-spacing:.02em}
+.couches li.actif{opacity:1}
 .compteur-ans{font-size:clamp(90px,15vw,240px);color:var(--encre);line-height:.8}
 .compteur-ans small{font-size:.32em;color:var(--pledge-brun);margin-left:.15em}
 .liste-garantie{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
@@ -329,6 +330,7 @@ a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
   .lien-fleche{margin-top:12px}
   .service:nth-child(even) .service-img{order:0}
   .chantier-grille{grid-template-columns:1fr}
+  .couches{grid-template-columns:1fr}
   .chiffres{grid-template-columns:repeat(2,minmax(0,1fr))}
   .etapes-piste{gap:20px;padding-block:60px}
   .etapes-intro{width:78vw}
@@ -337,6 +339,7 @@ a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
   .pied{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
+  html:not(.forcer-anim) .couches li{opacity:1}
   html:not(.forcer-anim) *{transition:none!important;animation:none!important}
   html:not(.forcer-anim) .manifeste .mot{opacity:1}
 }
@@ -546,11 +549,33 @@ a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
   <section class="chantier" id="chantier">
     <div class="enveloppe chantier-grille">
       <div>
-        <div class="toit" id="toit" aria-label="Illustration : un toit se couvre de bardeaux rang par rang">
-          <div class="toit-forme" id="toit-forme"></div>
-          <div class="faite" id="faite"></div>
-        </div>
-        <span class="crayon toit-legende">on pose de l'avant-toit vers le faîte, rang par rang</span>
+        <figure class="coupe" aria-labelledby="coupe-titre">
+          <svg viewBox="0 0 640 380" role="img" aria-label="Coupe d'un toit : pontage, membrane, sous-couche, bande de départ, bardeaux et faîte ventilé">
+            <defs>
+              <linearGradient id="gBardeau" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6A6762"/><stop offset="1" stop-color="#47453F"/></linearGradient>
+              <pattern id="pFeutre" width="14" height="6" patternUnits="userSpaceOnUse"><rect width="14" height="6" fill="#D5D9DC"/><path d="M0 3h7" stroke="#9AA4AB" stroke-width="1"/></pattern>
+            </defs>
+            <g transform="rotate(-20 320 230)">
+              <rect class="charpente" x="20" y="262" width="580" height="34" fill="#8A6640"/>
+              <rect class="charpente" x="8" y="256" width="14" height="48" fill="#EFE8D8"/>
+              <g class="couche" data-couche="1"><rect x="20" y="244" width="580" height="18" fill="#D9B77E" stroke="#B48E55"/><path d="M165 244v18M310 244v18M455 244v18" stroke="#B48E55" stroke-width="2"/></g>
+              <g class="couche" data-couche="2"><path d="M12 236h14v4h-10v14h-4z" fill="#A9B2B8"/><rect x="20" y="238" width="190" height="6" fill="#2E3236"/></g>
+              <g class="couche" data-couche="3"><rect x="180" y="238" width="420" height="6" fill="url(#pFeutre)"/></g>
+              <g class="couche" data-couche="4"><rect x="22" y="230" width="46" height="8" rx="1" fill="#1F2124"/></g>
+              <g class="couche" data-couche="5"><g class="bardeau"><rect x="26" y="221" width="70" height="9" rx="1.5" fill="url(#gBardeau)"/><rect x="26" y="228" width="70" height="2" fill="#1E1F21"/></g><g class="bardeau"><rect x="75" y="222" width="70" height="9" rx="1.5" fill="url(#gBardeau)"/><rect x="75" y="229" width="70" height="2" fill="#1E1F21"/></g><g class="bardeau"><rect x="124" y="221" width="70" height="9" rx="1.5" fill="url(#gBardeau)"/><rect x="124" y="228" width="70" height="2" fill="#1E1F21"/></g><g class="bardeau"><rect x="173" y="222" width="70" height="9" rx="1.5" fill="url(#gBardeau)"/><rect x="173" y="229" width="70" height="2" fill="#1E1F21"/></g><g class="bardeau"><rect x="222" y="221" width="70" height="9" rx="1.5" fill="url(#gBardeau)"/><rect x="222" y="228" width="70" height="2" fill="#1E1F21"/></g><g class="bardeau"><rect x="271" y="222" width="70" height="9" rx="1.5" fill="url(#gBardeau)"/><rect x="271" y="229" width="70" height="2" fill="#1E1F21"/></g><g class="bardeau"><rect x="320" y="221" width="70" height="9" rx="1.5" fill="url(#gBardeau)"/><rect x="320" y="228" width="70" height="2" fill="#1E1F21"/></g><g class="bardeau"><rect x="369" y="222" width="70" height="9" rx="1.5" fill="url(#gBardeau)"/><rect x="369" y="229" width="70" height="2" fill="#1E1F21"/></g><g class="bardeau"><rect x="418" y="221" width="70" height="9" rx="1.5" fill="url(#gBardeau)"/><rect x="418" y="228" width="70" height="2" fill="#1E1F21"/></g><g class="bardeau"><rect x="467" y="222" width="70" height="9" rx="1.5" fill="url(#gBardeau)"/><rect x="467" y="229" width="70" height="2" fill="#1E1F21"/></g><g class="bardeau"><rect x="516" y="221" width="70" height="9" rx="1.5" fill="url(#gBardeau)"/><rect x="516" y="228" width="70" height="2" fill="#1E1F21"/></g></g>
+              <g class="couche" data-couche="6"><rect x="560" y="212" width="44" height="12" fill="#2B2D30"/><path d="M552 214 Q584 194 618 214 L618 222 L552 222Z" fill="#3B3936"/></g>
+            </g>
+          </svg>
+          <figcaption id="coupe-titre" class="crayon">le système complet GAF, couche par couche</figcaption>
+          <ol class="couches">
+            <li data-couche="1"><b>Pontage</b> contreplaqué inspecté, remplacé au besoin</li>
+            <li data-couche="2"><b>Larmier et membrane</b> StormGuard contre les barrières de glace</li>
+            <li data-couche="3"><b>Sous-couche</b> synthétique FeltBuster sur tout le toit</li>
+            <li data-couche="4"><b>Bande de départ</b> Pro-Start, scellée à l'avant-toit</li>
+            <li data-couche="5"><b>Bardeaux</b> Timberline HDZ, rang par rang</li>
+            <li data-couche="6"><b>Faîte ventilé</b> Cobra et capuchons Seal-A-Ridge</li>
+          </ol>
+        </figure>
       </div>
       <div>
         <div class="logos-pledge">
@@ -728,15 +753,6 @@ a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
     f.querySelector('.portail-note').textContent=v?'Maquette : ici, Espace Soumission texte le lien du portail.':'Entrez un numéro de cellulaire.';
   }));
 
-  // Toit : génère les rangs de bardeaux (décalés d'un demi-bardeau, comme sur un vrai toit).
-  const forme = document.getElementById('toit-forme');
-  for(let r=0;r<11;r++){
-    const rang = document.createElement('div');
-    rang.className='rang'; rang.style.setProperty('--d', (r%2? 'calc(100%/28)':'0px'));
-    for(let i=0;i<16;i++) rang.appendChild(document.createElement('i'));
-    forme.appendChild(rang);
-  }
-
   // Villes : chaque ligne porte sa liste deux fois, pour boucler sans trou.
   document.querySelectorAll('.ligne-villes').forEach(l=>{
     const villes=l.dataset.villes.split(',');
@@ -868,12 +884,16 @@ a:hover .roule .l,a:focus-visible .roule .l{transform:translateY(-50%)}
       scrollTrigger:{trigger:b,start:'top bottom',end:'bottom top',scrub:true}});
   });
 
-  // 7. Le toit se couvre : rangs du bas vers le haut, puis le faîte, et le compteur monte à 50.
-  const rangs=[...document.querySelectorAll('.rang')].reverse();
-  const compte={v:0};
-  const tlToit=gsap.timeline({scrollTrigger:{trigger:'#chantier',start:'top 70%',end:'center 40%',scrub:1}});
-  tlToit.from(rangs,{y:-60,opacity:0,stagger:.15,ease:'power2.out',duration:.6})
-        .from('#faite',{scale:0,rotate:225,duration:.4,ease:'back.out(2)'})
+  // 7. Le toit se monte couche par couche (pontage, membrane, sous-couche, départ, bardeaux, faîte);
+  //    chaque couche allume sa ligne dans la liste, et le compteur monte à 50.
+  const compte={v:0}, lignesCouches=[...document.querySelectorAll('.couches li')];
+  const allume=n=>lignesCouches.forEach(l=>l.classList.toggle('actif',+l.dataset.couche<=n));
+  const tlToit=gsap.timeline({scrollTrigger:{trigger:'#chantier',start:'top 65%',end:'bottom 70%',scrub:1,onLeaveBack:()=>allume(0)}});
+  [1,2,3,4].forEach(n=>{
+    tlToit.from('.couche[data-couche="'+n+'"]',{y:-70,opacity:0,duration:.7,ease:'power2.out',onStart:()=>allume(n),onReverseComplete:()=>allume(n-1)});
+  });
+  tlToit.from('.couche[data-couche="5"] .bardeau',{y:-50,opacity:0,stagger:.12,duration:.5,ease:'power2.out',onStart:()=>allume(5),onReverseComplete:()=>allume(4)})
+        .from('.couche[data-couche="6"]',{y:-60,scale:.6,opacity:0,transformOrigin:'50% 100%',duration:.6,ease:'back.out(2)',onStart:()=>allume(6),onReverseComplete:()=>allume(5)})
         .to(compte,{v:50,duration:tlToit.duration(),ease:'none',onUpdate:()=>{document.getElementById('ans').textContent=Math.round(compte.v);}},0);
 
   gsap.from('.badge-pledge',{y:-80,rotate:-45,scale:.6,opacity:0,duration:1,ease:'back.out(2)',scrollTrigger:{trigger:'.logos-pledge',start:'top 85%'}});
